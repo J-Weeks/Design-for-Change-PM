@@ -157,7 +157,7 @@ function(App, Handlebars, Data) {
       $('#' + $(e.currentTarget).attr('data-section')).addClass('active');
       $('#' + $(e.currentTarget).attr('data-section')).html(Handlebars.compile($('#' + $(e.currentTarget).attr('data-section') + 'Template').html())({content: self.stage.attributes}));
 
-      $('.changePanel').unbind('click').click(function() {
+      $('.changeSkill').unbind('click').click(function() {
         $('.step-pane').removeClass('active');
         $('.steps').find('li').removeClass('active');
         $(this).parent().addClass('active');
@@ -167,10 +167,21 @@ function(App, Handlebars, Data) {
         self.showActivitiesBySkill();
       });
 
-      self.currentSkill = self.stage.attributes.content_obj.skills[0].skill.toLowerCase();
+      $('.changeDeliverable').unbind('click').click(function() {
+        $('.step-pane').removeClass('active');
+        $('.steps').find('li').removeClass('active');
+        $(this).parent().addClass('active');
+        $($(this).attr('data-target')).addClass('active');
+      });
+
+      self.currentSkill = self.stage.attributes.content_obj.skills.skills[0].skill.toLowerCase();
 
       if ($(e.currentTarget).attr('data-section') == 'skills') {
         self.showActivitiesBySkill();
+      }
+
+      if ($(e.currentTarget).attr('data-section') == 'submit') {
+        $('.changeDeliverable:first').click();
       }
 
       $('.searchActivities').unbind('click').click(function() {
@@ -199,7 +210,6 @@ function(App, Handlebars, Data) {
       self.activities.url = '/api/activities/stage/' + self.sStage;
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
-          console.log(activity.attributes.skills.indexOf($('#search-skill').val()));
           if ((activity.attributes.skills.indexOf($('#search-skill').val()) > -1) || ($('#search-skill').val() == 'all')) {
             if ((activity.attributes.time_required == $('#search-time_required').val()) || ($('#search-time_required').val() == 'all')) {
               if ((activity.attributes.age_group == $('#search-age_group').val())) {

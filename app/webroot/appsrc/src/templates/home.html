@@ -107,21 +107,21 @@
 </script>
 
 <script type="text/mustache-template" id="skillsTemplate">
-	<br/>
+	{{{content.content_obj.skills.text}}}
 	<section class="panel clearfix"> 
     <div class="wizard wizard-vertical clearfix" id="wizard-2">
       <ul class="steps">
-      	{{#content.content_obj.skills}}
-	        <li class="step{{#if_eq @index 0}} active{{/if_eq}}""><a href="javascript:void(0)" class="changePanel" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.skill}}</a></li>
-	      {{/content.content_obj.skills}}
+      	{{#content.content_obj.skills.skills}}
+	        <li class="step{{#if_eq @index 0}} active{{/if_eq}}""><a href="javascript:void(0)" class="changeSkill" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.skill}}</a></li>
+	      {{/content.content_obj.skills.skills}}
       </ul>
     </div>
     <div class="step-content">
-    	{{#content.content_obj.skills}}
+    	{{#content.content_obj.skills.skills}}
       	<div class="step-pane {{#if_eq @index 0}}active{{/if_eq}}" id="{{this.skill}}">
         	{{{this.text}}}
       	</div>
-      {{/content.content_obj.skills}}
+      {{/content.content_obj.skills.skills}}
     </div>
   </section>
   <div class="activities">
@@ -186,7 +186,30 @@
 </script>
 
 <script type="text/mustache-template" id="submitTemplate">
-	{{content.content_obj.submit}}
+	{{{content.content_obj.submit.text}}}
+	<section class="tab-pane active" id="wizard">
+	  <div class="panel">
+	    <div class="wizard clearfix" id="form-wizard">
+	      <ul class="steps">
+	      	{{#content.content_obj.submit.deliverables}}
+		        <li data-target="#deliverable{{add @index 1}}" class="step{{#if_eq @index 0}} active{{/if_eq}}"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable{{add @index 1}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.deliverable}}</a></li>
+		      {{/content.content_obj.submit.deliverables}}
+	      </ul>
+	    </div>
+	    <div class="step-content">
+			  <form>
+			  	{{#content.content_obj.submit.deliverables}}
+		        <div class="step-pane" id="deliverable{{add @index 1}}">
+		         {{{this.form}}}
+		        </div>
+		    	{{/content.content_obj.submit.deliverables}}
+		      <div class="actions m-t">
+		        <button type="button" class="btn btn-white btn-sm btn-next" data-target="#form-wizard" data-wizard="next" data-last="Finish">Save</button>
+		      </div>
+		    </form>
+	    </div>
+	  </div>
+	</section>
 </script>
 
 <script type="text/mustache-template" id="activityTemplate">
