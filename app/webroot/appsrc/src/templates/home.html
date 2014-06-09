@@ -1,0 +1,225 @@
+<script type="text/mustache-template" id="projectsListTemplate">
+	<div class="header b-b bg-white-only">
+    <button class="btn btn-success pull-right btn-sm" id="new-note"><i class="fa fa-plus"></i> Add New Project</button>
+    <h4 class="m-t m-b-none">Your Projects</h4>
+  </div>
+	<ul class="projectsList">
+	</ul>
+</script>
+
+<script type="text/mustache-template" id="projectMainTabletTemplate">
+	<li onclick="javascript:window.location.href = '#project/{{project.id}}'">
+		<section class="panel no-borders hbox projectPanel">
+	    <aside class="bg-info lter r-l text-center v-middle" style="background-image: url('{{project.profilepic}}'); background-size: 100%; background-repeat: no-repeat">
+	    </aside>
+	    <aside>
+	      <div class="pos-rlt">
+	        <span class="arrow left hidden-xs"></span>
+	        <div class="panel-body">                      
+	          <div class="clearfix m-b">
+	            <small class="text-muted pull-right">{{humanDateElapsed project.last_updated}}</small>
+	            <a href="#" class="thumb-sm pull-left m-r">
+	              <img src="{{organization.logo}}" class="img-circle">
+	            </a>
+	            <div class="clear">
+	              <a href="#"><strong>{{project.name}}</strong></a>
+	              <small class="block text-muted">{{project.location}}</small>
+	            </div>
+	          </div>
+	          <p>
+	            {{project.description}}
+	          </p>
+	          <a class="btn btn-primary btn-sm" href="#project/{{project.id}}">View</a>
+	        </div>
+	        <div class="wizard clearfix">
+            <ul class="steps">
+              <li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;FEEL</li>
+              <li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;IMAGINE</li>
+              <li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li>
+              <li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li>
+            </ul>
+          </div>
+	      </div>
+	    </aside>
+	  </section>
+	</li>
+</script>
+
+<script type="text/mustache-template" id="newProjectModalTemplate">
+	<form role="form" id="newProjectForm">
+	  <div class="form-group">
+			<label for="projectName">Project name</label>
+			<input type="text" class="form-control" id="projectName" name="name" placeholder="Enter a descriptive name" data-validate="required">
+			<span for="projectName" class="error-span hide">Please enter a name for the project.</span>
+	  </div>
+    <div class="form-group">
+  		<label for="projectCategory">Project category</label>
+  		<select class="form-control" id="projectCategory" name="category" data-validate="required">
+  			<option value="">Select a category</option>
+  			<option value="environment">Environment</option>
+  			<option value="health">Health</option>
+  			<option value="justice">Justice</option>
+  			<option value="other">Other</option>
+  		</select>
+  		<span for="projectCategory" class="error-span hide">Please enter a category for this project.</span>
+    </div>
+    <div class="form-group">
+  		<label for="projectDescription">Description</label>
+  		<textarea class="form-control" id="projectDescription" name="description" data-validate="required">
+  		</textarea>
+  		<span for="projectDescription" class="error-span hide">Please enter a description for the project.</span>
+    </div>
+	</form>
+</script>
+
+<script type="text/mustache-template" id="stageTemplate">
+	<section class="panel stageContainer">
+	  <header class="panel-heading bg-light">
+	    <ul class="nav nav-tabs nav-justified">
+	      <li class="active"><a href="javascript:void(0)" class="goToSection" data-section="started">Getting Started</a></li>
+	      <li><a href="javascript:void(0)" class="goToSection" data-section="why">Why Feel?</a></li>
+	      <li><a href="javascript:void(0)" class="goToSection" data-section="skills">Skills</a></li>
+	      <li><a href="javascript:void(0)" class="goToSection" data-section="activities">Activities</a></li>
+	      <li><a href="javascript:void(0)" class="goToSection" data-section="submit">Submit</a></li>
+	    </ul>
+	  </header>
+	  <div class="panel-body">
+	    <div class="tab-content">
+	      <div class="tab-pane active sectionText" id="started"></div>
+	      <div class="tab-pane sectionText" id="why"></div>
+	      <div class="tab-pane sectionText" id="skills"></div>
+	      <div class="tab-pane sectionText" id="activities"></div>
+	      <div class="tab-pane sectionText" id="submit"></div>
+	    </div>
+	  </div>
+	</section>
+</script>
+
+<script type="text/mustache-template" id="startedTemplate">
+	<div class="float">
+		<iframe width="560" height="315" src="//www.youtube.com/embed/{{content.content_obj.getting_started.video}}?rel=0" frameborder="0" allowfullscreen></iframe>
+	</div>
+	{{{content.content_obj.getting_started.text}}}
+</script>
+
+<script type="text/mustache-template" id="whyTemplate">
+	{{{content.content_obj.why.text}}}
+</script>
+
+<script type="text/mustache-template" id="skillsTemplate">
+	<br/>
+	<section class="panel clearfix"> 
+    <div class="wizard wizard-vertical clearfix" id="wizard-2">
+      <ul class="steps">
+      	{{#content.content_obj.skills}}
+	        <li class="step{{#if_eq @index 0}} active{{/if_eq}}""><a href="javascript:void(0)" class="changePanel" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.skill}}</a></li>
+	      {{/content.content_obj.skills}}
+      </ul>
+    </div>
+    <div class="step-content">
+    	{{#content.content_obj.skills}}
+      	<div class="step-pane {{#if_eq @index 0}}active{{/if_eq}}" id="{{this.skill}}">
+        	{{{this.text}}}
+      	</div>
+      {{/content.content_obj.skills}}
+    </div>
+  </section>
+  <div class="activities">
+  </div>
+</script>
+
+<script type="text/mustache-template" id="activitiesTemplate">
+	{{{content.content_obj.activities.text}}}
+	<div>
+		<table width="80%">
+			<tr valign="top">
+				<td>
+					<div class="input-group input-s m-t-sm">
+			      <span class="input-group-addon input-sm"><i class="fa fa-heart"></i></span>
+			      <select class="form-control input-sm" id="search-skill">
+			      	<option value="all">Select Skill</option>
+			      	<option value="awareness">Awareness</option>
+			      	<option value="engagement">Engagement</option>
+			      	<option value="empathy">Empathy</option>
+			      	<option value="collaboration">Collaboration</option>
+			      	<option value="communication">Communication</option>
+			      	<option value="connection">Connection</option>
+			      	<option value="creativity">Creativity</option>
+			      	<option value="critical_thinking">Critical Thinking</option>
+			      	<option value="initiative">Initiative</option>
+			      	<option value="reflection">Reflection</option>
+			      	<option value="resilience">Resilience</option>
+			      	<option value="responsibility">Responsibility</option>
+			     	</select>
+			    </div>
+			  </td>
+			 	<td>
+			 		<div class="input-group input-s m-t-sm">
+			      <span class="input-group-addon input-sm"><i class="fa fa-group"></i></span>
+			      <select class="form-control input-sm" id="search-age_group">
+			      	<option value="all_ages">All ages</option>
+			      	<option value="6-10">6-10 years old</option>
+			      	<option value="11-15">11-15 years old</option>
+			      	<option value="15-19">15-19 years old</option>
+			     	</select>
+			    </div>
+			 	</td>
+			 	<td>
+			 		<div class="input-group input-s m-t-sm">
+			      <span class="input-group-addon input-sm"><i class="fa fa-clock-o"></i></span>
+			      <select class="form-control input-sm" id="search-time_required">
+			      	<option value="all">All</option>
+			      	<option value="15">15-30 minutes</option>
+			      	<option value="30">30-60 minutes</option>
+			      	<option value="60">Over 60 minutes</option>
+			     	</select>
+			    </div>
+			 	</td>
+			 	<td>
+			 		<a style="margin-top: 10px" href="javascript:void(0)" target="_new" class="btn btn-success btn-sm searchActivities"><i class="fa fa-search"></i> Search</a>
+			 	</td>
+			</tr>
+		</table>
+	</div>
+	<div class="activities">
+	</div>
+</script>
+
+<script type="text/mustache-template" id="submitTemplate">
+	{{content.content_obj.submit}}
+</script>
+
+<script type="text/mustache-template" id="activityTemplate">
+	<div class="col-lg-6 col-sm-6 activity">
+		<section class="panel">
+	    <div class="panel-body">
+	      <div class="clearfix m-b">
+	        <small class="text-muted pull-right">{{humanDateElapsed activity.last_updated}}</small>
+
+	        <a href="#" class="thumb-sm pull-left m-r">
+	          <img src="{{activity.user.profilepic}}" class="img-circle">
+	        </a>
+	        <div class="clear">
+	          <a href="#"><strong>{{activity.title}}</strong></a>
+	          <small class="block text-muted">by {{activity.user.username}} from {{activity.user.location}}</small>
+	        </div>
+	      </div>
+	      <p>
+	        {{{activity.description}}}
+	      </p>
+	      <a href="{{activity.pdf}}" target="_new" class="btn btn-success btn-xs"><i class="fa fa-file-text"></i> View Activity</a>
+	      <small class="pull-right">
+	        <a href="#"><i class="fa fa-comment-o"></i> Comments ({{activity.comments_count}})</a>
+	      </small>
+	    </div>
+	    <footer class="panel-footer pos-rlt">
+	      <span class="arrow top"></span>
+	      {{#activity.skills}}
+	      	<a href="#activities/{{this}}"><span class="label bg-primary skill {{this}}">{{ucWords this}}</span></a>
+	      {{/activity.skills}}
+	      <div class="btn btn-white btn-xs pull-right"><i class="fa fa-clock-o text-muted"></i> {{activity.time_required}} mins</div>
+	      <div class="btn btn-white btn-xs pull-right marginButton"><i class="fa fa-group text-muted"></i> {{activity.age_group}}</div>
+	    </footer>
+	  </section>
+	 </div>
+</script>

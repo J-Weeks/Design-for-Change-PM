@@ -24,20 +24,39 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-/**
- * ...and connect the rest of 'Pages' controller's URLs.
- */
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 
-/**
- * Load all plugin routes. See the CakePlugin documentation on
- * how to customize the loading of plugin routes.
- */
+// API ROUTES
+	Router::connect('/api/user/me', array('controller' => 'api', 'action' => 'getCurrentUser', '[method]' => array('GET')));
+	Router::connect('/api/user/login', array('controller' => 'api', 'action' => 'loginUser', '[method]' => array('POST', 'PUT')));
+
+	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'getUser', '[method]' => array('GET')));
+	Router::connect('/api/user', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'removeUser', '[method]' => array('DELETE')));
+
+	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'getOrganization', '[method]' => array('GET')));
+	Router::connect('/api/organization', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'removeOrganization', '[method]' => array('DELETE')));
+
+	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'getProject', '[method]' => array('GET')));
+	Router::connect('/api/project/:projectid/files', array('controller' => 'api', 'action' => 'getProjectFiles', '[method]' => array('GET')));
+	Router::connect('/api/project', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'removeProject', '[method]' => array('DELETE')));
+
+	Router::connect('/api/project/:projectid/user', array('controller' => 'api', 'action' => 'updateUserProject', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/project/:projectid/user/:userid', array('controller' => 'api', 'action' => 'removeUserProject', '[method]' => array('DELETE')));
+
+	Router::connect('/api/content/:stage', array('controller' => 'api', 'action' => 'getContentStage', '[method]' => array('GET')));
+	Router::connect('/api/content', array('controller' => 'api', 'action' => 'updateContentStage', '[method]' => array('PUT', 'POST')));
+
+	Router::connect('/api/activities/stage/:stage', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
+	Router::connect('/api/activities/stage/:stage/:minscore', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
+	Router::connect('/api/activities/skill/:skill', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
+	Router::connect('/api/activities/skill/:skill/:minscore', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
+	
+// PAGE ROUTES
+	Router::connect('/login', array('controller' => 'pages', 'action' => 'login'));
+	Router::connect('/logout', array('controller' => 'pages', 'action' => 'logout'));
+	Router::connect('/home', array('controller' => 'pages', 'action' => 'home'));
+
 	CakePlugin::routes();
-
-/**
- * Load the CakePHP default routes. Only remove this if you do not want to use
- * the built-in default routes.
- */
 	require CAKE . 'Config' . DS . 'routes.php';

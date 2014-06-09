@@ -1,0 +1,100 @@
+.hide {
+  display: none !important; }
+
+.hbox {
+  padding-bottom: 50px; }
+
+.navbar-header {
+  width: 95px; }
+
+#navbar_fids {
+  width: 140px; }
+
+.btn.marginButton {
+  margin-right: 5px; }
+
+.nav-bar .nav-brand {
+  background-color: #FFF;
+  width: 95px; }
+  .nav-bar .nav-brand img {
+    width: 80px;
+    margin-left: 0px;
+    top: 1px;
+    max-width: 100%;
+    height: auto;
+    max-height: none !important; }
+
+.header {
+  border-top: 1px solid #f1f1f1; }
+
+.footer {
+  position: fixed !important; }
+
+.projectName {
+  position: absolute;
+  color: #fff;
+  font-size: 12pt;
+  left: 120px;
+  top: 14px; }
+
+.projectsList {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 20px 5% 20px 5%; }
+
+.projectPanel {
+  min-width: 700px; }
+
+.stageContainer {
+  margin: 20px 5% 20px 5%; }
+  .stageContainer .panel-body {
+    padding-top: 0px; }
+  .stageContainer li:not(.step) {
+    margin-bottom: 10px !important; }
+  .stageContainer .sectionText a[href^="http://"],
+  .stageContainer .sectionText a[href^="https://"] {
+    color: #428bca;
+    text-decoration: underline; }
+
+.float {
+  float: right;
+  margin: 0 0 10px 20px; }
+
+.skill.awareness {
+  background-color: lime; }
+.skill.engagement {
+  background-color: teal; }
+.skill.empathy {
+  background-color: maroon; }
+.skill.collaboration {
+  background-color: tan; }
+.skill.communication {
+  background-color: olive; }
+.skill.connection {
+  background-color: yellow orange; }
+.skill.creativity {
+  background-color: purple; }
+.skill.critical_thinking {
+  background-color: salmon; }
+.skill.initiative {
+  background-color: light red; }
+.skill.reflection {
+  background-color: orange; }
+.skill.resilience {
+  background-color: forest green; }
+.skill.responsibility {
+  background-color: fuchsia; }
+
+.activities {
+  border-top: 1px solid #f1f1f1;
+  margin-top: 20px;
+  padding-top: 10px; }
+
+.activity {
+  float: top;
+  margin-top: 10px;
+  margin-left: -14px; }
+  .activity .panel {
+    padding-top: 13px; }
+  .activity .panel-body {
+    min-height: 210px; }

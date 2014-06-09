@@ -1,0 +1,141 @@
+.hide {
+  display: none !important;
+}
+
+.hbox {
+  padding-bottom: 50px;
+}
+
+.navbar-header {
+  width: 95px;
+}
+
+#navbar_fids {
+  width: 140px;
+}
+
+.btn {
+  &.marginButton {
+    margin-right: 5px;
+  }
+}
+
+.nav-bar {
+  .nav-brand {
+    background-color: #FFF;
+  	width: 95px;
+    img {
+    	width: 80px;
+      margin-left: 0px;
+    	top: 1px;
+    	max-width: 100%;
+    	height: auto;
+      max-height: none !important;
+    }
+  }
+}
+
+.header {
+  border-top: 1px solid #f1f1f1;
+}
+
+.footer {
+  position: fixed !important;
+}
+
+.projectName {
+  position: absolute;
+  color: #fff;
+  font-size: 12pt;
+  left: 120px;
+  top: 14px;
+}
+
+.projectsList {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 20px 5% 20px 5%;
+}
+
+.projectPanel {
+  min-width: 700px;
+}
+
+.stageContainer {
+  margin: 20px 5% 20px 5%;
+  .panel-body {
+    padding-top: 0px;
+  }
+  li:not(.step) {
+    margin-bottom: 10px !important;
+  }
+  .sectionText {
+    a[href^="http://"],
+    a[href^="https://"]{
+        color: #428bca;
+        text-decoration: underline;
+    }
+  }
+}
+
+.float {
+  float: right;
+  margin: 0 0 10px 20px;
+}
+
+.skill {
+  &.awareness {
+    background-color: lime;
+  }
+  &.engagement {
+    background-color: teal;
+  }
+  &.empathy {
+    background-color: maroon;
+  }
+  &.collaboration {
+    background-color: tan;
+  }
+  &.communication {
+    background-color: olive;
+  }
+  &.connection {
+    background-color: yellow orange;
+  }
+  &.creativity {
+    background-color: purple;
+  }
+  &.critical_thinking {
+    background-color: salmon;
+  }
+  &.initiative {
+    background-color: light red;
+  }
+  &.reflection {
+    background-color: orange;
+  }
+  &.resilience {
+    background-color: forest green;
+  }
+  &.responsibility {
+    background-color: fuchsia;
+  }
+}
+
+.activities {
+  border-top: 1px solid #f1f1f1;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.activity {
+  float: top;
+  margin-top: 10px;
+  margin-left: -14px;
+  .panel {
+    padding-top: 13px;
+  }
+  .panel-body {
+    min-height: 210px;
+  }
+}
