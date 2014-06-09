@@ -1,3 +1,5 @@
+@import url("/dfcusa-pm/app/webroot/js/notyfy/jquery.notyfy.css");
+@import url("/dfcusa-pm/app/webroot/js/notyfy/themes/default.css");
 .hide {
   display: none !important; }
 

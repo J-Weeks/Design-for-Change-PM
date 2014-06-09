@@ -6,6 +6,7 @@ define([
   'bootstrap',
   'jqueryui',
   'fuelux',
+  'notyfy',
 ],
 
 function(App, Handlebars, Data) {
@@ -111,6 +112,8 @@ function(App, Handlebars, Data) {
       _.each(self.user.attributes.projects, function(project) {
         if (project.id == self.iProjectId) {
           $('#project_name').html(project.name);
+          self.project = new Data.Models.ProjectModel();
+          self.project.attributes = project;
         }
       });
 
@@ -155,7 +158,7 @@ function(App, Handlebars, Data) {
       $(e.currentTarget).parent().addClass('active');
       $('.tab-pane').removeClass('active');
       $('#' + $(e.currentTarget).attr('data-section')).addClass('active');
-      $('#' + $(e.currentTarget).attr('data-section')).html(Handlebars.compile($('#' + $(e.currentTarget).attr('data-section') + 'Template').html())({content: self.stage.attributes}));
+      $('#' + $(e.currentTarget).attr('data-section')).html(Handlebars.compile($('#' + $(e.currentTarget).attr('data-section') + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
 
       $('.changeSkill').unbind('click').click(function() {
         $('.step-pane').removeClass('active');
@@ -172,6 +175,29 @@ function(App, Handlebars, Data) {
         $('.steps').find('li').removeClass('active');
         $(this).parent().addClass('active');
         $($(this).attr('data-target')).addClass('active');
+        if (self.project.attributes.details_obj != undefined) {
+          $('#projectDeliverables').find('input,textarea,select').each(function() {
+            if (self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('id')] != undefined) {
+              $(this).val(self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('id')]);
+            }
+          });
+        }
+
+        $('.saveDeliverable').unbind('click').click(function() {
+          if (self.project.attributes.details_obj == undefined) self.project.attributes.details_obj = {};
+          if (self.project.attributes.details_obj.deliverables == undefined) self.project.attributes.details_obj.deliverables = {};
+          if (self.project.attributes.details_obj.deliverables[self.sStage] == undefined) self.project.attributes.details_obj.deliverables[self.sStage] = {};
+          $('#projectDeliverables').find('input,textarea,select').each(function() {
+            if ($(this).attr('id') != '') {
+              self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('id')] = $(this).val();
+            }
+          });
+          self.project.save({}, {success: function(e) {
+            app.showNotify('Saved project', 'success');
+          }, error: function() {
+            app.showNotify('Error saving', 'error');
+          }});
+        });
       });
 
       self.currentSkill = self.stage.attributes.content_obj.skills.skills[0].skill.toLowerCase();

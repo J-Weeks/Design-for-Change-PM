@@ -197,14 +197,14 @@
 	      </ul>
 	    </div>
 	    <div class="step-content">
-			  <form>
+			  <form id="projectDeliverables">
 			  	{{#content.content_obj.submit.deliverables}}
 		        <div class="step-pane" id="deliverable{{add @index 1}}">
 		         {{{this.form}}}
 		        </div>
 		    	{{/content.content_obj.submit.deliverables}}
 		      <div class="actions m-t">
-		        <button type="button" class="btn btn-white btn-sm btn-next" data-target="#form-wizard" data-wizard="next" data-last="Finish">Save</button>
+		        <button type="button" class="btn btn-success btn-sm saveDeliverable">Save</button>
 		      </div>
 		    </form>
 	    </div>

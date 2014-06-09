@@ -3,6 +3,7 @@ define([
   'bootstrap',
   'jqueryui',
   'moment',
+  'notyfy',
   'Handlebars',
 ], function() {
   // FOR IE
@@ -277,6 +278,15 @@ define([
   app.ucwords = function(str) {
     return (str + '').replace(/^([a-z\u00E0-\u00FC])|\s+([a-z\u00E0-\u00FC])/g, function ($1) {
       return $1.toUpperCase();
+    });
+  }
+
+  app.showNotify = function(message, type) {
+    notyfy({
+      template: '<div class="notyfy_message"><span class="notyfy_text"></span><div class="notyfy_close"></div></div>',
+      text: message,
+      type: type,
+      timeout: 4000
     });
   }
 

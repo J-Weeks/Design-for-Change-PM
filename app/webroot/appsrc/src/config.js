@@ -21,6 +21,7 @@ require.config({
     'slimscroll'                      : '/js/slimscroll/jquery.slimscroll.min',
     'fuelux'                          : '/js/fuelux/fuelux',
     'moment'                          : '/js/moment/moment',
+    'notyfy'                          : '/js/notyfy/jquery.notyfy'
   },
   map: {
     '*': { 'underscore': 'lodash' }
@@ -50,6 +51,7 @@ require.config({
     'slimscroll'                                  : ['jquery'],
     'fuelux'                                      : ['jquery'],
     'moment'                                      : ['jquery'],
+    'notyfy'                                      : ['jquery'],
 
     'application'                                 : ['jquery'],
     'template'                                    : ['template'],

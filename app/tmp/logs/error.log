@@ -54247,3 +54247,2979 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
 [main] - APP/webroot/index.php, line 108
 
+2014-06-09 05:02:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:36 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:08:42 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:08:42 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:09:31 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:31 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:09:31 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:09:32 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:32 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:32 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:32 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:32 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:09:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:09:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:09:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:10:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:38 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:38 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:10:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:10:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:10:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:21 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:21 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:11:22 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:11:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:11:22 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:05 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:12:05 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:12:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:05 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:39 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:12:39 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:12:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:12:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:13:19 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:19 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:49 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:13:49 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:13:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:52 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:13:52 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:14:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:14:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:15:35 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:35 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:39 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:40 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:49 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:15:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:16:22 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /dfcusa-pm/app/webroot/theme-todo/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-09 05:16:22 Error: [MissingActionException] Action AppController::webroot() could not be found.
+Exception Attributes: array (
+  'controller' => 'AppController',
+  'action' => 'webroot',
+)
+Request URL: /dfcusa-pm/app/webroot/theme-todo/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/lib/Cake/Routing/Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#1 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/lib/Cake/Routing/Dispatcher.php(160): Dispatcher->_invoke(Object(AppController), Object(CakeRequest), Object(CakeResponse))
+#2 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:25 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:22:25 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:37 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:22:37 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:37 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:41 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:48 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:22:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:03 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:04 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:06 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:23:08 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:23:08 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:07 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/css/bootstrap.css.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:25:07 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /dfcusa-pm/js/jquery-1.10.2.min.map
+Stack Trace:
+#0 /Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:07 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:10 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:10 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:25:12 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:46 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 18
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:47 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:50 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:58 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:27:58 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ApiController::updateProject() - APP/Controller/ApiController.php, line 231
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:02 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:08 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:17 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:20 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:21 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:21 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::getCurrentUser() - APP/Controller/ApiController.php, line 64
+ReflectionMethod::invokeArgs() - [internal], line ??
+Controller::invokeAction() - CORE/Cake/Controller/Controller.php, line 490
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:23 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:25 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-06-09 05:28:29 Warning: Warning (2): Invalid argument supplied for foreach() in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 38]
+Trace:
+AppModel::afterFind() - APP/Model/AppModel.php, line 38
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 245
+Model::_filterResults() - CORE/Cake/Model/Model.php, line 3212
+Model::_readDataSource() - CORE/Cake/Model/Model.php, line 2904
+Model::find() - CORE/Cake/Model/Model.php, line 2872
+ObjectsComponent::populateProject() - APP/Controller/Component/ObjectsComponent.php, line 29
+ObjectsComponent::populateUser() - APP/Controller/Component/ObjectsComponent.php, line 19
+ApiController::beforeFilter() - APP/Controller/ApiController.php, line 26
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
