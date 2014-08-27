@@ -118,7 +118,7 @@ function(App, Handlebars, Data) {
       });
 
       self.stage = new Data.Models.ContentModel();
-      self.stage.url = '/api/content/' + self.sStage;
+      self.stage.url = '/dfcusa-pm/api/content/' + self.sStage;
       self.stage.fetch({success: function() {
         self.showStage();
       }});
@@ -219,7 +219,7 @@ function(App, Handlebars, Data) {
 
       $('.activities').html('<h4>Official Activities</h4>');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/api/activities/stage/' + self.sStage + '/100';
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100';
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if (activity.attributes.skills.indexOf(self.currentSkill) > -1) {
@@ -233,7 +233,7 @@ function(App, Handlebars, Data) {
 
       $('.activities').html('<h4>Found Activities</h4>');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/api/activities/stage/' + self.sStage;
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage;
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if ((activity.attributes.skills.indexOf($('#search-skill').val()) > -1) || ($('#search-skill').val() == 'all')) {

@@ -42,7 +42,7 @@ function(App, Handlebars, Data) {
       $('#loginForm').find('.alert').addClass('hide');
 
       if (Common.checkForm('#loginForm')) {
-        this.user.url = '/api/user/login';
+        this.user.url = '/dfcusa-pm/api/user/login';
         this.user.attributes.username = $('#username').val();
         this.user.attributes.password = $('#password').val();
         this.user.save({}, {success: function(data) {

@@ -8,15 +8,15 @@ function(App, Mustache) {
 		MustacheLib: Mustache,
 		Models: {
 			UserModel: Backbone.Model.extend({
-			  url: '/api/user/me'
+			  url: '/dfcusa-pm/api/user/me'
 			}),
 
 			ProjectModel: Backbone.Model.extend({
-			  url: '/api/project'
+			  url: '/dfcusa-pm/api/project'
 			}),
 
 			ContentModel: Backbone.Model.extend({
-			  url: '/api/content'
+			  url: '/dfcusa-pm/api/content'
 			}),
 
 			ActivityModel: Backbone.Model.extend({
@@ -27,12 +27,12 @@ function(App, Mustache) {
 	Data.Collections = {
 		Projects: Backbone.Collection.extend({
 			model: Data.Models.ProjectModel,
-			url: '/api/user/me'
+			url: '/dfcusa-pm/api/user/me'
 		}),
 
 		Activities: Backbone.Collection.extend({
 			model: Data.Models.ActivityModel,
-			url: '/api/activities/stage'
+			url: '/dfcusa-pm/api/activities/stage'
 		}),
 	}
 
