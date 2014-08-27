@@ -4,24 +4,24 @@ require.config({
   deps: ['mains/main'],
 
   paths: {
-    'app'                             : '/appsrc/src/app',
-    'template'                        : '/js/template',
-    'jquery'                          : '/js/jquery.min',
-    'jqueryui'                        : '/js/jquery-ui-1.10.3.custom.min',
+    'app'                             : '/dfcusa-pm/appsrc/src/app',
+    'template'                        : '/dfcusa-pm/js/template',
+    'jquery'                          : '/dfcusa-pm/js/jquery.min',
+    'jqueryui'                        : '/dfcusa-pm/js/jquery-ui-1.10.3.custom.min',
 
-    'bootstrap'                       : '/js/bootstrap',
+    'bootstrap'                       : '/dfcusa-pm/js/bootstrap',
 
-    'lodash'                          : '/js/lodash/lodash.underscore',
-    'backbone'                        : '/js/backbone/backbone',
-    'backbone.layoutmanager'          : '/js/backbone.layoutmanager/backbone.layoutmanager',
+    'lodash'                          : '/dfcusa-pm/js/lodash/lodash.underscore',
+    'backbone'                        : '/dfcusa-pm/js/backbone/backbone',
+    'backbone.layoutmanager'          : '/dfcusa-pm/js/backbone.layoutmanager/backbone.layoutmanager',
 
-    'Mustache'                        : '/js/mustache/mustache',
-    'Handlebars'                      : '/js/handlebars/handlebars',
+    'Mustache'                        : '/dfcusa-pm/js/mustache/mustache',
+    'Handlebars'                      : '/dfcusa-pm/js/handlebars/handlebars',
 
-    'slimscroll'                      : '/js/slimscroll/jquery.slimscroll.min',
-    'fuelux'                          : '/js/fuelux/fuelux',
-    'moment'                          : '/js/moment/moment',
-    'notyfy'                          : '/js/notyfy/jquery.notyfy'
+    'slimscroll'                      : '/dfcusa-pm/js/slimscroll/jquery.slimscroll.min',
+    'fuelux'                          : '/dfcusa-pm/js/fuelux/fuelux',
+    'moment'                          : '/dfcusa-pm/js/moment/moment',
+    'notyfy'                          : '/dfcusa-pm/js/notyfy/jquery.notyfy'
   },
   map: {
     '*': { 'underscore': 'lodash' }
