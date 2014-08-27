@@ -72,4 +72,25 @@ class DATABASE_CONFIG {
 		//'encoding' => 'utf8',
 	);
 
+	public $live = array(
+		'datasource' 	=> 'Database/Mysql',
+		'persistent' 	=> false,
+		'host' 				=> 'localhost',
+		'login'	 			=> 'root',
+		'password' 		=> 'designforchange',
+		'database' 		=> 'dfcusa_pm',
+		'prefix' 			=> '',
+		//'encoding' => 'utf8',
+	);	
+
+	public function __construct() {
+	  if (dbConfig == 'live') {
+	  	$this->default = $this->live;
+	  } else if (dbConfig == 'local') {
+	  	$this->default = $this->default;
+	  } else {
+	  	$this->default = $this->default;
+	  }
+	}
+
 }
