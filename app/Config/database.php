@@ -75,7 +75,7 @@ class DATABASE_CONFIG {
 	public $live = array(
 		'datasource' 	=> 'Database/Mysql',
 		'persistent' 	=> false,
-		'host' 				=> 'localhost',
+		'host' 				=> 'dfcusa-pm.cul7rr78u6no.us-east-1.rds.amazonaws.com',
 		'login'	 			=> 'root',
 		'password' 		=> 'designforchange',
 		'database' 		=> 'dfcusa_pm',

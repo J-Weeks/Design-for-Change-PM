@@ -39,7 +39,7 @@ if (( $_SERVER['SERVER_NAME'] == 'localhost' ) || ( $_SERVER['SERVER_NAME'] == '
 	define('envAws', 'dev');
 } else if (($_SERVER['SERVER_NAME'] == 'designforchange.us') || ($_SERVER['SERVER_NAME'] == 'www.designforchange.us')) {
 	define('debug_level', 0);
-	define('cookieBase', 'maxwellhealth.com');
+	define('cookieBase', 'designforchange.us');
 	define('dbConfig', 'live');
 	define('envAws', 'dev');
 } 
