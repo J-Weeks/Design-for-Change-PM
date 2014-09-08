@@ -23,7 +23,7 @@ function(App, Handlebars, Data) {
     },
     initialize: function () {
       var self = this;
-      this.user = Common.LoginRouter.models.user;
+      this.user = App.LoginRouter.models.user;
     },
     unload: function() {
       this.remove();
@@ -34,14 +34,16 @@ function(App, Handlebars, Data) {
       
       $('#content').html(Handlebars.compile($('#loginFormTemplate').html()));
 
-      Common.setupPage();
+      App.setupPage();
     },
     submitLoginForm: function (e) {
+      var self = this;
+
       e.preventDefault();
-      
+
       $('#loginForm').find('.alert').addClass('hide');
 
-      if (Common.checkForm('#loginForm')) {
+      if (App.checkForm('#loginForm')) {
         this.user.url = '/dfcusa-pm/api/user/login';
         this.user.attributes.username = $('#username').val();
         this.user.attributes.password = $('#password').val();

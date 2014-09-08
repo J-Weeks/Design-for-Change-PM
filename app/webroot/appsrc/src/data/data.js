@@ -27,12 +27,12 @@ function(App, Mustache) {
 	Data.Collections = {
 		Projects: Backbone.Collection.extend({
 			model: Data.Models.ProjectModel,
-			url: '/dfcusa-pm/api/user/me'
+			url: '/dfcusa-pm/api/projects'
 		}),
 
 		Activities: Backbone.Collection.extend({
 			model: Data.Models.ActivityModel,
-			url: '/dfcusa-pm/api/activities/stage'
+			url: '/dfcusa-pm/api/activities'
 		}),
 	}
 

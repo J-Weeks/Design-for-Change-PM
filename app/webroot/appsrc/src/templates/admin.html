@@ -1,0 +1,136 @@
+<script type="text/mustache-template" id="allProjectsListTemplate">
+	<div class="header b-b bg-white-only">
+    <button class="btn btn-success pull-right btn-sm" id="newProject"><i class="fa fa-plus"></i> Add New Project</button>
+    <h4 class="m-t m-b-none">All Projects</h4>
+  </div>
+	<ul class="projectsList">
+	</ul>
+</script>
+
+<script type="text/mustache-template" id="projectMiniTabletTemplate">
+	<li>
+		<section class="panel no-borders hbox projectPanel">
+	    <aside class="bg-info lter r-l text-center v-middle" style="background-image: url('{{project.profilepic}}'); background-size: 100%; background-repeat: no-repeat">
+	    </aside>
+	    <aside>
+	      <div class="pos-rlt">
+	        <span class="arrow left hidden-xs"></span>
+	        <div class="panel-body">                      
+	          <div class="clearfix m-b">
+	            <small class="text-muted pull-right">{{humanDateElapsed project.last_updated}}</small>
+	            <a href="#" class="thumb-sm pull-left m-r">
+	              <img src="{{organization.logo}}" class="img-circle">
+	            </a>
+	            <div class="clear">
+	              <a href="#"><strong>{{project.name}}</strong></a>
+	              <small class="block text-muted">{{project.location}}</small>
+	            </div>
+	          </div>
+	          <p>
+	            {{project.description}}
+	          </p>
+	          <a class="btn btn-primary btn-sm" href="#project/{{project.id}}">View</a>
+	          <a class="btn btn-default btn-sm marginButton deleteProject" href="javascript:void(0)" data-id="{{project.id}}">Delete</a>
+	        </div>
+	        <div class="wizard clearfix">
+            <ul class="steps">
+              <li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;FEEL</li>
+              <li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;IMAGINE</li>
+              <li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li>
+              <li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li>
+            </ul>
+          </div>
+	      </div>
+	    </aside>
+	  </section>
+	</li>
+</script>
+
+<script type="text/mustache-template" id="allActivitiesListTemplate">
+	<div class="header b-b bg-white-only">
+    <button class="btn btn-success pull-right btn-sm" id="newActivity"><i class="fa fa-plus"></i> Add New Activity</button>
+    <h4 class="m-t m-b-none">All Activities</h4>
+  </div>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+				<th>Title</th>
+				<th>Stage</th>
+				<th>Skills</th>
+				<th>Last Updated</th>
+				<th>Actions</th>
+		  </tr>
+		</thead>
+		<tbody class="activitiesList">
+			  
+		</tbody>
+	 </table>
+</script>
+
+<script type="text/mustache-template" id="activityRowTemplate">
+  <tr>
+		<td>{{activity.title}}</td>
+		<td>{{activity.stages}}</td>
+		<td>{{activity.skills}}</td>
+		<td data-timestamp="{{activity.last_updated}}"></td>
+		<td><a href="#activity/{{activity.id}}" class="btn btn-sm btn-primary">Edit</a><a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton">Delete</a></td>
+  </tr>
+</script>
+
+<script type="text/mustache-template" id="editActivityTemplate">
+	<div class="header b-b bg-white-only">
+    <button class="btn btn-success pull-right btn-sm" id="newProject"><i class="fa fa-plus"></i> Add New Project</button>
+    <h4 class="m-t m-b-none">All Projects</h4>
+  </div>
+  <div class="col-lg-5 center">
+		<form id="activityForm">
+		  <div class="form-group">
+				<label>Title</label>
+				<input type="email" class="form-control" name="title" autocomplete="off" value="{{activity.title}}">
+		  </div>
+			<div class="form-group">
+				<label>Description</label>
+				<textarea class="form-control" name="description" style="width: 100%; height: 100px">{{activity.description}}</textarea>
+		  </div>
+		  <div class="form-group">
+				<label>Stage</label>
+				<select name="stage" class="form-control input-sm" data-value="{{activity.stage}}">
+					<option value="feel">Feel</option>
+					<option value="imagine">Imagine</option>
+					<option value="do">Do</option>
+					<option value="share">Share</option>
+				</select>
+		  </div>
+		  <div class="form-group">
+		  	<label>Skills</label>
+				<select name="skills" id="skills" class="form-control" multiple rows="10" data-value="{{activity.skills}}">
+				  <option value="awareness">Awareness</option>
+				  <option value="confidence">Confidence</option>
+				  <option value="empathy">Empathy</option>
+				</select>
+		  </div>
+			<div class="form-group">
+				<label>Age Group</label>
+				<select name="age_group" class="form-control" data-value="{{activity.age_group}}">
+					<option value="all_ages">All Ages</option>
+					<option value="primary_school">Primary School</option>
+					<option value="elementary">Elementary School</option>
+				</select>
+		  </div>
+	  	<div class="form-group">
+	  		<label>Time Required</label>
+	  		<select name="time_required" class="form-control" data-value="{{activity.time_required}}">
+	  			<option value="15">15 minutes</option>
+	  			<option value="30">30 minutes</option>
+	  			<option value="60">60 minutes</option>
+	  		</select>
+	    </div>
+	  	<div class="form-group">
+	  		<label>Score</label>
+	  		<input type="number" class="form-control input-sm" name="score" autocomplete="off" value="{{activity.score}}">
+	    </div>
+		  <a href="javascript:void(0)" class="btn btn-success saveActivity">Save</a>
+		  <a href="#allactivities" class="btn btn-default marginButton">Cancel</a>
+		</form>
+	</div>
+</script>

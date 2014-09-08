@@ -19,7 +19,7 @@
 
 .btn {
   &.marginButton {
-    margin-right: 5px;
+    margin-left: 5px;
   }
 }
 
@@ -141,4 +141,13 @@
   .panel-body {
     min-height: 210px;
   }
+}
+
+form {
+  margin: 20px;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
 }

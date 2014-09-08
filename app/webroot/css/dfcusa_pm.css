@@ -13,7 +13,7 @@
   width: 140px; }
 
 .btn.marginButton {
-  margin-right: 5px; }
+  margin-left: 5px; }
 
 .nav-bar .nav-brand {
   background-color: #FFF;
@@ -100,3 +100,10 @@
     padding-top: 13px; }
   .activity .panel-body {
     min-height: 210px; }
+
+form {
+  margin: 20px; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }

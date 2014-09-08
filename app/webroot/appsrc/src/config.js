@@ -52,7 +52,6 @@ require.config({
     'fuelux'                                      : ['jquery'],
     'moment'                                      : ['jquery'],
     'notyfy'                                      : ['jquery'],
-
     'application'                                 : ['jquery'],
     'template'                                    : ['template'],
   }

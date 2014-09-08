@@ -4,9 +4,7 @@ define([
   'data/data',
 
   'bootstrap',
-  'jqueryui',
-  'fuelux',
-  'notyfy',
+  'jqueryui'
 ],
 
 function(App, Handlebars, Data) {
@@ -19,15 +17,9 @@ function(App, Handlebars, Data) {
   }); 
   
   Home.ProjectsView = Backbone.View.extend({
-    events: {
-      'click .newProject'     : 'newProject'
-    },
     initialize: function () {
       var self = this;
-      self.user = App.HomeRouter.models.user;
-      self.user.fetch({success: function() {
-        self.showProjects();
-      }});
+      self.getProjects();
     },
     unload: function() {
       this.remove();
@@ -39,46 +31,56 @@ function(App, Handlebars, Data) {
       $('#navbar_fids').addClass('hide');
       $('#main_menu').removeClass('pull-right');
       $('#project_name').addClass('hide');
-      $('.newProject').unbind('click').click(function() {
-        self.newProject();
-      });
-
       App.setupPage();
+    },
+    getProjects: function() {
+      var self = this;
+      self.user = App.HomeRouter.models.user;
+      self.user.fetch({success: function() {
+        self.showProjects();
+      }});
     },
     showProjects: function() {
       var self = this;
       $('#content').html(Handlebars.compile($('#projectsListTemplate').html()));
       _.each(self.user.attributes.projects, function(project) {
-        $('#content').find('ul').append(Handlebars.compile($('#projectMainTabletTemplate').html())({organization: self.user.attributes.organization, project: project}));
+        $('#content').find('.projectsList').append(Handlebars.compile($('#projectMainTabletTemplate').html())({organization: self.user.attributes.organization, project: project}));
+      });
+  
+      $('#newProject').unbind('click').click(function() {
+        self.newProject();
+      });
+
+      $('.deleteProject').unbind('click').click(function() {
+        window.projectId = $(this).attr('data-id');
+        if (App.alertBox('Delete Project', 'Are you sure you want to delete this project?', 'Yes', 'Cancel', function() {
+          newproject = new Data.Models.ProjectModel();
+          newproject.id = window.projectId;
+          newproject.url = '/dfcusa-pm/api/project/' + window.projectId;
+          newproject.destroy({success: function() {
+            self.getProjects();
+          }});
+        }));
       });
     },
     newProject: function() {
-      bootbox.dialog({
-        message: $('#newProjectModalTemplate').html(),
-        title: 'Create New Project',
-        buttons: {
-          success: {
-            label: 'Create',
-            className: 'btn-success',
-            callback: function(e) {
-              if (App.checkForm('#newProjectForm')) {
-                newproject = new Data.Models.ProjectModel();
-                newproject.attributes = App.mapFormToModel($('#newProjectForm'));
-                newproject.save({}, {success: function(data) {
-                  App.Router.navigate('project/' + data.attributes.id, {trigger: true});
-                }, error: function() {
-                  bootbox.alert('Error creating project, perhaps a project with the same name already exists.');
-                }});
-              } else {
-                return false;
-              }
-            }
-          },
-          danger: {
-            label: 'Cancel',
-            className: 'btn-default'
-          },
-        }
+      $('#newProjectModal').modal().on('shown.bs.modal', function (e) {
+        $('#newProjectModal').find('.carousel').carousel();
+        $('.createProject').unbind('click').click(function() {
+          $('#newProjectModal').modal('hide');
+          if (App.checkForm('#newProjectForm')) {
+            newproject = new Data.Models.ProjectModel();
+            newproject.attributes = App.mapFormToModel($('#newProjectForm'));
+            newproject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#newProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
+            newproject.save({}, {success: function(data) {
+              App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
+            }, error: function() {
+              alert('Error creating project, perhaps a project with the same name already exists.');
+            }});
+          } else {
+            return false;
+          }
+        });
       });
     }
   });

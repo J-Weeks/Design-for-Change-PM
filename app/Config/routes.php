@@ -37,6 +37,7 @@
 	Router::connect('/api/organization', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'removeOrganization', '[method]' => array('DELETE')));
 
+	Router::connect('/api/projects', array('controller' => 'api', 'action' => 'getProjects', '[method]' => array('GET')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'getProject', '[method]' => array('GET')));
 	Router::connect('/api/project/:projectid/files', array('controller' => 'api', 'action' => 'getProjectFiles', '[method]' => array('GET')));
 	Router::connect('/api/project', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
@@ -48,10 +49,13 @@
 	Router::connect('/api/content/:stage', array('controller' => 'api', 'action' => 'getContentStage', '[method]' => array('GET')));
 	Router::connect('/api/content', array('controller' => 'api', 'action' => 'updateContentStage', '[method]' => array('PUT', 'POST')));
 
+	Router::connect('/api/activities', array('controller' => 'api', 'action' => 'getActivities', '[method]' => array('GET')));
 	Router::connect('/api/activities/stage/:stage', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
 	Router::connect('/api/activities/stage/:stage/:minscore', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
 	Router::connect('/api/activities/skill/:skill', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
 	Router::connect('/api/activities/skill/:skill/:minscore', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
+	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'getActivity', '[method]' => array('GET')));
+	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'removeActivity', '[method]' => array('DELETE')));
 	
 // PAGE ROUTES
 	Router::connect('/login', array('controller' => 'pages', 'action' => 'login'));

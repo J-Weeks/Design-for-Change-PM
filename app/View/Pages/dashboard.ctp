@@ -83,20 +83,49 @@
    </div>
    <div class="projectName" id="project_name">Project Name</div>
    <div class="collapse navbar-collapse pull-right" id="main_menu">
-     <ul class="nav navbar-nav">
-       <li class="dropdown">
-         <a href="#projects">
-           <i class="fa fa-flask  text-white"></i>
-           <span class="text-white">My Projects</span>
-         </a>
-       </li>
-       <li class="dropdown">
-         <a href="#activities">
-           <i class="fa fa-group  text-white"></i>
-           <span class="text-white">Activities</span>
-         </a>
-       </li>
-     </ul>
+      <?php if ($currentUser['type'] == 'mentor') { ?>
+        <ul class="nav navbar-nav">
+         <li class="dropdown">
+           <a href="#projects">
+             <i class="fa fa-flask text-white"></i>
+             <span class="text-white">My Projects</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#activities">
+             <i class="fa fa-list-alt text-white"></i>
+             <span class="text-white">Activities</span>
+           </a>
+         </li>
+        </ul>
+      <?php } else { ?>
+        <ul class="nav navbar-nav">
+         <li class="dropdown">
+           <a href="#allprojects">
+             <i class="fa fa-flask  text-white"></i>
+             <span class="text-white">All Projects</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#allusers">
+             <i class="fa fa-group text-white"></i>
+             <span class="text-white">Users</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#allactivities">
+             <i class="fa fa-list-alt text-white"></i>
+             <span class="text-white">Activities</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#allcontent">
+             <i class="fa fa-book text-white"></i>
+             <span class="text-white">Content</span>
+           </a>
+         </li>
+        </ul>
+      <?php } ?>
      <ul class="nav navbar-nav navbar-right">
        <li class="hidden-xs">
          <a href="#" class="dropdown-toggle dk" data-toggle="dropdown">

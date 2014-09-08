@@ -28,7 +28,9 @@ function(App, Handlebars, Mustache, Data, Home) {
         this.models.user.bind('change', function() { window.oCurrentUser = $(this)[0].attributes; });
       }
 
-      $('#header_container').html(Handlebars.compile($('#headerTemplate').html())({user: window.oCurrentUser}));
+      if ($('#header_container').length > 0) {
+        $('#header_container').html(Handlebars.compile($('#headerTemplate').html())({user: window.oCurrentUser}));
+      }
 
       App.HomeRouter = this;
     },

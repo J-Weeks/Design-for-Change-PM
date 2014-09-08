@@ -53,7 +53,10 @@ class ApiController extends AppController {
     if (($oFoundUser) && ($oFoundUser['password'] == $oData['password'])) {
     //if (md5($oFoundUser['password']) == $oData['password']) {
       $this->User->setCurrentUser($oFoundUser);
+    } else {
+      $oFoundUser = false;
     }
+    
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oFoundUser)), 531, 'access denied'); 
   }
 
@@ -180,6 +183,21 @@ class ApiController extends AppController {
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
   }
 
+  public function getProjects() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oProjects = $this->Project->find('all');
+      foreach ($oProjects as &$oProject) {
+        $oProject = $this->Objects->populateProjectFull($oProject);
+        $oProject['organization'] = $this->Organization->findById($oProject['users'][0]['organization_id']);
+      }
+    }
+
+    echo $this->prepareResponse($oProjects, 531, 'access denied'); 
+  }
+
   public function getProject() {
     global $oData;
     global $oCurrentUser;
@@ -241,13 +259,19 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
-    if ($oCurrentUser['type'] == 'mentor') {
+    if (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
       foreach ($oCurrentUser['projects'] as $oProject) {
         if ($oProject['id'] == $this->params['projectid']) {
-          $this->Project->delete($this->Project->findById($oProject['id']));
-          $oUserProjects = $this->UserProject->find('all', array('conditions' => array('UserProject.project_id' => $oProject['id'])));
-          foreach ($oUserProjects as $oUserProject) $this->UserProject->delete($oUserProject['id']);
+          $bContinue = true;
         }
+      }
+
+      if ($oCurrentUser['type'] == 'admin') $bContinue = true;
+
+      if ($bContinue) {
+        $this->Project->delete($this->Project->findById($oProject['id']));
+        $oUserProjects = $this->UserProject->find('all', array('conditions' => array('UserProject.project_id' => $oProject['id'])));
+        foreach ($oUserProjects as $oUserProject) $this->UserProject->delete($oUserProject['id']);
       }
     }
 
@@ -323,6 +347,39 @@ class ApiController extends AppController {
     }
 
     echo $this->prepareResponse($oContent, 531, 'access denied'); 
+  }
+
+  public function getActivities() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oActivities = $this->Activity->find('all');
+    }
+
+    echo $this->prepareResponse($oActivities, 531, 'access denied');
+  }
+
+  public function getActivity() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oActivity = $this->Activity->findById($this->params['activityid']);
+    }
+
+    echo $this->prepareResponse($oActivity, 531, 'access denied'); 
+  }
+
+  public function removeActivity() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oActivity = $this->Activity->delete($this->params['activityid']);
+    }
+
+    echo $this->prepareResponse($oCurrentUser, 531, 'access denied');
   }
 
   public function getActivitiesByStage() {

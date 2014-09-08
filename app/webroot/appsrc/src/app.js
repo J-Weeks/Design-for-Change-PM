@@ -24,7 +24,27 @@ define([
   };
 
   app.setupPage = function(Handlebars) {
+    $('[data-timestamp]').each(function() {
+      if ($(this).attr('data-timestamp') != '') {
+        $(this).html(moment(new Date($(this).attr('data-timestamp') * 1000)).format('M/D/YY, h:mm:ss a'));
+      }
+    });
 
+    $('select').each(function() {
+      if ($(this).attr('multiple') == undefined) {
+        if (($(this).attr('data-value') && $(this).attr('data-value') != '')) {
+          $(this).val($(this).attr('data-value'));
+        }
+      } else {
+        if ($(this).attr('data-value') != undefined) {
+          aValues = $(this).attr('data-value').split(',');
+          window.iSelecteId = $(this).attr('id');
+          _.each(aValues, function(value) {
+            $('#' + window.iSelecteId + ' option[value="' + value + '"]').attr('selected', true);
+          });
+        }
+      }
+    });
   };
 
   app.registerHandlebarsHelpers = function(Handlebars) {
@@ -288,6 +308,67 @@ define([
       type: type,
       timeout: 4000
     });
+  }
+
+  app.checkForm = function(id) {
+    return true;
+  }
+
+  app.mapFormToModel = function(form) {
+    var model = {};
+    $(form).find('input, textarea, select').each(function() {
+      if (!$(this).hasClass('ignoreSave')) {
+        if ($(this).attr('type') == 'checkbox') {
+          $(this).val(false);
+          if ($(this).is(":checked")) {
+            $(this).val(true);
+          }
+        }
+        sId = String($(this).attr('name'));
+        model[sId] = $(this).val();
+      }
+    });
+    return model;
+  }
+
+  app.alertBox = function(title, body, yesLabel, noLabel, yesFunction, noFunction) {
+    $('#alertModal').find('.modal-title').html(title);
+    $('#alertModal').find('.modal-body').html(body);
+    if (yesLabel) {
+      $('#alertModal').find('.yesButton').html(yesLabel);
+      $('#alertModal').find('.yesButton').removeClass('hide');
+    } else {
+      $('#alertModal').find('.yesButton').addClass('hide');
+    }
+    if (noLabel) {
+      $('#alertModal').find('.noButton').html(noLabel);
+      $('#alertModal').find('.noButton').removeClass('hide');
+    } else {
+      $('#alertModal').find('.noButton').hide();
+      $('#alertModal').find('.noButton').removeClass('hide');
+    }
+
+    window.yesFunction = yesFunction;
+    if (yesFunction) {
+      $('#alertModal').unbind('click').click(function() {
+        window.yesFunction();
+        $('#alertModal').modal('hide'); 
+      });
+    } else {
+      $('#alertModal').modal('hide');
+    }
+
+    window.noFunction = noFunction;
+    if (noFunction) {
+      $('#alertModal').unbind('click').click(function() {
+        window.noFunction();
+        $('#alertModal').modal('hide'); 
+      });
+    } else {
+      $('#alertModal').modal('hide'); 
+    }
+
+    $('#alertModal').modal();
   }
 
   var JST = window.JST = window.JST || {};
