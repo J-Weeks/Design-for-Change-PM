@@ -6,7 +6,7 @@ class ApiController extends AppController {
 
   public $name = 'UserApi';
   public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity');
-  public $components = array('Objects');
+  public $components = array('Objects', 'Aws');
 
   var $oData = array();
   var $oCurrentUser = array();
@@ -23,7 +23,9 @@ class ApiController extends AppController {
 
     $oCurrentUser = $this->User->getCurrentUser();
 
-    if ($oCurrentUser) $oCurrentUser = $this->Objects->populateUser($oCurrentUser);
+    if ($oCurrentUser) {
+      $oCurrentUser = $this->Objects->populateUser($oCurrentUser);
+    }
 
     if (!$oCurrentUser && !$isCreateUserRequest) {
       echo $this->prepareResponse(false, 401, 'unauthorized');
@@ -77,6 +79,20 @@ class ApiController extends AppController {
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
   }
 
+  public function getUsers() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oUsers = $this->User->find('all');
+      foreach ($oUsers as &$oUser) {
+        $oUser = $this->User->scrubUser($this->Objects->populateUser($oUser));
+      }
+    }
+
+    echo $this->prepareResponse($oUsers, 531, 'access denied');
+  }
+
   public function getUser() {
     global $oData;
     global $oCurrentUser;
@@ -104,10 +120,13 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
+    //if ($oData['password'] != '') $oData['password'] = md5($oData['password']);
+
     if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
-      if ($oData['id']) {
+      if ($this->params['userid'] != 'new') {
         $oUser = $this->User->findById($oData['id']);
-        if ($oUser['organization_id'] == $oCurrentUser['organization_id']) {
+        if (($oUser['organization_id'] == $oCurrentUser['organization_id']) || ($oCurrentUser['type'] == 'admin')) {
+          $this->User->id = $oData['id'];
           $oReturn = $this->User->save($oData);
           $oReturn = $this->User->findById($oReturn['id']);
         }
@@ -141,6 +160,17 @@ class ApiController extends AppController {
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied'); 
   }
 
+  public function getOrganizations() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oOrganizations = $this->Organization->find('all');
+    }
+
+    echo $this->prepareResponse($oOrganizations, 531, 'access denied');
+  }
+
   public function getOrganization() {
     global $oData;
     global $oCurrentUser;
@@ -157,18 +187,18 @@ class ApiController extends AppController {
     global $oCurrentUser;
 
     if (($oCurrentUser['type'] == 'mentor') && ($oCurrentUser['organization_id'] == $oData['id'])) {
-      $this->Organization->save($oData);
+      $oOrganization = $this->Organization->save($oData);
     } else if ($oCurrentUser['type'] == 'admin') {
       if ($Data['id']) {
         $this->Organization->id = $oData['id'];
       } else {
         $this->Organization->create();
       }
-      $this->Organization->save($oData);
+      $oOrganization = $this->Organization->save($oData);
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($oOrganization, 531, 'access denied'); 
   }
 
   public function removeOrganization() {
@@ -369,6 +399,46 @@ class ApiController extends AppController {
     }
 
     echo $this->prepareResponse($oActivity, 531, 'access denied'); 
+  }
+
+  public function updateActivity() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      if ($this->params['activityid'] != 'new') {
+        $oActivity = $this->Activity->findById($this->params['activityid']);
+        if ($oActivity) {
+          $this->Activity->id = $oActivity['id'];
+          $oActivity = $this->Activity->save($oData);
+        }
+      } else {
+        $oActivity = $this->Activity->create();
+        $oActivity = $this->Activity->save($oData);
+      }
+    }
+
+    echo $this->prepareResponse($oActivity, 531, 'access denied');
+  }
+
+  public function uploadActivityFile() {
+    global $oData;
+    global $oCurrentUser;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      if ($this->params['activityid'] != 'new') {
+        $oActivity = $this->Activity->findById($this->params['activityid']);
+        if ($oActivity) {
+          $oReturn = $this->Aws->uploadFile($_FILES['file']['name'], $_FILES['file']['tmp_name'], 'dfcusa_pm/content');
+          $oReturn = array();
+          $oReturn['file'] = 'https://dfcusa_pm.s3.amazonaws.com/content/' . $_FILES['file']['name'];
+          $this->Activity->id = $oActivity['id'];
+          $this->Activity->saveField('pdf', 'https://dfcusa_pm.s3.amazonaws.com/content/' . $_FILES['file']['name']);
+        }
+      }
+    }
+
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function removeActivity() {

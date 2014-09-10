@@ -21,7 +21,9 @@ require.config({
     'slimscroll'                      : '/dfcusa-pm/js/slimscroll/jquery.slimscroll.min',
     'fuelux'                          : '/dfcusa-pm/js/fuelux/fuelux',
     'moment'                          : '/dfcusa-pm/js/moment/moment',
-    'notyfy'                          : '/dfcusa-pm/js/notyfy/jquery.notyfy'
+    'notyfy'                          : '/dfcusa-pm/js/notyfy/jquery.notyfy',
+    'upload'                          : '/dfcusa-pm/js/upload/jquery.upload',
+    'messenger'                       : '/dfcusa-pm/js/hubspot-messenger/js/messenger.min'
   },
   map: {
     '*': { 'underscore': 'lodash' }
@@ -53,6 +55,8 @@ require.config({
     'moment'                                      : ['jquery'],
     'notyfy'                                      : ['jquery'],
     'application'                                 : ['jquery'],
+    'messenger'                                   : ['jquery'],
+    'upload'                                      : ['jquery'],
     'template'                                    : ['template'],
   }
 

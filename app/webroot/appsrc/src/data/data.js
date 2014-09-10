@@ -11,6 +11,10 @@ function(App, Mustache) {
 			  url: '/dfcusa-pm/api/user/me'
 			}),
 
+			OrganizationModel: Backbone.Model.extend({
+			  url: '/dfcusa-pm/api/organization'
+			}),
+
 			ProjectModel: Backbone.Model.extend({
 			  url: '/dfcusa-pm/api/project'
 			}),
@@ -34,6 +38,16 @@ function(App, Mustache) {
 			model: Data.Models.ActivityModel,
 			url: '/dfcusa-pm/api/activities'
 		}),
+
+		Users: Backbone.Collection.extend({
+			model: Data.Models.UserModel,
+			url: '/dfcusa-pm/api/users'
+		}),
+
+		Organizations: Backbone.Collection.extend({
+			model: Data.Models.OrganizationModel,
+			url: '/dfcusa-pm/api/organizations'
+		})
 	}
 
   return Data;

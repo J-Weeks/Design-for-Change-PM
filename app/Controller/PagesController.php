@@ -15,7 +15,12 @@ class PagesController extends AppController {
 
 	  $this->set('title', 'Design for Change USA');
 	  $oCurrentUser = $this->User->getCurrentUser();
-	  if ($oCurrentUser) $oCurrentUser = $this->Objects->populateUser($oCurrentUser);
+	  if ($oCurrentUser) {
+	  	$oCurrentUser = $this->Objects->populateUser($oCurrentUser);
+  	  $this->User->id = $oCurrentUser['id'];
+  	  $this->User->saveField('lastactive_timestamp', time());
+	  }
+
 	  $this->set('currentUser', $oCurrentUser);
 	}
 

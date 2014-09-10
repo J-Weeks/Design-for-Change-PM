@@ -102,8 +102,14 @@
         <ul class="nav navbar-nav">
          <li class="dropdown">
            <a href="#allprojects">
-             <i class="fa fa-flask  text-white"></i>
+             <i class="fa fa-flask text-white"></i>
              <span class="text-white">All Projects</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#allorganizations">
+             <i class="fa fa-briefcase text-white"></i>
+             <span class="text-white">Organizations</span>
            </a>
          </li>
          <li class="dropdown">
@@ -119,9 +125,9 @@
            </a>
          </li>
          <li class="dropdown">
-           <a href="#allcontent">
+           <a href="#curriculum">
              <i class="fa fa-book text-white"></i>
-             <span class="text-white">Content</span>
+             <span class="text-white">Curriculum</span>
            </a>
          </li>
         </ul>

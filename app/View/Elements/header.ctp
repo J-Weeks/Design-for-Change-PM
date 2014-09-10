@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/dfcusa-pm/css/font-awesome.min.css" type="text/css" />
   <link rel="stylesheet" href="/dfcusa-pm/css/font.css" type="text/css" cache="false" />
   <link rel="stylesheet" href="/dfcusa-pm/js/fuelux/fuelux.css" type="text/css" />
+  <link rel="stylesheet" href="/dfcusa-pm/js/hubspot-messenger/css/messenger.min.css" type="text/css" />
   <link rel="stylesheet" href="/dfcusa-pm/css/plugin.css" type="text/css" />
   <link rel="stylesheet" href="/dfcusa-pm/css/app.css" type="text/css" />
   <!--[if lt IE 9]>

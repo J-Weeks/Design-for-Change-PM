@@ -13,7 +13,11 @@ function(App, Handlebars, Mustache, Data, Admin) {
     routes: {
       'allprojects'                          : 'showAllProjects',
       'allactivities'                        : 'showAllActivities',
-      'activity/:activityid'                 : 'editActivity'
+      'activity/:activityid'                 : 'editActivity',
+      'allusers'                             : 'showAllUsers',
+      'user/:userid'                         : 'editUser',
+      'allorganizations'                     : 'showAllOrganizations',
+      'organization/:organizationid'         : 'editOrganization'
     },
     initialize: function() {
       this.Layout = new Admin.Layout();
@@ -22,6 +26,8 @@ function(App, Handlebars, Mustache, Data, Admin) {
         user                    : new Data.Models.UserModel(),
         projects                : new Data.Collections.Projects(),
         activities              : new Data.Collections.Activities(),
+        users                   : new Data.Collections.Users(),
+        organizations           : new Data.Collections.Organizations(),
       };
 
       if (window.oCurrentUser) {
@@ -54,6 +60,24 @@ function(App, Handlebars, Mustache, Data, Admin) {
       this.Layout.setView('activity', new Admin.EditActivityView());
       this.Layout.getView('activity').iActivityId = activityid;
       this.Layout.getView('activity').render();
+    },
+    showAllUsers: function(e) {
+      this.Layout.setView('users', new Admin.AllUsersView());
+      this.Layout.getView('users').render();
+    },
+    editUser: function(userid) {
+      this.Layout.setView('user', new Admin.EditUserView());
+      this.Layout.getView('user').iUserId = userid;
+      this.Layout.getView('user').render();
+    },
+    showAllOrganizations: function(e) {
+      this.Layout.setView('organizations', new Admin.AllOrganizationsView());
+      this.Layout.getView('organizations').render();
+    },
+    editOrganization: function(organizationid) {
+      this.Layout.setView('organization', new Admin.EditOrganizationView());
+      this.Layout.getView('organization').iOrganizationId = organizationid;
+      this.Layout.getView('organization').render();
     }
   });
 

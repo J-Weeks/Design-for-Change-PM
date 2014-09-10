@@ -48,7 +48,7 @@
 
 <script type="text/mustache-template" id="allActivitiesListTemplate">
 	<div class="header b-b bg-white-only">
-    <button class="btn btn-success pull-right btn-sm" id="newActivity"><i class="fa fa-plus"></i> Add New Activity</button>
+    <a class="btn btn-success pull-right btn-sm" href="#activity/new"><i class="fa fa-plus"></i> Add New Activity</a>
     <h4 class="m-t m-b-none">All Activities</h4>
   </div>
 	<table class="table table-striped">
@@ -73,21 +73,31 @@
 		<td>{{activity.stages}}</td>
 		<td>{{activity.skills}}</td>
 		<td data-timestamp="{{activity.last_updated}}"></td>
-		<td><a href="#activity/{{activity.id}}" class="btn btn-sm btn-primary">Edit</a><a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton">Delete</a></td>
+		<td>
+			<a href="#activity/{{activity.id}}" class="btn btn-sm btn-primary">Edit</a>
+			<a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton deleteActivity" data-id="{{activity.id}}">Delete</a>
+			{{#if_notempty activity.pdf}}
+				<a href="{{activity.pdf}}" class="btn btn-sm btn-default marginButton" target="_new">View PDF</a>
+			{{/if_notempty}}
+		</td>
   </tr>
 </script>
 
 <script type="text/mustache-template" id="editActivityTemplate">
 	<div class="header b-b bg-white-only">
-    <button class="btn btn-success pull-right btn-sm" id="newProject"><i class="fa fa-plus"></i> Add New Project</button>
-    <h4 class="m-t m-b-none">All Projects</h4>
+    <a class="btn btn-primary pull-right btn-sm" href="#allactivities"><i class="fa fa-arrow-left"></i> All Activities</a>
+    <h4 class="m-t m-b-none" id="title">{{activity.title}}</h4>
   </div>
   <div class="col-lg-5 center">
 		<form id="activityForm">
 		  <div class="form-group">
 				<label>Title</label>
-				<input type="email" class="form-control" name="title" autocomplete="off" value="{{activity.title}}">
+				<input type="text" class="form-control" name="title" autocomplete="off" value="{{activity.title}}">
 		  </div>
+		  <div class="form-group">
+	  		<label>Author</label>
+	  		<input type="text" class="form-control" name="author" autocomplete="off" value="{{activity.author}}">
+	    </div>		  
 			<div class="form-group">
 				<label>Description</label>
 				<textarea class="form-control" name="description" style="width: 100%; height: 100px">{{activity.description}}</textarea>
@@ -129,8 +139,169 @@
 	  		<label>Score</label>
 	  		<input type="number" class="form-control input-sm" name="score" autocomplete="off" value="{{activity.score}}">
 	    </div>
+    	<div class="form-group uploadFile">
+    		<label>Content File</label>
+    		{{#if_notempty activity.pdf}}
+					<a href="{{activity.pdf}}" target="_new" class="btn btn-small btn-primary marginButton">View</a>
+				{{/if_notempty}}
+    		<a href="javascript:void(0)" class="btn btn-small btn-default marginButton uploadPdfButton">Upload</a>
+    		<input class="input-large uploadPdf hide" type="file" id="pdf" name="file"/>
+      </div>
+	    
 		  <a href="javascript:void(0)" class="btn btn-success saveActivity">Save</a>
 		  <a href="#allactivities" class="btn btn-default marginButton">Cancel</a>
+		</form>
+	</div>
+</script>
+
+<script type="text/mustache-template" id="allUsersListTemplate">
+	<div class="header b-b bg-white-only">
+    <a class="btn btn-success pull-right btn-sm" href="#activity/new"><i class="fa fa-plus"></i> Add New Activity</a>
+    <h4 class="m-t m-b-none">All Users</h4>
+  </div>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+				<th>Organization</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Username</th>
+				<th>Location</th>
+				<th>Type</th>
+				<th>Status</th>
+				<th>Last Active</th>
+				<th>Joined</th>
+				<th>Actions</th>
+		  </tr>
+		</thead>
+		<tbody class="usersList">
+			  
+		</tbody>
+	 </table>
+</script>
+
+<script type="text/mustache-template" id="userRowTemplate">
+  <tr>
+		<td>{{user.organization.name}}</td>
+		<td>{{user.first_name}} {{user.last_name}}</td>
+		<td>{{user.email}}</td>
+		<td>{{user.username}}</td>
+		<td>{{user.location}}</td>
+		<td>{{user.type}}</td>
+		<td>{{user.status}}</td>
+		<td data-timestamp="{{user.lastactive_timestamp}}"></td>
+		<td data-timestamp="{{user.created_timestamp}}"></td>
+		<td>
+			<a href="#user/{{user.id}}" class="btn btn-sm btn-primary">Edit</a>
+			<a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton deleteUser" data-id="{{user.id}}">Delete</a>
+		</td>
+  </tr>
+</script>
+
+<script type="text/mustache-template" id="editUserTemplate">
+	<div class="header b-b bg-white-only">
+    <a class="btn btn-primary pull-right btn-sm" href="#allusers"><i class="fa fa-arrow-left"></i> All Users</a>
+    <h4 class="m-t m-b-none" id="title">{{user.first_name}} {{user.last_name}}</h4>
+  </div>
+  <div class="col-lg-5 center">
+		<form id="userForm">
+		  <div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" name="first_name" placeholder="First Name" autocomplete="off" value="{{user.first_name}}">
+				&nbsp;&nbsp;<input type="text" class="form-control" name="last_name" placeholder="Last Name"  autocomplete="off" value="{{user.last_name}}">
+		  </div>
+	    <div class="form-group">
+	  		<label>E-mail</label>
+	  		<input type="text" class="form-control" name="email" autocomplete="off" value="{{user.email}}">
+	  	</div>		  
+		  <div class="form-group">
+				<label>Type</label>
+				<select name="type" class="form-control input-sm" data-value="{{user.type}}">
+					<option value="admin">Admin</option>
+					<option value="mentor">Mentor</option>
+				</select>
+		  </div>
+			<div class="form-group">
+				<label>Username</label>
+				<input type="text" class="form-control" name="username" autocomplete="off" value="{{user.username}}">
+		  </div>
+		 	<div class="form-group">
+		 		<label>Location</label>
+		 		<input type="text" class="form-control" name="location" autocomplete="off" value="{{user.location}}">
+		  </div>
+		  <div class="form-group">
+		 		<label>Password</label>
+		 		<input type="text" class="form-control" name="password" autocomplete="off">
+		  </div>
+    	<div class="form-group uploadFile">
+    		<label>Profile Picture</label>
+    		<br/>
+    		{{#if_notempty user.profilepic}}
+					<img src="{{user.profilepic}}" class="profilePic"/>
+				{{/if_notempty}}
+    		<a href="javascript:void(0)" class="btn btn-small btn-default marginButton uploadPicButton">Upload</a>
+    		<input class="input-large uploadPic hide" type="file" id="pdf" name="file"/>
+      </div>
+	    
+		  <a href="javascript:void(0)" class="btn btn-success saveUser">Save</a>
+		  <a href="#allusers" class="btn btn-default marginButton">Cancel</a>
+		</form>
+	</div>
+</script>
+
+<script type="text/mustache-template" id="allOrganizationsListTemplate">
+	<div class="header b-b bg-white-only">
+    <a class="btn btn-success pull-right btn-sm" href="#organization/new"><i class="fa fa-plus"></i> Add New Organization</a>
+    <h4 class="m-t m-b-none">All Organizations</h4>
+  </div>
+	<table class="table table-striped">
+		<thead>
+		  <tr>
+		  	<th style="width: 100px"></th>
+				<th>Name</th>
+				<th style="width: 10em">Actions</th>
+		  </tr>
+		</thead>
+		<tbody class="organizationsList">
+			  
+		</tbody>
+	 </table>
+</script>
+
+<script type="text/mustache-template" id="organizationRowTemplate">
+  <tr>
+		<td><img src="{{organization.logo}}" class="profilePicSmall"></td>
+		<td>{{organization.name}}</td>
+		<td>
+			<a href="#organization/{{organization.id}}" class="btn btn-sm btn-primary">Edit</a>
+			<a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton deleteOrganization" data-id="{{organization.id}}">Delete</a>
+		</td>
+  </tr>
+</script>
+
+<script type="text/mustache-template" id="editOrganizationTemplate">
+	<div class="header b-b bg-white-only">
+    <a class="btn btn-primary pull-right btn-sm" href="#allorganizations"><i class="fa fa-arrow-left"></i> All Organizations</a>
+    <h4 class="m-t m-b-none" id="title">{{organization.name}}</h4>
+  </div>
+  <div class="col-lg-5 center">
+		<form id="organizationForm">
+		  <div class="form-group">
+				<label>Name</label>
+				<input type="text" class="form-control" name="name" autocomplete="off" value="{{organization.name}}">
+		  </div>
+    	<div class="form-group uploadFile">
+    		<label>Logo</label>
+    		<br/>
+    		{{#if_notempty organization.logo}}
+					<img src="{{organization.logo}}" class="profilePic"/>
+				{{/if_notempty}}
+    		<a href="javascript:void(0)" class="btn btn-small btn-default marginButton uploadPicButton">Upload</a>
+    		<input class="input-large uploadPic hide" type="file" id="logo" name="file"/>
+      </div>
+	    
+		  <a href="javascript:void(0)" class="btn btn-success saveOrganization">Save</a>
+		  <a href="#allorganizations" class="btn btn-default marginButton">Cancel</a>
 		</form>
 	</div>
 </script>

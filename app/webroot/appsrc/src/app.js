@@ -320,12 +320,14 @@ define([
       if (!$(this).hasClass('ignoreSave')) {
         if ($(this).attr('type') == 'checkbox') {
           $(this).val(false);
-          if ($(this).is(":checked")) {
-            $(this).val(true);
-          }
+          if ($(this).is(":checked")) $(this).val(true);
+        }
+        sValue = $(this).val();
+        if (sValue instanceof Array) {
+          sValue = sValue.join(',');
         }
         sId = String($(this).attr('name'));
-        model[sId] = $(this).val();
+        model[sId] = sValue;
       }
     });
     return model;
