@@ -25,6 +25,10 @@ function(App, Mustache) {
 
 			ActivityModel: Backbone.Model.extend({
 			}),
+
+			SkillModel: Backbone.Model.extend({
+				url: '/dfcusa-pm/api/skill'
+			})
 		}
 	}
 
@@ -47,6 +51,16 @@ function(App, Mustache) {
 		Organizations: Backbone.Collection.extend({
 			model: Data.Models.OrganizationModel,
 			url: '/dfcusa-pm/api/organizations'
+		}),
+
+		Content: Backbone.Collection.extend({
+			model: Data.Models.ContentModel,
+			url: '/dfcusa-pm/api/content'
+		}),
+
+		Skills: Backbone.Collection.extend({
+			model: Data.Models.SkillModel,
+			url: '/dfcusa-pm/api/skills'
 		})
 	}
 

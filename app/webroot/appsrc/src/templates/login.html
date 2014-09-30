@@ -1,89 +1,60 @@
 <script type="text/mustache-template" id="loginFormTemplate">
 	<form class="panel-body" id="loginForm">
     <div class="form-group">
-      <label class="control-label">Username or Email</label>
-      <input class="form-control" id="username">
+      <label class="control-label">E-mail</label>
+      <input class="form-control" id="email">
     </div>
     <div class="form-group">
       <label class="control-label">Password</label>
       <input type="password" id="password" placeholder="Password" class="form-control">
     </div>
     <div class="alert alert-danger hide">
-    	Username or password is incorrect.
+    	E-mail address or password is incorrect.
     </div>
     <a href="#" class="pull-right m-t-xs"><small>Forgot password?</small></a>
     <button type="submit" class="btn btn-info submitLoginForm">Sign in</button>
     <div class="line line-dashed"></div>
     <p class="text-muted text-center"><small>Do not have an account?</small></p>
-    <a href="signup.html" class="btn btn-white btn-block">Create an account</a>
+    <a href="#register" class="btn btn-white btn-block">Create an account</a>
   </form>
 </script>
 
 <script type="text/mustache-template" id="registerFormTemplate">
-	<section id="register">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-4 col-md-offset-4">
-					<div class="login-box-plain">
-						<h2 class="bigintro">Register</h2>
-						<div class="divide-40"></div>
-						<form role="form">
-						  <div class="form-group">
-							<label for="exampleInputName">Full Name</label>
-							<i class="fa fa-font"></i>
-							<input type="text" class="form-control" id="exampleInputName" >
-						  </div>
-						  <div class="form-group">
-							<label for="exampleInputUsername">Username</label>
-							<i class="fa fa-user"></i>
-							<input type="text" class="form-control" id="exampleInputUsername" >
-						  </div>
-						  <div class="form-group">
-							<label for="exampleInputEmail1">Email address</label>
-							<i class="fa fa-envelope"></i>
-							<input type="email" class="form-control" id="exampleInputEmail1" >
-						  </div>
-						  <div class="form-group"> 
-							<label for="exampleInputPassword1">Password</label>
-							<i class="fa fa-lock"></i>
-							<input type="password" class="form-control" id="exampleInputPassword1" >
-						  </div>
-						  <div class="form-group"> 
-							<label for="exampleInputPassword2">Repeat Password</label>
-							<i class="fa fa-check-square-o"></i>
-							<input type="password" class="form-control" id="exampleInputPassword2" >
-						  </div>
-						  <div class="form-actions">
-							<label class="checkbox"> <input type="checkbox" class="uniform" value=""> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
-							<button type="submit" class="btn btn-success">Sign Up</button>
-						  </div>
-						</form>
-						<!-- SOCIAL REGISTER -->
-						<div class="divide-20"></div>
-						<div class="center">
-							<strong>Or register using your social account</strong>
-						</div>
-						<div class="divide-20"></div>
-						<div class="social-login center">
-							<a class="btn btn-primary btn-lg">
-								<i class="fa fa-facebook"></i>
-							</a>
-							<a class="btn btn-info btn-lg">
-								<i class="fa fa-twitter"></i>
-							</a>
-							<a class="btn btn-danger btn-lg">
-								<i class="fa fa-google-plus"></i>
-							</a>
-						</div>
-						<!-- /SOCIAL REGISTER -->
-						<div class="login-helpers">
-							<a href="#" onclick="swapScreen('login');return false;"> Back to Login</a> <br>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+	<form role="form">
+		<h2 class="bigintro">Register</h2>
+		<h4 style="margin-bottom: 20px">Fill out this form to set up your account with Design for Change!</h4>
+	  <div class="form-group">
+			<label for="exampleInputName">First Name</label>
+			<input type="text" class="form-control" id="first_name" >
+	  </div>
+	  <div class="form-group">
+			<label for="exampleInputName">Last Name</label>
+			<input type="text" class="form-control" id="last_name" >
+	  </div>
+	  <div class="form-group">
+			<label for="email">Email address</label>
+			<input type="email" class="form-control" id="email" >
+	  </div>
+	  <div class="form-group">
+			<label for="location">Your location</label>
+			<input type="text" class="form-control" id="location" placeholder="City, State" >
+	  </div>
+	  <div class="form-group"> 
+			<label for="password">Password</label>
+			<input type="password" class="form-control" id="password" >
+	  </div>
+	  <div class="form-group"> 
+			<label for="password2">Repeat Password</label>
+			<input type="password" class="form-control" id="password2" >
+	  </div>
+    <div class="form-group"> 
+  		<label for="organization">Your Organization Name</label>
+  		<input type="organization" class="form-control" id="organization" >
+    </div>
+	  <div class="form-actions">
+			<button class="btn btn-success signUp">Sign Up</button>
+	  </div>
+	</form>
 </script>
 
 <script type="text/mustache-template" id="forgotFormTemplate">
@@ -96,12 +67,12 @@
 						<div class="divide-40"></div>
 						<form role="form">
 						  <div class="form-group">
-							<label for="exampleInputEmail1">Enter your Email address</label>
-							<i class="fa fa-envelope"></i>
-							<input type="email" class="form-control" id="exampleInputEmail1" >
+								<label for="exampleInputEmail1">Enter your Email address</label>
+								<i class="fa fa-envelope"></i>
+								<input type="email" class="form-control" id="exampleInputEmail1" >
 						  </div>
 						  <div class="form-actions">
-							<button type="submit" class="btn btn-info">Send Me Reset Instructions</button>
+								<button type="submit" class="btn btn-info">Send Me Reset Instructions</button>
 						  </div>
 						</form>
 						<div class="login-helpers">

@@ -11,9 +11,13 @@ function(App, Handlebars, Mustache, Data, Home) {
 
   HomeRouter.Router = Backbone.Router.extend({
     routes: {
+      'organization'                           : 'editOrganization',
+      'profile'                                : 'editProfile',
       'projects'                               : 'showProjects',
       'project/:id'                            : 'showProject',
       'project/:id/:section'                   : 'showProject',
+      'activities'                             : 'showActivities',
+      'activities/:skill/:age/:time'           : 'showActivities'
     },
     initialize: function() {
       this.Layout = new Home.Layout();
@@ -41,6 +45,14 @@ function(App, Handlebars, Mustache, Data, Home) {
         }
       });
     },
+    editOrganization: function(e) {
+      this.Layout.setView('organization', new Home.OrganizationView());
+      this.Layout.getView('organization').render();
+    },
+    editProfile: function(e) {
+      this.Layout.setView('profile', new Home.ProfileView());
+      this.Layout.getView('profile').render();
+    },
     showProjects: function(e) {
       this.Layout.setView('projects', new Home.ProjectsView());
       this.Layout.getView('projects').render();
@@ -50,6 +62,13 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.Layout.getView('home').iProjectId = projectid;
       if (stage != undefined) this.Layout.getView('home').sStage = stage;
       this.Layout.getView('home').render();
+    },
+    showActivities: function(skill, age, time) {
+      this.Layout.setView('activities', new Home.ActivitiesView());
+      this.Layout.getView('activities').sSkill = skill;
+      this.Layout.getView('activities').sAge = age;
+      this.Layout.getView('activities').sTime = time;
+      this.Layout.getView('activities').render();
     }
   });
 

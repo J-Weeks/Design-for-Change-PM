@@ -23,6 +23,8 @@ require.config({
     'moment'                          : '/dfcusa-pm/js/moment/moment',
     'notyfy'                          : '/dfcusa-pm/js/notyfy/jquery.notyfy',
     'upload'                          : '/dfcusa-pm/js/upload/jquery.upload',
+    'summernote'                      : '/dfcusa-pm/js/summernote/summernote',
+    'datepicker'                      : '/dfcusa-pm/js/datepicker/bootstrap-datepicker',
     'messenger'                       : '/dfcusa-pm/js/hubspot-messenger/js/messenger.min'
   },
   map: {
@@ -57,6 +59,8 @@ require.config({
     'application'                                 : ['jquery'],
     'messenger'                                   : ['jquery'],
     'upload'                                      : ['jquery'],
+    'summernote'                                  : ['jquery'],
+    'datepicker'                                  : ['jquery'],
     'template'                                    : ['template'],
   }
 

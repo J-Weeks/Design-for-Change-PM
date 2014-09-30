@@ -4,7 +4,7 @@ App::uses('AppController', 'Controller');
 
 class PagesController extends AppController {
 
-	public $uses = array('User');
+	public $uses = array('User', 'Skill');
 	public $components = array('Objects');
 
 	var $oCurrentUser = array();
@@ -19,7 +19,12 @@ class PagesController extends AppController {
 	  	$oCurrentUser = $this->Objects->populateUser($oCurrentUser);
   	  $this->User->id = $oCurrentUser['id'];
   	  $this->User->saveField('lastactive_timestamp', time());
+	  } else {
+	  	if ($_SERVER['REQUEST_URI'] != '/dfcusa-pm/pages/login') $this->redirect('login');
 	  }
+
+	  $oSkills = $this->Skill->find('all');
+	  $this->set('skills', $oSkills);
 
 	  $this->set('currentUser', $oCurrentUser);
 	}

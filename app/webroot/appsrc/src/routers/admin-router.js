@@ -12,12 +12,17 @@ function(App, Handlebars, Mustache, Data, Admin) {
   AdminRouter.Router = Backbone.Router.extend({
     routes: {
       'allprojects'                          : 'showAllProjects',
+      'editproject/:projectid'               : 'editProject',
       'allactivities'                        : 'showAllActivities',
       'activity/:activityid'                 : 'editActivity',
       'allusers'                             : 'showAllUsers',
       'user/:userid'                         : 'editUser',
+      'user/:userid/:organizationid'         : 'editUser',
       'allorganizations'                     : 'showAllOrganizations',
-      'organization/:organizationid'         : 'editOrganization'
+      'organization/:organizationid'         : 'editOrganization',
+      'content'                              : 'showAllContent',
+      'content/:stage'                       : 'editContent',
+      'skills'                               : 'showAllSkills'
     },
     initialize: function() {
       this.Layout = new Admin.Layout();
@@ -28,6 +33,8 @@ function(App, Handlebars, Mustache, Data, Admin) {
         activities              : new Data.Collections.Activities(),
         users                   : new Data.Collections.Users(),
         organizations           : new Data.Collections.Organizations(),
+        content                 : new Data.Collections.Content(),
+        skills                  : new Data.Collections.Skills(),
       };
 
       if (window.oCurrentUser) {
@@ -52,6 +59,11 @@ function(App, Handlebars, Mustache, Data, Admin) {
       this.Layout.setView('projects', new Admin.AllProjectsView());
       this.Layout.getView('projects').render();
     },
+    editProject: function(projectid) {
+      this.Layout.setView('project', new Admin.EditProjectView());
+      this.Layout.getView('project').iProjectId = projectid;
+      this.Layout.getView('project').render();
+    },
     showAllActivities: function(e) {
       this.Layout.setView('activities', new Admin.AllActivitiesView());
       this.Layout.getView('activities').render();
@@ -65,9 +77,10 @@ function(App, Handlebars, Mustache, Data, Admin) {
       this.Layout.setView('users', new Admin.AllUsersView());
       this.Layout.getView('users').render();
     },
-    editUser: function(userid) {
+    editUser: function(userid, organizationid) {
       this.Layout.setView('user', new Admin.EditUserView());
       this.Layout.getView('user').iUserId = userid;
+      this.Layout.getView('user').iOrganizationId = organizationid;
       this.Layout.getView('user').render();
     },
     showAllOrganizations: function(e) {
@@ -78,6 +91,19 @@ function(App, Handlebars, Mustache, Data, Admin) {
       this.Layout.setView('organization', new Admin.EditOrganizationView());
       this.Layout.getView('organization').iOrganizationId = organizationid;
       this.Layout.getView('organization').render();
+    },
+    showAllContent: function(e) {
+      this.Layout.setView('content', new Admin.AllContentView());
+      this.Layout.getView('content').render();
+    },
+    editContent: function(stage) {
+      this.Layout.setView('content', new Admin.EditContentView());
+      this.Layout.getView('content').sStage = stage;
+      this.Layout.getView('content').render();
+    },
+    showAllSkills: function() {
+      this.Layout.setView('skills', new Admin.AllSkillsView());
+      this.Layout.getView('skills').render();
     }
   });
 

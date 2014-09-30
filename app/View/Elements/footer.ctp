@@ -25,5 +25,6 @@
 
 	<script>
 		window.oCurrentUser = <?php if ($currentUser != false) { echo json_encode($currentUser); } else { echo '""'; } ?>;
+		window.oSkills = <?php if ($skills != false) { echo json_encode($skills); } else { echo '""'; } ?>;
 	</script>
 </html>

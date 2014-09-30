@@ -40,10 +40,12 @@ class ObjectsComponent extends Component {
 			foreach ($oUserProjects as $oUserProject) {
 				$oUser = $this->User->findById($oUserProject['user_id']);
 				if ($oUser) {
+					if ($oUser['type'] == 'mentor') $oMentor = $this->User->scrubUser($oUser);
 					array_push($oUsers, $this->User->scrubUser($oUser));
 				}
 			}
 			$project['users'] = $oUsers;
+			$project['mentor'] = $oMentor;
 			$project['users_count'] = count($oUsers);
 		}
 
@@ -56,12 +58,14 @@ class ObjectsComponent extends Component {
 	}
 
 	public function populateOrganization($organization) {
-		Controller::loadModel('Project');
-		$oProjects = $this->Project->find('all', array('conditions' => array('Project.organization_id' => $organization['id'])));
-		$organization['projects'] = array();
-		foreach ($oProjects as $oProject) {
-			$oProject = $this->populateProject($oProject);
-			array_push($organization['projects'], $oProject);
+		if ($organization) {
+			Controller::loadModel('Project');
+			$oProjects = $this->Project->find('all', array('conditions' => array('Project.organization_id' => $organization['id'])));
+			$organization['projects'] = array();
+			foreach ($oProjects as $oProject) {
+				$oProject = $this->populateProjectFull($oProject);
+				array_push($organization['projects'], $oProject);
+			}
 		}
 		return $organization;
 	}

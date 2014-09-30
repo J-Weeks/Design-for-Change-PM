@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
 class ApiController extends AppController {
 
   public $name = 'UserApi';
-  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity');
+  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill');
   public $components = array('Objects', 'Aws');
 
   var $oData = array();
@@ -19,7 +19,9 @@ class ApiController extends AppController {
     $this->response->type('application/json');
     $oData = $this->request->input('json_decode', 'true');
 
-    $isCreateUserRequest = (Router::url() === '/dfcusa-pm/api/user/login');
+    if ((Router::url() === '/dfcusa-pm/api/user/login') || (Router::url() === '/dfcusa-pm/api/user/new')) {
+      $isCreateUserRequest = true;
+    }
 
     $oCurrentUser = $this->User->getCurrentUser();
 
@@ -51,15 +53,39 @@ class ApiController extends AppController {
     global $oCurrentUser;
     global $oData;
 
-    $oFoundUser = $this->User->findByUsername($oData['username']);
-    if (($oFoundUser) && ($oFoundUser['password'] == $oData['password'])) {
-    //if (md5($oFoundUser['password']) == $oData['password']) {
+    $oFoundUser = $this->User->findByEmail($oData['email']);
+    if (($oFoundUser) && ($oFoundUser['password'] == md5($oData['password']))) {
       $this->User->setCurrentUser($oFoundUser);
     } else {
       $oFoundUser = false;
     }
     
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oFoundUser)), 531, 'access denied'); 
+  }
+
+  public function registerUser() {
+    global $oCurrentUser;
+    global $oData;
+
+    if (!$oCurrentUser) {
+      $oExistingUser = $this->User->findByEmail($oData['email']);
+      if (!$oExistingUser) {
+        $this->User->create();
+        $oOrganization = $this->Organization->findByName($oData['organization']);
+        if (!$oOrganization) {
+          $this->Organization->create();
+          $this->Organization->saveField('name', $oData['organization']);
+          $oOrganization = $this->Organization->findByName($oData['organization']);
+        }
+        $oData['organization_id'] = $oOrganization['id'];
+        unset($oData['organization']);
+        $oData['password'] = md5($oData['password']);
+        $oNewUser = $this->User->save($oData);
+        $this->User->setCurrentUser($oNewUser);
+      }
+    }
+
+    echo $this->prepareResponse($oNewUser, 531, 'access denied'); 
   }
 
   public function getCurrentUser() {
@@ -120,7 +146,7 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
-    //if ($oData['password'] != '') $oData['password'] = md5($oData['password']);
+    if ($oData['password'] != '') $oData['password'] = md5($oData['password']);
 
     if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
       if ($this->params['userid'] != 'new') {
@@ -166,6 +192,10 @@ class ApiController extends AppController {
 
     if ($oCurrentUser['type'] == 'admin') {
       $oOrganizations = $this->Organization->find('all');
+      foreach ($oOrganizations as &$oOrganization) {
+        $oProjects = $this->Project->find('all', array('conditions' => array('Project.organization_id' => $oOrganization['id'])));
+        $oOrganization['projects_count'] = count($oProjects);
+      }
     }
 
     echo $this->prepareResponse($oOrganizations, 531, 'access denied');
@@ -177,16 +207,31 @@ class ApiController extends AppController {
 
     if (($oCurrentUser['organization_id'] == $this->params['organizationid']) || ($oCurrentUser['type'] == 'admin')) {
       $oOrganization = $this->Organization->findById($this->params['organizationid']);
+      $oOrganization['users'] = $this->User->find('all', array('conditions' => array('organization_id' => $this->params['organizationid'])));
     }
 
     echo $this->prepareResponse($this->Objects->populateOrganization($oOrganization), 531, 'access denied'); 
   }
 
+  public function getOrganizationProjects() {
+    global $oData;
+    global $oCurrentUser;
+
+    if (($oCurrentUser['organization_id'] == $this->params['organizationid']) || ($oCurrentUser['type'] == 'admin')) {
+      $oOrganization = $this->Organization->findById($this->params['organizationid']);
+      $oOrganization = $this->Objects->populateOrganization($oOrganization);
+    }
+
+    echo $this->prepareResponse($oOrganization['projects'], 531, 'access denied'); 
+  }  
+
   public function updateOrganization() {
     global $oData;
     global $oCurrentUser;
 
-    if (($oCurrentUser['type'] == 'mentor') && ($oCurrentUser['organization_id'] == $oData['id'])) {
+    if ($oCurrentUser['type'] == 'mentor') {
+      $this->Organization->id = $oCurrentUser['organization_id'];
+      unset($oData['id']);
       $oOrganization = $this->Organization->save($oData);
     } else if ($oCurrentUser['type'] == 'admin') {
       if ($Data['id']) {
@@ -232,10 +277,15 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
-    foreach ($oCurrentUser['projects'] as $oProject) {
-      if ($oProject['id'] == $this->params['projectid']) {
-        $oReturn = $this->Objects->populateProjectFull($oProject);
+    if ($oCurrentUser['type'] != 'admin') {
+      $oProject = $this->Project->findById($this->params['projectid']);
+      $oProject = $this->Objects->populateProjectFull($oProject);
+      if ($oProject['mentor']['organization_id'] == $oCurrentUser['organization_id']) {
+        $oReturn = $oProject;
       }
+    } else {
+      $oProject = $this->Project->findById($this->params['projectid']);
+      if ($oProject) $oReturn = $this->Objects->populateProjectFull($oProject);
     }
 
     echo $this->prepareResponse($oReturn, 531, 'access denied'); 
@@ -259,12 +309,12 @@ class ApiController extends AppController {
     global $oCurrentUser;
 
     $bReturn = true;
-    if ($oCurrentUser['type'] == 'mentor') {
+    if (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
       if ($oData['id'] == '') {
         $oExistingProject = $this->Project->find('first', array('conditions' => array('Project.name' => $oData['name'], 'Project.organization_id' => $oCurrentUser['organization_id'])));
         if (!$oExistingProject) {
           $this->Project->create();
-          $oData['organization_id'] = $oCurrentUser['organization_id'];
+          if ($oCurrentUser['type'] == 'mentor') $oData['organization_id'] = $oCurrentUser['organization_id'];
           $oProject = $this->Project->save($oData);
           $this->UserProject->create();
           $this->UserProject->save(array('user_id' => $oCurrentUser['id'], 'project_id' => $oProject['id']));
@@ -273,11 +323,17 @@ class ApiController extends AppController {
           $oReturn = false;
         }
       } else {
-        foreach ($oCurrentUser['projects'] as $oProject) {
-          if ($oProject['id'] == $oData['id']) {
-            $this->Project->save($oData);
-            $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
+        if ($oCurrentUser['type'] == 'mentor') {
+          foreach ($oCurrentUser['projects'] as $oProject) {
+            if ($oProject['id'] == $oData['id']) {
+              $this->Project->save($oData);
+              $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
+            }
           }
+        } else {
+          $this->Project->findById($oData['id']);
+          $this->Project->save($oData);
+          $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
         }
       }
     }
@@ -354,11 +410,20 @@ class ApiController extends AppController {
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
   }
 
+  public function getContent() {
+    global $oData;
+    global $oCurrentUser;
+
+    echo $this->prepareResponse($this->Content->find('all'), 531, 'access denied');
+  }
+
   public function getContentStage() {
     global $oData;
     global $oCurrentUser;
 
-    echo $this->prepareResponse($this->Content->find('first', array('conditions' => array('Content.stage' => $this->params['stage']))), 531, 'access denied');
+    $oContent = $this->Content->find('first', array('conditions' => array('Content.stage' => $this->params['stage'])));
+    if (!$oContent) $oContent = $this->Content->findById($this->params['stage']);
+    echo $this->prepareResponse($oContent, 531, 'access denied');
   }
 
   public function updateContentStage() {
@@ -379,14 +444,55 @@ class ApiController extends AppController {
     echo $this->prepareResponse($oContent, 531, 'access denied'); 
   }
 
+  public function getSkills() {
+    global $oCurrentUser;
+    $oSkills = $this->Skill->find('all');
+    echo $this->prepareResponse($oSkills, 531, 'access denied');
+  }
+
+  public function updateSkill() {
+    global $oCurrentUser;
+    global $oData;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      if ($oData['id']) {
+        $oSkill = $this->Skill->findById($oData['id']);
+        if ($oSkill) {
+          $this->Skill->id = $oData['id'];
+          $oSkill = $this->Skill->save($oData);
+        } else {
+          $this->Skill->create();
+          $oSkill = $this->Skill->save($oData);
+        }
+      } else {
+        $this->Skill->create();
+        $oSkill = $this->Skill->save($oData);
+      }
+    }
+    echo $this->prepareResponse($oSkill, 531, 'access denied');
+  }
+
+  public function removeSkill() {
+    global $oCurrentUser;
+    global $oData;
+
+    if ($oCurrentUser['type'] == 'admin') {
+      $oSkill = $this->Skill->findById($this->params['id']);
+      if ($oSkill) {
+        $this->Skill->delete($this->params['id']);
+      }
+    }
+    echo $this->prepareResponse($oSkill, 531, 'access denied');
+  }
+
   public function getActivities() {
     global $oData;
     global $oCurrentUser;
 
-    if ($oCurrentUser['type'] == 'admin') {
-      $oActivities = $this->Activity->find('all');
+    $oActivities = $this->Activity->find('all');
+    foreach ($oActivities as &$oActivity) {
+      $oActivity = $this->Activity->getFullActivity($oActivity);
     }
-
     echo $this->prepareResponse($oActivities, 531, 'access denied');
   }
 
@@ -480,7 +586,7 @@ class ApiController extends AppController {
     $oActivities = $this->Activity->find('all');
     foreach ($oActivities as $oActivity) {
       $aSkills = explode(',', $oActivity['skills']);
-      if (in_array($this->params['skill'], $aSkills)) {
+      if (in_array(strtolower($this->params['skill']), $aSkills)) {
         if ($this->params['minscore'] != undefined) {
           if ($oActivity['score'] >= $this->params['minscore']) array_push($oReturn, $this->Activity->getFullActivity($oActivity));
         } else {

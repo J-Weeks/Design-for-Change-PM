@@ -48,9 +48,14 @@
       <section id="content">
         
       </section>
-      <aside class="bg-light lter b-l aside-sm hide">
-        <div class="wrapper">aside content</div>
-      </aside>
+        <section class="panel uploadFiles hide" style="float: bottom; width: 105px">
+          <header class="panel-heading">                    
+            <div class="btn btn-xs btn-primary">Upload File</div>
+          </header>
+          <div id="files">
+          </div>
+          
+        </section>
     </section>
   </section>
   <footer class="footer b-t bg-white-only" style="height: 50px">
@@ -125,9 +130,15 @@
            </a>
          </li>
          <li class="dropdown">
-           <a href="#curriculum">
+           <a href="#content">
              <i class="fa fa-book text-white"></i>
              <span class="text-white">Curriculum</span>
+           </a>
+         </li>
+         <li class="dropdown">
+           <a href="#skills">
+             <i class="fa fa-cogs text-white"></i>
+             <span class="text-white">Skills</span>
            </a>
          </li>
         </ul>
@@ -175,17 +186,19 @@
            {{user.first_name}}<b class="caret"></b>
          </a>
          <ul class="dropdown-menu animated fadeInLeft">
+           <?php if ($currentUser['type'] != 'admin') { ?>
+             <li>
+               <a href="#profile">Your Profile</a>
+             </li>
+             <li>
+               <a href="#organization">Your Organization</a>
+             </li>
+             <li>
+               <a href="http://">Help</a>
+             </li>
+            <?php } ?>
            <li>
-             <a href="#profile">Your Profile</a>
-           </li>
-           <li>
-             <a href="#organization">Your Organization</a>
-           </li>
-           <li>
-             <a href="http://">Help</a>
-           </li>
-           <li>
-             <a href="/logout">Logout</a>
+             <a href="/dfcusa-pm/logout">Logout</a>
            </li>
          </ul>
        </li>

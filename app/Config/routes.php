@@ -32,27 +32,35 @@
 	Router::connect('/api/users', array('controller' => 'api', 'action' => 'getUsers', '[method]' => array('GET')));
 	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'getUser', '[method]' => array('GET')));
 	Router::connect('/api/user', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/user/new', array('controller' => 'api', 'action' => 'registerUser', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'removeUser', '[method]' => array('DELETE')));
 	Router::connect('/api/user/:userid/upload', array('controller' => 'api', 'action' => 'uploadUserProfilePic', '[method]' => array('PUT', 'POST')));
 
 	Router::connect('/api/organizations', array('controller' => 'api', 'action' => 'getOrganizations', '[method]' => array('GET')));
-	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'getOrganization', '[method]' => array('GET')));
 	Router::connect('/api/organization', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'getOrganization', '[method]' => array('GET')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'removeOrganization', '[method]' => array('DELETE')));
+	Router::connect('/api/organization/:organizationid/projects', array('controller' => 'api', 'action' => 'getOrganizationProjects', '[method]' => array('GET')));
 
 	Router::connect('/api/projects', array('controller' => 'api', 'action' => 'getProjects', '[method]' => array('GET')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'getProject', '[method]' => array('GET')));
 	Router::connect('/api/project/:projectid/files', array('controller' => 'api', 'action' => 'getProjectFiles', '[method]' => array('GET')));
 	Router::connect('/api/project', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'removeProject', '[method]' => array('DELETE')));
 
 	Router::connect('/api/project/:projectid/user', array('controller' => 'api', 'action' => 'updateUserProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid/user/:userid', array('controller' => 'api', 'action' => 'removeUserProject', '[method]' => array('DELETE')));
 
+	Router::connect('/api/content', array('controller' => 'api', 'action' => 'getContent', '[method]' => array('GET')));
 	Router::connect('/api/content/:stage', array('controller' => 'api', 'action' => 'getContentStage', '[method]' => array('GET')));
 	Router::connect('/api/content', array('controller' => 'api', 'action' => 'updateContentStage', '[method]' => array('PUT', 'POST')));
+
+	Router::connect('/api/skills', array('controller' => 'api', 'action' => 'getSkills', '[method]' => array('GET')));
+	Router::connect('/api/skill', array('controller' => 'api', 'action' => 'updateSkill', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/skill/:id', array('controller' => 'api', 'action' => 'removeSkill', '[method]' => array('DELETE')));
 
 	Router::connect('/api/activities', array('controller' => 'api', 'action' => 'getActivities', '[method]' => array('GET')));
 	Router::connect('/api/activities/stage/:stage', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));

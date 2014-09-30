@@ -1,5 +1,6 @@
 @import url("/dfcusa-pm/app/webroot/js/notyfy/jquery.notyfy.css");
 @import url("/dfcusa-pm/app/webroot/js/notyfy/themes/default.css");
+@import url("/dfcusa-pm/app/webroot/js/summernote/summernote.css");
 .hide {
   display: none !important; }
 
@@ -45,7 +46,8 @@
   margin: 20px 5% 20px 5%; }
 
 .projectPanel {
-  min-width: 700px; }
+  min-width: 700px;
+  padding-bottom: 0px; }
 
 .stageContainer {
   margin: 20px 5% 20px 5%; }
@@ -57,35 +59,12 @@
   .stageContainer .sectionText a[href^="https://"] {
     color: #428bca;
     text-decoration: underline; }
+  .stageContainer .sectionText .btn {
+    text-decoration: none !important; }
 
 .float {
   float: right;
   margin: 0 0 10px 20px; }
-
-.skill.awareness {
-  background-color: lime; }
-.skill.engagement {
-  background-color: teal; }
-.skill.empathy {
-  background-color: maroon; }
-.skill.collaboration {
-  background-color: tan; }
-.skill.communication {
-  background-color: olive; }
-.skill.connection {
-  background-color: yellow orange; }
-.skill.creativity {
-  background-color: purple; }
-.skill.critical_thinking {
-  background-color: salmon; }
-.skill.initiative {
-  background-color: light red; }
-.skill.reflection {
-  background-color: orange; }
-.skill.resilience {
-  background-color: forest green; }
-.skill.responsibility {
-  background-color: fuchsia; }
 
 .activities {
   border-top: 1px solid #f1f1f1;
@@ -104,6 +83,12 @@
 form {
   margin: 20px; }
 
+.modal-body form {
+  margin: 0px 10px 20px 10px !important; }
+.modal-body .error-span {
+  margin-top: 10px;
+  color: red; }
+
 .center {
   margin-left: auto;
   margin-right: auto; }
@@ -116,3 +101,54 @@ form {
 .profilePicSmall {
   width: 25px;
   height: 25px; }
+
+.htmleditor {
+  overflow: scroll;
+  height: 300px; }
+  .htmleditor.small {
+    height: 100px; }
+  .htmleditor.large {
+    height: 700px; }
+
+.note-editable {
+  background-color: #fff; }
+
+.generalBox {
+  background-color: #fff;
+  padding: 20px; }
+
+.skillsBox {
+  height: 150px; }
+
+.activitiesContent {
+  margin: 65px 15px; }
+
+.items {
+  display: block; }
+
+.listItem {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  width: 97%; }
+
+.listItemContainer {
+  position: relative; }
+
+.listItemAdd {
+  position: absolute;
+  top: 28px;
+  left: -5px; }
+
+.listItemDelete {
+  position: absolute;
+  top: 10px;
+  right: -10px; }
+
+.uploadFiles {
+  margin-bottom: 0px !important; }
+
+.input-group {
+  margin-right: 20px; }
+
+.projectDeliverables {
+  position: relative; }

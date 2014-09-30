@@ -3,8 +3,10 @@ define([
   'bootstrap',
   'jqueryui',
   'moment',
-  'notyfy',
+  'messenger',
   'Handlebars',
+  'datepicker',
+  'summernote'
 ], function() {
   // FOR IE
   $.ajaxSetup({ cache: false });
@@ -45,6 +47,22 @@ define([
         }
       }
     });
+
+    $('.datepicker').each(function() {
+      $(this).datepicker();
+    });
+
+    $('.htmleditor').each(function() {
+      $(this).summernote({
+        toolbar: [
+          ['insert', ['picture', 'link', 'video', 'table', 'hr']],
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['para', ['ul', 'ol']]
+        ]
+      });
+      $(this).code($(this).attr('data-text'));
+    });
+
   };
 
   app.registerHandlebarsHelpers = function(Handlebars) {
@@ -302,11 +320,10 @@ define([
   }
 
   app.showNotify = function(message, type) {
-    notyfy({
-      template: '<div class="notyfy_message"><span class="notyfy_text"></span><div class="notyfy_close"></div></div>',
-      text: message,
+    Messenger().post({
+      message: message,
       type: type,
-      timeout: 4000
+      hideAfter: 5
     });
   }
 
@@ -351,24 +368,29 @@ define([
     }
 
     window.yesFunction = yesFunction;
-    if (yesFunction) {
-      $('#alertModal').unbind('click').click(function() {
-        window.yesFunction();
-        $('#alertModal').modal('hide'); 
+    if (yesLabel) {
+      $('#alertModal').find('.yesButton').unbind('click').click(function() {
+        if (yesFunction) {
+          window.yesFunction();
+          $('#alertModal').modal('hide'); 
+        } else {
+          $('#alertModal').modal('hide'); 
+        }
       });
-    } else {
-      $('#alertModal').modal('hide');
     }
 
     window.noFunction = noFunction;
-    if (noFunction) {
-      $('#alertModal').unbind('click').click(function() {
-        window.noFunction();
-        $('#alertModal').modal('hide'); 
+    if (noLabel) {
+      $('#alertModal').find('.noButton').unbind('click').click(function() {
+        if (noFunction) {
+          window.noFunction();
+          $('#alertModal').modal('hide'); 
+        } else {
+          $('#alertModal').modal('hide'); 
+        }
       });
-    } else {
-      $('#alertModal').modal('hide'); 
     }
+    
 
     $('#alertModal').modal();
   }

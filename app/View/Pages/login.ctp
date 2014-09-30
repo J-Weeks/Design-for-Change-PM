@@ -4,7 +4,7 @@
 	    <div class="col-md-4 col-md-offset-4 m-t-lg">
 	      <section class="panel">
 	        <header class="panel-heading text-center">
-	          <a href="index.html"><img src="images/dfc_logo.png" alt="logo name" /></a>
+	          <img src="/dfcusa-pm/images/dfc_logo.jpg" alt="logo name" />
 	        </header>
 	        <div id="content">
 
