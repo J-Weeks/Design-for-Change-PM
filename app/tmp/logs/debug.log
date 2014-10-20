@@ -1287,3 +1287,56 @@ Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 185
 Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
 [main] - APP/webroot/index.php, line 108
 
+2014-10-20 04:20:15 Notice: Strict (2048): Declaration of AppModel::beforeSave() should be compatible with Model::beforeSave($options = Array) in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 33]
+Trace:
+include - APP/Model/AppModel.php, line 33
+App::load() - CORE/Cake/Core/App.php, line 545
+spl_autoload_call - [internal], line ??
+include - APP/Model/User.php, line 3
+App::load() - CORE/Cake/Core/App.php, line 545
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+ClassRegistry::init() - CORE/Cake/Utility/ClassRegistry.php, line 145
+Controller::loadModel() - CORE/Cake/Controller/Controller.php, line 738
+Controller::__isset() - CORE/Cake/Controller/Controller.php, line 367
+Controller::__get() - CORE/Cake/Controller/Controller.php, line 405
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 17
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-10-20 04:20:15 Notice: Strict (2048): Declaration of AppModel::afterSave() should be compatible with Model::afterSave($created, $options = Array) in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/AppModel.php, line 33]
+Trace:
+include - APP/Model/AppModel.php, line 33
+App::load() - CORE/Cake/Core/App.php, line 545
+spl_autoload_call - [internal], line ??
+include - APP/Model/User.php, line 3
+App::load() - CORE/Cake/Core/App.php, line 545
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+ClassRegistry::init() - CORE/Cake/Utility/ClassRegistry.php, line 145
+Controller::loadModel() - CORE/Cake/Controller/Controller.php, line 738
+Controller::__isset() - CORE/Cake/Controller/Controller.php, line 367
+Controller::__get() - CORE/Cake/Controller/Controller.php, line 405
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 17
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
+2014-10-20 04:20:16 Notice: Notice (8): Undefined index: user in [/Users/vinaygidwaney/Documents/htdocs/dfcusa-pm/app/Model/User.php, line 23]
+Trace:
+User::getCurrentUser() - APP/Model/User.php, line 23
+PagesController::beforeFilter() - APP/Controller/PagesController.php, line 17
+call_user_func - [internal], line ??
+CakeEventManager::dispatch() - CORE/Cake/Event/CakeEventManager.php, line 247
+Controller::startupProcess() - CORE/Cake/Controller/Controller.php, line 674
+Dispatcher::_invoke() - CORE/Cake/Routing/Dispatcher.php, line 182
+Dispatcher::dispatch() - CORE/Cake/Routing/Dispatcher.php, line 160
+[main] - APP/webroot/index.php, line 108
+
