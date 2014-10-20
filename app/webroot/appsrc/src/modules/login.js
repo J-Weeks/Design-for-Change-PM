@@ -44,7 +44,7 @@ function(App, Handlebars, Data) {
       $('#loginForm').find('.alert').addClass('hide');
 
       if (App.checkForm('#loginForm')) {
-        this.user.url = '/dfcusa-pm/api/user/login';
+        this.user.url = '/dfcusa-pm/dfcusa-pm/api/user/login';
         this.user.attributes.email = $('#email').val();
         this.user.attributes.password = $('#password').val();
         this.user.save({}, {success: function(data) {
@@ -97,7 +97,7 @@ function(App, Handlebars, Data) {
 
       if (bContinue) {
         if ($('#password').val() == $('#password2').val()) {
-          this.user.url = '/dfcusa-pm/api/user/new';
+          this.user.url = '/dfcusa-pm/dfcusa-pm/api/user/new';
           this.user.attributes.first_name = $('#first_name').val();
           this.user.attributes.last_name = $('#last_name').val();
           this.user.attributes.location = $('#location').val();
