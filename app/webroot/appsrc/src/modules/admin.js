@@ -54,7 +54,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete Project', 'Are you sure you want to delete this project?', 'Yes', 'Cancel', function() {
           newproject = new Data.Models.ProjectModel();
           newproject.id = window.projectId;
-          newproject.url = '/dfcusa-pm/dfcusa-pm/api/project/' + window.projectId;
+          newproject.url = '/dfcusa-pm/api/project/' + window.projectId;
           newproject.destroy({success: function() {
             self.getProjects();
           }});
@@ -88,7 +88,7 @@ function(App, Handlebars, Data) {
       var self = this;
       if ((self.iProjectId != false) && (self.iProjectId != 'new')) {
         self.project = new Data.Models.ProjectModel();
-        self.project.url = '/dfcusa-pm/dfcusa-pm/api/project/' + self.iProjectId;
+        self.project.url = '/dfcusa-pm/api/project/' + self.iProjectId;
         self.project.fetch({success: function() {
           self.showProject();
         }});
@@ -96,7 +96,7 @@ function(App, Handlebars, Data) {
       } else {
         self.project = new Data.Models.ProjectModel();
         self.project.attributes.title = 'New Project';
-        self.project.url = '/dfcusa-pm/dfcusa-pm/api/project/' + self.iProjectId;
+        self.project.url = '/dfcusa-pm/api/project/' + self.iProjectId;
         self.showProject();
         $('.uploadFile').addClass('hide');
       }
@@ -197,7 +197,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete Activity', 'Are you sure you want to delete this activity?', 'Yes', 'Cancel', function() {
           newactivity = new Data.Models.ActivityModel();
           newactivity.id = window.activityId;
-          newactivity.url = '/dfcusa-pm/dfcusa-pm/api/activity/' + window.activityId;
+          newactivity.url = '/dfcusa-pm/api/activity/' + window.activityId;
           newactivity.destroy({success: function() {
             app.showNotify('Activity deleted', 'success');
             self.getActivities();
@@ -232,7 +232,7 @@ function(App, Handlebars, Data) {
       var self = this;
       if ((self.iActivityId != false) && (self.iActivityId != 'new')) {
         self.activity = new Data.Models.ActivityModel();
-        self.activity.url = '/dfcusa-pm/dfcusa-pm/api/activity/' + self.iActivityId;
+        self.activity.url = '/dfcusa-pm/api/activity/' + self.iActivityId;
         self.activity.fetch({success: function() {
           self.showActivity();
         }});
@@ -240,7 +240,7 @@ function(App, Handlebars, Data) {
       } else {
         self.activity = new Data.Models.ActivityModel();
         self.activity.attributes.title = 'New Activity';
-        self.activity.url = '/dfcusa-pm/dfcusa-pm/api/activity/' + self.iActivityId;
+        self.activity.url = '/dfcusa-pm/api/activity/' + self.iActivityId;
         self.showActivity();
         $('.uploadFile').addClass('hide');
       }
@@ -257,7 +257,7 @@ function(App, Handlebars, Data) {
       $('.uploadPdfButton').unbind('click').click(function() {
         $('.uploadPdf').click();
         $('.uploadPdf').change(function() {
-          $(this).upload('/dfcusa-pm/dfcusa-pm/api/activity/' + window.iActivityId + '/upload', function(res) {
+          $(this).upload('/dfcusa-pm/api/activity/' + window.iActivityId + '/upload', function(res) {
             oRes = $.parseJSON(res.substring(res.indexOf("{"), res.lastIndexOf("}") + 1));
             self.activity.attributes.pdf = oRes.file;
             self.showActivity();
@@ -330,7 +330,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete User', 'Are you sure you want to delete this user?', 'Yes', 'Cancel', function() {
           newuser = new Data.Models.ActivityModel();
           newuser.id = window.userId;
-          newuser.url = '/dfcusa-pm/dfcusa-pm/api/user/' + window.userId;
+          newuser.url = '/dfcusa-pm/api/user/' + window.userId;
           newuser.destroy({success: function() {
             app.showNotify('User deleted', 'success');
             self.getUsers();
@@ -366,7 +366,7 @@ function(App, Handlebars, Data) {
       var self = this;
       if ((self.iUserId != false) && (self.iUserId != 'new')) {
         self.user = new Data.Models.UserModel();
-        self.user.url = '/dfcusa-pm/dfcusa-pm/api/user/' + self.iUserId;
+        self.user.url = '/dfcusa-pm/api/user/' + self.iUserId;
         self.user.fetch({success: function() {
           self.showUser();
         }});
@@ -375,7 +375,7 @@ function(App, Handlebars, Data) {
         self.user = new Data.Models.ActivityModel();
         self.user.attributes.first_name = 'New';
         self.user.attributes.last_name = 'User';
-        self.user.url = '/dfcusa-pm/dfcusa-pm/api/user/' + self.iUserId;
+        self.user.url = '/dfcusa-pm/api/user/' + self.iUserId;
         self.showUser();
         $('.uploadFile').addClass('hide');
       }
@@ -392,7 +392,7 @@ function(App, Handlebars, Data) {
       $('.uploadPicButton').unbind('click').click(function() {
         $('.uploadPic').click();
         $('.uploadPic').change(function() {
-          $(this).upload('/dfcusa-pm/dfcusa-pm/api/user/' + window.iUserId + '/upload', function(res) {
+          $(this).upload('/dfcusa-pm/api/user/' + window.iUserId + '/upload', function(res) {
             oRes = $.parseJSON(res.substring(res.indexOf("{"), res.lastIndexOf("}") + 1));
             self.user.attributes.profilepic = oRes.file;
             self.showUser();
@@ -464,7 +464,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete Organization', 'Are you sure you want to delete this organization?', 'Yes', 'Cancel', function() {
           neworginization = new Data.Models.OrganizationModel();
           neworginization.id = window.organizationId;
-          neworginization.url = '/dfcusa-pm/dfcusa-pm/api/organization/' + window.organizationId;
+          neworginization.url = '/dfcusa-pm/api/organization/' + window.organizationId;
           neworginization.destroy({success: function() {
             app.showNotify('Organization deleted', 'success');
             self.getOrganizations();
@@ -499,7 +499,7 @@ function(App, Handlebars, Data) {
       var self = this;
       if ((self.iOrganizationId != false) && (self.iOrganizationId != 'new')) {
         self.organization = new Data.Models.OrganizationModel();
-        self.organization.url = '/dfcusa-pm/dfcusa-pm/api/organization/' + self.iOrganizationId;
+        self.organization.url = '/dfcusa-pm/api/organization/' + self.iOrganizationId;
         self.organization.fetch({success: function() {
           self.showOrganization();
         }});
@@ -507,7 +507,7 @@ function(App, Handlebars, Data) {
       } else {
         self.organization = new Data.Models.OrganizationModel();
         self.organization.attributes.title = 'New Organization';
-        self.organization.url = '/dfcusa-pm/dfcusa-pm/api/organization/' + self.iOrganizationId;
+        self.organization.url = '/dfcusa-pm/api/organization/' + self.iOrganizationId;
         self.showOrganization();
         $('.uploadFile').addClass('hide');
       }
@@ -524,7 +524,7 @@ function(App, Handlebars, Data) {
       $('.uploadPicButton').unbind('click').click(function() {
         $('.uploadPic').click();
         $('.uploadPic').change(function() {
-          $(this).upload('/dfcusa-pm/dfcusa-pm/api/organization/' + window.iOrganizationId + '/upload', function(res) {
+          $(this).upload('/dfcusa-pm/api/organization/' + window.iOrganizationId + '/upload', function(res) {
             oRes = $.parseJSON(res.substring(res.indexOf("{"), res.lastIndexOf("}") + 1));
             self.organization.attributes.logo = oRes.file;
             self.showOrganization();
@@ -609,7 +609,7 @@ function(App, Handlebars, Data) {
     getContent: function() {
       var self = this;
       self.contentModule = new Data.Models.ContentModel();
-      self.contentModule.url = '/dfcusa-pm/dfcusa-pm/api/content/' + self.sStage;
+      self.contentModule.url = '/dfcusa-pm/api/content/' + self.sStage;
       self.contentModule.fetch({success: function() {
         self.showContent();
       }});
@@ -731,7 +731,7 @@ function(App, Handlebars, Data) {
         self.contentModule.attributes.content_obj.submit.deliverables.push(oDeliverable);
       });
 
-      self.contentModule.url = '/dfcusa-pm/dfcusa-pm/api/content';
+      self.contentModule.url = '/dfcusa-pm/api/content';
 
       self.contentModule.save({}, {success: function(data) {
         app.showNotify('Saved content', 'success');
@@ -797,7 +797,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete Skill', 'Are you sure you want to delete this skill?', 'Yes', 'Cancel', function() {
           oSkill = new Data.Models.SkillModel();
           oSkill.id = window.skillId;
-          oSkill.url = '/dfcusa-pm/dfcusa-pm/api/skill/' + window.skillId;
+          oSkill.url = '/dfcusa-pm/api/skill/' + window.skillId;
           oSkill.destroy({success: function() {
             app.showNotify('Skill deleted', 'success');
             self.getSkills();

@@ -8,26 +8,26 @@ function(App, Mustache) {
 		MustacheLib: Mustache,
 		Models: {
 			UserModel: Backbone.Model.extend({
-			  url: '/dfcusa-pm/dfcusa-pm/api/user/me'
+			  url: '/dfcusa-pm/api/user/me'
 			}),
 
 			OrganizationModel: Backbone.Model.extend({
-			  url: '/dfcusa-pm/dfcusa-pm/api/organization'
+			  url: '/dfcusa-pm/api/organization'
 			}),
 
 			ProjectModel: Backbone.Model.extend({
-			  url: '/dfcusa-pm/dfcusa-pm/api/project'
+			  url: '/dfcusa-pm/api/project'
 			}),
 
 			ContentModel: Backbone.Model.extend({
-			  url: '/dfcusa-pm/dfcusa-pm/api/content'
+			  url: '/dfcusa-pm/api/content'
 			}),
 
 			ActivityModel: Backbone.Model.extend({
 			}),
 
 			SkillModel: Backbone.Model.extend({
-				url: '/dfcusa-pm/dfcusa-pm/api/skill'
+				url: '/dfcusa-pm/api/skill'
 			})
 		}
 	}
@@ -35,32 +35,32 @@ function(App, Mustache) {
 	Data.Collections = {
 		Projects: Backbone.Collection.extend({
 			model: Data.Models.ProjectModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/projects'
+			url: '/dfcusa-pm/api/projects'
 		}),
 
 		Activities: Backbone.Collection.extend({
 			model: Data.Models.ActivityModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/activities'
+			url: '/dfcusa-pm/api/activities'
 		}),
 
 		Users: Backbone.Collection.extend({
 			model: Data.Models.UserModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/users'
+			url: '/dfcusa-pm/api/users'
 		}),
 
 		Organizations: Backbone.Collection.extend({
 			model: Data.Models.OrganizationModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/organizations'
+			url: '/dfcusa-pm/api/organizations'
 		}),
 
 		Content: Backbone.Collection.extend({
 			model: Data.Models.ContentModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/content'
+			url: '/dfcusa-pm/api/content'
 		}),
 
 		Skills: Backbone.Collection.extend({
 			model: Data.Models.SkillModel,
-			url: '/dfcusa-pm/dfcusa-pm/api/skills'
+			url: '/dfcusa-pm/api/skills'
 		})
 	}
 

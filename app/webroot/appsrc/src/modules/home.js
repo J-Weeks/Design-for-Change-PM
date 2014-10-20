@@ -36,7 +36,7 @@ function(App, Handlebars, Data) {
       $('.uploadPicButton').unbind('click').click(function() {
         $('.uploadPic').click();
         $('.uploadPic').change(function() {
-          $(this).upload('/dfcusa-pm/dfcusa-pm/api/organization/' + window.iOrganizationId + '/upload', function(res) {
+          $(this).upload('/dfcusa-pm/api/organization/' + window.iOrganizationId + '/upload', function(res) {
             oRes = $.parseJSON(res.substring(res.indexOf("{"), res.lastIndexOf("}") + 1));
             $('#editOrganizationModal').find('#logo_source').val(oRes.file);
            }, 'html');
@@ -91,7 +91,7 @@ function(App, Handlebars, Data) {
       $('.uploadPicButton').unbind('click').click(function() {
         $('.uploadPic').click();
         $('.uploadPic').change(function() {
-          $(this).upload('/dfcusa-pm/dfcusa-pm/api/user/' + window.oCurrentUser.id + '/upload', function(res) {
+          $(this).upload('/dfcusa-pm/api/user/' + window.oCurrentUser.id + '/upload', function(res) {
             oRes = $.parseJSON(res.substring(res.indexOf("{"), res.lastIndexOf("}") + 1));
             $('#editProfileModal').find('#profile_pic_source').val(oRes.file);
            }, 'html');
@@ -182,7 +182,7 @@ function(App, Handlebars, Data) {
       $('#content').html(Handlebars.compile($('#welcomeViewTemplate').html()));
 
       self.projects = new Data.Collections.Projects();
-      self.projects.url = '/dfcusa-pm/dfcusa-pm/api/organization/' + self.user.attributes.organization_id + '/projects';
+      self.projects.url = '/dfcusa-pm/api/organization/' + self.user.attributes.organization_id + '/projects';
       self.projects.fetch({success: function() {
         if (self.projects.models.length > 0) {
           $('#content').html(Handlebars.compile($('#projectsListTemplate').html()));
@@ -197,7 +197,7 @@ function(App, Handlebars, Data) {
 
       if (bFound == false) {
         self.content = new Data.Models.ContentModel();
-        self.content.url = '/dfcusa-pm/dfcusa-pm/api/content/welcome';
+        self.content.url = '/dfcusa-pm/api/content/welcome';
         self.content.fetch({success: function() {
           $('#content').find('.modal-body').html(self.content.attributes.content_obj.content);
 
@@ -216,7 +216,7 @@ function(App, Handlebars, Data) {
         if (App.alertBox('Delete Project', 'Are you sure you want to delete this project?', 'Yes', 'Cancel', function() {
           oNewProject = new Data.Models.ProjectModel();
           oNewProject.id = window.projectId;
-          oNewProject.url = '/dfcusa-pm/dfcusa-pm/api/project/' + window.projectId;
+          oNewProject.url = '/dfcusa-pm/api/project/' + window.projectId;
           oNewProject.destroy({success: function() {
             self.getProjects();
           }});
@@ -276,7 +276,7 @@ function(App, Handlebars, Data) {
       $('#project_name').html(self.project.attributes.name);
 
       self.stage = new Data.Models.ContentModel();
-      self.stage.url = '/dfcusa-pm/dfcusa-pm/api/content/' + self.sStage;
+      self.stage.url = '/dfcusa-pm/api/content/' + self.sStage;
       self.stage.fetch({success: function() {
         self.showStage();
       }});
@@ -428,7 +428,7 @@ function(App, Handlebars, Data) {
       bFound = false;
       $('.activities').html('<h4>Official Activities</h4>');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/dfcusa-pm/dfcusa-pm/api/activities/stage/' + self.sStage + '/100';
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100';
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if (activity.attributes.all_skills.indexOf(self.currentSkill) > -1) {
@@ -447,7 +447,7 @@ function(App, Handlebars, Data) {
       bFound = false;
       $('.activities').html('<h4>Found Activities</h4>');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/dfcusa-pm/dfcusa-pm/api/activities/stage/' + self.sStage;
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage;
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if ((activity.attributes.all_skills.indexOf($('#search-skill').val()) > -1) || ($('#search-skill').val() == 'all')) {
@@ -522,7 +522,7 @@ function(App, Handlebars, Data) {
       bFound = false;
       $('.activitiesContent').html('');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/dfcusa-pm/dfcusa-pm/api/activities';
+      self.activities.url = '/dfcusa-pm/api/activities';
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if ((activity.attributes.all_skills.indexOf(self.sSkill) > -1) || (self.sSkill == 'all')) {
