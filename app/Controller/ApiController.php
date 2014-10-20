@@ -54,6 +54,7 @@ class ApiController extends AppController {
     global $oData;
 
     $oFoundUser = $this->User->findByEmail($oData['email']);
+
     if (($oFoundUser) && ($oFoundUser['password'] == md5($oData['password']))) {
       $this->User->setCurrentUser($oFoundUser);
     } else {
