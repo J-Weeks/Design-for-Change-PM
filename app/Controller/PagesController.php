@@ -31,18 +31,19 @@ class PagesController extends AppController {
 
 	public function login() {
 		global $oCurrentUser;
-
+		$this->layout = 'blank';
 		if ($oCurrentUser) $this->redirect('/home');
 	}
 
 	public function logout() {
 		$this->User->setCurrentUser(false);
-		$this->redirect('/login');
+		$this->redirect('http://www.designforchange.us');
 	}
 
 	public function home() {
 		global $oCurrentUser;
-		//if (!$oCurrentUser) $this->redirect('/login');
+		if (!$oCurrentUser) $this->redirect('/login');
+		$this->layout = 'internal';
 		$this->render('dashboard');
 	}
 }

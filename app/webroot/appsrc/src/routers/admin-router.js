@@ -43,8 +43,10 @@ function(App, Handlebars, Mustache, Data, Admin) {
       }
 
       if ($('#header_container').length > 0) {
-        $('#header_container').html(Handlebars.compile($('#headerTemplate').html())({user: window.oCurrentUser}));
+        $('#header_container').html(Handlebars.compile($('#adminHeaderTemplate').html())({user: window.oCurrentUser}));
       }
+
+      $('.leftnav').addClass('hide');
 
       App.AdminRouter = this;
     },

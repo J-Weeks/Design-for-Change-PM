@@ -2,6 +2,10 @@
 @import url('/dfcusa-pm/app/webroot/js/notyfy/themes/default.css');
 @import url('/dfcusa-pm/app/webroot/js/summernote/summernote.css');
 
+form {
+  padding: 15px;
+}
+
 .hide {
   display: none !important;
 }
@@ -21,6 +25,12 @@
 .btn {
   &.marginButton {
     margin-left: 5px;
+  }
+  &.marginButtonRight {
+    margin-right: 5px;
+  }
+  &.rightAlign {
+    float: right;
   }
 }
 
@@ -49,21 +59,19 @@
 
 .projectName {
   position: absolute;
-  color: #fff;
+  color: #666;
   font-size: 12pt;
   left: 120px;
   top: 14px;
 }
 
-.projectsList {
-  list-style-type: none;
-  padding-left: 0px;
-  margin: 20px 5% 20px 5%;
-}
-
 .projectPanel {
   min-width: 700px;
   padding-bottom: 0px;
+  p {
+    font-size: 10pt !important;
+    line-height: 14pt !important;
+  }
 }
 
 .stageContainer {
@@ -98,20 +106,50 @@
 .activities {
   border-top: 1px solid #f1f1f1;
   margin-top: 20px;
-  padding-top: 10px;
+  padding-top: 20px;
+  h4 {
+    margin-bottom: 10px;
+  }
+  &.leftMargin {
+    .activity {
+      margin-left: -14px !important;
+    }
+  }
 }
 
 .activity {
-  float: top;
+  float: left;
+  width: 380px;
   margin-top: 10px;
-  margin-left: -14px;
   .panel {
     padding-top: 13px;
   }
   .panel-body {
     min-height: 210px;
+    height: 230px;
+    padding-top: 0px !important;
+    p {
+      font-size: 10pt !important;
+      line-height: 14pt !important;
+    }
+  }
+  .panel-footer {
+    padding: 10px 0px !important;
+    height: 25px;
+    .label {
+      height: 10px !important;
+      padding: 5px !important;
+      margin: 1px 5px 3px 2px !important;
+      font-size: 8pt;
+      color: #fff;
+    }
+  }
+  .title {
+    line-height: 35px;
   }
 }
+
+
 
 form {
   margin: 20px;
@@ -119,7 +157,10 @@ form {
 
 .modal-body {
   form {
-    margin: 0px 10px 20px 10px !important;
+    margin: 0px 30px 0px 0px !important;
+    select {
+      width: 105%;
+    }
   }
   .error-span {
     margin-top: 10px;
@@ -132,6 +173,10 @@ form {
   margin-right: auto;
 }
 
+.padded {
+  padding: 15px;
+}
+
 .profilePic {
   width: 50px;
   height: 50px;
@@ -141,6 +186,9 @@ form {
 .profilePicSmall {
   width: 25px;
   height: 25px;
+  &.padded {
+    margin: 0px 10px 0px 10px;
+  }
 }
 
 .htmleditor {
@@ -163,12 +211,9 @@ form {
   padding: 20px;
 }
 
-.skillsBox {
-  height: 150px;
-}
 
 .activitiesContent {
-  margin: 65px 15px;
+  margin: 5px 15px;
 }
 
 .items {
@@ -176,25 +221,30 @@ form {
 }
 
 .listItem {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 20px;
   width: 97%;
+  &.withButton {
+    width: 93%;
+  }
 }
 
 .listItemContainer {
-  position: relative;
+  position: relative; 
 }
 
 .listItemAdd {
   position: absolute;
-  top: 28px;
+  top: 35px;
   left: -5px;
 }
 
 .listItemDelete {
   position: absolute;
   top: 10px;
-  right: -10px;
+  right: 0px;
+  cursor: pointer;
 }
 
 .uploadFiles {
@@ -207,4 +257,166 @@ form {
 
 .projectDeliverables {
   position: relative;
+}
+
+#content {
+  p {
+    font-family: 'proxima_novalight';
+    font-size: 12pt;
+    color: #000000;
+    line-height: 23pt;
+    &.padded {
+      padding: 20px;
+      border: 1px solid #f1f1f1;
+    }
+    margin-bottom: 20px;
+  }
+  ul {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    list-style-type: circle;
+    margin-left: 20px;
+    &.padded {
+      margin-left: 50px;
+      margin-right: 50px;
+    }
+    li {
+      font-size: 12pt;
+      margin-top: 20px;
+      color: #000000;
+    }
+    ol {
+      font-size: 12pt;
+      margin-top: 20px;
+      color: #000000;
+    }
+    a {
+      color: #3366cc;
+    }
+    .sublist {
+      list-style-type: circle;
+      margin-left: 30px;
+      li {
+        font-size: 10pt;
+        line-height: 4pt;
+      }
+    }
+  }
+
+  .steps {
+    list-style-type: none;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    li {
+      margin-top: 0px;
+    }
+  }
+
+  .projectsList {
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 20px 5% 20px 5%;
+    .projectTablet {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.stageicon {
+  width: 30px;
+  position: absolute;
+  right: 200px;
+}
+
+.stageicons {
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  img {
+    width: 35px;
+    float: left;
+    margin-left: 15px;
+  }
+}
+
+.projecthome {
+  position: relative;
+  li {
+    position: relative;
+    .stageicon {
+      position: absolute;
+      right: 200px;
+    }
+  }
+}
+
+.carousel {
+  width: 550px;
+}
+
+#alertModal {
+  .modal-body {
+    font-size: 12pt;
+  }
+}
+
+.activitiesHeader {
+  position: relative;
+}
+
+.searchToolbar {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+}
+
+.alert {
+  font-size: 10pt;
+  &.topMargin {
+    margin-top: 20px;
+  }
+}
+
+#wizard {
+  font-size: 12pt;
+  .actions {
+    margin-top: 10px;
+  }
+}
+
+small {
+  font-size: 10pt;
+}
+
+.filesList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    float: left;    
+  }
+  .file {
+    border: 1px solid #666;
+    width: 200px;
+    height: 275px;
+    img {
+      width: 200px;
+      height: 210px;
+    }
+    .fileName {
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      font-size: 9pt;
+      background-color: #666;
+      color: #fff;
+      border-top: #666;
+    }
+    .fileButtons {
+      padding: 5px 5px 5px 45px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }

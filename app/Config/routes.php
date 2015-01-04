@@ -50,6 +50,7 @@
 	Router::connect('/api/project', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'removeProject', '[method]' => array('DELETE')));
+	Router::connect('/api/project/:projectid/file', array('controller' => 'api', 'action' => 'uploadProjectFile', '[method]' => array('POST', 'PUT')));
 
 	Router::connect('/api/project/:projectid/user', array('controller' => 'api', 'action' => 'updateUserProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid/user/:userid', array('controller' => 'api', 'action' => 'removeUserProject', '[method]' => array('DELETE')));

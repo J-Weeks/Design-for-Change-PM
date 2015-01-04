@@ -275,7 +275,9 @@ function(App, Handlebars, Data) {
       self.skills = App.AdminRouter.models.skills;
       self.skills.fetch({success: function() {
         _.each(self.skills.models, function(skill) {
-          $('#skills').append('<option value="' + skill.attributes.skill + '">' + skill.attributes.skill + '</option>');
+          sSelected = '';
+          if (self.activity.attributes.skills.indexOf(skill.attributes.skill) > -1) sSelected = ' SELECTED ';
+          $('#skills').append('<option value="' + skill.attributes.skill + '"' + sSelected + '>' + skill.attributes.skill + '</option>');
         });
       }});
       

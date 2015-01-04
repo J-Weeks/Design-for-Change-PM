@@ -15,7 +15,8 @@ function(App, Handlebars, Mustache, Data, Home) {
       'profile'                                : 'editProfile',
       'projects'                               : 'showProjects',
       'project/:id'                            : 'showProject',
-      'project/:id/:section'                   : 'showProject',
+      'project/:id/:stage'                     : 'showProject',
+      'project/:id/:stage/:section'            : 'showProject',
       'activities'                             : 'showActivities',
       'activities/:skill/:age/:time'           : 'showActivities'
     },
@@ -25,6 +26,7 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.models = {
         user                    : new Data.Models.UserModel(),
         project                 : new Data.Models.ProjectModel(),
+        skills                  : new Data.Collections.Skills(),
       };
 
       if (window.oCurrentUser) {
@@ -57,10 +59,11 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.Layout.setView('projects', new Home.ProjectsView());
       this.Layout.getView('projects').render();
     },
-    showProject: function(projectid, stage) {
+    showProject: function(projectid, stage, section) {
       this.Layout.setView('home', new Home.ProjectView());
       this.Layout.getView('home').iProjectId = projectid;
       if (stage != undefined) this.Layout.getView('home').sStage = stage;
+      if (section != undefined) this.Layout.getView('home').sSection = section;
       this.Layout.getView('home').render();
     },
     showActivities: function(skill, age, time) {

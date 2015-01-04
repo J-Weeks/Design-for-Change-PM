@@ -55,7 +55,7 @@ define([
     $('.htmleditor').each(function() {
       $(this).summernote({
         toolbar: [
-          ['insert', ['picture', 'link', 'video', 'table', 'hr']],
+          ['insert', ['picture', 'link', 'video', 'table', 'hr', 'codeview']],
           ['style', ['bold', 'italic', 'underline', 'clear']],
           ['para', ['ul', 'ol']]
         ]
@@ -241,6 +241,9 @@ define([
       return number + amount;
     });
 
+    Handlebars.registerHelper('countadd', function(array, amount) {
+      return array.length + amount;
+    });
 
     Handlebars.registerHelper('eachkeys', function(context, options) {
       var fn = options.fn, inverse = options.inverse;

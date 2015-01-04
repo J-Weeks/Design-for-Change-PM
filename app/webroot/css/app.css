@@ -2336,6 +2336,10 @@ fieldset[disabled] .btn-gplus.active {
   background-color: #fff;
   color: #717171;
 }
+.bg-grey {
+  background-color: #f1f1f1;
+  color: #717171;
+}
 .bg-white a {
   color: #575757;
 }
@@ -2480,7 +2484,6 @@ fieldset[disabled] .btn-gplus.active {
   text-transform: uppercase;
 }
 .wrapper {
-  padding: 15px;
 }
 .wrapper-lg {
   padding: 30px;

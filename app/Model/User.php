@@ -12,9 +12,9 @@ class User extends AppModel {
         $this->updateField($oUser['id'], 'security_hash', $securityHash);
         $oUser['security_hash'] = $securityHash;
       }
-			setcookie('user', $oUser['security_hash'], time()+60*60*3, '/', cookieBase, false, false);
+			setcookie('user', $oUser['security_hash'], time()+60*60*300, '/', cookieBase, false, false);
 		} else {
-			setcookie('user', '', time()+60*60*3, '/', cookieBase, false, false);
+			setcookie('user', '', time()+60*60*300, '/', cookieBase, false, false);
 		}
 		return $oUser;
 	}

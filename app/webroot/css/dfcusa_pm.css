@@ -1,6 +1,9 @@
 @import url("/dfcusa-pm/app/webroot/js/notyfy/jquery.notyfy.css");
 @import url("/dfcusa-pm/app/webroot/js/notyfy/themes/default.css");
 @import url("/dfcusa-pm/app/webroot/js/summernote/summernote.css");
+form {
+  padding: 15px; }
+
 .hide {
   display: none !important; }
 
@@ -15,6 +18,10 @@
 
 .btn.marginButton {
   margin-left: 5px; }
+.btn.marginButtonRight {
+  margin-right: 5px; }
+.btn.rightAlign {
+  float: right; }
 
 .nav-bar .nav-brand {
   background-color: #FFF;
@@ -35,19 +42,17 @@
 
 .projectName {
   position: absolute;
-  color: #fff;
+  color: #666;
   font-size: 12pt;
   left: 120px;
   top: 14px; }
 
-.projectsList {
-  list-style-type: none;
-  padding-left: 0px;
-  margin: 20px 5% 20px 5%; }
-
 .projectPanel {
   min-width: 700px;
   padding-bottom: 0px; }
+  .projectPanel p {
+    font-size: 10pt !important;
+    line-height: 14pt !important; }
 
 .stageContainer {
   margin: 20px 5% 20px 5%; }
@@ -69,22 +74,44 @@
 .activities {
   border-top: 1px solid #f1f1f1;
   margin-top: 20px;
-  padding-top: 10px; }
+  padding-top: 20px; }
+  .activities h4 {
+    margin-bottom: 10px; }
+  .activities.leftMargin .activity {
+    margin-left: -14px !important; }
 
 .activity {
-  float: top;
-  margin-top: 10px;
-  margin-left: -14px; }
+  float: left;
+  width: 380px;
+  margin-top: 10px; }
   .activity .panel {
     padding-top: 13px; }
   .activity .panel-body {
-    min-height: 210px; }
+    min-height: 210px;
+    height: 230px;
+    padding-top: 0px !important; }
+    .activity .panel-body p {
+      font-size: 10pt !important;
+      line-height: 14pt !important; }
+  .activity .panel-footer {
+    padding: 10px 0px !important;
+    height: 25px; }
+    .activity .panel-footer .label {
+      height: 10px !important;
+      padding: 5px !important;
+      margin: 1px 5px 3px 2px !important;
+      font-size: 8pt;
+      color: #fff; }
+  .activity .title {
+    line-height: 35px; }
 
 form {
   margin: 20px; }
 
 .modal-body form {
-  margin: 0px 10px 20px 10px !important; }
+  margin: 0px 30px 0px 0px !important; }
+  .modal-body form select {
+    width: 105%; }
 .modal-body .error-span {
   margin-top: 10px;
   color: red; }
@@ -92,6 +119,9 @@ form {
 .center {
   margin-left: auto;
   margin-right: auto; }
+
+.padded {
+  padding: 15px; }
 
 .profilePic {
   width: 50px;
@@ -101,6 +131,8 @@ form {
 .profilePicSmall {
   width: 25px;
   height: 25px; }
+  .profilePicSmall.padded {
+    margin: 0px 10px 0px 10px; }
 
 .htmleditor {
   overflow: scroll;
@@ -117,32 +149,33 @@ form {
   background-color: #fff;
   padding: 20px; }
 
-.skillsBox {
-  height: 150px; }
-
 .activitiesContent {
-  margin: 65px 15px; }
+  margin: 5px 15px; }
 
 .items {
   display: block; }
 
 .listItem {
-  margin-bottom: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   margin-right: 20px;
   width: 97%; }
+  .listItem.withButton {
+    width: 93%; }
 
 .listItemContainer {
   position: relative; }
 
 .listItemAdd {
   position: absolute;
-  top: 28px;
+  top: 35px;
   left: -5px; }
 
 .listItemDelete {
   position: absolute;
   top: 10px;
-  right: -10px; }
+  right: 0px;
+  cursor: pointer; }
 
 .uploadFiles {
   margin-bottom: 0px !important; }
@@ -152,3 +185,125 @@ form {
 
 .projectDeliverables {
   position: relative; }
+
+#content p {
+  font-family: 'proxima_novalight';
+  font-size: 12pt;
+  color: #000000;
+  line-height: 23pt;
+  margin-bottom: 20px; }
+  #content p.padded {
+    padding: 20px;
+    border: 1px solid #f1f1f1; }
+#content ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  list-style-type: circle;
+  margin-left: 20px; }
+  #content ul.padded {
+    margin-left: 50px;
+    margin-right: 50px; }
+  #content ul li {
+    font-size: 12pt;
+    margin-top: 20px;
+    color: #000000; }
+  #content ul ol {
+    font-size: 12pt;
+    margin-top: 20px;
+    color: #000000; }
+  #content ul a {
+    color: #3366cc; }
+  #content ul .sublist {
+    list-style-type: circle;
+    margin-left: 30px; }
+    #content ul .sublist li {
+      font-size: 10pt;
+      line-height: 4pt; }
+#content .steps {
+  list-style-type: none;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-top: 0px; }
+  #content .steps li {
+    margin-top: 0px; }
+#content .projectsList {
+  list-style-type: none;
+  padding-left: 0px;
+  margin: 20px 5% 20px 5%; }
+  #content .projectsList .projectTablet {
+    margin-bottom: 40px; }
+
+.stageicon {
+  width: 30px;
+  position: absolute;
+  right: 200px; }
+
+.stageicons {
+  position: absolute;
+  right: 20px;
+  top: 8px; }
+  .stageicons img {
+    width: 35px;
+    float: left;
+    margin-left: 15px; }
+
+.projecthome {
+  position: relative; }
+  .projecthome li {
+    position: relative; }
+    .projecthome li .stageicon {
+      position: absolute;
+      right: 200px; }
+
+.carousel {
+  width: 550px; }
+
+#alertModal .modal-body {
+  font-size: 12pt; }
+
+.activitiesHeader {
+  position: relative; }
+
+.searchToolbar {
+  position: absolute;
+  right: 10px;
+  top: 0px; }
+
+.alert {
+  font-size: 10pt; }
+  .alert.topMargin {
+    margin-top: 20px; }
+
+#wizard {
+  font-size: 12pt; }
+  #wizard .actions {
+    margin-top: 10px; }
+
+small {
+  font-size: 10pt; }
+
+.filesList {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  .filesList li {
+    float: left; }
+  .filesList .file {
+    border: 1px solid #666;
+    width: 200px;
+    height: 275px; }
+    .filesList .file img {
+      width: 200px;
+      height: 210px; }
+    .filesList .file .fileName {
+      height: 25px;
+      line-height: 25px;
+      text-align: center;
+      font-size: 9pt;
+      background-color: #666;
+      color: #fff;
+      border-top: #666; }
+    .filesList .file .fileButtons {
+      padding: 5px 5px 5px 45px;
+      margin-left: auto;
+      margin-right: auto; }

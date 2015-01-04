@@ -1,11 +1,56 @@
+<script type="text/mustache-template" id="contentTemplate">
+	<div class="insidepage">
+	  <div class="contents">
+	    
+	  </div>
+	</div>
+</script>
+
+<script type="text/mustache-template" id="projectHeaderTemplate">
+	<div class="header b-b bg-white-only" style="position: relative">
+		<div style="position: absolute;"><h4 style="line-height: 55px">{{project.name}}</h4></div>
+		<div class="stageicons">
+			<a href="#project/{{project.id}}/home"><img data-stage-icon="home" src="/dfcusa-pm/app/webroot/images/icon_home.png"></a>
+			<a href="#project/{{project.id}}/feel"><img data-stage-icon="feel" src="/dfcusa-pm/app/webroot/images/icon_feel.png"></a>
+			<a href="#project/{{project.id}}/imagine"><img data-stage-icon="imagine" src="/dfcusa-pm/app/webroot/images/icon_imagine.png"></a>
+			<a href="#project/{{project.id}}/do"><img data-stage-icon="do" src="/dfcusa-pm/app/webroot/images/icon_do.png"></a>
+			<a href="#project/{{project.id}}/share"><img data-stage-icon="share" src="/dfcusa-pm/app/webroot/images/icon_share.png"></a>
+			<a href="#project/{{project.id}}/home/files"><img data-stage-icon="files" src="/dfcusa-pm/app/webroot/images/icon_files.png"></a>
+		</div>
+	</div>
+</script>
+
 <script type="text/mustache-template" id="welcomeViewTemplate">
 	<div class="header b-b bg-white-only">
     <button class="btn btn-success pull-right btn-sm newProject"><i class="fa fa-plus"></i> Add New Project</button>
     <h4 class="m-t m-b-none">Welcome to Design for Change!</h4>
   </div>
-	<div class="modal-body">
-		
-		
+	<div class="modal-body bg-white-only">
+
+	</div>
+</script>
+
+<script type="text/mustache-template" id="filesViewTemplate">
+	<h1>
+		Your Project Files
+		<button class="btn btn-primary pull-right btn-sm uploadProjectFile"><i class="fa fa-file"></i> Upload New File</button>
+		<input class="input-large uploadFile hide" type="file" id="pdf" name="file"/>
+	</h1>
+	<ul class="filesList">
+	</ul>
+	<div class="alert alert-info hide noFiles">
+		Use this area to upload files that demonstrate various aspects of your project, including your final project video.
+	</div>
+</script>
+
+<script type="text/mustache-template" id="fileTabletTemplate">
+	<div class="file" data-file="{{file}}">
+		<img src="http://docs.google.com/viewer?url={{file}}&a=bi&pagenumber=1&w=200">
+		<div class="fileName">{{filename}}</div>
+		<div class="fileButtons">
+			<a class="btn btn-primary btn-sm" href="{{file}}" target="_new">View</a>
+			<a class="btn btn-default btn-sm marginButton deleteFile">Delete</a>
+		</div>
 	</div>
 </script>
 
@@ -98,24 +143,14 @@
     <h4 class="m-t m-b-none" id="title">Your Projects</h4>
   </div>
 	<ul class="projectsList">
-	</ul>
-</script>
-
-<script type="text/mustache-template" id="blankTemplate">
-	<div class="header b-b bg-white-only">
-    <button class="btn btn-success pull-right btn-sm newProject"><i class="fa fa-plus"></i> Add New Project</button>
-    <h4 class="m-t m-b-none" id="title">{{ucWords content.stage}}</h4>
-  </div>
-	<div class="generalBox">
-		{{{content.content_obj.content}}}
+		
 	</ul>
 </script>
 
 <script type="text/mustache-template" id="projectMainTabletTemplate">
-	<li>
+	<li class="projectTablet">
 		<section class="panel no-borders hbox projectPanel">
-	    <aside class="bg-info lter r-l text-center v-middle" style="background-image: url('{{project.profilepic}}'); background-size: 120%; background-repeat: no-repeat">
-	    </aside>
+	    <aside class="bg-info lter r-l text-center v-middle" style="background-image: url('{{project.profilepic}}'); background-size: 120%; background-repeat: no-repeat"></aside>
 	    <aside>
 	      <div class="pos-rlt">
 	        <span class="arrow left hidden-xs"></span>
@@ -125,16 +160,14 @@
  	            <a href="javascript:void(0)" class="thumb-sm pull-left m-r">
 	              <img src="{{project.mentor.profilepic}}" class="img-circle">
 	            </a>
-	            <div class="clear">
-	              <a href="#"><strong>{{project.name}}</strong></a>
-	              <small class="block text-muted">{{project.location}}</small>
-	            </div>
+              <h3><strong>{{project.name}}</strong></h3>
+              <small class="block text-muted">{{project.location}}</small>
 	          </div>
 	          <p>
 	            {{project.description}}
 	          </p>
 	          <a class="btn btn-primary btn-sm" href="#project/{{project.id}}">View</a>
-	          <a class="btn btn-default btn-sm marginButton deleteProject" href="javascript:void(0)" data-id="{{project.id}}">Delete</a>
+	          <a class="btn btn-default btn-sm marginButton rightAlign deleteProject" href="javascript:void(0)" data-id="{{project.id}}">Delete</a>
 	        </div>
 	        <div class="wizard clearfix">
             <ul class="steps">
@@ -215,31 +248,34 @@
 	</div>
 </div>
 
-<script type="text/mustache-template" id="stageTemplate">
-	<section class="panel stageContainer">
-	  <header class="panel-heading bg-light">
-	    <ul class="nav nav-tabs nav-justified">
-	      <li class="active"><a href="javascript:void(0)" class="goToSection" data-section="started">Getting Started</a></li>
-	      <li><a href="javascript:void(0)" class="goToSection" data-section="why">Why Feel?</a></li>
-	      <li><a href="javascript:void(0)" class="goToSection" data-section="skills">Skills</a></li>
-	      <li><a href="javascript:void(0)" class="goToSection" data-section="activities">Activities</a></li>
-	      <li><a href="javascript:void(0)" class="goToSection" data-section="submit">Submit</a></li>
-	    </ul>
-	  </header>
-	  <div class="panel-body">
-	    <div class="tab-content">
-	      <div class="tab-pane active sectionText" id="started"></div>
-	      <div class="tab-pane sectionText" id="why"></div>
-	      <div class="tab-pane sectionText" id="skills"></div>
-	      <div class="tab-pane sectionText" id="activities"></div>
-	      <div class="tab-pane sectionText" id="submit"></div>
-	    </div>
-	  </div>
-	</section>
+<script type="text/mustache-template" id="projectLeftNavTemplate">
+	<h1>Your Project</h1>
+	<ul class="projecthome">
+	  <li onclick="javascript:location.href = '#project/{{project}}/home';" class="goToSection" data-section="home"><p><img data-stage-icon="home" src="/dfcusa-pm/app/webroot/images/icon_home.png" class="stageicon">Getting Started</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/feel';"><p><img src="/dfcusa-pm/app/webroot/images/icon_feel.png" class="stageicon">Feel</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/imagine';"><p><img src="/dfcusa-pm/app/webroot/images/icon_imagine.png" class="stageicon">Imagine</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/do';"><p><img src="/dfcusa-pm/app/webroot/images/icon_do.png" class="stageicon">Do</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/share';"><p><img src="/dfcusa-pm/app/webroot/images/icon_share.png" class="stageicon">Share</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/home/files';" class="goToSection" data-section="files"><p><img data-stage-icon="files" src="/dfcusa-pm/app/webroot/images/icon_files.png" class="stageicon">Project Files</p></li>
+	</ul>
+	<div class="clear"></div>
 </script>
 
-<script type="text/mustache-template" id="startedTemplate">
-	<div class="float">
+<script type="text/mustache-template" id="stageLeftNavTemplate">
+	<h1><img src="/dfcusa-pm/app/webroot/images/icon_{{stage}}_selected.png" class="stageicon">{{ucWords stage}}</h1>
+	<ul>
+	  <li class="goToSection" data-section="home"><a href="#project/{{project}}/{{stage}}/home"><p>The {{ucWords stage}} Stage</p></a></li>
+	  <li class="goToSection" data-section="why"><a href="#project/{{project}}/{{stage}}/why"><p>Why {{ucWords stage}}</p></a></li>
+	  <li class="goToSection" data-section="skills"><a href="#project/{{project}}/{{stage}}/skills"><p>Skills & Activities</p></a></li>
+	  <li class="goToSection hide" data-section="activities"><a href="#project/{{project}}/{{stage}}/activities"><p>Activities</p></a></li>
+	  <li class="goToSection" data-section="submit"><a href="#project/{{project}}/{{stage}}/submit"><p>Complete This Stage</p></a></li>
+	  <li class="goToSection pull-left" data-section="submit"><a href="#project/{{project}}/home"><p style="font-size: 10pt; margin-left: 20px">< back to home</p></a></li>
+	</ul>
+	<div class="clear"></div>
+</script>
+
+<script type="text/mustache-template" id="homeTemplate">
+	<div class="float hide">
 		<iframe width="400" height="200" src="//www.youtube.com/embed/{{content.content_obj.getting_started.video}}?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	{{{content.content_obj.getting_started.text}}}
@@ -254,20 +290,27 @@
 	<section class="panel clearfix skillsBox"> 
     <div class="wizard wizard-vertical clearfix" id="wizard-2">
       <ul class="steps">
+	      <li class="step active"><a href="javascript:void(0)" class="changeSkill" data-target="#all" data-skill="all"><span class="badge badge-info">1</span>{{ucWords content.stage}} Activities</a></li>
       	{{#content.content_obj.skills.skills}}
-	        <li class="step{{#if_eq @index 0}} active{{/if_eq}}""><a href="javascript:void(0)" class="changeSkill" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 1}}</span>{{ucWords this.skill}}</a></li>
+	        <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 2}}</span>{{ucWords this.skill}}</a></li>
 	      {{/content.content_obj.skills.skills}}
       </ul>
     </div>
     <div class="step-content">
+    	<div class="step-pane active" id="all">
+    		<ul>
+    			<li>All activities in the {{ucWords content.stage}} stage are listed below.</li>
+    			<li>You can also click on each skill at the left to show activities that teach that specific skill.</li>
+    		</ul>
+    	</div>
     	{{#content.content_obj.skills.skills}}
-      	<div class="step-pane {{#if_eq @index 0}}active{{/if_eq}}" id="{{this.skill}}">
+      	<div class="step-pane" id="{{this.skill}}">
         	{{{this.text}}}
       	</div>
       {{/content.content_obj.skills.skills}}
     </div>
   </section>
-  <div class="activities">
+  <div class="activities leftMargin">
   </div>
 </script>
 
@@ -279,7 +322,6 @@
 			<tr valign="top">
 				<td>
 					<div class="input-group input-s m-t-sm">
-			      <span class="input-group-addon input-sm"><i class="fa fa-heart"></i></span>
 			      <select class="form-control input-sm skillsList" id="search-skill">
 			      	<option value="all">All skills</option>
 			     	</select>
@@ -287,7 +329,6 @@
 			  </td>
 			 	<td>
 			 		<div class="input-group input-s m-t-sm">
-			      <span class="input-group-addon input-sm"><i class="fa fa-group"></i></span>
 			      <select class="form-control input-sm" id="search-age_group">
 			      	<option value="all_ages">All ages</option>
 			      	<option value="6-10">6-10 years old</option>
@@ -298,9 +339,8 @@
 			 	</td>
 			 	<td>
 			 		<div class="input-group input-s m-t-sm">
-			      <span class="input-group-addon input-sm"><i class="fa fa-clock-o"></i></span>
 			      <select class="form-control input-sm" id="search-time_required">
-			      	<option value="all_times">All</option>
+			      	<option value="all_times">All times</option>
 			      	<option value="15">15-30 minutes</option>
 			      	<option value="30">30-60 minutes</option>
 			      	<option value="60">Over 60 minutes</option>
@@ -324,7 +364,7 @@
 	    <div class="wizard clearfix" id="form-wizard">
 	      <ul class="steps">
 	      	{{#content.content_obj.submit.deliverables}}
-		        <li data-target="#deliverable{{add @index 1}}" class="step{{#if_eq @index 0}} active{{/if_eq}}"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable{{add @index 1}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.label}}</a></li>
+		        <li data-target="#deliverable{{add @index 1}}" class="step{{#if_eq @index 0}} active{{/if_eq}}"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable{{add @index 1}}" data-deliverable="{{@index}}"><span class="badge badge-info">{{add @index 1}}</span>{{this.label}}</a></li>
 		      {{/content.content_obj.submit.deliverables}}
 	      </ul>
 	    </div>
@@ -338,15 +378,18 @@
 		         	<textarea class="form-control col-lg-12" rows="10" data-key="{{this.key}}"></textarea>
 		         {{/if_eq}}
 		         {{#if_eq this.form 'list'}}
-				        <br/><br/><a href="javascript:void(0)" class="btn btn-sm btn-primary addListDeliverable marginButton listItemAdd" data-key="{{this.key}}">Add</a>
+				        <br/><a href="javascript:void(0)" class="btn btn-sm btn-primary addListDeliverable marginButton listItemAdd" data-key="{{this.key}}">Add Item</a>
 		         		<div class="items">
 		         			
 		         		</div>
 		         {{/if_eq}}
 		        </div>
 		    	{{/content.content_obj.submit.deliverables}}
+		    	<div class="clear"></div>
 		      <div class="actions m-t">
 				    <button type="button" class="btn btn-success btn-sm saveDeliverable">Save</button>
+				    <button type="button" class="btn btn-primary btn-sm uploadProjectFile"><i class="fa fa-file"></i> Upload File</button>
+				    <input class="input-large uploadFile hide" type="file" id="pdf" name="file"/>
 		      </div>
 		    </form>
 	    </div>
@@ -364,8 +407,8 @@
 	        <a href="#" class="thumb-sm pull-left m-r">
 	          <img src="{{activity.user.profilepic}}" class="img-circle">
 	        </a>
+	        <h3 class="title"><strong>{{activity.title}}</strong></h3>
 	        <div class="clear">
-	          <a href="#"><strong>{{activity.title}}</strong></a>
 	          <small class="block text-muted">by {{activity.user.username}} from {{activity.user.location}}</small>
 	        </div>
 	      </div>
@@ -373,7 +416,7 @@
 	        {{{activity.description}}}
 	      </p>
 	      <a href="{{activity.pdf}}" target="_new" class="btn btn-success btn-xs"><i class="fa fa-file-text"></i> View Activity</a>
-	      <small class="pull-right">
+	      <small class="pull-right hide">
 	        <a href="#"><i class="fa fa-comment-o"></i> Comments ({{activity.comments_count}})</a>
 	      </small>
 	    </div>
@@ -382,22 +425,22 @@
 	      {{#activity.skills}}
 	      	<a href="#activities/{{this.skill}}/all_ages/all_times"><span class="label bg-primary skill marginButton" style="background-color: {{this.color}}">{{ucWords this.skill}}</span></a>
 	      {{/activity.skills}}
-	      <a href="#activities/all/all_ages/{{activity.time_required}}" class="btn btn-white btn-xs pull-right marginButton"><i class="fa fa-clock-o text-muted"></i> {{ucWords activity.time_required}}</a>
-	      <a href="#activities/all/{{activity.age_group}}/all_times" class="btn btn-white btn-xs pull-right"><i class="fa fa-group text-muted"></i> {{ucWords activity.age_group}}</a>
+	      <a href="#activities/all/all_ages/{{activity.time_required}}" class="btn btn-white btn-xs pull-right marginButton marginButtonRight"><i class="fa fa-clock-o text-muted"></i> {{ucWords activity.time_required}}</a>
+	      <a href="#activities/all/{{activity.age_group}}/all_times" class="btn btn-white btn-xs pull-right "><i class="fa fa-group text-muted"></i> {{ucWords activity.age_group}}</a>
 	    </footer>
 	  </section>
 	 </div>
 </script>
 
 <script type="text/mustache-template" id="activitiesListTemplate">
-	<div class="header b-b bg-white-only col-md-12">
-    <h4 class="m-t m-b-none col-md-3">Search Activities</h4>
+	<div class="header b-b bg-white-only activitiesHeader">
+    <h4 class="m-t m-b-none" id="title">Search Activities</h4>
     <div class="pull-right col-md-9 searchToolbar">
     	
     </div>
   </div>
 	<div class="activitiesContent">
-		<div class="alert alert-info">Please use the options above to search for Activities.</div>
+		<div class="alert alert-info topMargin">Please use the options above to search for Activities.</div>
 	</div>
 	<div class="hide staging">
 	</div>

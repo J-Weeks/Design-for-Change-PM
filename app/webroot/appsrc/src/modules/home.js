@@ -85,8 +85,8 @@ function(App, Handlebars, Data) {
       $('#editProfileModal').find('#last_name').val(window.oCurrentUser.last_name);
       $('#editProfileModal').find('#email').val(window.oCurrentUser.email);
       $('#editProfileModal').find('#location').val(window.oCurrentUser.location);
-      $('#editProfileModal').find('img').attr('src', window.oCurrentUser.profile_pic);
-      $('#editProfileModal').find('#profile_pic_source').val(window.oCurrentUser.profile_pic);
+      $('#editProfileModal').find('.profilePic').attr('src', window.oCurrentUser.profilepic);
+      $('#editProfileModal').find('#profile_pic_source').val(window.oCurrentUser.profilepic);
 
       $('.uploadPicButton').unbind('click').click(function() {
         $('.uploadPic').click();
@@ -137,7 +137,7 @@ function(App, Handlebars, Data) {
         self.oUser.attributes.email = $('#editProfileModal').find('#email').val();
         self.oUser.attributes.location = $('#editProfileModal').find('#location').val();
         self.oUser.attributes.password = $('#editProfileModal').find('#password').val();
-        self.oUser.attributes.profile_pic = $('#editProfileModal').find('#profile_pic_source').val();
+        self.oUser.attributes.profilepic = $('#editProfileModal').find('#profile_pic_source').val();
         self.oUser.url = '/dfcusa-pm/api/user';
         self.oUser.save({}, {success: function(data) {
           $('#editProfileModal').modal('hide');
@@ -162,6 +162,10 @@ function(App, Handlebars, Data) {
     afterRender: function () {
       var self = this;
 
+      $('.leftnav').addClass('hide');
+      $('#projectHeader').addClass('hide');
+      $('.inner_nav').find('a').removeClass('active');
+      $('.myprojects').addClass('active');
       $('#navbar_fids').addClass('hide');
       $('#main_menu').removeClass('pull-right');
       $('#project_name').addClass('hide');
@@ -192,6 +196,22 @@ function(App, Handlebars, Data) {
           });
 
           $('#title').html(self.user.attributes.organization.name + ' Projects');
+
+          $('.newProject').unbind('click').click(function() {
+            self.newProject();
+          });
+
+          $('.deleteProject').unbind('click').click(function() {
+            window.projectId = $(this).attr('data-id');
+            if (App.alertBox('Delete Project', 'Are you sure you want to delete this project?', 'Yes', 'Cancel', function() {
+              oNewProject = new Data.Models.ProjectModel();
+              oNewProject.id = window.projectId;
+              oNewProject.url = '/dfcusa-pm/api/project/' + window.projectId;
+              oNewProject.destroy({success: function() {
+                self.getProjects();
+              }});
+            }));
+          });
         }
       }});
 
@@ -206,26 +226,11 @@ function(App, Handlebars, Data) {
           });
         }});
       }
-  
-      $('.newProject').unbind('click').click(function() {
-        self.newProject();
-      });
-
-      $('.deleteProject').unbind('click').click(function() {
-        window.projectId = $(this).attr('data-id');
-        if (App.alertBox('Delete Project', 'Are you sure you want to delete this project?', 'Yes', 'Cancel', function() {
-          oNewProject = new Data.Models.ProjectModel();
-          oNewProject.id = window.projectId;
-          oNewProject.url = '/dfcusa-pm/api/project/' + window.projectId;
-          oNewProject.destroy({success: function() {
-            self.getProjects();
-          }});
-        }));
-      });
 
       $('.uploadFiles').addClass('hide');
     },
     newProject: function() {
+      console.log('test');
       $('#newProjectModal').modal().on('shown.bs.modal', function (e) {
         $('#newProjectModal').find('.carousel').carousel();
         $('.createProject').unbind('click').click(function() {
@@ -249,7 +254,8 @@ function(App, Handlebars, Data) {
 
   Home.ProjectView = Backbone.View.extend({
     iProjectId: false,
-    sStage: 'introduction',
+    sStage: 'home',
+    sSection: 'home',
     initialize: function () {
       var self = this;
     },
@@ -259,6 +265,10 @@ function(App, Handlebars, Data) {
     },
     afterRender: function () {
       var self = this;
+
+      $('.leftnav').removeClass('hide');
+
+      $('#content').html($('#contentTemplate').html());
 
       self.project = new Data.Models.ProjectModel();
       self.project.url = '/dfcusa-pm/api/project/' + self.iProjectId;
@@ -272,6 +282,8 @@ function(App, Handlebars, Data) {
       $('#navbar_fids').removeClass('hide');
       $('#project_name').removeClass('hide');
       $('#main_menu').addClass('pull-right');
+      $('#projectHeader').html(Handlebars.compile($('#projectHeaderTemplate').html())({project: self.project.attributes}));
+      $('#projectHeader').removeClass('hide');
 
       $('#project_name').html(self.project.attributes.name);
 
@@ -287,39 +299,43 @@ function(App, Handlebars, Data) {
       var self = this;
 
       $('.leftNav').find('li').removeClass('active');
-      if (self.sStage == 'introduction') $('#menu_introduction').addClass('active');
-      if (self.sStage == 'feel') $('#menu_feel').addClass('active');
-      if (self.sStage == 'imagine') $('#menu_imagine').addClass('active');
-      if (self.sStage == 'do') $('#menu_do').addClass('active');
-      if (self.sStage == 'share') $('#menu_share').addClass('active');
+      if (self.sStage == 'home') {
+        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        $('.stageicons').find('img').each(function() {
+          $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
+        });
+      } else if (self.sStage == 'files') {
+        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        $('.stageicons').find('img').each(function() {
+          $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
+        });
+      } else {
+        $('.stageicons').find('img').each(function() {
+          $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
+          if ($(this).attr('data-stage-icon') == self.sStage) {
+            $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '_selected.png');
+          }
+        });
+        $('.leftnav').html(Handlebars.compile($('#stageLeftNavTemplate').html())({project: self.iProjectId, stage: self.sStage}));
+      }
 
-      $('#menu_introduction').find('a').attr('href', '#project/' + self.iProjectId);
-      $('#menu_feel').find('a').attr('href', '#project/' + self.iProjectId + '/feel');
-      $('#menu_imagine').find('a').attr('href', '#project/' + self.iProjectId + '/imagine');
-      $('#menu_do').find('a').attr('href', '#project/' + self.iProjectId + '/do');
-      $('#menu_share').find('a').attr('href', '#project/' + self.iProjectId + '/share');
-
-      $('#content').html(Handlebars.compile($('#stageTemplate').html()));
-
-      $('.goToSection').unbind('click').click(function(e) {
-        self.goToSection(e);
-      })
-
-      $('[data-section="started"]').click();
+      self.goToSection();
 
       App.setupPage();
     },
-    goToSection: function(e) {
+    goToSection: function() {
       var self = this;
 
-      $('.nav-tabs').find('li').removeClass('active');
-      $(e.currentTarget).parent().addClass('active');
-      $('.tab-pane').removeClass('active');
-      $('#' + $(e.currentTarget).attr('data-section')).addClass('active');
+      $('.leftnav').find('li').removeClass('active');
+      $('[data-section="' + self.sSection + '"]').addClass('active');
+
       if (self.stage.attributes.fids_stage) {
-        $('#' + $(e.currentTarget).attr('data-section')).html(Handlebars.compile($('#' + $(e.currentTarget).attr('data-section') + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+        $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+      } else if (self.sSection == 'files') {
+        $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
+        self.showProjectFiles();
       } else {
-        $('#content').html(Handlebars.compile($('#blankTemplate').html())({content: self.stage.attributes}));
+        $('.contents').html(self.stage.attributes.content_obj.content);
       }
 
       $('.changeSkill').unbind('click').click(function() {
@@ -338,18 +354,39 @@ function(App, Handlebars, Data) {
         $(this).parent().addClass('active');
         $($(this).attr('data-target')).addClass('active');
 
+        $('.saveDeliverable').removeClass('hide');
+        $('.uploadProjectFile').addClass('hide');
+        window.iCurrentDeliverable = $(this).attr('data-deliverable');
+        iIndex = -1;
         _.each(self.stage.attributes.content_obj.submit.deliverables, function(deliverable) {
-          if (deliverable.form == 'textarea') {
-            if ((self.project.attributes.details_obj.deliverables != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage] != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key] != undefined)) {
-              $('#projectDeliverables').find('[data-key="' + deliverable.key + '"]').val(self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key]);
-            }
-          } else if (deliverable.form == 'list') {
-            $('.items').html('');
-            if ((self.project.attributes.details_obj.deliverables != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage] != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key] != undefined)) {
-              _.each(self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key], function(deliverableValue) {
-                $('.items').append('<div class="listItemContainer"><input type="text" class="listItem form-control" value="' + deliverableValue + '" data-increment="true" data-key="' + deliverable.key + '"/><i class="fa fa-trash-o listItemDelete"></i></div>');
+          iIndex = iIndex + 1;
+          if (window.iCurrentDeliverable == iIndex) {
+            if (deliverable.form == 'textarea') {
+              if ((self.project.attributes.details_obj.deliverables != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage] != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key] != undefined)) {
+                $('#projectDeliverables').find('[data-key="' + deliverable.key + '"]').val(self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key]);
+              }
+            } else if (deliverable.form == 'list') {
+              $('.items').html('');
+              if ((self.project.attributes.details_obj.deliverables != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage] != undefined) && (self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key] != undefined)) {
+                _.each(self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key], function(deliverableValue) {
+                  $('.items').append('<div class="listItemContainer"><input type="text" class="listItem form-control withButton" value="' + deliverableValue + '" data-increment="true" data-key="' + deliverable.key + '"/><i class="fa fa-trash-o listItemDelete"></i></div>');
+                });
+              }            
+            } else if (deliverable.form == 'upload') {
+              $('.saveDeliverable').addClass('hide');
+              $('.uploadProjectFile').removeClass('hide');
+
+              window.iProjectId = self.project.attributes.id;
+
+              $('.uploadProjectFile').unbind('click').click(function() {
+                $('.uploadFile').click();
+                $('.uploadFile').change(function() {
+                  $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+                    location.href = '/dfcusa-pm/home#project/' + window.iProjectId + '/home/files';
+                  }, 'html');
+                });
               });
-            }            
+            }
           }
         });
 
@@ -358,7 +395,11 @@ function(App, Handlebars, Data) {
         }
 
         $('.addListDeliverable').unbind('click').click(function() {
-          $('.items').append('<div class="listItemContainer"><input type="text" class="listItem form-control" data-increment="true" data-key="' + $(this).attr('data-key') + '"/><i class="fa fa-trash-o listItemDelete"></i></div>');
+          $('.items').append('<div class="listItemContainer"><input type="text" class="listItem form-control withButton" data-increment="true" data-key="' + $(this).attr('data-key') + '"/><i class="fa fa-trash-o listItemDelete"></i></div>');
+
+          $('.listItemDelete').unbind('click').click(function() {
+            $(this).parent().remove();
+          });
         }); 
 
         $('.listItemDelete').unbind('click').click(function() {
@@ -370,10 +411,11 @@ function(App, Handlebars, Data) {
           if (self.project.attributes.details_obj.deliverables == undefined) self.project.attributes.details_obj.deliverables = {};
           if (self.project.attributes.details_obj.deliverables[self.sStage] == undefined) self.project.attributes.details_obj.deliverables[self.sStage] = {};
           iIndex = -1;
+          self.project.attributes.details_obj.deliverables[self.sStage] = new Object();
           $('#projectDeliverables').find('input,textarea,select').each(function() {
             if ($(this).attr('id') != '') {
               if ($(this).attr('data-increment') == 'true') {
-                if (self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('data-key')] == undefined) {
+                if ((self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('data-key')] == undefined) || (self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('data-key')] == false)) {
                   self.project.attributes.details_obj.deliverables[self.sStage][$(this).attr('data-key')] = new Array();
                 }
                 if ($(this).val() != '') {
@@ -387,6 +429,7 @@ function(App, Handlebars, Data) {
               }
             }
           });
+          
           self.project.save({}, {success: function(e) {
             app.showNotify('Saved project', 'success');
           }, error: function() {
@@ -396,14 +439,14 @@ function(App, Handlebars, Data) {
       });
 
       if (self.stage.attributes.content_obj.skills != undefined) {
-        self.currentSkill = self.stage.attributes.content_obj.skills.skills[0].skill.toLowerCase();
+        self.currentSkill = 'all';
       }
 
-      if ($(e.currentTarget).attr('data-section') == 'skills') {
+      if (self.sSection == 'skills') {
         self.showActivitiesBySkill();
       }
 
-      if ($(e.currentTarget).attr('data-section') == 'submit') {
+      if (self.sSection == 'submit') {
         $('.changeDeliverable:first').click();
       }
 
@@ -413,7 +456,7 @@ function(App, Handlebars, Data) {
 
       $('#content').append(Handlebars.compile($('#projectFilesTemplate').html())({project: self.project.attributes}));
 
-      self.skills = App.AdminRouter.models.skills;
+      self.skills = App.HomeRouter.models.skills;
       self.skills.fetch({success: function() {
         _.each(self.skills.models, function(skill) {
           $('.skillsList').append('<option value="' + skill.attributes.skill + '">' + app.ucwords(skill.attributes.skill) + '</option>');
@@ -422,16 +465,57 @@ function(App, Handlebars, Data) {
 
       $('.uploadFiles').removeClass('hide');
     },
+    showProjectFiles: function() {
+      var self = this;
+
+      bFound = false;
+      _.each(self.project.attributes.files_obj, function(file) {
+        bFound = true;
+        $('.filesList').append(Handlebars.compile($('#fileTabletTemplate').html())({file: file, filename: file.substring(file.lastIndexOf('/')+1)}));
+      });
+
+      if (!bFound) $('.noFiles').removeClass('hide');
+
+      window.iProjectId = self.project.attributes.id;
+
+      $('.uploadProjectFile').unbind('click').click(function() {
+        $('.uploadFile').click();
+        $('.uploadFile').change(function() {
+          $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+            location.reload();  
+          }, 'html');
+        });
+      });
+
+      $('.deleteFile').unbind('click').click(function() {
+        $(this).parent().parent().remove();
+
+        self.project.attributes.files_obj = new Array();
+        $('#filesList').find('li').each(function() {
+          self.project.attributes.files_obj.push($(this).attr('data-file'));
+        });
+
+        self.project.save({}, {success: function(e) {
+          app.showNotify('Saved project', 'success');
+        }, error: function() {
+          app.showNotify('Error saving', 'error');
+        }});
+      });
+    },
     showActivitiesBySkill: function() {
       var self = this;
 
       bFound = false;
-      $('.activities').html('<h4>Official Activities</h4>');
+      if (self.currentSkill != 'all') {
+        $('.activities').html('<h4>' + app.ucwords(self.currentSkill) + ' Activities</h4>');
+      } else {
+        $('.activities').html('<h4>All ' + app.ucwords(self.sStage) + ' Activities</h4>')
+      }
       self.activities = new Data.Collections.Activities;
       self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100';
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
-          if (activity.attributes.all_skills.indexOf(self.currentSkill) > -1) {
+          if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
             $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
             bFound = true;
           }
@@ -481,6 +565,10 @@ function(App, Handlebars, Data) {
     afterRender: function () {
       var self = this;
 
+      $('.inner_nav').find('a').removeClass('active');
+      $('.leftnav').addClass('hide');
+      $('#projectHeader').addClass('hide');
+      $('.allactivities').addClass('active');
       $('#navbar_fids').addClass('hide');
       $('#main_menu').removeClass('pull-right');
       $('#project_name').addClass('hide');
@@ -501,7 +589,7 @@ function(App, Handlebars, Data) {
       $('.staging').html('');
       $('#content').find('table').css('float', 'right');
 
-      self.skills = App.AdminRouter.models.skills;
+      self.skills = App.HomeRouter.models.skills;
       self.skills.fetch({success: function() {
         _.each(self.skills.models, function(skill) {
           $('.skillsList').append('<option value="' + skill.attributes.skill + '">' + app.ucwords(skill.attributes.skill) + '</option>');

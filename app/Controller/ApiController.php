@@ -101,6 +101,7 @@ class ApiController extends AppController {
     global $oCurrentUser;
 
     $oData['id'] = $oCurrentUser['id'];
+    if ($oData['password'] == '') unset($oData['password']);
     $this->User->save($oData);
     $oCurrentUser = $this->User->getCurrentUser();
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
@@ -147,6 +148,7 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
+    if ($oData['password'] == '') unset($oData['password']);
     if ($oData['password'] != '') $oData['password'] = md5($oData['password']);
 
     if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
@@ -334,6 +336,29 @@ class ApiController extends AppController {
         } else {
           $this->Project->findById($oData['id']);
           $this->Project->save($oData);
+          $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
+        }
+      }
+    }
+
+    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+  }
+
+  public function uploadProjectFile() {
+    global $oData;
+    global $oCurrentUser;
+
+    $bReturn = true;
+    if ($oCurrentUser['type'] == 'mentor') {
+      foreach ($oCurrentUser['projects'] as $oProject) {
+        if ($oProject['id'] == $this->params['projectid']) {
+          $oFiles = $oProject['files_obj'];
+
+          $oReturn = $this->Aws->uploadFile($_FILES['file']['name'], $_FILES['file']['tmp_name'], 'dfcusa_pm/projects/' . $oProject['id']);
+          array_push($oFiles, 'https://dfcusa_pm.s3.amazonaws.com/projects/' . $oProject['id'] . '/' . $_FILES['file']['name']);
+          $oProject['files_obj'] = $oFiles;
+
+          $this->Project->save($oProject);
           $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
         }
       }
