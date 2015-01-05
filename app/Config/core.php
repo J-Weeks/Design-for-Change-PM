@@ -37,7 +37,7 @@ if (( $_SERVER['SERVER_NAME'] == 'localhost' ) || ( $_SERVER['SERVER_NAME'] == '
 	define('cookieBase', '');
 	define('dbConfig', 'local');
 	define('envAws', 'dev');
-} else if (($_SERVER['SERVER_NAME'] == 'designforchange.us') || ($_SERVER['SERVER_NAME'] == 'www.designforchange.us')) {
+} else if (($_SERVER['SERVER_NAME'] == 'designforchange.us') || ($_SERVER['SERVER_NAME'] == 'portal.designforchange.us')) {
 	define('debug_level', 0);
 	define('cookieBase', 'designforchange.us');
 	define('dbConfig', 'live');
