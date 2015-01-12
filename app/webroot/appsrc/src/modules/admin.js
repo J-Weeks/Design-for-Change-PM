@@ -268,7 +268,7 @@ function(App, Handlebars, Data) {
       self.users = new Data.Collections.Users();
       self.users.fetch({success: function() {
         _.each(self.users.models, function(user) {
-          $('#activityForm').find('#author_id').append('<option value="' + user.attributes.id + '">' + user.attributes.first_name + ' ' + user.attributes.last_name + ' (' + user.attributes.type + ')</option>');
+          $('#activityForm').find('#user_id').append('<option value="' + user.attributes.id + '">' + user.attributes.first_name + ' ' + user.attributes.last_name + ' (' + user.attributes.type + ')</option>');
         });
       }});
 

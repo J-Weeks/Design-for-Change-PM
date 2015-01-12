@@ -77,6 +77,7 @@
 	Router::connect('/login', array('controller' => 'pages', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'pages', 'action' => 'logout'));
 	Router::connect('/home', array('controller' => 'pages', 'action' => 'home'));
+	Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
 
 	CakePlugin::routes();
 	require CAKE . 'Config' . DS . 'routes.php';
