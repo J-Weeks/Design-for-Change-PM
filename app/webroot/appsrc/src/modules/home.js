@@ -343,7 +343,7 @@ function(App, Handlebars, Data) {
         $('.steps').find('li').removeClass('active');
         $(this).parent().addClass('active');
         $($(this).attr('data-target')).addClass('active');
-        self.currentSkill = $(this).attr('data-skill').toLowerCase();
+        //self.currentSkill = $(this).attr('data-skill').toLowerCase();
         $('.activities').html('');
         self.showActivitiesBySkill();
       });
@@ -551,9 +551,9 @@ function(App, Handlebars, Data) {
   });
 
   Home.ActivitiesView = Backbone.View.extend({
-    sSkill: false,
-    sAge: false,
-    sTime: false,
+    sSkill: 'all',
+    sAge: 'all_ages',
+    sTime: 'all_times',
     initialize: function () {
       var self = this;
       self.getProjects();
@@ -595,9 +595,9 @@ function(App, Handlebars, Data) {
           $('.skillsList').append('<option value="' + skill.attributes.skill + '">' + app.ucwords(skill.attributes.skill) + '</option>');
         });
 
-        if ((self.sSkill) && (self.sAge) && (self.sTime)) {
+        //if ((self.sSkill) && (self.sAge) && (self.sTime)) {
           self.searchActivities();
-        }
+        //}
       }});
 
       $('.searchActivities').unbind('click').click(function() {
@@ -613,9 +613,9 @@ function(App, Handlebars, Data) {
       self.activities.url = '/dfcusa-pm/api/activities';
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
-          if ((activity.attributes.all_skills.indexOf(self.sSkill) > -1) || (self.sSkill == 'all')) {
-            if ((activity.attributes.time_required == self.sTime) || (self.sTime == 'all_times')) {
-              if ((activity.attributes.age_group == self.sAge)) {
+          if ((activity.attributes.all_skills.indexOf(self.sSkill) > -1) || (self.sSkill == 'all') || (self.sSkill == undefined)) {
+            if ((activity.attributes.time_required == self.sTime) || (self.sTime == 'all_times') || (self.sTime == undefined)) {
+              if ((activity.attributes.age_group == self.sAge) || (self.sAge == undefined)) {
                 $('.activitiesContent').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
                 bFound = true;
               }
@@ -623,7 +623,7 @@ function(App, Handlebars, Data) {
           }
         });
         if (bFound == false) {
-          $('.activitiesContent').append('<div class="alert alert-danger">No activities found.</div>');
+          $('.activitiesContent').append('<br/><div class="alert alert-danger">No activities found.</div>');
         }
       }});
 
