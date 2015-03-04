@@ -196,7 +196,7 @@
   <tr>
 		<td>{{activity.title}}</td>
 		<td>{{activity.stages}}</td>
-		<td>{{activity.skills}}</td>
+		<td>{{activity.all_skills}}</td>
 		<td data-timestamp="{{activity.last_updated}}"></td>
 		<td>
 			<a href="#activity/{{activity.id}}" class="btn btn-sm btn-primary">Edit</a>
@@ -229,7 +229,7 @@
 		  </div>
 		  <div class="form-group">
 				<label>Stage</label>
-				<select name="stages" class="form-control input-sm" data-value="{{activity.stages}}">
+				<select name="stages" class="form-control input-sm" id="stages" data-value="{{activity.stages}}">
 					<option value="feel">Feel</option>
 					<option value="imagine">Imagine</option>
 					<option value="do">Do</option>
@@ -244,18 +244,21 @@
 		  </div>
 			<div class="form-group">
 				<label>Age Group</label>
-				<select name="age_group" class="form-control" data-value="{{activity.age_group}}">
+				<select name="age_group" class="form-control" id="age_group" data-value="{{activity.age_group}}" multiple>
 					<option value="all_ages">All Ages</option>
 					<option value="primary_school">Primary School</option>
 					<option value="elementary">Elementary School</option>
+					<option value="middle_school">Middle School</option>
+					<option value="high_school">High School</option>
 				</select>
 		  </div>
 	  	<div class="form-group">
 	  		<label>Time Required</label>
-	  		<select name="time_required" class="form-control" data-value="{{activity.time_required}}">
+	  		<select name="time_required" class="form-control" id="time_required" data-value="{{activity.time_required}}">
 	  			<option value="all_times">All</option>
 	  			<option value="15">15 minutes</option>
 	  			<option value="30">30 minutes</option>
+	  			<option value="45">45 minutes</option>
 	  			<option value="60">60 minutes</option>
 	  		</select>
 	    </div>
@@ -489,6 +492,7 @@
 		<thead>
 		  <tr>
 				<th>Stage</th>
+				<th>Activities</th>
 				<th style="width: 10em">Actions</th>
 		  </tr>
 		</thead>
@@ -501,6 +505,7 @@
 <script type="text/mustache-template" id="contentRowTemplate">
   <tr>
 		<td>{{ucWords content.stage}}</td>
+		<td>{{content.activities_count}}</td>
 		<td>
 			<a href="#content/{{content.id}}" class="btn btn-sm btn-primary">Edit</a>
 		</td>
@@ -689,6 +694,7 @@
 		  <tr>
 				<th>Skill</th>
 				<th>Color</th>
+				<th>Activities</th>
 				<th style="width: 15em">Actions</th>
 		  </tr>
 		</thead>
@@ -702,6 +708,7 @@
   <tr>
 		<td>{{skill.skill}}</td>
 		<td><div style="width: 100px; height: 20px; background-color: {{skill.color}}"></div>
+		<td>{{skill.activities_count}}</td>
 		<td>
 			<a href="javascript:void(0)" class="btn btn-sm btn-primary editSkill" data-id="{{skill.id}}">Edit</a>
 			<a href="javascript:void(0)" class="btn btn-sm btn-danger marginButton removeSkill" data-id="{{skill.id}}">Remove</a>

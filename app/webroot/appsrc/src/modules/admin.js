@@ -276,7 +276,7 @@ function(App, Handlebars, Data) {
       self.skills.fetch({success: function() {
         _.each(self.skills.models, function(skill) {
           sSelected = '';
-          if (self.activity.attributes.skills.indexOf(skill.attributes.skill) > -1) sSelected = ' SELECTED ';
+          if (self.activity.attributes.skills != null) if (self.activity.attributes.skills.indexOf(skill.attributes.skill) > -1) sSelected = ' SELECTED ';
           $('#skills').append('<option value="' + skill.attributes.skill + '"' + sSelected + '>' + skill.attributes.skill + '</option>');
         });
       }});

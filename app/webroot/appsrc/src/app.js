@@ -40,9 +40,9 @@ define([
       } else {
         if ($(this).attr('data-value') != undefined) {
           aValues = $(this).attr('data-value').split(',');
-          window.iSelecteId = $(this).attr('id');
+          window.iSelectedId = $(this).attr('id');
           _.each(aValues, function(value) {
-            $('#' + window.iSelecteId + ' option[value="' + value + '"]').attr('selected', true);
+            $('#' + window.iSelectedId + ' option[value="' + value + '"]').attr('selected', true);
           });
         }
       }

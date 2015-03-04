@@ -440,7 +440,17 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
-    echo $this->prepareResponse($this->Content->find('all'), 531, 'access denied');
+    $oContents = $this->Content->find('all');
+    $oActivities = $this->Activity->find('all');
+    foreach ($oContents as &$oContent) {
+      $iFound = 0;
+      foreach ($oActivities as $oActivity) {
+        if ($oActivity['stages'] == $oContent['stage']) $iFound++;
+      }
+      $oContent['activities_count'] = $iFound;
+    }
+
+    echo $this->prepareResponse($oContents, 531, 'access denied');
   }
 
   public function getContentStage() {
@@ -473,6 +483,17 @@ class ApiController extends AppController {
   public function getSkills() {
     global $oCurrentUser;
     $oSkills = $this->Skill->find('all');
+    $oActivities = $this->Activity->find('all');
+    foreach ($oSkills as &$oSkill) {
+      $iFound = 0;
+      foreach ($oActivities as $oActivity) {
+        $aSkills = explode(',', $oActivity['skills']);
+        if (array_search($oSkill['skill'], $aSkills) != false) {
+          $iFound++;
+        }
+      }
+      $oSkill['activities_count'] = $iFound;
+    }
     echo $this->prepareResponse($oSkills, 531, 'access denied');
   }
 

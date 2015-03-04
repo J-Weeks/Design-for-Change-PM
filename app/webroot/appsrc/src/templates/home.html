@@ -191,7 +191,9 @@
 	      <h4 class="modal-title">Create New Project</h4>
 	    </div>
 	    <div class="modal-body">
-				<form role="form" id="newProjectForm">
+	    	<button type="button" class="btn btn-primary hide" data-dismiss="modal">I've already started my project</button>
+	    	<button type="button" class="btn btn-primary hide" data-dismiss="modal">I want to start a new project</button>
+				<form role="form" id="newProjectForm" class="">
 				  <div class="form-group">
 						<label for="projectName">Project name</label>
 						<input type="text" class="form-control" id="projectName" name="name" placeholder="Enter a descriptive name" data-validate="required">
@@ -346,15 +348,15 @@
 			<tr valign="top">
 				<td>
 					<div class="input-group input-s m-t-sm">
-			      <select class="form-control input-sm skillsList" id="search-skill">
-			      	<option value="all">All skills</option>
+			      <select class="form-control input-sm skillsList" id="search-skill" value="All Skills">
+			      	<option value="all" selected>All skills</option>
 			     	</select>
 			    </div>
 			  </td>
 			 	<td>
 			 		<div class="input-group input-s m-t-sm">
 			      <select class="form-control input-sm" id="search-age_group">
-			      	<option value="all_ages">All ages</option>
+			      	<option value="all_ages" selected>All ages</option>
 			      	<option value="6-10">6-10 years old</option>
 			      	<option value="11-15">11-15 years old</option>
 			      	<option value="15-19">15-19 years old</option>
@@ -364,7 +366,7 @@
 			 	<td>
 			 		<div class="input-group input-s m-t-sm">
 			      <select class="form-control input-sm" id="search-time_required">
-			      	<option value="all_times">All times</option>
+			      	<option value="all_times" selected>All times</option>
 			      	<option value="15">15-30 minutes</option>
 			      	<option value="30">30-60 minutes</option>
 			      	<option value="60">Over 60 minutes</option>
