@@ -269,6 +269,7 @@ function(App, Handlebars, Data) {
       self.users.fetch({success: function() {
         _.each(self.users.models, function(user) {
           $('#activityForm').find('#user_id').append('<option value="' + user.attributes.id + '">' + user.attributes.first_name + ' ' + user.attributes.last_name + ' (' + user.attributes.type + ')</option>');
+          App.setupPage();
         });
       }});
 
