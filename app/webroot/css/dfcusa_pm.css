@@ -330,5 +330,30 @@ small {
   height: 135px;
 }
 
-/*======project style page======*/
+/*======radio button feel activities======*/
+
+.reveal-if-active-skillsAll {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .reveal-if-active-skillsAll {
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+}
+
+.reveal-if-active-skillsEmpathy {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .reveal-if-active-skillsEmpathy {
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+}
+
 

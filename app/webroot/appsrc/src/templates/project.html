@@ -1,21 +1,4 @@
-<!-- inside .contents .INSIDEPAGE .CONTENT -->
-<!-- <h1>Getting Started</h1>
-  <p><span style="font-size: 12pt; line-height: 23pt;">Design for Change is a program that challenges young people to design and implement social change projects in their communities.&nbsp;</span></p>
-  <h1>Mission:</h1>
-  <p>Our mission is to ensure that young minds have the opportunities and mentorship to strengthen and apply their character, capacity, and confidence.</p>
-<h1>Format:</h1>
-  <ul>
-    <li>So how do we do this? Well, we believe that when relevant and impactful learning experiences are combined with mentorship, young people can become active contributors to their communities.&nbsp;</li>
-    <li><span style="font-size: 12pt; line-height: 23pt;">Through a simple four strep process, Feel, Imagine, Do, and Share, Design for Change provides a simple framework for young people to create, implement, and share a project that has a positive impact on their community.</span></li>
-    <li><span style="font-size: 12pt; line-height: 23pt;">Among other things, these stages develop EMPATHY, CREATIVITY, INITIATIVE, and COLLABORATION - culminating in meaningful social change!</span></li>
-  </ul>
-<h1>Mentorship:</h1>
-  <ul>
-    <li>What else do they need? &nbsp;YOU! In the world of DFC, you are now a Change Mentor, providing guidance to your team of young people as they move through their DFC project. You will help them develop their skills in the real world, building their confidence, and encouraging them to grow as makers of change.</li>
-    <li><span style="font-size: 12pt; line-height: 23pt;">We will provide you with knowledge, activities, training, and support throughout this portal - empowering you with the tools you need to guide your team in successfully implementing their DFC project.&nbsp;</span></li>
-  </ul>
-  <p>We are excited to have you on board!</p>
-  <button class="btn btn-success btn-lg newProject"><i class=\"fa fa-plus\"></i> Create Your First Project</button> -->
+<!-- inside .INSIDEPAGE .CONTENT  -->
 <h1>Hello! Welcome to our Design for Change portal. </h1>
   <p><span style="font-size: 12pt; line-height: 23pt;">Design for Change is a program that challenges youth to design and implement social change projects in their communities. Our mission is to ensure that youth have the opportunities and mentorship to strengthen and apply their character, capacity, and confidence.</span></p>
   <p>So how do we do this? Well, we believe that young people need both relevant, impactful experiences as well as guidance to become empowered contributors to their communities. Here at Design for Change, we even call our youth participants \"Change Makers\" - letting them know from the very beginning that we believe in their abilities to make and create an impact. </p>
@@ -60,37 +43,51 @@
 <section class="panel clearfix skillsBox">
   <div class="wizard wizard-vertical clearfix" id="wizard-2">
     <ul class="steps">
-      <li class="step active"><a href="javascript:void(0)" class="changeSkill" data-target="#all" data-skill="all"><span class="badge badge-info">1</span>Feel Activities</a></li>
-      <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#Empathy" data-skill="Empathy"><span class="badge badge-info">2</span>Empathy</a></li>
+
+      <input type="radio" id="zskills" name="feels"><label for="zskills">
+        <li class="step changeSkill"><span class="badge badge-info">1</span>Feel Activities</li></label>
+        <div class="reveal-if-active-skillsAll">
+          <div class="step-pane step-content" id="all">
+            <ul>
+              <li>All activities in the Feel stage are listed below.<br> </li>
+              <li>You can also click on each skill at the left to show activities that teach that specific skill.</li>
+            </ul>
+          </div>
+        </div>
+
+      <input type="radio" id="zempathy" name="feels"><label for="zempathy">
+      <li class="step changeSkill"><span class="badge badge-info">2</span>Empathy</li></label>
+      <div class="reveal-if-active-skillsEmpathy">
+        <div class="step-pane step-content" id="Empathy">
+          <ul>
+            <li>Ability to sense other people's emotions and thoughts, especially by imagining someone else's perspective in what they are thinking and feeling<br> </li>
+            <li>Empathy allows you to truly understand how and why people are affected by the issues that surround them, and what solutions could truly impact the problem. </li>
+          </ul>
+        </div>
+      </div>
       <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#Awareness" data-skill="Awareness"><span class="badge badge-info">3</span>Awareness</a></li>
+        <div class="step-pane step-content" id="Awareness">
+          <ul>
+            <li>Ability to show a true understanding of yourself and others, by being conscious of your own thoughts and actions as well as of those around you</li>
+            <li>It is important to be aware of the people, places, and things around you, in order to be conscious and fully sensitive to the problems that you and your community may be facing and what can be used to solve them. </li>
+          </ul>
+        </div>
       <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#Engagement" data-skill="Engagement"><span class="badge badge-info">4</span>Engagement</a></li>
+       <div class="step-pane step-content" id="Engagement">
+        <ul>
+          <li>Ability to be proactively, attentively, and passionately committed to tasks at hand as well as enthusiastic about interacting with the world around you, because you see how you fit into achieving an end goal. </li>
+          <li>Engagement is critical for motivation - you care about interacting with your community and your team because you see how you are a part of it and how you can change it. </li>
+        </ul>
+      </div>
     </ul>
   </div>
-  <div class="step-content">
-    <div class="step-pane active" id="all">
-      <ul>
-        <li>All activities in the Feel stage are listed below.</li>
-        <li>You can also click on each skill at the left to show activities that teach that specific skill.</li>
-      </ul>
-    </div>
-    <div class="step-pane" id="Empathy">
-      <ul>
-        <li>Ability to sense other people's emotions and thoughts, especially by imagining someone else's perspective in what they are thinking and feeling<br> </li>
-        <li>Empathy allows you to truly understand how and why people are affected by the issues that surround them, and what solutions could truly impact the problem. </li>
-      </ul>
-    </div>
-    <div class="step-pane" id="Awareness">
-      <ul>
-        <li>Ability to show a true understanding of yourself and others, by being conscious of your own thoughts and actions as well as of those around you</li>
-        <li>It is important to be aware of the people, places, and things around you, in order to be conscious and fully sensitive to the problems that you and your community may be facing and what can be used to solve them. </li>
-      </ul>
-    </div>
-    <div class="step-pane" id="Engagement">
-      <ul>
-        <li>Ability to be proactively, attentively, and passionately committed to tasks at hand as well as enthusiastic about interacting with the world around you, because you see how you fit into achieving an end goal. </li>
-        <li>Engagement is critical for motivation - you care about interacting with your community and your team because you see how you are a part of it and how you can change it. </li>
-      </ul>
-    </div>
+
+
+  <div class="step-content"> perserver this in every pane
+
+
+
+
   </div>
 </section>
 
@@ -164,23 +161,51 @@
   <div class="activities">
   </div>
 </script>
+<!-- COMPLETE THE STAGE -->
 
-<h1>Deliverables for FEEL</h1>\n
-<p> Please fill out the each of the following statements to continue to the next stage.</p>",
-<!-- tag here? -->
-Situations
-"List the situations/problems in your school/community that bothered you. (option to upload community map.)",
-"form": "list"
-<!-- tag here? -->
-People
-"explanation": "Who was affected by the situation/problem and what did they say?",
-"form": "textarea"
-<!-- tag here -->
-Problem Statement"
-"explanation": "Define your problem statement: State the problem you chose and why did you CHOOSE it?",
-"form": "textarea"
+<p> </p>
+<h1>Deliverables for FEEL</h1>
+<p> Please fill out the each of the following statements to continue to the next stage.</p>
+<section class="tab-pane active" id="wizard">
+  <div class="panel">
+    <div class="wizard clearfix" id="form-wizard">
+      <ul class="steps">
+          <li data-target="#deliverable1" class="step active"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable1" data-deliverable="0"><span class="badge badge-info">1</span>Situations</a></li>
+          <li data-target="#deliverable2" class="step"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable2" data-deliverable="1"><span class="badge badge-info">2</span>People</a></li>
+          <li data-target="#deliverable3" class="step"><a href="javascript:void(0)" class="changeDeliverable" data-target="#deliverable3" data-deliverable="2"><span class="badge badge-info">3</span>Problem Statement</a></li>
+      </ul>
+    </div>
+    <div class="step-content">
+      <form id="projectDeliverables" class="projectDeliverables">
+        <div class="step-pane active" id="deliverable1" style="float: top">
+          List the situations/problems in your school/community that bothered you. (option to upload community map.)
+          <br><br>
+          <br><a href="javascript:void(0)" class="btn btn-sm btn-primary addListDeliverable marginButton listItemAdd" data-key="situations">Add Item</a>
+            <div class="items"></div>
+        </div>
+        <div class="step-pane" id="deliverable2" style="float: top">
+         Who was affected by the situation/problem and what did they say?
+         <br><br>
+         <textarea class="form-control col-lg-12" rows="10" data-key="people"></textarea>
+        </div>
+        <div class="step-pane" id="deliverable3" style="float: top">
+           Define your problem statement: State the problem you chose and why did you CHOOSE it?
+           <br><br>
+           <textarea class="form-control col-lg-12" rows="10" data-key="problem_statement"></textarea>
+         </div>
+        <div class="clear"></div>
+        <div class="actions m-t">
+          <button type="button" class="btn btn-success btn-sm saveDeliverable">Save</button>
+          <button type="button" class="btn btn-primary btn-sm uploadProjectFile hide"><i class="fa fa-file"></i> Upload File</button>
+          <input class="input-large uploadFile hide" type="file" id="pdf" name="file">
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
 
-<h1>The IMAGINE Stage</h1>\n
+
+<!-- <h1>The IMAGINE Stage</h1>\n
 <p>Welcome to the IMAGINE stage!</p>\n
 <p>Your team has just built their motivation and empathy in identifying the community problem they want to change. Now in this stage, your Change Makers will use their creativity in collaboration with their teammates and the community to think critically about the best solution.</p>\n
 <h3>Why do we ask youth to IMAGINE?</h3>\n<p>First, we want youth to practice divergent thinking - a way to generate ideas that focuses on being creative and exploring as many unique solutions as possible. It's easy for us to think there is only one \"right\" solution to a problem, and just move forward with the first idea that comes to mind because we think it \"sounds good enough.\"</p>\n
@@ -216,19 +241,19 @@ Problem Statement"
 <p></p>
 <h1><span style=\"font-weight: normal;\">IMAGINE Skills</span></h1>
 <p></p>
-<!-- tag here -->
+tag here
 creativity
 <ul>\n
   <li>Ability to generate new, uncommon, unique ideas; the openness and courage to explore ideas; and willingness to listen to one’s inner voice.</li>\n
   <li>Creativity and looking beyond the obvious solutions are what allow you to develop something new that may have an unprecedented impact. </li>\n
 </ul>
-<!-- tag here -->
+tag here
 collaboration
 <ul>\n
   <li>Ability to work and cooperate with a team, relying on knowledge and understanding to build on each others' strengths.</li>\n
   <li>Since no one is good at or interested in everything - although we would like to be! - collaboration is how you best support and leverage every team member's skills and strengths to achieve your goals.</li>\n
 </ul>
-<!-- tag here -->
+tag here
 critical thinking
 <ul>\n
   <li>Ability to use objective analysis and evaluation in order to make a decision on important issues.</li>\n
@@ -236,7 +261,7 @@ critical thinking
 </ul>
 <h1>Deliverables for IMAGINE</h1>\n
 <p> Please fill out the each of the following statements to continue to the next stage.</p>
-<!-- tag here -->
+tag here
 Brainstorming
 "explanation": "List the different solutions you came up with.",
 form": "list"
@@ -276,29 +301,29 @@ label": "Your Chosen Solution"
   <li><a href=\"http://www.huffingtonpost.com/justin-snider/the-transformative-power-_b_740394.html\" target=\"_new\">http://www.huffingtonpost.com/justin-snider/the-transformative-power-_b_740394.html</a></li>
 </ul>",
 <p></p><h1><span style=\"font-weight: normal;\">DO Skills</span></h1><p></p>"
-<!-- tag here -->
+tag here
 initiative
 <ul>\n
   <li>Ability to actually begin and follow through on our goals.</li>\n
     <li>Initiative is the drive to turn ideas into reality, and is the crucial skill of believing that your ideas are worth developing and deciding to act.</li>\n
 </ul>
-<!-- tag here -->
+tag here
 responsibility
 <ul>\n
   <li>Ability to make independent decisions and hold ourselves accountable to each other and ourselves.</li>\n
   <li>Practicing responsibility means you understand your role in taking care of things and accept the consequences of your actions. Being responsible means you can accept and learn from your mistakes, all while building strong relationships with your team that knows they can depend on you.&nbsp;</li>
 </ul>
-<!-- tag here-->
+tag here
 resilience
 <ul>\n
 <li>Ability to learn and recover from criticisms, setbacks, struggles, and failure.</li>
 <li>Resilience is essential for understanding failure not as a reflection of personal weakness, but as a learning experience, which will allow you to improve upon your past ideas for the better.</li>\n
 </ul>
-<!-- tag here-->
+tag here
 submit
 <h1>Deliverables for DO</h1>\n
 <p> Please fill out the each of the following statements to continue to the next stage.</p>
-<!-- tag here -->
+tag here
 deliverables
 <p>Describe your action plan.</p>
 "form": "textarea"
@@ -370,4 +395,3 @@ deliverables
 "activities_count": 1
 }
 ]
-

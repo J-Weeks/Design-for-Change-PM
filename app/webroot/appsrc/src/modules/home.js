@@ -366,9 +366,14 @@ function(App, Handlebars, Data) {
       // console.log("hello");
 
       //end
+      $('.contents').load('/app/webroot/appsrc/src/templates/project.html', function(){
+        //change this to relative
 
-      if (self.stage.attributes.fids_stage) {
-        $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+        console.log("added");
+      });
+      // if (self.stage.attributes.fids_stage) {
+        // $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+
         // $.ajax({
         //     url: "http://localhost:8888/dfcusa-pm/api/content/",
         //     type: 'GET',
@@ -383,22 +388,29 @@ function(App, Handlebars, Data) {
         //       console.log(res[2].content_obj.skills);
         //     }
         // });
-      } else if (self.sSection == 'files') {
+
+      // } else
+      if (self.sSection == 'files') {
         $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
         self.showProjectFiles();
       } else {
         $('.contents').html(self.stage.attributes.content_obj.content);
       }
 
-      $('.changeSkill').unbind('click').click(function() {
-        $('.step-pane').removeClass('active');
-        $('.steps').find('li').removeClass('active');
-        $(this).parent().addClass('active');
-        $($(this).attr('data-target')).addClass('active');
-        //self.currentSkill = $(this).attr('data-skill').toLowerCase();
-        $('.activities').html('');
+
+        $('.changeSkill').click(function(){
+          console.log("clicked");
+        });
+
+      // $('.changeSkill').unbind('click').click(function() {
+      //   $('.step-pane').removeClass('active');
+      //   $('.steps').find('li').removeClass('active');
+      //   $(this).parent().addClass('active');
+      //   $($(this).attr('data-target')).addClass('active');
+      //   //self.currentSkill = $(this).attr('data-skill').toLowerCase();
+      //   $('.activities').html('');
         self.showActivitiesBySkill();
-      });
+      // });
 
       $('.changeDeliverable').unbind('click').click(function() {
         $('.step-pane').removeClass('active');
