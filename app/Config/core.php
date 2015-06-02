@@ -42,7 +42,7 @@ if (( $_SERVER['SERVER_NAME'] == 'localhost' ) || ( $_SERVER['SERVER_NAME'] == '
 	define('cookieBase', 'designforchange.us');
 	define('dbConfig', 'live');
 	define('envAws', 'dev');
-} 
+}
 
 Configure::write('debug', debug_level);
 

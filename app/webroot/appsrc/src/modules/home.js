@@ -12,9 +12,9 @@ function(App, Handlebars, Data) {
 
   Home.Layout = Backbone.Layout.extend({
     initialize : function () {
-      var self = this;    
+      var self = this;
     }
-  }); 
+  });
 
   Home.OrganizationView = Backbone.View.extend({
     initialize: function () {
@@ -145,11 +145,11 @@ function(App, Handlebars, Data) {
           window.location.href = '/home#projects';
         }, error: function() {
           app.showNotify('Error saving profile', 'error');
-        }});        
+        }});
       }
     }
   });
-  
+
   Home.ProjectsView = Backbone.View.extend({
     initialize: function () {
       var self = this;
@@ -182,7 +182,7 @@ function(App, Handlebars, Data) {
       var self = this;
 
       bFound = false;
-      
+
       $('#content').html(Handlebars.compile($('#welcomeViewTemplate').html()));
 
       self.projects = new Data.Collections.Projects();
@@ -215,6 +215,9 @@ function(App, Handlebars, Data) {
         }
       }});
 
+
+
+
       if (bFound == false) {
         self.content = new Data.Models.ContentModel();
         self.content.url = '/dfcusa-pm/api/content/welcome';
@@ -231,14 +234,39 @@ function(App, Handlebars, Data) {
     },
     newProject: function() {
       console.log('test');
+      var self = this;
       $('#newProjectModal').modal().on('shown.bs.modal', function (e) {
         $('#newProjectModal').find('.carousel').carousel();
-        $('.createProject').unbind('click').click(function() {
+        $('.existingNewProject').unbind('click').click(function() {
           $('#newProjectModal').modal('hide');
+          self.newExistingProject();
+        });
+        $('.blankNewProject').unbind('click').click(function() {
+          $('#newProjectModal').modal('hide');
+          self.newBlankProject();
+        });
+      });
+    },
+    newBlankProject: function() {
+      oNewProject = new Data.Models.ProjectModel();
+      oNewProject.attributes.name = 'New Project';
+      oNewProject.attributes.profilepic = '';
+      oNewProject.save({}, {success: function(data) {
+        App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
+      }, error: function() {
+        alert('Error creating project, perhaps a project with the same name already exists.');
+      }});
+    },
+    newExistingProject: function() {
+      console.log('test');
+      $('#existingNewProjectModal').modal().on('shown.bs.modal', function (e) {
+        $('#existingNewProjectModal').find('.carousel').carousel();
+        $('.createProject').unbind('click').click(function() {
+          $('#existingNewProjectModal').modal('hide');
           if (App.checkForm('#newProjectForm')) {
             oNewProject = new Data.Models.ProjectModel();
             oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
-            oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#newProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
+            oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
             oNewProject.save({}, {success: function(data) {
               App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
             }, error: function() {
@@ -324,13 +352,37 @@ function(App, Handlebars, Data) {
       App.setupPage();
     },
     goToSection: function() {
+      //change this, will now show all /home#project/:id
       var self = this;
 
       $('.leftnav').find('li').removeClass('active');
       $('[data-section="' + self.sSection + '"]').addClass('active');
 
+
+      //jason
+      // allStage = '/dfcusa-pm/api/content/';
+      // $('.testdiv').append("self.stage");
+      // $('.testdiv').append(allStage);
+      // console.log("hello");
+
+      //end
+
       if (self.stage.attributes.fids_stage) {
         $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+        // $.ajax({
+        //     url: "http://localhost:8888/dfcusa-pm/api/content/",
+        //     type: 'GET',
+        //     success: function(res) {
+        //         console.log(res);
+        //       //clean following with loop once built, handlebars template maybe?
+        //       $('.testdiv').append(res[1].content_obj.content);
+        //       $('.testdiv').append(res[2].content_obj.getting_started.text);
+        //       $('.testdiv').append(res[2].content_obj.why.text);
+        //       $('.testdiv').append(res[2].content_obj.skills.text);
+
+        //       console.log(res[2].content_obj.skills);
+        //     }
+        // });
       } else if (self.sSection == 'files') {
         $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
         self.showProjectFiles();
@@ -371,7 +423,7 @@ function(App, Handlebars, Data) {
                 _.each(self.project.attributes.details_obj.deliverables[self.sStage][deliverable.key], function(deliverableValue) {
                   $('.items').append('<div class="listItemContainer"><input type="text" class="listItem form-control withButton" value="' + deliverableValue + '" data-increment="true" data-key="' + deliverable.key + '"/><i class="fa fa-trash-o listItemDelete"></i></div>');
                 });
-              }            
+              }
             } else if (deliverable.form == 'upload') {
               $('.saveDeliverable').addClass('hide');
               $('.uploadProjectFile').removeClass('hide');
@@ -400,7 +452,7 @@ function(App, Handlebars, Data) {
           $('.listItemDelete').unbind('click').click(function() {
             $(this).parent().remove();
           });
-        }); 
+        });
 
         $('.listItemDelete').unbind('click').click(function() {
           $(this).parent().remove();
@@ -429,7 +481,7 @@ function(App, Handlebars, Data) {
               }
             }
           });
-          
+
           self.project.save({}, {success: function(e) {
             app.showNotify('Saved project', 'success');
           }, error: function() {
@@ -482,7 +534,7 @@ function(App, Handlebars, Data) {
         $('.uploadFile').click();
         $('.uploadFile').change(function() {
           $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
-            location.reload();  
+            location.reload();
           }, 'html');
         });
       });
@@ -602,7 +654,7 @@ function(App, Handlebars, Data) {
 
       $('.searchActivities').unbind('click').click(function() {
         window.location.href = '#activities/' + $('#search-skill').val() + '/' + $('#search-age_group').val() + '/' + $('#search-time_required').val();
-      });      
+      });
     },
     searchActivities: function() {
       var self = this;

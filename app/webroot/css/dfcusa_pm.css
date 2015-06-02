@@ -307,3 +307,28 @@ small {
       padding: 5px 5px 5px 45px;
       margin-left: auto;
       margin-right: auto; }
+
+/*=======New Project Modals=======*/
+.existingNewProject{
+  margin-left:50px;
+  margin-right: 50px;
+}
+
+.existingNewProject img{
+  width: 128px;
+  height: 128px;
+}
+
+.blankNewProject{
+  margin-left:50px;
+  margin-right: 50px;
+  float: right;
+}
+
+.blankNewProject img{
+  width: 135px;
+  height: 135px;
+}
+
+/*======project style page======*/
+

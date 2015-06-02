@@ -5,7 +5,7 @@
     <title>Design for Change USA</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-      
+
     <!--[if lt IE 9]>
     <script type="text/javascript">
       document.createElement("header");
@@ -41,7 +41,7 @@
       <!-- <link rel="stylesheet" type="text/css"  href="/dfcusa-pm/css/style.css" id="skin-switcher" > -->
       <!-- <link rel="stylesheet" type="text/css"  href="/dfcusa-pm/css/dfcusa_pm.css" id="skin-switcher" > -->
       <link href="/dfcusa-pm/css/style.css" rel="stylesheet" type="text/css" media="all">
-      
+
       <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'> -->
   </head>
 
@@ -50,16 +50,16 @@
     <div class="wrapper">
 
       <?php echo $this->fetch('content'); ?>
-          
+
     </div>
 
   </body>
 
   <script data-main="/dfcusa-pm/appsrc/src/config.js" src="/dfcusa-pm/js/require.js"></script>
 
-  <div id="templatesLogin"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/login.html') ?></div>
-  <div id="templatesHome"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/home.html') ?></div>
-  <div id="templatesAdmin"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/admin.html') ?></div>
+  <div id="templatesLogin"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/login.html') ?></div>
+  <div id="templatesHome"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/home.html') ?></div>
+  <div id="templatesAdmin"><?php echo file_get_contents('http://' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . '/dfcusa-pm/app/webroot/appsrc/src/templates/admin.html') ?></div>
 
   <div id="alertModal" class="modal fade">
     <div class="modal-dialog">
