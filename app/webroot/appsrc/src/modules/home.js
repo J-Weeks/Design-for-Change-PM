@@ -366,11 +366,11 @@ function(App, Handlebars, Data) {
       // console.log("hello");
 
       //end
-      $('.contents').load('/app/webroot/appsrc/src/templates/project.html', function(){
-        //change this to relative
+      // $('.contents').load('/app/webroot/appsrc/src/templates/project.html', function(){
+      //   //change this to relative
 
-        console.log("added");
-      });
+      //   console.log("added");
+      // });
       if (self.stage.attributes.fids_stage) {
         $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
       }
