@@ -371,9 +371,9 @@ function(App, Handlebars, Data) {
 
         console.log("added");
       });
-      // if (self.stage.attributes.fids_stage) {
-        // $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
-
+      if (self.stage.attributes.fids_stage) {
+        $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+      }
         // $.ajax({
         //     url: "http://localhost:8888/dfcusa-pm/api/content/",
         //     type: 'GET',
@@ -389,8 +389,8 @@ function(App, Handlebars, Data) {
         //     }
         // });
 
-      // } else
-      if (self.sSection == 'files') {
+       else if
+       (self.sSection == 'files') {
         $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
         self.showProjectFiles();
       } else {
@@ -402,15 +402,15 @@ function(App, Handlebars, Data) {
           console.log("clicked");
         });
 
-      // $('.changeSkill').unbind('click').click(function() {
-      //   $('.step-pane').removeClass('active');
-      //   $('.steps').find('li').removeClass('active');
-      //   $(this).parent().addClass('active');
-      //   $($(this).attr('data-target')).addClass('active');
-      //   //self.currentSkill = $(this).attr('data-skill').toLowerCase();
-      //   $('.activities').html('');
+      $('.changeSkill').unbind('click').click(function() {
+        $('.step-pane').removeClass('active');
+        $('.steps').find('li').removeClass('active');
+        $(this).parent().addClass('active');
+        $($(this).attr('data-target')).addClass('active');
+        //self.currentSkill = $(this).attr('data-skill').toLowerCase();
+        $('.activities').html('');
         self.showActivitiesBySkill();
-      // });
+      });
 
       $('.changeDeliverable').unbind('click').click(function() {
         $('.step-pane').removeClass('active');

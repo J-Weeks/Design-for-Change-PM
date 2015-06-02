@@ -330,21 +330,31 @@ small {
   height: 135px;
 }
 
+/*INSIDE PAGE SCROLL*/
+
+.insidepage{
+  max-height: 600px;
+  overflow: scroll;
+}
+
+
+
+
 /*======radio button feel activities======*/
 
-.reveal-if-active-skillsAll {
+/*.reveal-if-active-skillsAll {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
-}
+}*/
 
-input[type="radio"]:checked ~ .reveal-if-active-skillsAll {
+/*input[type="radio"]:checked ~ .reveal-if-active-skillsAll {
   opacity: 1;
   max-height: 100px;
   overflow: visible;
-}
+}*/
 
-.reveal-if-active-skillsEmpathy {
+/*.reveal-if-active-skillsEmpathy{
   opacity: 0;
   max-height: 0;
   overflow: hidden;
@@ -353,7 +363,30 @@ input[type="radio"]:checked ~ .reveal-if-active-skillsAll {
 input[type="radio"]:checked ~ .reveal-if-active-skillsEmpathy {
   opacity: 1;
   max-height: 100px;
+  overflow: hidden;
+}
+
+.reveal-if-active-skillsAwareness {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+input[type="radio"]:checked ~ .reveal-if-active-skillsAwareness {
+  opacity: 1;
+  max-height: 100px;
   overflow: visible;
 }
 
+.reveal-if-active-skillsEngagement {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
 
+input[type="radio"]:checked ~ .reveal-if-active-skillsEngagement {
+  opacity: 1;
+  max-height: 100px;
+  overflow: visible;
+}
+*/
