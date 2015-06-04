@@ -356,10 +356,16 @@ function(App, Handlebars, Data) {
 
       $('.leftnav').find('li').removeClass('active');
       $('[data-section="' + self.sSection + '"]').addClass('active');
+      console.log(self.sSection);
+      // console.log(self.stage);
 
+      $('.contents').html('');
 
       if (self.stage.attributes.fids_stage) {
-        $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+        for (var stageName in self.stage.attributes.content_obj) {
+          $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+          console.log(stageName);
+        }
 
             //   $.ajax({
             //   url: "http://localhost:8888/dfcusa-pm/api/content/feel",
@@ -514,7 +520,9 @@ function(App, Handlebars, Data) {
         self.currentSkill = 'all';
       }
 
-      if (self.sSection == 'skills') {
+      if (self.sSection == 'home') {
+        // changed the == from "skill" to "home" to coerce skills to show
+        console.log(self.sSection);
         self.showActivitiesBySkill();
       }
 
