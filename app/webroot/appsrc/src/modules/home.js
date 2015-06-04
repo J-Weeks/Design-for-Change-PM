@@ -352,42 +352,50 @@ function(App, Handlebars, Data) {
       App.setupPage();
     },
     goToSection: function() {
-      //change this, will now show all /home#project/:id
       var self = this;
 
       $('.leftnav').find('li').removeClass('active');
       $('[data-section="' + self.sSection + '"]').addClass('active');
 
 
-      //jason
-      // allStage = '/dfcusa-pm/api/content/';
-      // $('.testdiv').append("self.stage");
-      // $('.testdiv').append(allStage);
-      // console.log("hello");
-
-      //end
-      // $('.contents').load('/app/webroot/appsrc/src/templates/project.html', function(){
-      //   //change this to relative
-
-      //   console.log("added");
-      // });
       if (self.stage.attributes.fids_stage) {
         $('.contents').html(Handlebars.compile($('#' + self.sSection + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
-      }
-        // $.ajax({
-        //     url: "http://localhost:8888/dfcusa-pm/api/content/",
-        //     type: 'GET',
-        //     success: function(res) {
-        //         console.log(res);
-        //       //clean following with loop once built, handlebars template maybe?
-        //       $('.testdiv').append(res[1].content_obj.content);
-        //       $('.testdiv').append(res[2].content_obj.getting_started.text);
-        //       $('.testdiv').append(res[2].content_obj.why.text);
-        //       $('.testdiv').append(res[2].content_obj.skills.text);
 
-        //       console.log(res[2].content_obj.skills);
-        //     }
+            //   $.ajax({
+            //   url: "http://localhost:8888/dfcusa-pm/api/content/feel",
+            //   success:function(data){
+            //     $('.contents').append(JSON.stringify(data));
+            //     console.log(data);
+            //   }
+            // });
+
+        // var FeelView = Backbone.View.extend({
+        //   initialize: function(){
+        //     console.log("view");
+        //     this.render();
+        //   },
+        //   render:function(){
+        //     console.log("1.5");
+        //     var template = _.template($("#feelTemplate").html(), {});
+        //     this.el.html(template);
+        //     console.log("2");
+        //     this.ShowFeel();
+        //   },
+        //   ShowFeel:function(){
+        //     console.log("in showfeel");
+        //     $.ajax({
+        //       url: "http://localhost:8888/dfcusa-pm/api/content/feel",
+        //       success:function(data){
+        //         $('.testdiv').append("data here");
+        //         console.log("get");
+        //       }
+        //     });
+        //   }
         // });
+        // var feel_view = new FeelView({el: $(".testdiv")});
+        // feel_view.render();
+
+      }
 
        else if
        (self.sSection == 'files') {
