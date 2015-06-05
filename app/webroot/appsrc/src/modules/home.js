@@ -354,14 +354,32 @@ function(App, Handlebars, Data) {
     goToSection: function() {
       var self = this;
 
-      $('.leftnav').find('li').removeClass('active');
-      $('[data-section="' + self.sSection + '"]').addClass('active');
-      console.log(self.sSection);
+      // $('.leftnav').find('li').removeClass('active');
+      // $('[data-section="' + self.sSection + '"]').addClass('active');
+      // console.log(self.sSection);
       // console.log(self.stage);
+
+      //start nav / road bar
+      var main = main = $('#main ul');
+
+$('.goToSection').click(function(event) {
+
+    // event.preventDefault();
+
+
+    main.children().removeClass('active');
+    this.classList.add('active');
+
+
+
+    console.log("here");
+    });
+
+//end
 
       $('.contents').html('');
 
-      console.log(self.stage);
+      // console.log(self.stage);
 
       $('.contents').html('');
 
