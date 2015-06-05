@@ -305,10 +305,10 @@
 	<ul class="projecthome">
 	  <li onclick="javascript:location.href = '#project/{{project}}/home';" class="goToSection" data-section="home"><p><img data-stage-icon="home" src="/dfcusa-pm/app/webroot/images/icon_home.png" class="stageicon">Getting Started</p></li>
 	  <li onclick="javascript:location.href = '#project/{{project}}/feel';"><p><img src="/dfcusa-pm/app/webroot/images/icon_feel.png" class="stageicon hide">Feel</p></li>
-	  <!-- <li onclick="javascript:location.href = '#project/{{project}}/imagine';"><p><img src="/dfcusa-pm/app/webroot/images/icon_imagine.png" class="stageicon hide">Imagine</p></li>
+	  <li onclick="javascript:location.href = '#project/{{project}}/imagine';"><p><img src="/dfcusa-pm/app/webroot/images/icon_imagine.png" class="stageicon hide">Imagine</p></li>
 	   <li onclick="javascript:location.href = '#project/{{project}}/do';"><p><img src="/dfcusa-pm/app/webroot/images/icon_do.png" class="stageicon hide">Do</p></li>
 	   <li onclick="javascript:location.href = '#project/{{project}}/share';"><p><img src="/dfcusa-pm/app/webroot/images/icon_share.png" class="stageicon hide">Share</p></li>
-	  <li onclick="javascript:location.href = '#project/{{project}}/home/files';" class="goToSection" data-section="files"><p><img data-stage-icon="files" src="/dfcusa-pm/app/webroot/images/icon_files.png" class="stageicon hide">Project Files</p></li> -->
+	  <li onclick="javascript:location.href = '#project/{{project}}/home/files';" class="goToSection" data-section="files"><p><img data-stage-icon="files" src="/dfcusa-pm/app/webroot/images/icon_files.png" class="stageicon hide">Project Files</p></li>
 	</ul>
 	<div class="clear"></div>
 </script>
@@ -372,8 +372,9 @@
 </script>
 
 <script type="text/mustache-template" id="activitiesTemplate">
-  <a name="feel_activities">
+
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
+  <a name="feel_activities">
 	{{{content.content_obj.activities.text}}}
 	<br/>
 	<div id="toolbar">

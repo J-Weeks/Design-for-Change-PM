@@ -361,45 +361,12 @@ function(App, Handlebars, Data) {
 
       $('.contents').html('');
 
+
       if (self.stage.attributes.fids_stage) {
         for (var stageName in self.stage.attributes.content_obj) {
           $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
-          console.log(stageName);
+
         }
-
-            //   $.ajax({
-            //   url: "http://localhost:8888/dfcusa-pm/api/content/feel",
-            //   success:function(data){
-            //     $('.contents').append(JSON.stringify(data));
-            //     console.log(data);
-            //   }
-            // });
-
-        // var FeelView = Backbone.View.extend({
-        //   initialize: function(){
-        //     console.log("view");
-        //     this.render();
-        //   },
-        //   render:function(){
-        //     console.log("1.5");
-        //     var template = _.template($("#feelTemplate").html(), {});
-        //     this.el.html(template);
-        //     console.log("2");
-        //     this.ShowFeel();
-        //   },
-        //   ShowFeel:function(){
-        //     console.log("in showfeel");
-        //     $.ajax({
-        //       url: "http://localhost:8888/dfcusa-pm/api/content/feel",
-        //       success:function(data){
-        //         $('.testdiv').append("data here");
-        //         console.log("get");
-        //       }
-        //     });
-        //   }
-        // });
-        // var feel_view = new FeelView({el: $(".testdiv")});
-        // feel_view.render();
 
       }
 
@@ -522,7 +489,7 @@ function(App, Handlebars, Data) {
 
       if (self.sSection == 'home') {
         // changed the == from "skill" to "home" to coerce skills to show
-        console.log(self.sSection);
+        // console.log(self.sSection);
         self.showActivitiesBySkill();
       }
 
