@@ -363,9 +363,32 @@ function(App, Handlebars, Data) {
       var main = main = $('#main ul');
 
     $('.goToSection').click(function(event) {
-    // event.preventDefault();
       main.children().removeClass('active');
       this.classList.add('active');
+
+//progress bar below
+    if (this.classList[1] == "two"){
+      $('.progress-bar').attr("aria-valuenow", "33");
+      $('.progress-bar').attr("width", "33%");
+      $('.progress-bar').attr("style", "width:33%");
+      $('.progress-bar').text("15 Minutes Left");
+    } else if (this.classList[1] == "three"){
+        $('.progress-bar').attr("aria-valuenow", "66");
+        $('.progress-bar').attr("width", "66%");
+        $('.progress-bar').attr("style", "width:66%");
+        $('.progress-bar').text("10 Minutes Left");
+    } else if (this.classList[1] == "four") {
+      $('.progress-bar').attr("aria-valuenow", "100");
+      $('.progress-bar').attr("width", "100%");
+      $('.progress-bar').attr("style", "width:100%");
+      $('.progress-bar').text("5 Minutes Left");
+    } else{
+      $('.progress-bar').attr("aria-valuenow", "0");
+      $('.progress-bar').attr("width", "0%");
+      $('.progress-bar').attr("style", "width:0%");
+    }
+
+
       console.log("here");
     });
 
