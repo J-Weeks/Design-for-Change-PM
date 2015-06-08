@@ -390,26 +390,25 @@ function(App, Handlebars, Data) {
     }
     //end
 
-      console.log("here");
     });
 
   //nav scroll
     var sections = $('.contents p'),
     //Template generated dynamically line 427
-      nav = $('.projecthome'),
+      nav = $('#main'),
       nav_height = nav.outerHeight();
 
-    $('.contents').on('scroll', function () {
+    $('.insidepage').on('scroll', function () {
       var cur_pos = $(this).scrollTop();
-
+      console.log(cur_pos);
       sections.each(function() {
         var top = $(this).offset().top - nav_height,
             bottom = top + $(this).outerHeight();
 
         if (cur_pos >= top && cur_pos <= bottom) {
+          console.log("here");
           nav.find('li').removeClass('scrollactive');
           sections.removeClass('scrollactive');
-     debugger;
           $(this).addClass('scrollactive');
           nav.find('.goToSection').addClass('scrollactive');
         }
