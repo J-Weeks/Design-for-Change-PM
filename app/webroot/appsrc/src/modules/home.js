@@ -394,11 +394,12 @@ function(App, Handlebars, Data) {
     });
 
   //nav scroll
-    var sections = $('.goToSection'),
-      nav = $('#main'),
+    var sections = $('.contents p'),
+    //Template generated dynamically line 427
+      nav = $('.projecthome'),
       nav_height = nav.outerHeight();
 
-    $(window).on('scroll', function () {
+    $('.contents').on('scroll', function () {
       var cur_pos = $(this).scrollTop();
 
       sections.each(function() {
