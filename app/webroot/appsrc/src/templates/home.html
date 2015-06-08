@@ -317,11 +317,11 @@
 	<h1><img src="/dfcusa-pm/app/webroot/images/icon_{{stage}}_selected.png" class="stageicon">{{ucWords stage}}</h1>
   <div id="main">
   	<ul>
-  	  <li class="goToSection one" data-section="home"><a href="#project/{{project}}/{{stage}}/home"><p>The {{ucWords stage}} Stage</p></a></li>
-  	   <li class="goToSection two" data-section="why"><a href="#why_feel"><p>Why {{ucWords stage}}</p></a></li>
-  	  <li class="goToSection three" data-section="skills"><a href="#feel_skills"><p>Skills & Activities</p></a></li>
+  	  <li class="goToSection 1" data-section="home"><a href="#project/{{project}}/{{stage}}/home"><p>The {{ucWords stage}} Stage</p></a></li>
+  	   <li class="goToSection 2" data-section="why"><a href="#why_feel"><p>Why {{ucWords stage}}</p></a></li>
+  	  <li class="goToSection 3" data-section="skills"><a href="#feel_skills"><p>Skills & Activities</p></a></li>
   	  <li class="goToSection hide" data-section="activities"><a href="#feel_activities"><p>Activities</p></a></li>
-  	  <li class="goToSection four" data-section="submit"><a href="#feel_submit"><p>Complete This Stage</p></a></li>
+  	  <li class="goToSection 4" data-section="submit"><a href="#feel_submit"><p>Complete This Stage</p></a></li>
   	  <li class="goToSection pull-left" data-section="back"><a href="#project/{{project}}/home"><p style="font-size: 10pt; margin-left: 20px">< back to home</p></a></li>
   	</ul>
     <br><br>
@@ -344,14 +344,17 @@
 </script>
 
 <script type="text/mustache-template" id="whyTemplate">
+<div id="1">
   <a name="why_feel">
   <div id="testdiv"></div>
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.why.text}}}
+</div>
 </script>
 
 <script type="text/mustache-template" id="skillsTemplate">
   <a name="feel_skills">
+  <div id="2">
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.skills.text}}}
 	<section class="panel clearfix skillsBox">
@@ -379,10 +382,11 @@
   </section>
   <div class="activities leftMargin">
   </div>
+</div>
 </script>
 
 <script type="text/mustache-template" id="activitiesTemplate">
-
+<div id="3">
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
   <a name="feel_activities">
 	{{{content.content_obj.activities.text}}}
@@ -425,9 +429,11 @@
 	</div>
 	<div class="activities">
 	</div>
+</div>
 </script>
 
 <script type="text/mustache-template" id="submitTemplate">
+<div id="4">
   <a name="feel_submit">
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.submit.text}}}
@@ -467,6 +473,7 @@
 	    </div>
 	  </div>
 	</section>
+</div>
 </script>
 
 <script type="text/mustache-template" id="activityTemplate">
