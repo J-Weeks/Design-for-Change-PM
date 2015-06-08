@@ -367,6 +367,7 @@ function(App, Handlebars, Data) {
       this.classList.add('active');
 
 //progress bar below
+//lets DRY this up
     if (this.classList[1] == "two"){
       $('.progress-bar').attr("aria-valuenow", "33");
       $('.progress-bar').attr("width", "33%");
@@ -378,23 +379,45 @@ function(App, Handlebars, Data) {
         $('.progress-bar').attr("style", "width:66%");
         $('.progress-bar').text("10 Minutes Left");
     } else if (this.classList[1] == "four") {
-      $('.progress-bar').attr("aria-valuenow", "100");
-      $('.progress-bar').attr("width", "100%");
-      $('.progress-bar').attr("style", "width:100%");
+      $('.progress-bar').attr("aria-valuenow", "95");
+      $('.progress-bar').attr("width", "95%");
+      $('.progress-bar').attr("style", "width:95%");
       $('.progress-bar').text("5 Minutes Left");
     } else{
       $('.progress-bar').attr("aria-valuenow", "0");
       $('.progress-bar').attr("width", "0%");
       $('.progress-bar').attr("style", "width:0%");
     }
-
+    //end
 
       console.log("here");
     });
 
-    //end
+  //nav scroll
+    var sections = $('.goToSection'),
+      nav = $('#main'),
+      nav_height = nav.outerHeight();
 
-      $('.contents').html('');
+    $(window).on('scroll', function () {
+      var cur_pos = $(this).scrollTop();
+
+      sections.each(function() {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+          nav.find('li').removeClass('scrollactive');
+          sections.removeClass('scrollactive');
+     debugger;
+          $(this).addClass('scrollactive');
+          nav.find('.goToSection').addClass('scrollactive');
+        }
+      });
+    });
+
+  //end
+
+      // $('.contents').html('');
 
       // console.log(self.stage);
 
