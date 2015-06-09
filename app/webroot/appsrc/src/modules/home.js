@@ -427,11 +427,22 @@ function(App, Handlebars, Data) {
 
       $('.contents').html('');
 
+              console.log("ready");
+      $('.uploadProjectFile').unbind('click').click(function() {
+        console.log("inside prog");
+        $('.uploadFile').click();
+        $('.uploadFile').change(function() {
+          $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+            location.reload();
+          }, 'html');
+        });
+      });
+
+
       if (self.stage.attributes.fids_stage) {
         for (var stageName in self.stage.attributes.content_obj) {
           $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
         }
-
       }
 
        else if
@@ -440,8 +451,12 @@ function(App, Handlebars, Data) {
         self.showProjectFiles();
       } else {
         $('.contents').html(self.stage.attributes.content_obj.content);
-      }
 
+
+      }
+//start
+
+//end upload
 
         $('.changeSkill').click(function(){
           console.log("clicked");
@@ -552,6 +567,7 @@ function(App, Handlebars, Data) {
       }
 
       if (self.sSection == 'home') {
+
         // changed the == from "skill" to "home" to coerce skills to show
         // console.log(self.sSection);
         self.showActivitiesBySkill();
@@ -659,6 +675,7 @@ function(App, Handlebars, Data) {
         }
       }});
     }
+
   });
 
   Home.ActivitiesView = Backbone.View.extend({
@@ -694,11 +711,13 @@ function(App, Handlebars, Data) {
     },
     showActivities: function() {
       var self = this;
+
       $('#content').html(Handlebars.compile($('#activitiesListTemplate').html()));
       $('.staging').html(Handlebars.compile($('#activitiesTemplate').html()));
       $('.searchToolbar').html($('.staging').find('#toolbar').html());
       $('.staging').html('');
       $('#content').find('table').css('float', 'right');
+
 
       self.skills = App.HomeRouter.models.skills;
       self.skills.fetch({success: function() {
@@ -743,6 +762,7 @@ function(App, Handlebars, Data) {
       $('#search-time_required').val(self.sTime);
     }
   });
+
 
   return Home;
 });
