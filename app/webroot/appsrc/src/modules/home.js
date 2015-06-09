@@ -396,7 +396,7 @@ function(App, Handlebars, Data) {
     var sections = $('.contents p'),
     //Template generated dynamically line 427
       nav = $('#main'),
-      nav_height = $('.contents').outerHeight();
+      nav_height = $('.header').outerHeight();
       // nav_height = nav.outerHeight();
 
     $('.insidepage').on('scroll', function () {
