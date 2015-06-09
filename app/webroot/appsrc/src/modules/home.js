@@ -393,27 +393,28 @@ function(App, Handlebars, Data) {
     });
 
   //nav scroll
-    var sections = $('.contents p'),
     //Template generated dynamically line 427
-      nav = $('#main'),
+      var nav = $('#main'),
       nav_height = $('.header').outerHeight();
       // nav_height = nav.outerHeight();
 
     $('.insidepage').on('scroll', function () {
+      var sections = $('.contents div');
       var cur_pos = $(this).scrollTop();
-      // console.log(cur_pos);
-      sections.each(function() {
+      console.log(cur_pos);
+      sections.each(function(section) {
         var top = $(this).offset().top - nav_height,
             bottom = top + $(this).outerHeight();
             // console.log(top);
 
         if (cur_pos >= top && cur_pos <= bottom) {
           console.log("here");
+          console.log($(this));
           nav.find('li').removeClass('scrollactive');
-          sections.removeClass('scrollactive');
-
-          $(this).addClass('scrollactive');
-          nav.find($(this).attr('id')).addClass('scrollactive');
+          // sections.removeClass('scrollactive');
+          // $(this).addClass('scrollactive');
+          // nav.find($(this).attr('id')).addClass('scrollactive');
+          $('.' + $(this).attr('id')).addClass('scrollactive');
 
         }
       });
@@ -426,8 +427,8 @@ function(App, Handlebars, Data) {
       // console.log(self.stage);
 
       $('.contents').html('');
-
-              console.log("ready");
+//start upload
+//not getting inside the click
       $('.uploadProjectFile').unbind('click').click(function() {
         console.log("inside prog");
         $('.uploadFile').click();
@@ -437,6 +438,7 @@ function(App, Handlebars, Data) {
           }, 'html');
         });
       });
+// end upload
 
 
       if (self.stage.attributes.fids_stage) {
@@ -454,9 +456,7 @@ function(App, Handlebars, Data) {
 
 
       }
-//start
 
-//end upload
 
         $('.changeSkill').click(function(){
           console.log("clicked");
