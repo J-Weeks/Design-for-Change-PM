@@ -248,6 +248,11 @@ nav {
         background-color: #45798e; }
         .leftnav ul li.active p {
           color: #fff; }
+      .leftnav ul li.scrollactive {
+        background-color: #45798e; }
+        .leftnav ul li.scrollactive p {
+          color: #fff; }
+
 
 .insidepage {
   float: left;

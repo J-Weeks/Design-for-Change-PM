@@ -386,7 +386,7 @@
 </script>
 
 <script type="text/mustache-template" id="activitiesTemplate">
-<div id="3">
+
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
   <a name="feel_activities">
 	{{{content.content_obj.activities.text}}}
@@ -395,6 +395,7 @@
 		<table width="80%" id="activitiesSearch">
 			<tr valign="top">
 				<td>
+          <div id="3">
 					<div class="input-group input-s m-t-sm">
 			      <select class="form-control input-sm skillsList" id="search-skill" value="All Skills">
 			      	<option value="all" selected>All skills</option>
@@ -427,15 +428,14 @@
 			</tr>
 		</table>
 	</div>
-	<div class="activities">
-	</div>
+	<div class="activities"></div>
 </div>
 </script>
 
 <script type="text/mustache-template" id="submitTemplate">
-<div id="4">
   <a name="feel_submit">
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
+  <div id="4">
 	{{{content.content_obj.submit.text}}}
 	<section class="tab-pane active" id="wizard">
 	  <div class="panel">
@@ -495,8 +495,7 @@
 	        {{{activity.description}}}
 	      </p>
 	      <a href="{{activity.pdf}}" target="_new" class="btn btn-success btn-xs"><i class="fa fa-file-text"></i> View Activity</a>
-        <button type="button" class="btn btn-primary btn-sm uploadProjectFile"><i class="fa fa-file"></i> Upload File</button>
-            <input class="input-large uploadFile hide" type="file" id="pdf" name="file"/>
+        <button class="btn btn-primary pull-right btn-sm uploadProjectFile"><i class="fa fa-file"></i> Upload New File</button>
 	      <small class="pull-right hide">
 	        <a href="#"><i class="fa fa-comment-o"></i> Comments ({{activity.comments_count}})</a>
 	      </small>
