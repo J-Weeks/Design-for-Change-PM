@@ -328,15 +328,15 @@ function(App, Handlebars, Data) {
 
       $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
-        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
-        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
       } else if (self.sStage == 'files') {
         // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
 
-        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+        // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
@@ -399,19 +399,30 @@ function(App, Handlebars, Data) {
     //Template generated dynamically line 427
       var nav = $('#main'),
       nav_height = $('.header').outerHeight();
-      // nav_height = nav.outerHeight();
+      didScroll = false;
 
-    $('.insidepage').on('scroll', function () {
-      var sections = $('.contents div');
-      var cur_pos = $(this).scrollTop();
-      console.log(cur_pos);
-      sections.each(function(section) {
-        var top = $(this).offset().top - nav_height,
+      $('.insidepage').scroll(function(){
+        didScroll = true;
+      });
+
+
+      var sections = $('.contents');
+
+
+    setInterval(function() {
+        if ( didScroll ) {
+            didScroll = false;
+            // Check your page position and then
+            // Load in more results
+      // sections.each(function(section) {
+        var cur_pos = $(this).scrollTop();
+        var top = $('.contents').offset().top - nav_height,
             bottom = top + $(this).outerHeight();
+            // console.log(cur_pos);
             // console.log(top);
 
         if (cur_pos >= top && cur_pos <= bottom) {
-          console.log("here");
+
           console.log($(this));
 
           // sections.removeClass('scrollactive');
@@ -420,8 +431,11 @@ function(App, Handlebars, Data) {
           $('.' + $(this).attr('id')).addClass('scrollactive');
 
         }
-      });
-    });
+      // });
+        }
+    }, 250);
+
+
 
   //end
 
