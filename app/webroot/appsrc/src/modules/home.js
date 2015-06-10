@@ -328,12 +328,15 @@ function(App, Handlebars, Data) {
 
       $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
-        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
       } else if (self.sStage == 'files') {
-        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+
+        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
@@ -410,7 +413,7 @@ function(App, Handlebars, Data) {
         if (cur_pos >= top && cur_pos <= bottom) {
           console.log("here");
           console.log($(this));
-          nav.find('li').removeClass('scrollactive');
+
           // sections.removeClass('scrollactive');
           // $(this).addClass('scrollactive');
           // nav.find($(this).attr('id')).addClass('scrollactive');
