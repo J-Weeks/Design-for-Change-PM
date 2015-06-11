@@ -311,6 +311,9 @@ function(App, Handlebars, Data) {
       $('#project_name').removeClass('hide');
       $('#main_menu').addClass('pull-right');
       $('#projectHeader').html(Handlebars.compile($('#projectHeaderTemplate').html())({project: self.project.attributes}));
+
+
+
       $('#projectHeader').removeClass('hide');
 
       $('#project_name').html(self.project.attributes.name);
@@ -328,8 +331,17 @@ function(App, Handlebars, Data) {
 
       $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
-        $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
-        // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+          //steps test
+      $('.steps').click(function(){
+        console.log("clicked");
+        $(".insidepage").html("");
+        $('.insidepage').html(Handlebars.compile($('#stepsTemplate').html()));
+      });
+//end
+
+
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
@@ -613,7 +625,6 @@ function(App, Handlebars, Data) {
       if (!bFound) $('.noFiles').removeClass('hide');
 
       window.iProjectId = self.project.attributes.id;
-
       $('.uploadProjectFile').unbind('click').click(function() {
         $('.uploadFile').click();
         $('.uploadFile').change(function() {
@@ -662,8 +673,13 @@ function(App, Handlebars, Data) {
         $('.uploadProjectFile').on("click", function() {
           console.log("inside prog");
           $('.uploadFile').click();
+          var hash = window.location.hash.split("");
+          var hashid = hash[9] + hash[10];
           $('.uploadFile').change(function() {
-            $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+            // $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+          $(this).upload('/dfcusa-pm/api/user_project/' + hashid + '/url', function(res) {
+            console.log(hashid);
+
             location.reload();
             }, 'html');
           });
