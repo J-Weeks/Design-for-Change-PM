@@ -332,6 +332,7 @@ function(App, Handlebars, Data) {
       $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
         // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
+
         $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
           //steps test
       $('.steps').click(function(){
@@ -419,7 +420,7 @@ function(App, Handlebars, Data) {
 
 
       var sections = $('.contents');
-
+      var insidePage = $('.insidepage');
 
     setInterval(function() {
         if ( didScroll ) {
@@ -427,20 +428,18 @@ function(App, Handlebars, Data) {
             // Check your page position and then
             // Load in more results
       // sections.each(function(section) {
-        var cur_pos = $(this).scrollTop();
-        var top = $('.contents').offset().top - nav_height,
-            bottom = top + $(this).outerHeight();
+        var cur_pos = insidePage.scrollTop();
+        var top = sections.offset().top - nav_height,
+            bottom = top + insidePage.outerHeight();
             // console.log(cur_pos);
             // console.log(top);
-
         if (cur_pos >= top && cur_pos <= bottom) {
-
-          console.log($(this));
+          //console.log($(this));
 
           // sections.removeClass('scrollactive');
           // $(this).addClass('scrollactive');
           // nav.find($(this).attr('id')).addClass('scrollactive');
-          $('.' + $(this).attr('id')).addClass('scrollactive');
+          $('.' + $(insidePage).attr('id')).addClass('scrollactive');
 
         }
       // });
