@@ -334,11 +334,38 @@ function(App, Handlebars, Data) {
         // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
 
         $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
-          //steps test
+//stepsTemplate
       $('.steps').click(function(){
-        console.log("clicked");
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#stepsTemplate').html()));
+      });
+//end
+
+//timeTemplate
+      $('.time').click(function(){
+        $(".insidepage").html("");
+        $('.insidepage').html(Handlebars.compile($('#timeTemplate').html()));
+      });
+//end
+
+//resourcesTemplate
+      $('.resources').click(function(){
+        $(".insidepage").html("");
+        $('.insidepage').html(Handlebars.compile($('#resourcesTemplate').html()));
+      });
+//end
+
+//sampleProjectsTemplate
+      $('.sampleProjects').click(function(){
+        $(".insidepage").html("");
+        $('.insidepage').html(Handlebars.compile($('#sampleProjectsTemplate').html()));
+      });
+//end
+
+//portalGuideTemplate
+      $('.portalGuide').click(function(){
+        $(".insidepage").html("");
+        $('.insidepage').html(Handlebars.compile($('#portalGuideTemplate').html()));
       });
 //end
 
