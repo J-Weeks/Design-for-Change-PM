@@ -446,15 +446,7 @@ function(App, Handlebars, Data) {
       $('.contents').html('');
 //start upload
 //not getting inside the click
-      $('.uploadProjectFile').unbind('click').click(function() {
-        console.log("inside prog");
-        $('.uploadFile').click();
-        $('.uploadFile').change(function() {
-          $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
-            location.reload();
-          }, 'html');
-        });
-      });
+
 // end upload
 
 
@@ -667,6 +659,15 @@ function(App, Handlebars, Data) {
         if (bFound == false) {
           $('.activities').append('<br/><div class="alert alert-info">No activities found.</div>');
         }
+        $('.uploadProjectFile').on("click", function() {
+          console.log("inside prog");
+          $('.uploadFile').click();
+          $('.uploadFile').change(function() {
+            $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
+            location.reload();
+            }, 'html');
+          });
+        });
       }});
     },
     searchActivities: function() {
