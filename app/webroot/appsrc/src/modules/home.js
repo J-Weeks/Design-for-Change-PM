@@ -484,11 +484,18 @@ function(App, Handlebars, Data) {
           if ($('.insidepage').scrollTop() < 228){
             $('#main ul li').removeClass('active');
             $('#main .1').addClass('active');
-          // } else if ($('.insidepage').scrollTop() > 229 && $('.insidepage').scrollTop() < 1500){
-          }else{
+          } else if ($('.insidepage').scrollTop() > 229 && $('.insidepage').scrollTop() < 1500){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-        }
+          }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 4900){
+            $('#main ul li').removeClass('active');
+            $('#main .3').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 4901 && $('.insidepage').scrollTop() < 5466){
+            $('#main ul li').removeClass('active');
+            $('#main .4').addClass('active');
+          }else{
+            $('#main ul li').removeClass('active');
+          }
         }
       }, 250);
 
