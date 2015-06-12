@@ -369,7 +369,6 @@ function(App, Handlebars, Data) {
       });
 //end
 
-
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
@@ -492,6 +491,17 @@ function(App, Handlebars, Data) {
         for (var stageName in self.stage.attributes.content_obj) {
           $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
         }
+        $('.nextStepImagine').click(function(){
+
+          var windowhasharray = window.location.hash.split("/");
+          windowhasharray.pop();
+          windowhasharray.push("imagine");
+          windowhasharray = windowhasharray.join("/");
+          console.log(window.location.host + 'home' + windowhasharray);
+          router.navigate((windowhasharray), {replace:true, trigger:true});
+
+
+        });
       }
 
        else if
