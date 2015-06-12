@@ -436,35 +436,6 @@ function(App, Handlebars, Data) {
     });
 
 
-    //nav scroll
-      var nav = $('#main'),
-      nav_height = $('.header').outerHeight();
-      // nav_height = nav.outerHeight();
-
-    $('.insidepage').on('scroll', function () {
-      var sections = $('.contents div');
-      var cur_pos = $(this).scrollTop();
-      console.log(cur_pos);
-      sections.each(function(section) {
-        var top = $(this).offset().top - nav_height,
-            bottom = top + $(this).outerHeight();
-            // console.log(top);
-
-        if (cur_pos >= top && cur_pos <= bottom) {
-          console.log("here");
-          console.log($(this));
-
-          // sections.removeClass('scrollactive');
-          // $(this).addClass('scrollactive');
-          // nav.find($(this).attr('id')).addClass('scrollactive');
-          $('.' + $(this).attr('id')).addClass('scrollactive');
-
-        }
-      });
-    });
-
-  //end
-
       // $('.contents').html('');
 
       // console.log(self.stage);
@@ -480,6 +451,7 @@ function(App, Handlebars, Data) {
         for (var stageName in self.stage.attributes.content_obj) {
           $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
         }
+
         $('.nextStepImagine').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
@@ -502,6 +474,13 @@ function(App, Handlebars, Data) {
           router.navigate((windowhasharray), {replace:true, trigger:true});
 
 
+        });
+
+        var waypoint = new Waypoint({
+          element: document.getElementById('basic-waypoint'),
+          handler: function() {
+            console.log('Scrolled to waypoint!');
+          }
         });
       }
 
