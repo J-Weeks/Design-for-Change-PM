@@ -475,16 +475,24 @@ function(App, Handlebars, Data) {
 
 
         });
-
-        var waypoint = new Waypoint({
-          element: document.getElementById('basic-waypoint'),
-          handler: function() {
-            console.log('Scrolled to waypoint!');
-          }
+        var didScroll = false;
+        $('.insidepage').scroll(function() {
+          didScroll = true;
         });
-      }
+        setInterval(function(){
+        if((window.location.hash.split("/")[2]) == 'feel'){
+          if ($('.insidepage').scrollTop() < 228){
+            $('#main ul li').removeClass('active');
+            $('#main .1').addClass('active');
+          // } else if ($('.insidepage').scrollTop() > 229 && $('.insidepage').scrollTop() < 1500){
+          }else{
+            $('#main ul li').removeClass('active');
+            $('#main .2').addClass('active');
+        }
+        }
+      }, 250);
 
-       else if
+       }else if
        (self.sSection == 'files') {
         $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
         self.showProjectFiles();
