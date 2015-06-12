@@ -494,8 +494,21 @@ function(App, Handlebars, Data) {
         $('.nextStepImagine').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
-          windowhasharray.pop();
-          windowhasharray.push("imagine");
+          if (windowhasharray[2] === "feel"){
+            windowhasharray.pop();
+            windowhasharray.push("imagine");
+          }else if (windowhasharray[2] === "imagine"){
+            windowhasharray.pop();
+            windowhasharray.push("do");
+          }else if (windowhasharray[2] === "do"){
+            windowhasharray.pop();
+            windowhasharray.push("share");
+          }else{
+            windowhasharray.pop();
+            windowhasharray.push("home");
+            windowhasharray.push("files");
+          }
+          // need to get to #project/{{project}}/home/files
           windowhasharray = windowhasharray.join("/");
           console.log(window.location.host + 'home' + windowhasharray);
           router.navigate((windowhasharray), {replace:true, trigger:true});
