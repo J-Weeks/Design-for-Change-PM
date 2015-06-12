@@ -364,6 +364,7 @@ function(App, Handlebars, Data) {
 
 //portalGuideTemplate
       $('.portalGuide').click(function(){
+
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#portalGuideTemplate').html()));
       });
@@ -508,7 +509,6 @@ function(App, Handlebars, Data) {
             windowhasharray.push("home");
             windowhasharray.push("files");
           }
-          // need to get to #project/{{project}}/home/files
           windowhasharray = windowhasharray.join("/");
           console.log(window.location.host + 'home' + windowhasharray);
           router.navigate((windowhasharray), {replace:true, trigger:true});
