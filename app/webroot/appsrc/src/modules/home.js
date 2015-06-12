@@ -435,45 +435,33 @@ function(App, Handlebars, Data) {
 
     });
 
-  //nav scroll
-    //Template generated dynamically line 427
+
+    //nav scroll
       var nav = $('#main'),
       nav_height = $('.header').outerHeight();
-      didScroll = false;
+      // nav_height = nav.outerHeight();
 
-      $('.insidepage').scroll(function(){
-        didScroll = true;
-      });
-
-
-      var sections = $('.contents');
-      var insidePage = $('.insidepage');
-
-    setInterval(function() {
-        if ( didScroll ) {
-            didScroll = false;
-            // Check your page position and then
-            // Load in more results
-      // sections.each(function(section) {
-        var cur_pos = insidePage.scrollTop();
-        var top = sections.offset().top - nav_height,
-            bottom = top + insidePage.outerHeight();
-            // console.log(cur_pos);
+    $('.insidepage').on('scroll', function () {
+      var sections = $('.contents div');
+      var cur_pos = $(this).scrollTop();
+      console.log(cur_pos);
+      sections.each(function(section) {
+        var top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
             // console.log(top);
+
         if (cur_pos >= top && cur_pos <= bottom) {
-          //console.log($(this));
+          console.log("here");
+          console.log($(this));
 
           // sections.removeClass('scrollactive');
           // $(this).addClass('scrollactive');
           // nav.find($(this).attr('id')).addClass('scrollactive');
-          $('.' + $(insidePage).attr('id')).addClass('scrollactive');
+          $('.' + $(this).attr('id')).addClass('scrollactive');
 
         }
-      // });
-        }
-    }, 250);
-
-
+      });
+    });
 
   //end
 
