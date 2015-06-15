@@ -747,21 +747,24 @@ function(App, Handlebars, Data) {
             $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
             bFound = true;
           }
+
         });
         if (bFound == false) {
           $('.activities').append('<br/><div class="alert alert-info">No activities found.</div>');
         }
         $('.uploadProjectFile').on("click", function() {
+          var activity_id = this.value;
+          debugger;
           console.log("inside prog");
           $('.uploadFile').click();
           var hash = window.location.hash.split("");
           var hashid = hash[9] + hash[10];
           $('.uploadFile').change(function() {
             // $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
-          $(this).upload('/dfcusa-pm/api/user_project/' + hashid + '/url', function(res) {
+          $(this).upload('/dfcusa-pm/api/project/' + hashid + '/file', function(res) {
             console.log(hashid);
 
-            location.reload();
+            // location.reload();
             }, 'html');
           });
         });

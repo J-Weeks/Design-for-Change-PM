@@ -538,6 +538,7 @@
 
 <script type="text/mustache-template" id="activityTemplate">
 	<div class="col-lg-6 col-sm-6 activity">
+  <div class="actNum" value="{{activity.id}}">
 		<section class="panel">
 	    <div class="panel-body">
 	      <div class="clearfix m-b">
@@ -555,7 +556,7 @@
 	        {{{activity.description}}}
 	      </p>
 	      <a href="{{activity.pdf}}" target="_new" class="btn btn-success btn-xs"><i class="fa fa-file-text"></i> View Activity</a>
-        <button class="btn btn-primary pull-right btn-sm uploadProjectFile"><i class="fa fa-file"></i> Upload New File</button>
+        <button class="btn btn-primary pull-right btn-sm uploadProjectFile" value="{{activity.id}}"><i class="fa fa-file"></i> Upload New File</button>
 	      <small class="pull-right hide">
 	        <a href="#"><i class="fa fa-comment-o"></i> Comments ({{activity.comments_count}})</a>
 	      </small>
@@ -568,6 +569,7 @@
 	      <a href="#activities/all/all_ages/{{activity.time_required}}" class="btn btn-white btn-xs pull-right marginButton marginButtonRight"><i class="fa fa-clock-o text-muted"></i> {{ucWords activity.time_required}}</a>
 	      <a href="#activities/all/{{activity.age_group}}/all_times" class="btn btn-white btn-xs pull-right "><i class="fa fa-group text-muted"></i> {{ucWords activity.age_group}}</a>
 	    </footer>
+    </div>
 	  </section>
 	 </div>
 </script>
