@@ -474,13 +474,14 @@ function(App, Handlebars, Data) {
           router.navigate((windowhasharray), {replace:true, trigger:true});
 
 
-        });
-        var didScroll = false;
-        $('.insidepage').scroll(function() {
-          didScroll = true;
+        // });
+        // var didScroll = false;
+        // $('.insidepage').scroll(function() {
+        //   didScroll = true;
         });
         setInterval(function(){
         if((window.location.hash.split("/")[2]) == 'feel'){
+          //can also use self.stage.attributes.stage
           if ($('.insidepage').scrollTop() < 228){
             $('#main ul li').removeClass('active');
             $('#main .1').addClass('active');
@@ -496,7 +497,56 @@ function(App, Handlebars, Data) {
           }else{
             $('#main ul li').removeClass('active');
           }
+        }else if((window.location.hash.split("/")[2]) == 'imagine'){
+          if ($('.insidepage').scrollTop() < 860){
+            $('#main ul li').removeClass('active');
+            $('#main .1').addClass('active');
+          } else if ($('.insidepage').scrollTop() > 861 && $('.insidepage').scrollTop() < 2200){
+            $('#main ul li').removeClass('active');
+            $('#main .2').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 4300){
+            $('#main ul li').removeClass('active');
+            $('#main .3').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 4301 && $('.insidepage').scrollTop() < 4500){
+            $('#main ul li').removeClass('active');
+            $('#main .4').addClass('active');
+          }else{
+            $('#main ul li').removeClass('active');
+          }
+        }else if((window.location.hash.split("/")[2]) == 'do'){
+          if ($('.insidepage').scrollTop() < 850){
+            $('#main ul li').removeClass('active');
+            $('#main .1').addClass('active');
+          } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2300){
+            $('#main ul li').removeClass('active');
+            $('#main .2').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 4800){
+            $('#main ul li').removeClass('active');
+            $('#main .3').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 4801 && $('.insidepage').scrollTop() < 4900){
+            $('#main ul li').removeClass('active');
+            $('#main .4').addClass('active');
+          }else{
+            $('#main ul li').removeClass('active');
+          }
+        }else {
+          if ($('.insidepage').scrollTop() < 850){
+            $('#main ul li').removeClass('active');
+            $('#main .1').addClass('active');
+          } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2200){
+            $('#main ul li').removeClass('active');
+            $('#main .2').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3200){
+            $('#main ul li').removeClass('active');
+            $('#main .3').addClass('active');
+          }else if ($('.insidepage').scrollTop() > 3201 && $('.insidepage').scrollTop() < 3400){
+            $('#main ul li').removeClass('active');
+            $('#main .4').addClass('active');
+          }else{
+            $('#main ul li').removeClass('active');
+          }
         }
+
       }, 250);
 
        }else if
