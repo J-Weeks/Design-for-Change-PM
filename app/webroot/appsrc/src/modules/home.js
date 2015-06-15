@@ -338,6 +338,8 @@ function(App, Handlebars, Data) {
       $('.steps').click(function(){
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#stepsTemplate').html()));
+        $('.projecthome li').removeClass('active');
+        $(".steps").addClass('active');
       });
 //end
 
@@ -345,6 +347,8 @@ function(App, Handlebars, Data) {
       $('.time').click(function(){
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#timeTemplate').html()));
+        $('.projecthome li').removeClass('active');
+        $(".time").addClass('active');
       });
 //end
 
@@ -352,6 +356,8 @@ function(App, Handlebars, Data) {
       $('.resources').click(function(){
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#resourcesTemplate').html()));
+        $('.projecthome li').removeClass('active');
+        $(".resources").addClass('active');
       });
 //end
 
@@ -359,6 +365,8 @@ function(App, Handlebars, Data) {
       $('.sampleProjects').click(function(){
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#sampleProjectsTemplate').html()));
+        $('.projecthome li').removeClass('active');
+        $(".sampleProjects").addClass('active');
       });
 //end
 
@@ -367,6 +375,8 @@ function(App, Handlebars, Data) {
 
         $(".insidepage").html("");
         $('.insidepage').html(Handlebars.compile($('#portalGuideTemplate').html()));
+        $('.projecthome li').removeClass('active');
+        $(".portalGuide").addClass('active');
       });
 //end
 
@@ -551,6 +561,8 @@ function(App, Handlebars, Data) {
 
        }else if
        (self.sSection == 'files') {
+        $('.projecthome li').removeClass('active');
+        $(".yourVideo").addClass('active');
         $('.contents').html(Handlebars.compile($('#filesViewTemplate').html()));
         self.showProjectFiles();
       } else {
@@ -764,7 +776,7 @@ function(App, Handlebars, Data) {
           $(this).upload('/dfcusa-pm/api/project/' + hashid + '/file', function(res) {
             console.log(hashid);
 
-            // location.reload();
+            location.reload();
             }, 'html');
           });
         });
