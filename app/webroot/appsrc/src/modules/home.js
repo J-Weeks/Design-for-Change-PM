@@ -329,6 +329,7 @@ function(App, Handlebars, Data) {
     showStage: function() {
       var self = this;
 
+
       $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
         // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
@@ -484,11 +485,19 @@ function(App, Handlebars, Data) {
           router.navigate((windowhasharray), {replace:true, trigger:true});
 
 
-        // });
-        // var didScroll = false;
-        // $('.insidepage').scroll(function() {
-        //   didScroll = true;
         });
+
+$( document ).ready(function() {
+      console.log("test");
+      var waypoint = new Waypoint({
+      element: $('basic-waypoint'),
+      handler: function() {
+        console.log(' hit')
+      },
+      context: '.insidepage .contents'
+    });
+});
+
         setInterval(function(){
         if((window.location.hash.split("/")[2]) == 'feel'){
           //can also use self.stage.attributes.stage

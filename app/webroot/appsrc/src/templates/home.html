@@ -1,4 +1,5 @@
-<script src="../../js/noframework.waypoints.js"></script>
+<!-- <script src="../../js/noframework.waypoints.js"></script> -->
+<script src="../../js/jquery.waypoints.js"></script>
 
 <script type="text/mustache-template" id="contentTemplate">
 	<div class="insidepage">
@@ -41,6 +42,7 @@
 </script>
 
 <script type="text/mustache-template" id="stepsTemplate">
+ <div id="basic-waypoint"></div>
 <h1>Steps</h1>
   <p>Lorem ipsum dolor sit amet, eam consulatu sadipscing et. Cum enim nostro no, eu nam suas purto urbanitas, quem agam denique ex vix. Nostrum explicari aliquando id mea, qui partem aperiri assentior ei. Nec an adhuc maiorum menandri. Ei sed aliquando adipiscing, has commodo scaevola ut, est euismod dolorem adversarium ea.</p>
 
@@ -401,7 +403,9 @@
 
 <script type="text/mustache-template" id="whyTemplate">
 <div id="1">
+ <div id="basic-waypoint">
   <a name="why_feel">
+  </div>
   <div id="testdiv"></div>
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.why.text}}}
@@ -410,7 +414,7 @@
 
 <script type="text/mustache-template" id="skillsTemplate">
   <a name="feel_skills">
-  <div id="2">
+
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.skills.text}}}
 	<section class="panel clearfix skillsBox">
@@ -434,7 +438,7 @@
         	{{{this.text}}}
       	</div>
       {{/content.content_obj.skills.skills}}
-    </div>
+
   </section>
   <div class="activities leftMargin">
   </div>
@@ -490,8 +494,9 @@
 
 <script type="text/mustache-template" id="submitTemplate">
   <a name="feel_submit">
+    <div id="2"></div>
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
-  <div id="basic-waypoint"></div>
+
   <div id="4">
 	{{{content.content_obj.submit.text}}}
 	<section class="tab-pane active" id="wizard">
