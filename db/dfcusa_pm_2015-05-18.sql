@@ -141,13 +141,14 @@ CREATE TABLE `files` (
   `section` varchar(256) DEFAULT NULL,
   `name` varchar(500) DEFAULT NULL,
   `url` varchar(500) DEFAULT NULL,
+  `activity_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `files` WRITE;
 /*!40000 ALTER TABLE `files` DISABLE KEYS */;
 
-INSERT INTO `files` (`id`, `project_id`, `section`, `name`, `url`)
+INSERT INTO `files` (`id`, `project_id`, `section`, `name`, `url`, `activity_id`)
 VALUES
 	(1,9,'feel','doc','http://s3.amazonaws.com/dfcusa_pm/teams/9/doc.pdf');
 
