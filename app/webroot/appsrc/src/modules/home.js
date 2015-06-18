@@ -487,16 +487,11 @@ function(App, Handlebars, Data) {
 
         });
 
-$( document ).ready(function() {
-      console.log("test");
-      var waypoint = new Waypoint({
-      element: $('basic-waypoint'),
-      handler: function() {
-        console.log(' hit')
-      },
-      context: '.insidepage .contents'
-    });
-});
+        $( document ).ready(function() {
+          $('basic-waypoint').waypoint(function(){
+            console.log('found');
+          },{context:'.insidepage'});
+        });
 
         setInterval(function(){
         if((window.location.hash.split("/")[2]) == 'feel'){
@@ -510,7 +505,7 @@ $( document ).ready(function() {
           }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 4900){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 4901 && $('.insidepage').scrollTop() < 5466){
+          }else if ($('.insidepage').scrollTop() > 4901 && $('.insidepage').scrollTop() < 5500){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
@@ -539,10 +534,10 @@ $( document ).ready(function() {
           } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2300){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 4800){
+          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 4230){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 4801 && $('.insidepage').scrollTop() < 4900){
+          }else if ($('.insidepage').scrollTop() > 4231 && $('.insidepage').scrollTop() < 4900){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
