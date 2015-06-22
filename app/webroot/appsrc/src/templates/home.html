@@ -376,26 +376,28 @@
   <div id="main">
   	<ul>
   	  <li class="goToSection 1" data-section="home"><a href="#project/{{project}}/{{stage}}/home"><p>The {{ucWords stage}} Stage</p></a></li>
-  	   <li class="goToSection 2" data-section="why"><a href="#why_feel"><p>Why {{ucWords stage}}</p></a></li>
-  	  <li class="goToSection 3" data-section="skills"><a href="#feel_skills"><p>Skills & Activities</p></a></li>
-  	  <li class="goToSection hide" data-section="activities"><a href="#feel_activities"><p>Activities</p></a></li>
-  	  <li class="goToSection 4" data-section="submit"><a href="#feel_submit"><p>Complete This Stage</p></a></li>
+  	   <li class="goToSection 2" data-section="why"><p>Why {{ucWords stage}}</p></li>
+  	  <li class="goToSection 3" data-section="skills"><p>Skills & Activities</p></li>
+  	  <li class="goToSection hide" data-section="activities"><p>Activities</p></li>
+  	  <li class="goToSection 4" data-section="submit"><p>Complete This Stage</p></li>
   	  <li class="goToSection pull-left" data-section="back"><a href="#project/{{project}}/home"><p style="font-size: 10pt; margin-left: 20px">< back to home</p></a></li>
   	</ul>
     <br><br>
   </div>
   <br><br>
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
-        <p></p>
-      </div>
-    </div>
+  <!--
+   <div class="progress">
+     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+       <p></p>
+     </div>
+   </div>
+   -->
 	<div class="clear"></div>
 </script>
 
 <script type="text/mustache-template" id="getting_startedTemplate">
 	<div class="float hide">
-    <a name="getting_started">
+    <!-- <a name="getting_started"> -->
 		<iframe width="400" height="200" src="//www.youtube.com/embed/{{content.content_obj.getting_started.video}}?rel=0" frameborder="0" allowfullscreen></iframe>
 	</div>
 	{{{content.content_obj.getting_started.text}}}
@@ -404,7 +406,7 @@
 <script type="text/mustache-template" id="whyTemplate">
 <div id="1">
  <div id="basic-waypoint">
-  <a name="why_feel">
+  <!-- <a name="why_feel"> -->
   </div>
   <div id="testdiv"></div>
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
@@ -413,7 +415,7 @@
 </script>
 
 <script type="text/mustache-template" id="skillsTemplate">
-  <a name="feel_skills">
+  <!-- <a name="feel_skills"> -->
 
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 	{{{content.content_obj.skills.text}}}
@@ -448,7 +450,7 @@
 <script type="text/mustache-template" id="activitiesTemplate">
 
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
-  <a name="feel_activities">
+ <!-- <a name="feel_activities"> -->
 	{{{content.content_obj.activities.text}}}
 	<br/>
 	<div id="toolbar">
@@ -493,7 +495,7 @@
 </script>
 
 <script type="text/mustache-template" id="submitTemplate">
-  <a name="feel_submit">
+  <!-- <a name="feel_submit"> -->
     <div id="2"></div>
   <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Sunday_Comic_Strip_Layout_Third_Page.png/800px-Sunday_Comic_Strip_Layout_Third_Page.png" alt="comic strip">
 

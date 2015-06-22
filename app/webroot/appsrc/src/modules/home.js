@@ -419,32 +419,33 @@ function(App, Handlebars, Data) {
     $('.goToSection').click(function(event) {
       main.children().removeClass('active');
       this.classList.add('active');
-
-//progress bar below
-//lets DRY this up
-    if (this.classList[1] == "2"){
-      $('.progress-bar').attr("aria-valuenow", "33");
-      $('.progress-bar').attr("width", "33%");
-      $('.progress-bar').attr("style", "width:33%");
-      $('.progress-bar').text("15 Minutes Left");
-    } else if (this.classList[1] == "3"){
-        $('.progress-bar').attr("aria-valuenow", "66");
-        $('.progress-bar').attr("width", "66%");
-        $('.progress-bar').attr("style", "width:66%");
-        $('.progress-bar').text("10 Minutes Left");
-    } else if (this.classList[1] == "4") {
-      $('.progress-bar').attr("aria-valuenow", "95");
-      $('.progress-bar').attr("width", "95%");
-      $('.progress-bar').attr("style", "width:95%");
-      $('.progress-bar').text("5 Minutes Left");
-    } else{
-      $('.progress-bar').attr("aria-valuenow", "0");
-      $('.progress-bar').attr("width", "0%");
-      $('.progress-bar').attr("style", "width:0%");
-    }
-    //end
-
     });
+
+// //progress bar below
+// //lets DRY this up
+//     if (this.classList[1] == "2"){
+//       $('.progress-bar').attr("aria-valuenow", "33");
+//       $('.progress-bar').attr("width", "33%");
+//       $('.progress-bar').attr("style", "width:33%");
+//       $('.progress-bar').text("15 Minutes Left");
+//     } else if (this.classList[1] == "3"){
+//         $('.progress-bar').attr("aria-valuenow", "66");
+//         $('.progress-bar').attr("width", "66%");
+//         $('.progress-bar').attr("style", "width:66%");
+//         $('.progress-bar').text("10 Minutes Left");
+//     } else if (this.classList[1] == "4") {
+//       $('.progress-bar').attr("aria-valuenow", "95");
+//       $('.progress-bar').attr("width", "95%");
+//       $('.progress-bar').attr("style", "width:95%");
+//       $('.progress-bar').text("5 Minutes Left");
+//     } else{
+//       $('.progress-bar').attr("aria-valuenow", "0");
+//       $('.progress-bar').attr("width", "0%");
+//       $('.progress-bar').attr("style", "width:0%");
+//     }
+//     //end
+
+//     });
 
 
       // $('.contents').html('');
@@ -487,19 +488,19 @@ function(App, Handlebars, Data) {
 
         });
 
-        $( document ).ready(function() {
-          $('basic-waypoint').waypoint(function(){
-            console.log('found');
-          },{context:'.insidepage'});
-        });
+        // $( document ).ready(function() {
+        //   $('basic-waypoint').waypoint(function(){
+        //     console.log('found');
+        //   },{context:'.insidepage'});
+        // });
 
         setInterval(function(){
         if((window.location.hash.split("/")[2]) == 'feel'){
           //can also use self.stage.attributes.stage
-          if ($('.insidepage').scrollTop() < 228){
+          if ($('.insidepage').scrollTop() < 226 ){
             $('#main ul li').removeClass('active');
             $('#main .1').addClass('active');
-          } else if ($('.insidepage').scrollTop() > 229 && $('.insidepage').scrollTop() < 1500){
+          } else if ($('.insidepage').scrollTop() > 227 && $('.insidepage').scrollTop() < 1500){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
           }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 4900){
