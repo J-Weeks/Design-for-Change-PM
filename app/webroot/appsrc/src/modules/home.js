@@ -416,10 +416,10 @@ function(App, Handlebars, Data) {
     //start nav / road bar
       var main = main = $('#main ul');
 
-    $('.goToSection').click(function(event) {
-      main.children().removeClass('active');
-      this.classList.add('active');
-    });
+    // $('.goToSection').click(function(event) {
+    //   main.children().removeClass('active');
+    //   this.classList.add('active');
+    // });
 
 // //progress bar below
 // //lets DRY this up
@@ -494,6 +494,29 @@ function(App, Handlebars, Data) {
         //   },{context:'.insidepage'});
         // });
 
+      $('#main .2').click(function(e){
+        e.preventDefault();
+        $('.insidepage').animate({
+          scrollTop: $("#1").offset().top
+          }, 2000);
+      });
+
+      $('#main .3').click(function(e){
+        e.preventDefault();
+        $('.insidepage').animate({
+        scrollTop: $("#2").offset().top
+        }, 2000);
+      });
+
+      $('#main .4').click(function(e){
+        e.preventDefault();
+        $('.insidepage').animate({
+        scrollTop: "5000px"
+        }, 2000);
+      });
+
+
+
         setInterval(function(){
         if((window.location.hash.split("/")[2]) == 'feel'){
           //can also use self.stage.attributes.stage
@@ -562,7 +585,7 @@ function(App, Handlebars, Data) {
           }
         }
 
-      }, 250);
+      }, 500);
 
        }else if
        (self.sSection == 'files') {
