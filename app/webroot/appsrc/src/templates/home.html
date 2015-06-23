@@ -15,14 +15,24 @@
 <script type="text/mustache-template" id="projectHeaderTemplate">
 	<div class="header b-b bg-white-only" style="position: relative">
 		<div style="position: absolute; color: #666"><h2 style="line-height: 55px"><i style="font-size: 12pt">Your Project:</i>&nbsp;&nbsp;<b>{{project.name}}</b></h2></div>
-		<div class="stageicons">
+
+		<!-- <div class="stageicons">
 			<a href="#project/{{project.id}}/home"><img data-stage-icon="home" src="/dfcusa-pm/app/webroot/images/icon_home.png"></a>
 			<a href="#project/{{project.id}}/feel"><img data-stage-icon="feel" src="/dfcusa-pm/app/webroot/images/icon_feel.png"></a>
 			<a href="#project/{{project.id}}/imagine"><img data-stage-icon="imagine" src="/dfcusa-pm/app/webroot/images/icon_imagine.png"></a>
 			<a href="#project/{{project.id}}/do"><img data-stage-icon="do" src="/dfcusa-pm/app/webroot/images/icon_do.png"></a>
 			<a href="#project/{{project.id}}/share"><img data-stage-icon="share" src="/dfcusa-pm/app/webroot/images/icon_share.png"></a>
 			<a href="#project/{{project.id}}/home/files"><img data-stage-icon="files" src="/dfcusa-pm/app/webroot/images/icon_files.png"></a>
-		</div>
+		</div> -->
+
+    <div class="wizard clearfix stageicons">
+      <ul class="steps">
+        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;FEEL</li></a>
+        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;IMAGINE</li></a>
+        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li></a>
+        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
+      </ul>
+    </div>
 	</div>
 </script>
 
@@ -360,7 +370,8 @@
 
 <script type="text/mustache-template" id="projectLeftNavTemplate">
 	<h1>Your Project</h1>
-	<ul class="projecthome">
+
+	 <ul class="projecthome">
 	  <li onclick="javascript:location.href = '#project/{{project}}/home';" class="goToSection" data-section="home"><p><img data-stage-icon="home" src="/dfcusa-pm/app/webroot/images/icon_home.png" class="stageicon">Getting Started</p></li>
 	  <li onclick="javascript:location.href = '#project/{{project}}/feel';"><p><img src="/dfcusa-pm/app/webroot/images/icon_feel.png" class="stageicon hide">Feel</p></li>
 	  <li onclick="javascript:location.href = '#project/{{project}}/imagine';"><p><img src="/dfcusa-pm/app/webroot/images/icon_imagine.png" class="stageicon hide">Imagine</p></li>

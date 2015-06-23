@@ -312,7 +312,7 @@ function(App, Handlebars, Data) {
       $('#main_menu').addClass('pull-right');
       $('#projectHeader').html(Handlebars.compile($('#projectHeaderTemplate').html())({project: self.project.attributes}));
 
-
+console.log(self.project.attributes);
 
       $('#projectHeader').removeClass('hide');
 
@@ -795,12 +795,13 @@ function(App, Handlebars, Data) {
           $('.activities').append('<br/><div class="alert alert-info">No activities found.</div>');
         }
         $('.uploadProjectFile').on("click", function() {
+          console.log(window.sStage);
           var activity_id = this.value;
           $('.uploadFile').click();
           var hash = window.location.hash.split("");
           var hashid = hash[9] + hash[10];
           $('.uploadFile').change(function() {
-          $(this).upload('/dfcusa-pm/api/project/' + hashid + 'file/' + activity_id + '/' + window.sStage, function(res) {
+          $(this).upload('/dfcusa-pm/api/project/' + hashid + '/file/' + activity_id + '/' + window.sStage, function(res) {
             location.reload();
             }, 'html');
           });

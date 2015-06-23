@@ -241,7 +241,8 @@ form {
 .stageicons {
   position: absolute;
   right: 20px;
-  top: 8px; }
+  top: 8px;}
+
   .stageicons img {
     width: 35px;
     float: left;
