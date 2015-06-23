@@ -50,7 +50,7 @@
 	Router::connect('/api/project', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'updateProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'removeProject', '[method]' => array('DELETE')));
-	Router::connect('/api/project/:projectid/file', array('controller' => 'api', 'action' => 'uploadProjectFile', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/project/:projectid/file/:activityid', array('controller' => 'api', 'action' => 'uploadProjectFile', '[method]' => array('POST', 'PUT')));
 
 	Router::connect('/api/project/:projectid/user', array('controller' => 'api', 'action' => 'updateUserProject', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/project/:projectid/user/:userid', array('controller' => 'api', 'action' => 'removeUserProject', '[method]' => array('DELETE')));
@@ -66,8 +66,10 @@
 	Router::connect('/api/activities', array('controller' => 'api', 'action' => 'getActivities', '[method]' => array('GET')));
 	Router::connect('/api/activities/stage/:stage', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
 	Router::connect('/api/activities/stage/:stage/:minscore', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
+	Router::connect('/api/activities/stage/:stage/:minscore/:projectid', array('controller' => 'api', 'action' => 'getActivitiesByStage', '[method]' => array('GET')));
 	Router::connect('/api/activities/skill/:skill', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
 	Router::connect('/api/activities/skill/:skill/:minscore', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
+	Router::connect('/api/activities/skill/:skill/:minscore/:projectid', array('controller' => 'api', 'action' => 'getActivitiesBySkill', '[method]' => array('GET')));
 	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'getActivity', '[method]' => array('GET')));
 	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'updateActivity', '[method]' => array('PUT', 'POST')));
 	Router::connect('/api/activity/:activityid/upload', array('controller' => 'api', 'action' => 'uploadActivityFile', '[method]' => array('PUT', 'POST')));

@@ -780,7 +780,7 @@ function(App, Handlebars, Data) {
         $('.activities').html('<h4>All ' + app.ucwords(self.sStage) + ' Activities</h4>')
       }
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100';
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100/' + self.iProjectId;
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
@@ -794,16 +794,11 @@ function(App, Handlebars, Data) {
         }
         $('.uploadProjectFile').on("click", function() {
           var activity_id = this.value;
-          debugger;
-          console.log("inside prog");
           $('.uploadFile').click();
           var hash = window.location.hash.split("");
           var hashid = hash[9] + hash[10];
           $('.uploadFile').change(function() {
-            // $(this).upload('/dfcusa-pm/api/project/' + window.iProjectId + '/file', function(res) {
-          $(this).upload('/dfcusa-pm/api/project/' + hashid + '/file', function(res) {
-            console.log(hashid);
-
+          $(this).upload('/dfcusa-pm/api/project/' + hashid + 'file/' + activity_id, function(res) {
             location.reload();
             }, 'html');
           });
@@ -816,7 +811,7 @@ function(App, Handlebars, Data) {
       bFound = false;
       $('.activities').html('<h4>Found Activities</h4>');
       self.activities = new Data.Collections.Activities;
-      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage;
+      self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/' + self.iProjectId;
       self.activities.fetch({success: function() {
         _.each(self.activities.models, function(activity) {
           if ((activity.attributes.all_skills.indexOf($('#search-skill').val()) > -1) || ($('#search-skill').val() == 'all')) {

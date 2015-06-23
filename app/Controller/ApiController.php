@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
 class ApiController extends AppController {
 
   public $name = 'UserApi';
-  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill');
+  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill', 'File');
   public $components = array('Objects', 'Aws');
 
   var $oData = array();
@@ -355,10 +355,13 @@ class ApiController extends AppController {
           $oFiles = $oProject['files_obj'];
 
           $oReturn = $this->Aws->uploadFile($_FILES['file']['name'], $_FILES['file']['tmp_name'], 'dfcusa_pm/projects/' . $oProject['id']);
-          array_push($oFiles, 'https://dfcusa_pm.s3.amazonaws.com/projects/' . $oProject['id'] . '/' . $_FILES['file']['name']);
-          $oProject['files_obj'] = $oFiles;
 
-          $this->Project->save($oProject);
+          $this->File->create();
+          $this->File->saveField('project_id', $oProject['id']);
+          $this->File->saveField('url', 'https://dfcusa_pm.s3.amazonaws.com/projects/' . $oProject['id'] . '/' . $_FILES['file']['name']);
+          $this->File->saveField('activity_id', $this->params['activityid']);
+          $this->File->saveField('name', $_FILES['file']['name']);
+
           $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));
         }
       }
@@ -615,9 +618,9 @@ class ApiController extends AppController {
       $aStages = explode(',', $oActivity['stages']);
       if (in_array($this->params['stage'], $aStages)) {
         if ($this->params['minscore'] != undefined) {
-          if ($oActivity['score'] >= $this->params['minscore']) array_push($oReturn, $this->Activity->getFullActivity($oActivity));
+          if ($oActivity['score'] >= $this->params['minscore']) array_push($oReturn, $this->Activity->getFullActivity($oActivity, $this->params['projectid']));
         } else {
-          array_push($oReturn, $this->Activity->getFullActivity($oActivity));
+          array_push($oReturn, $this->Activity->getFullActivity($oActivity, $this->params['projectid']));
         }
       }
     }
@@ -635,9 +638,9 @@ class ApiController extends AppController {
       $aSkills = explode(',', $oActivity['skills']);
       if (in_array(strtolower($this->params['skill']), $aSkills)) {
         if ($this->params['minscore'] != undefined) {
-          if ($oActivity['score'] >= $this->params['minscore']) array_push($oReturn, $this->Activity->getFullActivity($oActivity));
+          if ($oActivity['score'] >= $this->params['minscore']) array_push($oReturn, $this->Activity->getFullActivity($oActivity, $this->params['projectid']));
         } else {
-          array_push($oReturn, $this->Activity->getFullActivity($oActivity));
+          array_push($oReturn, $this->Activity->getFullActivity($oActivity, $this->params['projectid']));
         }
       }
     }

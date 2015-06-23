@@ -564,7 +564,12 @@
 	        {{{activity.description}}}
 	      </p>
 	      <a href="{{activity.pdf}}" target="_new" class="btn btn-success btn-xs"><i class="fa fa-file-text"></i> View Activity</a>
-        <button class="btn btn-primary pull-right btn-sm uploadProjectFile" value="{{activity.id}}"><i class="fa fa-file"></i> Upload New File</button>
+	      {{#if_notempty activity.file}}
+	      	<a href="{{activity.file.url}}"><button class="btn btn-success pull-right btn-sm" target="_new"><i class="fa fa-file"></i> Download File</button></a>
+        	<button class="btn btn-primary pull-right btn-sm uploadProjectFile" value="{{activity.id}}"><i class="fa fa-file"></i> Replace File</button>
+        {{else}}
+        	<button class="btn btn-primary pull-right btn-sm uploadProjectFile" value="{{activity.id}}"><i class="fa fa-file"></i> Upload New File</button>
+        {{/if_notempty}}
 	      <small class="pull-right hide">
 	        <a href="#"><i class="fa fa-comment-o"></i> Comments ({{activity.comments_count}})</a>
 	      </small>
