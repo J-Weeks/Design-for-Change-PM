@@ -732,6 +732,8 @@ function(App, Handlebars, Data) {
         });
       }});
 
+      window.sStage = self.stage.attributes.stage;
+
       $('.uploadFiles').removeClass('hide');
     },
     showProjectFiles: function() {
@@ -798,7 +800,7 @@ function(App, Handlebars, Data) {
           var hash = window.location.hash.split("");
           var hashid = hash[9] + hash[10];
           $('.uploadFile').change(function() {
-          $(this).upload('/dfcusa-pm/api/project/' + hashid + 'file/' + activity_id, function(res) {
+          $(this).upload('/dfcusa-pm/api/project/' + hashid + 'file/' + activity_id + '/' + window.sStage, function(res) {
             location.reload();
             }, 'html');
           });

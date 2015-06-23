@@ -360,6 +360,7 @@ class ApiController extends AppController {
           $this->File->saveField('project_id', $oProject['id']);
           $this->File->saveField('url', 'https://dfcusa_pm.s3.amazonaws.com/projects/' . $oProject['id'] . '/' . $_FILES['file']['name']);
           $this->File->saveField('activity_id', $this->params['activityid']);
+          $this->File->saveField('stage', $this->params['stage']);
           $this->File->saveField('name', $_FILES['file']['name']);
 
           $oReturn = $this->Objects->populateProject($this->Project->findById($oData['id']));

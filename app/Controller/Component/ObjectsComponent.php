@@ -33,6 +33,7 @@ class ObjectsComponent extends Component {
 	public function populateProjectFull($project) {
 		Controller::loadModel('User');
 		Controller::loadModel('UserProject');
+		Controller::loadModel('File');
 
 		if ($project) {
 			$oUsers = array();
@@ -47,6 +48,20 @@ class ObjectsComponent extends Component {
 			$project['users'] = $oUsers;
 			$project['mentor'] = $oMentor;
 			$project['users_count'] = count($oUsers);
+
+			$oFiles = $this->File->find('all', array('conditions' => array('File.project_id' => $project['id'])));
+			$project['current_stage'] = '';
+			foreach ($oFiles as $oFile) {
+				if ($oFile['stage'] == 'feel') {
+					if ($project['current_stage'] == '') $project['current_stage'] = 1;
+				} else if ($oFile['stage'] == 'imagine') {
+					if ($project['current_stage'] <= 1) $project['current_stage'] = 2;
+				} else if ($oFile['stage'] == 'do') {
+					if ($project['current_stage'] <= 2) $project['current_stage'] = 3;
+				} else if ($oFile['stage'] == 'share') {
+					if ($project['current_stage'] <= 3) $project['current_stage'] = 4;
+				}
+			}
 		}
 
 		return $project;
