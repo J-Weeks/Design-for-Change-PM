@@ -306,6 +306,9 @@ function(App, Handlebars, Data) {
     },
     showProject: function() {
       var self = this;
+      var curStage =  window.location.hash.split('/');
+      self.project.attributes.current_stage = curStage[2];
+      debugger;
 
       $('#navbar_fids').removeClass('hide');
       $('#project_name').removeClass('hide');
