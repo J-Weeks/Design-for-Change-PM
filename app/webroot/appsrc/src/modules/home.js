@@ -356,6 +356,7 @@ console.log(self.project.attributes);
         // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
 
         $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+
 //stepsTemplate
       $('.steps').click(function(){
         $(".insidepage").html("");
