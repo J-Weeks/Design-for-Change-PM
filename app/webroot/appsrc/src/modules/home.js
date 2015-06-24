@@ -807,14 +807,17 @@ console.log(self.project.attributes);
         var count = 0;
         _.each(self.activities.models, function(activity) {
 
-          if ((count < 3) && ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all'))) {
+          while ((count < 3) && ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all'))) {
             $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
             bFound = true;
             count = count + 1;
-            console.log(count);
-          }
+              // if(count == 3){
+              //   $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
+              // }
 
+          }
         });
+        $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
 
         if (bFound == false) {
           $('.activities').append('<br/><div class="alert alert-info">No activities found.</div>');

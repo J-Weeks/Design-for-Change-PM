@@ -105,6 +105,29 @@ form {
   .activity .title {
     line-height: 35px; }
 
+/*View more activity panel body   */
+
+.activity .panel-body-more {
+    min-height: 210px;
+    height: 250px;
+    padding-top: 0px !important;
+}
+
+.panel-body-more p{
+padding-left:20px;
+}
+.activity .moreact-title{
+ margin: 0 auto;
+ text-align: center;
+}
+
+.moreact-btn{
+margin: 40px 0px 0px 150px;
+
+}
+
+
+
 form {
   margin: 20px; }
 
