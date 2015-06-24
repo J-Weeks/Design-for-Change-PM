@@ -561,10 +561,10 @@ console.log(self.project.attributes);
           } else if ($('.insidepage').scrollTop() > 861 && $('.insidepage').scrollTop() < 2200){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 4300){
+          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3380){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 4301 && $('.insidepage').scrollTop() < 4500){
+          }else if ($('.insidepage').scrollTop() > 3381 && $('.insidepage').scrollTop() < 4500){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
