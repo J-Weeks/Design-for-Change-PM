@@ -32,6 +32,13 @@
         <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li></a>
         <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
       </ul>
+
+       <!--<ul class="steps">
+        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_eq project.current_stage "feel"}}class="active"{{/if_eq}}>{{#if_eq project.current_stage "feel"}}<span class="fa fa-check"></span>{{/if_eq}}&nbsp;FEEL</li></a>
+        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" {{#if_eq project.current_stage "imagine"}}class="active"{{/if_eq}}>{{#if_eq project.current_stage "imagine"}}<span class="fa fa-check"></span>{{/if_eq}}&nbsp;IMAGINE</li></a>
+        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li></a>
+        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
+      </ul> -->
     </div>
 	</div>
 </script>

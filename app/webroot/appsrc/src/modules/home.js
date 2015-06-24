@@ -306,9 +306,25 @@ function(App, Handlebars, Data) {
     },
     showProject: function() {
       var self = this;
+      var windowhash = window.location.hash.split('/');
       var curStage =  window.location.hash.split('/');
-      self.project.attributes.current_stage = curStage[2];
-      debugger;
+      curStage = curStage[2];
+
+      if(curStage == "feel"){
+        curStage = 1;
+      }else if (curStage == "imagine"){
+        curStage = 2;
+      }else if (curStage == "do"){
+        curStage = 3;
+      }else if(curStage == "share" || windowhash[3] == "files"){
+        curStage = 4;
+      }else{
+        curStage = 0;
+      }
+
+
+      self.project.attributes.current_stage = curStage;
+      // debugger;
 
       $('#navbar_fids').removeClass('hide');
       $('#project_name').removeClass('hide');
