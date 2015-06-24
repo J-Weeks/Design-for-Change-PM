@@ -114,16 +114,20 @@ form {
 }
 
 .panel-body-more p{
-padding-left:20px;
+padding-top:20px;
+margin-left:10px;
 }
 .activity .moreact-title{
  margin: 0 auto;
  text-align: center;
 }
 
+.moreact-title p{
+  margin-top: 20px
+}
+
 .moreact-btn{
 margin: 40px 0px 0px 150px;
-
 }
 
 
@@ -214,7 +218,7 @@ form {
   font-size: 12pt;
   color: #000000;
   line-height: 23pt;
-  margin-bottom: 20px; }
+  margin-bottom: 5px; }
   #content p.padded {
     padding: 20px;
     border: 1px solid #f1f1f1; }
