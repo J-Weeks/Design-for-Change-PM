@@ -803,13 +803,19 @@ console.log(self.project.attributes);
       self.activities = new Data.Collections.Activities;
       self.activities.url = '/dfcusa-pm/api/activities/stage/' + self.sStage + '/100/' + self.iProjectId;
       self.activities.fetch({success: function() {
+
+        var count = 0;
         _.each(self.activities.models, function(activity) {
-          if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
+
+          if ((count < 3) && ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all'))) {
             $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
             bFound = true;
+            count = count + 1;
+            console.log(count);
           }
 
         });
+
         if (bFound == false) {
           $('.activities').append('<br/><div class="alert alert-info">No activities found.</div>');
         }
