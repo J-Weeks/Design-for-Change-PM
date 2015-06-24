@@ -309,6 +309,8 @@ function(App, Handlebars, Data) {
       var windowhash = window.location.hash.split('/');
       var curStage =  window.location.hash.split('/');
       curStage = curStage[2];
+      var stageComplete = localStorage.getItem('stageComplete');
+      console.log(stageComplete);
 
       if(curStage == "feel"){
         curStage = 1;
@@ -316,7 +318,7 @@ function(App, Handlebars, Data) {
         curStage = 2;
       }else if (curStage == "do"){
         curStage = 3;
-      }else if(curStage == "share" || windowhash[3] == "files"){
+      }else if(curStage == "share" || windowhash[3] == "files" || stageComplete == 'true'){
         curStage = 4;
       }else{
         curStage = 0;
@@ -499,6 +501,7 @@ console.log(self.project.attributes);
             windowhasharray.pop();
             windowhasharray.push("home");
             windowhasharray.push("files");
+            localStorage.setItem('stageComplete', true);
           }
           windowhasharray = windowhasharray.join("/");
           console.log(window.location.host + 'home' + windowhasharray);
@@ -545,10 +548,10 @@ console.log(self.project.attributes);
           } else if ($('.insidepage').scrollTop() > 227 && $('.insidepage').scrollTop() < 1500){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 4900){
+          }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 2800){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 4901 && $('.insidepage').scrollTop() < 5500){
+          }else if ($('.insidepage').scrollTop() > 2801 && $('.insidepage').scrollTop() < 5500){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
@@ -577,10 +580,10 @@ console.log(self.project.attributes);
           } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2300){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 4230){
+          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 3370){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 4231 && $('.insidepage').scrollTop() < 4900){
+          }else if ($('.insidepage').scrollTop() > 3371 && $('.insidepage').scrollTop() < 4900){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
@@ -593,10 +596,10 @@ console.log(self.project.attributes);
           } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2200){
             $('#main ul li').removeClass('active');
             $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3200){
+          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3300){
             $('#main ul li').removeClass('active');
             $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 3201 && $('.insidepage').scrollTop() < 3400){
+          }else if ($('.insidepage').scrollTop() > 3301 && $('.insidepage').scrollTop() < 4000){
             $('#main ul li').removeClass('active');
             $('#main .4').addClass('active');
           }else{
@@ -757,7 +760,6 @@ console.log(self.project.attributes);
     },
     showProjectFiles: function() {
       var self = this;
-
       bFound = false;
       _.each(self.project.attributes.files_obj, function(file) {
         bFound = true;
