@@ -77,6 +77,7 @@
   </div>
 
   <!-- Table -->
+{{#if_eq masterMentor 0}}
   <table class="table">
     <thead>
       <tr>
@@ -91,11 +92,42 @@
       <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
       <td>{{location}}</td>
       {{#each projects}}
-        <td>{{name}}</td>
+        <td>
+          {{name}}
+        </td>
       {{/each}}
     </tr>
     {{/each}}
   </tbody>
   </table>
 </div>
+{{/if_eq}}
+
+{{#if_eq masterMentor 1}}
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Projects</th>
+      </tr>
+    </thead>
+  <tbody>
+    {{#each org.users}}
+    <tr>
+      <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
+      <td>{{location}}</td>
+      {{#each projects}}
+        <td>
+          {{name}}
+          <button type="button" class="btn btn-primary btn-sm deleteProject"><i class="fa fa-file"></i> Delete</button>
+        </td>
+      {{/each}}
+    </tr>
+    {{/each}}
+  </tbody>
+  </table>
+</div>
+{{/if_eq}}
+
 </script>

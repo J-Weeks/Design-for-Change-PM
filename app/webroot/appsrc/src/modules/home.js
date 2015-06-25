@@ -243,8 +243,9 @@ function(App, Handlebars, Data) {
           }).done(function(res){
             console.log(res);
             $('#content').html('');
-            $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res}));
-
+            $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
+            debugger;
+console.log(oCurrentUser);
           });
         });
       });
