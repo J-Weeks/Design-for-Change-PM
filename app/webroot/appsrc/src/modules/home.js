@@ -810,18 +810,28 @@ console.log(self.project.attributes);
       self.activities.fetch({success: function() {
 
         var count = 0;
+         // var windowhash = window.location.hash.split('/');
+      var curStage =  window.location.hash.split('/');
+      curStage = curStage[2]
+      String.prototype.capitalize = function() {
+        return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
+      };
+
+      curStage = curStage.capitalize();
 
         _.each(self.activities.models, function(activity) {
           if (count < 3){
             if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
-              $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
+              $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes, curStage: curStage}));
               bFound = true;
               count = count + 1;
+              // debugger;
             }
           }
         });
-        debugger;
 
+
+// debugger;
         $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
 
         if (bFound == false) {
