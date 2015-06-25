@@ -233,6 +233,13 @@ function(App, Handlebars, Data) {
       }
 
       $('.uploadFiles').addClass('hide');
+
+      debugger;
+      $(document).ready(function(){
+        $('.editorg').click(function(){
+          $('.main_content').html('');
+        });
+      });
     },
     newProject: function() {
       console.log('test');

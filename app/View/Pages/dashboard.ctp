@@ -4,7 +4,7 @@
 
 <div class="main_content">
   <section id="content">
-    
+
   </section>
 </div>
 
@@ -17,7 +17,7 @@
           <li><a href="/dfcusa-pm/logout" class="sign">Exit Portal</a></li>
           <li style="width: 20px"><img src="{{user.profilepic}}" class="profilePicSmall"></li>
         </ul>
-        <div class="clear"></div>   
+        <div class="clear"></div>
       </div>
       <div class="clear"></div>
       <div class="inner_logo"><a href="/"><img src="/images/inner_logo.png" width="196" height="93" alt="logo"></a></div>
@@ -27,6 +27,7 @@
     <div class="container">
       <div class="inner_navigation">
         <ul>
+          <li data-navigation="editorg"><a href="/home#projects" class="getstarted editorg">Edit Org</a></li>
           <li data-navigation="myprojects"><a href="/home#projects" class="getstarted myprojects">My Projects</a></li>
           <li data-navigation="allactivities"><a href="/home#activities" class="getstarted allactivities">All Activities</a></li>
         </ul>
@@ -43,7 +44,7 @@
         <ul>
           <li><a href="/dfcusa-pm/logout" class="sign">Exit Portal</a></li>
         </ul>
-        <div class="clear"></div>   
+        <div class="clear"></div>
       </div>
       <div class="clear"></div>
       <div class="inner_logo"><a href="/"><img src="/images/inner_logo.png" width="196" height="93" alt="logo"></a></div>
