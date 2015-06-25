@@ -67,3 +67,22 @@
     </div>
   </nav>
 </script>
+
+<script type="text/mustache-template" id="editOrgTemplate">
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Panel heading</div>
+  <div class="panel-body">
+    <p>Below are members of your organization</p>
+  </div>
+
+  <!-- Table -->
+  <table class="table">
+    <tr>
+      <th>Col1</th>
+      <th>Col2</th>
+    </tr>
+
+  </table>
+</div>
+</script>

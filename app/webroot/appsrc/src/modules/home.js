@@ -192,9 +192,9 @@ function(App, Handlebars, Data) {
           $('#content').html(Handlebars.compile($('#projectsListTemplate').html()));
           _.each(self.projects.models, function(project) {
             bDeleteable = false;
-            console.log(project);
+
             if ((project.attributes.mentor) && (window.oCurrentUser.id == project.attributes.mentor.id)) bDeleteable = true;
-            console.log(window.oCurrentUser);
+
             if (window.oCurrentUser.master_mentor == 1) bDeleteable = true;
             $('#content').find('.projectsList').append(Handlebars.compile($('#projectMainTabletTemplate').html())({organization: self.user.attributes.organization, project: project.attributes, deletable: bDeleteable}));
             bFound = true;
@@ -234,12 +234,17 @@ function(App, Handlebars, Data) {
 
       $('.uploadFiles').addClass('hide');
 
-      debugger;
+
       $(document).ready(function(){
         $('.editorg').click(function(){
-          $('.main_content').html('');
-        });
-      });
+          debugger;
+          $.ajax({
+            url: '/dfcusa-pm/api/organization'
+          }).done(function(res){
+            console.log(res);
+          });
+      })
+      })
     },
     newProject: function() {
       console.log('test');
