@@ -115,12 +115,13 @@
   <tbody>
     {{#each org.users}}
     <tr>
-      <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
+      <td>
+        <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}<button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button>
+      </td>
       <td>{{location}}</td>
       {{#each projects}}
         <td>
           {{name}}
-          <button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button>
         </td>
       {{/each}}
     </tr>
