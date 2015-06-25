@@ -73,26 +73,29 @@
   <!-- Default panel contents -->
   <div class="panel-heading">Panel heading</div>
   <div class="panel-body">
-    <p>Below are members of your organization</p>
+    <p>Below are members of {{org.name}}</p>
   </div>
 
   <!-- Table -->
   <table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-    </tr>
-  </thead>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Projects</th>
+      </tr>
+    </thead>
   <tbody>
     {{#each org.users}}
     <tr>
       <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
       <td>{{location}}</td>
+      {{#each projects}}
+        <td>{{name}}</td>
+      {{/each}}
     </tr>
     {{/each}}
   </tbody>
-
   </table>
 </div>
 </script>
