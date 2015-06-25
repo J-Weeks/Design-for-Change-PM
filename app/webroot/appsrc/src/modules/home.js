@@ -244,10 +244,17 @@ function(App, Handlebars, Data) {
             console.log(res);
             $('#content').html('');
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
-            debugger;
-console.log(oCurrentUser);
+               $('.deleteProject').click(function(e){
+          e.preventDefault;
+          var delProjectId = this.value;
+          console.log(delProjectId);
+        });
+
           });
         });
+
+
+
       });
     },
     newProject: function() {

@@ -120,7 +120,7 @@
       {{#each projects}}
         <td>
           {{name}}
-          <button type="button" class="btn btn-primary btn-sm deleteProject"><i class="fa fa-file"></i> Delete</button>
+          <button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button>
         </td>
       {{/each}}
     </tr>
