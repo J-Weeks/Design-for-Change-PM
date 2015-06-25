@@ -38,6 +38,7 @@
 	Router::connect('/api/user/:userid/upload', array('controller' => 'api', 'action' => 'uploadUserProfilePic', '[method]' => array('PUT', 'POST')));
 
 	Router::connect('/api/organizations', array('controller' => 'api', 'action' => 'getOrganizations', '[method]' => array('GET')));
+	Router::connect('/api/organization', array('controller' => 'api', 'action' => 'getOrganization', '[method]' => array('GET')));
 	Router::connect('/api/organization', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'getOrganization', '[method]' => array('GET')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));

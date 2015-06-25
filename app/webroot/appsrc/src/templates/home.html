@@ -244,7 +244,9 @@
 	            {{project.description}}
 	          </p>
 	          <a class="btn btn-primary btn-sm" href="#project/{{project.id}}">View</a>
-	          <a class="btn btn-default btn-sm marginButton rightAlign deleteProject" href="javascript:void(0)" data-id="{{project.id}}">Delete</a>
+	          {{#if_eq deletable true}}
+	          	<a class="btn btn-default btn-sm marginButton rightAlign deleteProject" href="javascript:void(0)" data-id="{{project.id}}">Delete</a>
+	          {{/if_eq}}
 	        </div>
 	        <div class="wizard clearfix">
             <ul class="steps">

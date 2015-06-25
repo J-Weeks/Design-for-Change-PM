@@ -77,6 +77,7 @@ class ApiController extends AppController {
           $this->Organization->create();
           $this->Organization->saveField('name', $oData['organization']);
           $oOrganization = $this->Organization->findByName($oData['organization']);
+          $oData['master_mentor'] = 1;
         }
         $oData['organization_id'] = $oOrganization['id'];
         unset($oData['organization']);
@@ -175,7 +176,14 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
-    if (($oCurrentUser['id'] != $this->params['userid']) && (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin'))) {
+    $oDeleteUser = $this->User->findById($this->params['userid']);
+
+    $bAllowed = false;
+
+    if (($oCurrentUser['id'] == $this->params['userid']) && (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin'))) $bAllowed = true;
+    if (($oCurrentUser['master_mentor'] == 1) && ($oCurrentUser['organization_id'] == $oDeleteUser['organization_id'])) $bAllowed = true;
+    
+    if ($bAllowed) {
       if ($oCurrentUser['type'] == 'admin') {
         $this->User->delete($this->params['userid']);
       } else {
@@ -184,9 +192,11 @@ class ApiController extends AppController {
           $this->User->delete($this->params['userid']);
         }
       }
+    } else {
+      $oCurrentUser = false;
     }
 
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
   }
 
   public function getOrganizations() {
@@ -207,6 +217,8 @@ class ApiController extends AppController {
   public function getOrganization() {
     global $oData;
     global $oCurrentUser;
+
+    if ($this->params['organizationid'] == null) $this->params['organizationid'] = $oCurrentUser['organization_id'];
 
     if (($oCurrentUser['organization_id'] == $this->params['organizationid']) || ($oCurrentUser['type'] == 'admin')) {
       $oOrganization = $this->Organization->findById($this->params['organizationid']);
@@ -375,6 +387,8 @@ class ApiController extends AppController {
     global $oData;
     global $oCurrentUser;
 
+    $oFoundUserProject = $this->Project->findById($this->params['projectid']);
+
     if (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
       foreach ($oCurrentUser['projects'] as $oProject) {
         if ($oProject['id'] == $this->params['projectid']) {
@@ -383,6 +397,8 @@ class ApiController extends AppController {
       }
 
       if ($oCurrentUser['type'] == 'admin') $bContinue = true;
+
+      if (($oCurrentUser['master_mentor'] == 1) && ($oFoundUserProject['organization_id'] == $oCurrentUser['organization_id'])) $bContinue = true;
 
       if ($bContinue) {
         $this->Project->delete($this->Project->findById($oProject['id']));

@@ -191,7 +191,12 @@ function(App, Handlebars, Data) {
         if (self.projects.models.length > 0) {
           $('#content').html(Handlebars.compile($('#projectsListTemplate').html()));
           _.each(self.projects.models, function(project) {
-            $('#content').find('.projectsList').append(Handlebars.compile($('#projectMainTabletTemplate').html())({organization: self.user.attributes.organization, project: project.attributes}));
+            bDeleteable = false;
+            console.log(project);
+            if ((project.attributes.mentor) && (window.oCurrentUser.id == project.attributes.mentor.id)) bDeleteable = true;
+            console.log(window.oCurrentUser);
+            if (window.oCurrentUser.master_mentor == 1) bDeleteable = true;
+            $('#content').find('.projectsList').append(Handlebars.compile($('#projectMainTabletTemplate').html())({organization: self.user.attributes.organization, project: project.attributes, deletable: bDeleteable}));
             bFound = true;
           });
 
@@ -214,9 +219,6 @@ function(App, Handlebars, Data) {
           });
         }
       }});
-
-
-
 
       if (bFound == false) {
         self.content = new Data.Models.ContentModel();

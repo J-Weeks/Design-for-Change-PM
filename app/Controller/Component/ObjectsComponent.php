@@ -80,6 +80,16 @@ class ObjectsComponent extends Component {
 			foreach ($oProjects as $oProject) {
 				$oProject = $this->populateProjectFull($oProject);
 				array_push($organization['projects'], $oProject);
+
+				foreach ($organization['users'] as &$user) {
+					if ($oProject['mentor']['id'] == $user['id']) {
+						if (!$user['projects']) $user['projects'] = array();
+						$userProject = array();
+						$userProject['id'] = $oProject['id'];
+						$userProject['name'] = $oProject['name'];
+						array_push($user['projects'], $userProject);
+					}
+				}
 			}
 		}
 		return $organization;
