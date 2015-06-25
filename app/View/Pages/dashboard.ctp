@@ -78,10 +78,20 @@
 
   <!-- Table -->
   <table class="table">
+  <thead>
     <tr>
-      <th>Col1</th>
-      <th>Col2</th>
+      <th>Name</th>
+      <th>Location</th>
     </tr>
+  </thead>
+  <tbody>
+    {{#each org.users}}
+    <tr>
+      <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
+      <td>{{location}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
 
   </table>
 </div>

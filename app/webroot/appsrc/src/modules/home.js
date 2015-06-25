@@ -237,14 +237,17 @@ function(App, Handlebars, Data) {
 
       $(document).ready(function(){
         $('.editorg').click(function(){
-          debugger;
+          // debugger;
           $.ajax({
             url: '/dfcusa-pm/api/organization'
           }).done(function(res){
             console.log(res);
+            $('#content').html('');
+            $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res}));
+
           });
-      })
-      })
+        });
+      });
     },
     newProject: function() {
       console.log('test');
