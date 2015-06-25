@@ -308,26 +308,26 @@ function(App, Handlebars, Data) {
     },
     showProject: function() {
       var self = this;
-      var windowhash = window.location.hash.split('/');
-      var curStage =  window.location.hash.split('/');
-      curStage = curStage[2];
-      var stageComplete = localStorage.getItem('stageComplete');
-      console.log(stageComplete);
+      // var windowhash = window.location.hash.split('/');
+      // var curStage =  window.location.hash.split('/');
+      // curStage = curStage[2];
+      // var stageComplete = localStorage.getItem('stageComplete');
+      // console.log(stageComplete);
 
-      if(curStage == "feel"){
-        curStage = 1;
-      }else if (curStage == "imagine"){
-        curStage = 2;
-      }else if (curStage == "do"){
-        curStage = 3;
-      }else if(curStage == "share" || windowhash[3] == "files" || stageComplete == 'true'){
-        curStage = 4;
-      }else{
-        curStage = 0;
-      }
+      // if(curStage == "feel"){
+      //   curStage = 1;
+      // }else if (curStage == "imagine"){
+      //   curStage = 2;
+      // }else if (curStage == "do"){
+      //   curStage = 3;
+      // }else if(curStage == "share" || windowhash[3] == "files" || stageComplete == 'true'){
+      //   curStage = 4;
+      // }else{
+      //   curStage = 0;
+      // }
 
 
-      self.project.attributes.current_stage = curStage;
+      // self.project.attributes.current_stage = curStage;
       // debugger;
 
       $('#navbar_fids').removeClass('hide');
@@ -810,18 +810,18 @@ console.log(self.project.attributes);
       self.activities.fetch({success: function() {
 
         var count = 0;
+
         _.each(self.activities.models, function(activity) {
-
-          while ((count < 3) && ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all'))) {
-            $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
-            bFound = true;
-            count = count + 1;
-              // if(count == 3){
-              //   $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
-              // }
-
+          if (count < 3){
+            if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
+              $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes}));
+              bFound = true;
+              count = count + 1;
+            }
           }
         });
+        debugger;
+
         $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
 
         if (bFound == false) {
