@@ -247,6 +247,9 @@ function(App, Handlebars, Data) {
             $('.emailModal').click(function(){
               $("#emailModal").modal('show');
             });
+            $('.gHome').click(function(){
+              Backbone.history.loadUrl();
+            }).
             $('.deleteProject').click(function(e){
               e.preventDefault;
               var selfButton = this;

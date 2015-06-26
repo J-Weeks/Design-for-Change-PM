@@ -102,6 +102,7 @@
   </tbody>
   </table>
 </div>
+<p style="font-size: 10pt; margin-left: 20px" class='gHome'>< back to home</p>
 {{/if_eq}}
 
 {{#if_eq masterMentor 1}}
@@ -130,6 +131,7 @@
   </tbody>
   </table>
 </div>
+<p style="font-size: 10pt; margin-left: 20px" class='gHome'>< back to home</p>
 {{/if_eq}}
 
 <div id="emailModal" class="modal fade">
