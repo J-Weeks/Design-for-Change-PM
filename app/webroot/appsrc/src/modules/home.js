@@ -237,6 +237,8 @@ function(App, Handlebars, Data) {
 
       $(document).ready(function(){
         $('.editorg').click(function(){
+          $('.inner_navigation a').removeClass('active');
+          $('.editorg').addClass('active');
           $.ajax({
             url: '/dfcusa-pm/api/organization'
           }).done(function(res){
@@ -245,6 +247,9 @@ function(App, Handlebars, Data) {
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
             $('.emailModal').click(function(){
               $("#emailModal").modal('show');
+            });
+            $('.gHome').click(function(){
+              window.history.back();
             });
             $('.deleteProject').click(function(e){
               e.preventDefault;
@@ -1003,13 +1008,6 @@ Home.MentorView = Backbone.View.extend({
       var self = this;
 
       App.setupPage();
-    },
-    showMentor: function() {
-      var self = this;
-      debugger;
-      $('#content').html(Handlebars.compile($('#editOrgTemplate').html()));
-        $('.inner_navigation li').removeClass('active');
-        $('.editorg').addClass('active');
     }
   });
 
