@@ -246,12 +246,14 @@ function(App, Handlebars, Data) {
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
             $('.deleteProject').click(function(e){
               e.preventDefault;
+              var selfButton = this;
               var delMentorId = this.value;
               console.log(delMentorId);
               $.ajax({
                 url: '/dfcusa-pm/api/user/' + delMentorId,
                 type: 'DELETE'
               }).done(function(){
+                selfButton.closest('tr').remove();
               });
             });
           });

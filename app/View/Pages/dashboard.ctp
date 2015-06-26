@@ -88,7 +88,7 @@
     </thead>
   <tbody>
     {{#each org.users}}
-    <tr>
+    <tr class= {{id}}>
       <td><img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}</td>
       <td>{{location}}</td>
       {{#each projects}}
