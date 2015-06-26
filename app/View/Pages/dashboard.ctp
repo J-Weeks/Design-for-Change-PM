@@ -71,7 +71,7 @@
 <script type="text/mustache-template" id="editOrgTemplate">
 <div class="panel panel-default">
   <!-- Default panel contents -->
-  <div class="panel-heading">Panel heading</div>
+  <div class="panel-heading">{{org.name}}</div>
   <div class="panel-body">
     <p>Below are members of {{org.name}}</p>
     <button type="button" class="btn btn-success btn-sm emailModal">Invite Members</button>
@@ -110,6 +110,7 @@
     <thead>
       <tr>
         <th>Name</th>
+        <th></th>
         <th>Location</th>
         <th>Projects</th>
       </tr>
@@ -118,8 +119,9 @@
     {{#each org.users}}
     <tr>
       <td>
-        <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}<button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button>
+        <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}
       </td>
+      <td><button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button></td>
       <td>{{location}}</td>
       {{#each projects}}
         <td>
@@ -139,14 +141,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Please enter the email address below</h4>
+                <h4 class="modal-title">Please enter the requested information below</h4>
             </div>
             <div class="modal-body">
           <form class="contact" name="contact">
-                <label class="label" for="name">Your Name</label><br>
-                Your Name<input type="text" name="name" class="input-xlarge"><br>
-                <label class="label" for="email">Your E-mail</label><br>
-                Recipient<input type="email" name="email" class="input-xlarge"><br>
+                <input type="text" class="form-control" placeholder="Your Name" aria-describedby="basic-addon1">
+                <br>
+                <label class="label" for="email">Your E-mail</label>
+                <input type="text" class="form-control" placeholder="Recipient Email" aria-describedby="basic-addon1"><br>
         </form>
             </div>
             <div class="modal-footer">
