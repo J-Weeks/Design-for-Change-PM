@@ -27,7 +27,7 @@
     <div class="container">
       <div class="inner_navigation">
         <ul>
-          <li data-navigation="editorg"><a href="/home#projects" class="getstarted editorg">Edit Org</a></li>
+          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">Edit Org</a></li>
           <li data-navigation="myprojects"><a href="/home#projects" class="getstarted myprojects">My Projects</a></li>
           <li data-navigation="allactivities"><a href="/home#activities" class="getstarted allactivities">All Activities</a></li>
         </ul>

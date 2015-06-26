@@ -18,7 +18,8 @@ function(App, Handlebars, Mustache, Data, Home) {
       'project/:id/:stage'                     : 'showProject',
       'project/:id/:stage/:section'            : 'showProject',
       'activities'                             : 'showActivities',
-      'activities/:skill/:age/:time'           : 'showActivities'
+      'activities/:skill/:age/:time'           : 'showActivities',
+      'editmentor'                             : 'editMentor'
     },
     initialize: function() {
       this.Layout = new Home.Layout();
@@ -35,7 +36,12 @@ function(App, Handlebars, Mustache, Data, Home) {
       }
 
       if ($('#header_container').length > 0) {
-        $('#header_container').html(Handlebars.compile($('#headerTemplate').html())({user: window.oCurrentUser}));
+
+
+        $(document).ready(function(){
+          var windowlocationhash = window.location.hash;
+          $('#header_container').html(Handlebars.compile($('#headerTemplate').html())({user: window.oCurrentUser, windowhash: windowlocationhash}));
+        });
       }
 
       App.HomeRouter = this;
@@ -72,6 +78,10 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.Layout.getView('activities').sAge = age;
       this.Layout.getView('activities').sTime = time;
       this.Layout.getView('activities').render();
+    },
+    editMentor: function(e){
+      this.Layout.setView('mentor', new Home.MentorView());
+      this.Layout.getView('mentor').render();
     }
   });
 

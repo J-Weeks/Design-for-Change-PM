@@ -371,3 +371,6 @@ small {
   display:block;
   text-align: center;
 }
+
+/*edit org*/
+.gHome{ cursor: pointer;}

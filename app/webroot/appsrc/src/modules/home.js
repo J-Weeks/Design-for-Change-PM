@@ -237,7 +237,6 @@ function(App, Handlebars, Data) {
 
       $(document).ready(function(){
         $('.editorg').click(function(){
-          // debugger;
           $.ajax({
             url: '/dfcusa-pm/api/organization'
           }).done(function(res){
@@ -247,9 +246,6 @@ function(App, Handlebars, Data) {
             $('.emailModal').click(function(){
               $("#emailModal").modal('show');
             });
-            $('.gHome').click(function(){
-              Backbone.history.loadUrl();
-            }).
             $('.deleteProject').click(function(e){
               e.preventDefault;
               var selfButton = this;
@@ -367,7 +363,6 @@ function(App, Handlebars, Data) {
       $('#project_name').removeClass('hide');
       $('#main_menu').addClass('pull-right');
       $('#projectHeader').html(Handlebars.compile($('#projectHeaderTemplate').html())({project: self.project.attributes}));
-
 console.log(self.project.attributes);
 
       $('#projectHeader').removeClass('hide');
@@ -845,7 +840,8 @@ console.log(self.project.attributes);
         var count = 0;
          // var windowhash = window.location.hash.split('/');
       var curStage =  window.location.hash.split('/');
-      curStage = curStage[2]
+      curStage = curStage[2];
+      if(typeof curStage == "undefined"){curStage = 'feel';}
       String.prototype.capitalize = function() {
         return this.replace(/(?:^|\s)\S/g, function(a) { return a.toUpperCase(); });
       };
@@ -992,6 +988,28 @@ console.log(self.project.attributes);
       $('#search-skill').val(self.sSkill);
       $('#search-age_group').val(self.sAge);
       $('#search-time_required').val(self.sTime);
+    }
+  });
+
+Home.MentorView = Backbone.View.extend({
+    initialize: function () {
+      var self = this;
+    },
+    unload: function() {
+      this.remove();
+      this.unbind();
+    },
+    afterRender: function() {
+      var self = this;
+
+      App.setupPage();
+    },
+    showMentor: function() {
+      var self = this;
+      debugger;
+      $('#content').html(Handlebars.compile($('#editOrgTemplate').html()));
+        $('.inner_navigation li').removeClass('active');
+        $('.editorg').addClass('active');
     }
   });
 
