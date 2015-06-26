@@ -74,6 +74,7 @@
   <div class="panel-heading">Panel heading</div>
   <div class="panel-body">
     <p>Below are members of {{org.name}}</p>
+    <button type="button" class="btn btn-success btn-sm emailModal">Invite Members</button>
   </div>
 
   <!-- Table -->
@@ -130,5 +131,28 @@
   </table>
 </div>
 {{/if_eq}}
+
+<div id="emailModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Please enter the email address below</h4>
+            </div>
+            <div class="modal-body">
+          <form class="contact" name="contact">
+                <label class="label" for="name">Your Name</label><br>
+                Your Name<input type="text" name="name" class="input-xlarge"><br>
+                <label class="label" for="email">Your E-mail</label><br>
+                Recipient<input type="email" name="email" class="input-xlarge"><br>
+        </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 </script>

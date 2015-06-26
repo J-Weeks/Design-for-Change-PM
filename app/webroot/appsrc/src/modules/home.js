@@ -244,6 +244,9 @@ function(App, Handlebars, Data) {
             console.log(res);
             $('#content').html('');
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
+            $('.emailModal').click(function(){
+              $("#emailModal").modal('show');
+            });
             $('.deleteProject').click(function(e){
               e.preventDefault;
               var selfButton = this;
