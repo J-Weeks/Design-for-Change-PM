@@ -244,16 +244,18 @@ function(App, Handlebars, Data) {
             console.log(res);
             $('#content').html('');
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
-               $('.deleteProject').click(function(e){
-          e.preventDefault;
-          var delProjectId = this.value;
-          console.log(delProjectId);
-        });
-
+            $('.deleteProject').click(function(e){
+              e.preventDefault;
+              var delMentorId = this.value;
+              console.log(delMentorId);
+              $.ajax({
+                url: '/dfcusa-pm/api/user/' + delMentorId,
+                type: 'DELETE'
+              }).done(function(){
+              });
+            });
           });
         });
-
-
 
       });
     },
