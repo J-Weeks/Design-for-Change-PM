@@ -245,6 +245,7 @@ function(App, Handlebars, Data) {
             console.log(res);
             $('#content').html('');
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
+            if(window.location.hash == '#editmentor'){$('.leftnav').addClass('hide');$('.header').addClass('hide');}
             $('.emailModal').click(function(){
               $("#emailModal").modal('show');
             });
@@ -854,6 +855,7 @@ console.log(self.project.attributes);
       curStage = curStage.capitalize();
 
         _.each(self.activities.models, function(activity) {
+          // debugger;
           if (count < 3){
             if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
               $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes, curStage: curStage}));
