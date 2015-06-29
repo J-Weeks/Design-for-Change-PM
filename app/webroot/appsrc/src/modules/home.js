@@ -882,16 +882,12 @@ console.log(self.project.attributes);
             url: "/api/activities/skill/" + selfSkill,
           }).done(function(res){
             for (var i = 0; i < res.length; i++) {
-              console.log('here');
-              // debugger;
-              $('.activitiesContent').append(Handlebars.compile($('#activityTemplate').html())({activity: res[i]}));
-              // console.log(res);
+              $('.activitiesContent').append(Handlebars.compile($('#activityTemplate').html())({activity: res[i], selfSkill: selfSkill}));
             }
             $('.viewMore').addClass('hide');
           });
         });
 
-// debugger;
         $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
 
         if (bFound == false) {
