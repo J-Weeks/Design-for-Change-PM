@@ -19,7 +19,8 @@ function(App, Handlebars, Mustache, Data, Home) {
       'project/:id/:stage/:section'            : 'showProject',
       'activities'                             : 'showActivities',
       'activities/:skill/:age/:time'           : 'showActivities',
-      'editmentor'                             : 'editMentor'
+      'editmentor'                             : 'editMentor',
+      'activityskill'                          : 'activityskill'
     },
     initialize: function() {
       this.Layout = new Home.Layout();
@@ -82,6 +83,10 @@ function(App, Handlebars, Mustache, Data, Home) {
     editMentor: function(e){
       this.Layout.setView('mentor', new Home.MentorView());
       this.Layout.getView('mentor').render();
+    },
+      activityskill: function(e){
+      this.Layout.setView('activityskill', new Home.ActivityskillView());
+      this.Layout.getView('activityskill').render();
     }
   });
 

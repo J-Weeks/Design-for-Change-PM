@@ -858,7 +858,8 @@ console.log(self.project.attributes);
           // debugger;
           if (count < 3){
             if ((activity.attributes.all_skills.indexOf(self.currentSkill) > -1) || (self.currentSkill == 'all')) {
-              $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes, curStage: curStage}));
+              var actSkill = activity.attributes.all_skills[0].capitalize();
+              $('.activities').append(Handlebars.compile($('#activityTemplate').html())({activity: activity.attributes, curStage: curStage, actSkill: actSkill}));
               bFound = true;
               count = count + 1;
               // debugger;
@@ -866,6 +867,29 @@ console.log(self.project.attributes);
           }
         });
 
+        $('.viewMore').click(function(e){
+          e.preventDefault();
+          var selfSkill = this.value;
+          $('.contents').html('');
+          $('.insidepage').addClass('activity');
+          $('.activity').append("<div class='activitiesContent'></div>");
+          $('.leftnav').addClass('hide');
+          // debugger;
+          $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+          $('.leftnav').removeClass('hide');
+          window.location.hash = "#activityskill";
+          $.ajax({
+            url: "/api/activities/skill/" + selfSkill,
+          }).done(function(res){
+            for (var i = 0; i < res.length; i++) {
+              console.log('here');
+              // debugger;
+              $('.activitiesContent').append(Handlebars.compile($('#activityTemplate').html())({activity: res[i]}));
+              // console.log(res);
+            }
+            $('.viewMore').addClass('hide');
+          });
+        });
 
 // debugger;
         $('.activities').append(Handlebars.compile($('#moreActivityTemplate').html()));
@@ -998,20 +1022,35 @@ console.log(self.project.attributes);
     }
   });
 
-Home.MentorView = Backbone.View.extend({
-    initialize: function () {
-      var self = this;
-    },
-    unload: function() {
-      this.remove();
-      this.unbind();
-    },
-    afterRender: function() {
-      var self = this;
+  Home.MentorView = Backbone.View.extend({
+      initialize: function () {
+        var self = this;
+      },
+      unload: function() {
+        this.remove();
+        this.unbind();
+      },
+      afterRender: function() {
+        var self = this;
 
-      App.setupPage();
-    }
-  });
+        App.setupPage();
+      }
+    });
+
+  Home.ActivityskillView = Backbone.View.extend({
+      initialize: function () {
+        var self = this;
+      },
+      unload: function() {
+        this.remove();
+        this.unbind();
+      },
+      afterRender: function() {
+        var self = this;
+
+        App.setupPage();
+      }
+    });
 
 
   return Home;
