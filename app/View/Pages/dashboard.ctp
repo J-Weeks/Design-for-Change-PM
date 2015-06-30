@@ -14,7 +14,7 @@
       <div class="inner_login">
         <ul>
           <li><a href="/home#profile">My Profile</a></li>
-          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">Edit Org</a></li>
+          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">My Organization</a></li>
           <li><a href="/dfcusa-pm/logout" class="sign">Exit Portal</a></li>
           <li style="width: 20px"><img src="{{user.profilepic}}" class="profilePicSmall"></li>
         </ul>
@@ -122,12 +122,12 @@
       <td>
         <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}
       </td>
-      <td><button type="button" class="btn btn-primary btn-sm deleteProject" value="{{id}}">Delete</button></td>
+      <td><button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Delete</button></td>
       <td>{{location}}</td>
       {{#each projects}}
         <td>
           <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
-          <button type="button" class="btn btn-primary btn-sm delProject" value="{{id}}">Delete</button>
+          <button type="button" class="btn btn-primary btn-sm delProject"  value="{{../id}}">Delete</button>
         </td>
       {{/each}}
     </tr>

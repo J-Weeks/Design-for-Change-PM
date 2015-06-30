@@ -242,6 +242,7 @@ function(App, Handlebars, Data) {
           $.ajax({
             url: '/dfcusa-pm/api/organization'
           }).done(function(res){
+            // debugger;
             console.log(res);
             $('#content').html('');
             $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
@@ -252,7 +253,7 @@ function(App, Handlebars, Data) {
             $('.gHome').click(function(){
               window.history.back();
             });
-            $('.deleteProject').click(function(e){
+            $('.deleteMentor').click(function(e){
               e.preventDefault;
               var selfButton = this;
               var delMentorId = this.value;
@@ -264,8 +265,14 @@ function(App, Handlebars, Data) {
                 selfButton.closest('tr').remove();
               });
             });
+            $('.delProject').click(function(){
+            debugger;
+            // this.parentElement.firstElementChild;
+            //grabs button to the right, can get proj id from value
+            });
           });
         });
+
 
       });
     },
