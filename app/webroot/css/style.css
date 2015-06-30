@@ -1412,3 +1412,8 @@ footer {
   margin-left: auto;
   margin-right: auto;
   float: center; }
+
+.inner_login ul li a.editorg{
+  background: #594f8d;
+  background-color: #594f8d;
+  border: 1px solid #594f8d;}

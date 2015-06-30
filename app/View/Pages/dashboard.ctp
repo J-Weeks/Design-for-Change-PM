@@ -14,6 +14,7 @@
       <div class="inner_login">
         <ul>
           <li><a href="/home#profile">My Profile</a></li>
+          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">Edit Org</a></li>
           <li><a href="/dfcusa-pm/logout" class="sign">Exit Portal</a></li>
           <li style="width: 20px"><img src="{{user.profilepic}}" class="profilePicSmall"></li>
         </ul>
@@ -27,7 +28,6 @@
     <div class="container">
       <div class="inner_navigation">
         <ul>
-          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">Edit Org</a></li>
           <li data-navigation="myprojects"><a href="/home#projects" class="getstarted myprojects">My Projects</a></li>
           <li data-navigation="allactivities"><a href="/home#activities" class="getstarted allactivities">All Activities</a></li>
         </ul>
