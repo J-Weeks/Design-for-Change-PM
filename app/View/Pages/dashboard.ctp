@@ -113,6 +113,7 @@
         <th></th>
         <th>Location</th>
         <th>Projects</th>
+        <th>last row</th>
       </tr>
     </thead>
   <tbody>
@@ -126,6 +127,7 @@
       {{#each projects}}
         <td>
           <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
+          <button type="button" class="btn btn-primary btn-sm delProject" value="{{id}}">Delete</button>
         </td>
       {{/each}}
     </tr>
