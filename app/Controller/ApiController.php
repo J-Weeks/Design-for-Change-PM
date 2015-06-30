@@ -6,7 +6,7 @@ class ApiController extends AppController {
 
   public $name = 'UserApi';
   public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill', 'File');
-  public $components = array('Objects', 'Aws');
+  public $components = array('Objects', 'Aws', 'Mailgun');
 
   var $oData = array();
   var $oCurrentUser = array();
@@ -152,7 +152,7 @@ class ApiController extends AppController {
     if ($oData['password'] == '') unset($oData['password']);
     if ($oData['password'] != '') $oData['password'] = md5($oData['password']);
 
-    if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin')) {
+    if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin') || ($oCurrentUser['master_mentor'] == '1')) {
       if ($this->params['userid'] != 'new') {
         $oUser = $this->User->findById($oData['id']);
         if (($oUser['organization_id'] == $oCurrentUser['organization_id']) || ($oCurrentUser['type'] == 'admin')) {
@@ -271,6 +271,12 @@ class ApiController extends AppController {
 
     $oCurrentUser = $this->User->getCurrentUser();
     echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+  }
+
+  public function sendInvite() {
+    global $oCurrentUser;
+
+    $this->Mailgun->sendMail($oCurrentUser['email'], $this->params['to'], '', 'Invite to Design for Change', 'Come join us');
   }
 
   public function getProjects() {

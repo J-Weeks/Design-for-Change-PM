@@ -44,6 +44,7 @@
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'updateOrganization', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/organization/:organizationid', array('controller' => 'api', 'action' => 'removeOrganization', '[method]' => array('DELETE')));
 	Router::connect('/api/organization/:organizationid/projects', array('controller' => 'api', 'action' => 'getOrganizationProjects', '[method]' => array('GET')));
+	Router::connect('/api/organization/invite/:name/:email', array('controller' => 'api', 'action' => 'sendInvite', '[method]' => array('GET')));
 
 	Router::connect('/api/projects', array('controller' => 'api', 'action' => 'getProjects', '[method]' => array('GET')));
 	Router::connect('/api/project/:projectid', array('controller' => 'api', 'action' => 'getProject', '[method]' => array('GET')));
