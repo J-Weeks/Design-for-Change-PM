@@ -94,7 +94,7 @@
       <td>{{location}}</td>
       {{#each projects}}
         <td>
-          {{name}}
+          <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
         </td>
       {{/each}}
     </tr>
@@ -125,7 +125,7 @@
       <td>{{location}}</td>
       {{#each projects}}
         <td>
-          {{name}}
+          <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
         </td>
       {{/each}}
     </tr>
