@@ -298,7 +298,7 @@ function(App, Handlebars, Data) {
             });
             $('.saveMember').click(function(){
               var selUser = this.value;
-              var formData = $("#editMemberForm").serialize();
+              // var formData = $("#editMemberForm").serialize();
               debugger;
                 $.ajax({
 

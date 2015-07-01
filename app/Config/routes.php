@@ -76,7 +76,7 @@
 	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'updateActivity', '[method]' => array('PUT', 'POST')));
 	Router::connect('/api/activity/:activityid/upload', array('controller' => 'api', 'action' => 'uploadActivityFile', '[method]' => array('PUT', 'POST')));
 	Router::connect('/api/activity/:activityid', array('controller' => 'api', 'action' => 'removeActivity', '[method]' => array('DELETE')));
-	
+
 // PAGE ROUTES
 	Router::connect('/login', array('controller' => 'pages', 'action' => 'login'));
 	Router::connect('/logout', array('controller' => 'pages', 'action' => 'logout'));

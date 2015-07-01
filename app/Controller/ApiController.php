@@ -277,6 +277,8 @@ class ApiController extends AppController {
     global $oCurrentUser;
 
     $this->Mailgun->sendMail($oCurrentUser['email'], $this->params['to'], '', 'Invite to Design for Change', 'Come join us');
+    // $this->Invitee->create();
+    // $this->Invitee->saveField('name', 'email');
   }
 
   public function getProjects() {
