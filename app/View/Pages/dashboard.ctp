@@ -193,10 +193,6 @@
             <input type="text" class="form-control" id="location" name="location" placeholder="City, State" data-validate="required">
             <span for="location" class="error-span hide">Please enter your location.</span>
           </div>
-          <div class="form-group">
-            <label for="password">New Password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Enter a new password">
-          </div>
           <div class="form-group uploadFile">
             <label>Profile Picture</label>
             <br/>
