@@ -172,7 +172,7 @@
         <h4 class="modal-title">Edit Your Profile</h4>
       </div>
       <div class="modal-body">
-        <form role="form" id="newProjectForm">
+        <form role="form" id="editMemberForm">
           <div class="form-group">
             <label for="first_name">First name</label>
             <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Your first name" data-validate="required">

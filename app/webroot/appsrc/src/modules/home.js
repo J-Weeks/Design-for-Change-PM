@@ -281,11 +281,18 @@ function(App, Handlebars, Data) {
               });
             });
             $('.editMemberModal').click(function(){
-              $("#editMemberModal").modal('show');
-              $('#editMemberModal .submit').click(function() {
-                  // Get all the forms elements and their values in one step
-                  var values = $(this).serialize();
-                  debugger;
+              var selUser = this.value;
+              $.ajax({
+                url: '/dfcusa-pm/api/user/' +  selUser
+              }).done(function(response){
+                console.log(response);
+                $("#editMemberModal").modal('show');
+                $('#editMemberModal').find('#first_name').val(response.first_name);
+                $('#editMemberModal').find('#last_name').val(response.last_name);
+                $('#editMemberModal').find('#email').val(response.email);
+                $('#editMemberModal').find('#location').val(response.location);
+                $('#editMemberModal').find('.profilePic').attr('src', response.profilepic);
+                $('#editMemberModal').find('#profile_pic_source').val(response.profilepic);
               });
             });
           });
