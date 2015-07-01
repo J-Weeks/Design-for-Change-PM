@@ -164,4 +164,30 @@
     </div>
 </div>
 
+<div id="editMemberModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Edit the member information below</h4>
+            </div>
+            <div class="modal-body">
+          <form class="contact" name="contact">
+                <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+                <br>
+                <input type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+                <br>
+                <input type="text" class="form-control" placeholder="Location (ex: Boston, MA)" aria-describedby="basic-addon1">
+                <br>
+                <input type="text" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1">
+        </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </script>

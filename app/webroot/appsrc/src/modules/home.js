@@ -272,7 +272,6 @@ function(App, Handlebars, Data) {
             projId = proButton[0].value;
             var projUserId = this.value;
             proButton = proButton[0];
-            debugger;
             $.ajax({
                 url: '/dfcusa-pm/api/project/' + projId + '/user/' + projUserId,
                 type: 'DELETE'
@@ -280,13 +279,12 @@ function(App, Handlebars, Data) {
                 proButton.remove();
                 selfButton.remove();
               });
-            //grabs button to the right, can get proj id from value
-
+            });
+            $('.editMemberModal').click(function(){
+              $("#editMemberModal").modal('show');
             });
           });
         });
-
-
       });
     },
     newProject: function() {
