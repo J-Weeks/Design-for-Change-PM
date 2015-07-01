@@ -312,10 +312,14 @@ function(App, Handlebars, Data) {
                 }).fail(function(){
                   debugger;
                 });
-
             });
+              $('.sendInvite').click(function(){
+                debugger;
+              });
           });
         });
+
+
       });
     },
     newProject: function() {

@@ -150,15 +150,15 @@
             </div>
             <div class="modal-body">
           <form class="contact" name="contact">
-                <input type="text" class="form-control" placeholder="Your Name" aria-describedby="basic-addon1">
+                <input type="text" class="form-control inviteName" placeholder="Recipient Name" aria-describedby="basic-addon1">
                 <br>
                 <label class="label" for="email">Your E-mail</label>
-                <input type="text" class="form-control" placeholder="Recipient Email" aria-describedby="basic-addon1"><br>
+                <input type="text" class="form-control inviteEmail" placeholder="Recipient Email" aria-describedby="basic-addon1"><br>
         </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-primary sendInvite">Submit</button>
             </div>
         </div>
     </div>
