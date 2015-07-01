@@ -122,7 +122,10 @@
       <td>
         <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}
       </td>
-      <td><button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Delete</button></td>
+      <td>
+        <button type="button" class="btn btn-success btn-sm editMemberModal">Edit Member</button>
+        <button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Delete</button>
+      </td>
       <td>{{location}}</td>
       {{#each projects}}
         <td>
