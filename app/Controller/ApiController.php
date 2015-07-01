@@ -60,8 +60,8 @@ class ApiController extends AppController {
     } else {
       $oFoundUser = false;
     }
-    
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oFoundUser)), 531, 'access denied'); 
+
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oFoundUser)), 531, 'access denied');
   }
 
   public function registerUser() {
@@ -87,14 +87,14 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oNewUser, 531, 'access denied'); 
+    echo $this->prepareResponse($oNewUser, 531, 'access denied');
   }
 
   public function getCurrentUser() {
-    global $oData;    
+    global $oData;
     global $oCurrentUser;
 
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function updateCurrentUser() {
@@ -105,7 +105,7 @@ class ApiController extends AppController {
     if ($oData['password'] == '') unset($oData['password']);
     $this->User->save($oData);
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function getUsers() {
@@ -142,7 +142,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied');
   }
 
   public function updateUser() {
@@ -155,7 +155,7 @@ class ApiController extends AppController {
     if (($oCurrentUser['id'] == $oData['id']) || ($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin') || ($oCurrentUser['master_mentor'] == '1')) {
       if ($this->params['userid'] != 'new') {
         $oUser = $this->User->findById($oData['id']);
-        if (($oUser['organization_id'] == $oCurrentUser['organization_id']) || ($oCurrentUser['type'] == 'admin')) {
+        if (($oUser['organization_id'] == $oCurrentUser['organization_id']) || ($oCurrentUser['type'] == 'admin') || ($oCurrentUser['master_mentor'] == '1')) {
           $this->User->id = $oData['id'];
           $oReturn = $this->User->save($oData);
           $oReturn = $this->User->findById($oReturn['id']);
@@ -169,7 +169,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oReturn)), 531, 'access denied');
   }
 
   public function removeUser() {
@@ -182,7 +182,7 @@ class ApiController extends AppController {
 
     if (($oCurrentUser['id'] == $this->params['userid']) && (($oCurrentUser['type'] == 'mentor') || ($oCurrentUser['type'] == 'admin'))) $bAllowed = true;
     if (($oCurrentUser['master_mentor'] == 1) && ($oCurrentUser['organization_id'] == $oDeleteUser['organization_id'])) $bAllowed = true;
-    
+
     if ($bAllowed) {
       if ($oCurrentUser['type'] == 'admin') {
         $this->User->delete($this->params['userid']);
@@ -196,7 +196,7 @@ class ApiController extends AppController {
       $oCurrentUser = false;
     }
 
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function getOrganizations() {
@@ -225,7 +225,7 @@ class ApiController extends AppController {
       $oOrganization['users'] = $this->User->find('all', array('conditions' => array('organization_id' => $this->params['organizationid'])));
     }
 
-    echo $this->prepareResponse($this->Objects->populateOrganization($oOrganization), 531, 'access denied'); 
+    echo $this->prepareResponse($this->Objects->populateOrganization($oOrganization), 531, 'access denied');
   }
 
   public function getOrganizationProjects() {
@@ -237,8 +237,8 @@ class ApiController extends AppController {
       $oOrganization = $this->Objects->populateOrganization($oOrganization);
     }
 
-    echo $this->prepareResponse($oOrganization['projects'], 531, 'access denied'); 
-  }  
+    echo $this->prepareResponse($oOrganization['projects'], 531, 'access denied');
+  }
 
   public function updateOrganization() {
     global $oData;
@@ -258,7 +258,7 @@ class ApiController extends AppController {
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($oOrganization, 531, 'access denied'); 
+    echo $this->prepareResponse($oOrganization, 531, 'access denied');
   }
 
   public function removeOrganization() {
@@ -270,7 +270,7 @@ class ApiController extends AppController {
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function sendInvite() {
@@ -291,7 +291,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oProjects, 531, 'access denied'); 
+    echo $this->prepareResponse($oProjects, 531, 'access denied');
   }
 
   public function getProject() {
@@ -309,7 +309,7 @@ class ApiController extends AppController {
       if ($oProject) $oReturn = $this->Objects->populateProjectFull($oProject);
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function getProjectFiles() {
@@ -322,7 +322,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function updateProject() {
@@ -359,7 +359,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function uploadProjectFile() {
@@ -386,7 +386,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function removeProject() {
@@ -414,7 +414,7 @@ class ApiController extends AppController {
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function updateUserProject() {
@@ -442,7 +442,7 @@ class ApiController extends AppController {
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function removeUserProject() {
@@ -459,7 +459,7 @@ class ApiController extends AppController {
     }
 
     $oCurrentUser = $this->User->getCurrentUser();
-    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied'); 
+    echo $this->prepareResponse($this->User->scrubUser($this->Objects->populateUser($oCurrentUser)), 531, 'access denied');
   }
 
   public function getContent() {
@@ -503,7 +503,7 @@ class ApiController extends AppController {
       $oContent = $this->Content->save($oData);
     }
 
-    echo $this->prepareResponse($oContent, 531, 'access denied'); 
+    echo $this->prepareResponse($oContent, 531, 'access denied');
   }
 
   public function getSkills() {
@@ -577,7 +577,7 @@ class ApiController extends AppController {
       $oActivity = $this->Activity->findById($this->params['activityid']);
     }
 
-    echo $this->prepareResponse($oActivity, 531, 'access denied'); 
+    echo $this->prepareResponse($oActivity, 531, 'access denied');
   }
 
   public function updateActivity() {
@@ -648,7 +648,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
   public function getActivitiesBySkill() {
@@ -668,7 +668,7 @@ class ApiController extends AppController {
       }
     }
 
-    echo $this->prepareResponse($oReturn, 531, 'access denied'); 
+    echo $this->prepareResponse($oReturn, 531, 'access denied');
   }
 
 }

@@ -293,7 +293,54 @@ function(App, Handlebars, Data) {
                 $('#editMemberModal').find('#location').val(response.location);
                 $('#editMemberModal').find('.profilePic').attr('src', response.profilepic);
                 $('#editMemberModal').find('#profile_pic_source').val(response.profilepic);
+                $('.saveMember').attr('value', selUser);
               });
+            });
+            $('.saveMember').click(function(){
+              var selUser = this.value;
+              bContinue = true;
+
+              if ($('#editMemberModal').find('#first_name').val() == '') {
+                bContinue = false
+                $('#editMemberModal').find('#first_name').parent().find('.error-span').removeClass('hide');
+              }
+
+              if ($('#editMemberModal').find('#last_name').val() == '') {
+                bContinue = false
+                $('#editMemberModal').find('#last_name').parent().find('.error-span').removeClass('hide');
+              }
+
+              if ($('#editMemberModal').find('#email').val() == '') {
+                bContinue = false
+                $('#editMemberModal').find('#email').parent().find('.error-span').removeClass('hide');
+              }
+
+              if ($('#editMemberModal').find('#location').val() == '') {
+                bContinue = false
+                $('#editMemberModal').find('#location').parent().find('.error-span').removeClass('hide');
+              }
+
+              if (bContinue) {
+                var first_name = $('#editMemberModal').find('#first_name').val();
+                var last_name = $('#editMemberModal').find('#last_name').val();
+                var email = $('#editMemberModal').find('#email').val();
+                var location = $('#editMemberModal').find('#location').val();
+                var password = $('#editMemberModal').find('#password').val();
+                var profilepic = $('#editMemberModal').find('#profile_pic_source').val();
+                debugger;
+                $.ajax({
+                  url: '/dfcusa-pm/api/user/' +  selUser,
+                  type: 'POST',
+                  data: {first_name: first_name,
+                        last_name: last_name,
+                        email: email,
+                        location: location,
+                        password: password,
+                        profilepic: profilepic}
+                }).success(function(response){
+                  $("#editMemberModal").modal('hide');
+                });
+              }
             });
           });
         });
