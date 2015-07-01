@@ -123,7 +123,7 @@
         <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}
       </td>
       <td>
-        <button type="button" class="btn btn-success btn-sm editMemberModal">Edit Member</button>
+        <button type="button" class="btn btn-success btn-sm editMemberModal" value="{{id}}">Edit Member</button>
         <button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Delete</button>
       </td>
       <td>{{location}}</td>
@@ -165,29 +165,54 @@
 </div>
 
 <div id="editMemberModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Edit the member information below</h4>
-            </div>
-            <div class="modal-body">
-          <form class="contact" name="contact">
-                <input type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
-                <br>
-                <input type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
-                <br>
-                <input type="text" class="form-control" placeholder="Location (ex: Boston, MA)" aria-describedby="basic-addon1">
-                <br>
-                <input type="text" class="form-control" placeholder="Email Address" aria-describedby="basic-addon1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">Edit Your Profile</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form" id="newProjectForm">
+          <div class="form-group">
+            <label for="first_name">First name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Your first name" data-validate="required">
+            <span for="first_name" class="error-span hide">Please enter your first name.</span>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Your last name" data-validate="required">
+            <span for="last_name" class="error-span hide">Please enter your last name.</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Your email" data-validate="required">
+            <span for="email" class="error-span hide">Please enter your email.</span>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="City, State" data-validate="required">
+            <span for="location" class="error-span hide">Please enter your location.</span>
+          </div>
+          <div class="form-group">
+            <label for="password">New Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter a new password">
+          </div>
+          <div class="form-group uploadFile">
+            <label>Profile Picture</label>
+            <br/>
+            <img src="" class="profilePic"/>
+            <a href="javascript:void(0)" class="btn btn-small btn-default marginButton uploadPicButton">Upload</a>
+            <input class="input-large uploadPic hide" type="file" id="profilepic" name="file"/>
+            <input class="input-large hide" type="hidden" id="profilepic_source"/>
+          </div>
         </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary saveProfile">Save Profile</button>
+      </div>
     </div>
+  </div>
 </div>
 
 </script>

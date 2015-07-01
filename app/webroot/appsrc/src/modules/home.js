@@ -282,6 +282,11 @@ function(App, Handlebars, Data) {
             });
             $('.editMemberModal').click(function(){
               $("#editMemberModal").modal('show');
+              $('#editMemberModal .submit').click(function() {
+                  // Get all the forms elements and their values in one step
+                  var values = $(this).serialize();
+                  debugger;
+              });
             });
           });
         });
