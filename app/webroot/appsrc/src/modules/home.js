@@ -266,9 +266,22 @@ function(App, Handlebars, Data) {
               });
             });
             $('.delProject').click(function(){
+            var selfButton = this;
+            var proButton = this.parentElement.firstElementChild;
+            proButton = proButton.children;
+            projId = proButton[0].value;
+            var projUserId = this.value;
+            proButton = proButton[0];
             debugger;
-            // this.parentElement.firstElementChild;
+            $.ajax({
+                url: '/dfcusa-pm/api/project/' + projId + '/user/' + projUserId,
+                type: 'DELETE'
+              }).done(function(){
+                proButton.remove();
+                selfButton.remove();
+              });
             //grabs button to the right, can get proj id from value
+
             });
           });
         });
