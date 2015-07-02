@@ -33,7 +33,7 @@
 	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'getUser', '[method]' => array('GET')));
 	Router::connect('/api/user', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT')));
 	Router::connect('/api/user/new', array('controller' => 'api', 'action' => 'registerUser', '[method]' => array('POST', 'PUT')));
-	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT')));
+	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'updateUser', '[method]' => array('POST', 'PUT', 'PATCH')));
 	Router::connect('/api/user/:userid', array('controller' => 'api', 'action' => 'removeUser', '[method]' => array('DELETE')));
 	Router::connect('/api/user/:userid/upload', array('controller' => 'api', 'action' => 'uploadUserProfilePic', '[method]' => array('PUT', 'POST')));
 
