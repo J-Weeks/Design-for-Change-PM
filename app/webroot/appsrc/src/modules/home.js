@@ -298,13 +298,24 @@ function(App, Handlebars, Data) {
             });
             $('.saveMember').click(function(){
               var selUser = this.value;
+
+                var first_name = $('#editMemberModal').find('#first_name').val();
+                var last_name = $('#editMemberModal').find('#last_name').val();
+                var email = $('#editMemberModal').find('#email').val();
+                var location = $('#editMemberModal').find('#location').val();
+
               var formData = $("#editMemberForm").serialize();
               debugger;
                 $.ajax({
 
                   url: '/dfcusa-pm/api/user/' +  selUser,
                   type: 'POST',
-                  data: formData,
+                  // data: formData,
+                  data: {first_name: first_name,
+                         last_name: last_name,
+                          email: email,
+                          location: location},
+
                   dataType: 'JSON'
                 }).done(function(response){
                   debugger;
