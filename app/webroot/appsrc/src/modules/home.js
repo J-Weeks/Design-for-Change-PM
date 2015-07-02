@@ -314,7 +314,17 @@ function(App, Handlebars, Data) {
                 });
             });
               $('.sendInvite').click(function(){
-                debugger;
+                var inputName = $('.inviteName').val();
+                var inputEmail = $('.inviteEmail').val();
+
+                if((inputEmail == '') || (inputName == '')){
+                  console.log('throw error');
+                }else{
+                  $('#emailModal a').attr("href", "mailto:" + inputEmail + "?subject=Join Design For Change&body=Click here to Sign up");
+                  $('#emailModal').modal('hide');
+                  $('.inviteName').val('');
+                  $('.inviteEmail').val('');
+                }
               });
           });
         });
