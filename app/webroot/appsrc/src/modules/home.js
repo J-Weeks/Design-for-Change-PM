@@ -298,7 +298,7 @@ function(App, Handlebars, Data) {
             });
             $('.saveMember').click(function(){
               var selUser = this.value;
-              // var formData = $("#editMemberForm").serialize();
+              var formData = $("#editMemberForm").serialize();
               debugger;
                 $.ajax({
 
@@ -321,9 +321,9 @@ function(App, Handlebars, Data) {
                   console.log('throw error');
                 }else{
                   $('#emailModal a').attr("href", "mailto:" + inputEmail + "?subject=Join Design For Change&body=Click here to Sign up");
-                  $('#emailModal').modal('hide');
                   $('.inviteName').val('');
                   $('.inviteEmail').val('');
+                  $('#emailModal').modal('hide');
                 }
               });
           });
