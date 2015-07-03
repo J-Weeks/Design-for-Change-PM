@@ -19,7 +19,7 @@ function(App, Handlebars, Mustache, Data, Home) {
       'project/:id/:stage/:section'            : 'showProject',
       'activities'                             : 'showActivities',
       'activities/:skill/:age/:time'           : 'showActivities',
-      'editmentor'                             : 'editMentor',
+      'mentors'                                : 'editMentors',
       'activityskill'                          : 'activityskill'
     },
     initialize: function() {
@@ -28,7 +28,7 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.models = {
         user                    : new Data.Models.UserModel(),
         project                 : new Data.Models.ProjectModel(),
-        skills                  : new Data.Collections.Skills(),
+        skills                  : new Data.Collections.Skills()
       };
 
       if (window.oCurrentUser) {
@@ -80,11 +80,11 @@ function(App, Handlebars, Mustache, Data, Home) {
       this.Layout.getView('activities').sTime = time;
       this.Layout.getView('activities').render();
     },
-    editMentor: function(e){
-      this.Layout.setView('mentor', new Home.MentorView());
-      this.Layout.getView('mentor').render();
+    editMentors: function(e){
+      this.Layout.setView('mentors', new Home.MentorsView());
+      this.Layout.getView('mentors').render();
     },
-      activityskill: function(e){
+    activityskill: function(e){
       this.Layout.setView('activityskill', new Home.ActivityskillView());
       this.Layout.getView('activityskill').render();
     }

@@ -3,33 +3,27 @@
 class MailgunComponent extends Component {
 
   public function sendMail($from, $to, $cc, $subject, $body) {
-    $mgClient = new Mailgun('key-d19e568a45c27e51a9bd0bee2bcc4d98');
-    $domain = 'designforchange.us';
+    $ch = curl_init();
 
-    // curl -s --user 'api:key-d19e568a45c27e51a9bd0bee2bcc4d98' \
-        // https://api.mailgun.net/v3/designforchange.us/messages \
-        // -F from='Excited User <mailgun@designforchange.us>' \
-        // -F to=admin@designforchange.us \
-        // -F to=bar@example.com \
-        // -F subject='Hello' \
-        // -F text='Testing some Mailgun awesomness!'
+    echo $to; 
+  
+    curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+    curl_setopt($ch, CURLOPT_USERPWD, 'api:key-d19e568a45c27e51a9bd0bee2bcc4d98');
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+    curl_setopt($ch, CURLOPT_URL, 
+                'https://api.mailgun.net/v2/designforchange.us/messages');
+    curl_setopt($ch, CURLOPT_POSTFIELDS, 
+                  array('from' => $from,
+                        'to' => $to,
+                        'subject' => html_entity_decode($subject),
+                        'text' => $body));
+    $result = curl_exec($ch);
+    curl_close($ch);
 
-    $mg->sendMessage($domain, array('from'    => $from,
-                                    'to'      => $to,
-                                    'subject' => html_entity_decode($subject),
-                                    'text'    => $body));
+    echo json_encode($result);
 
-    try {
-      return $mgClient->sendMessage("$domain",
-                                    array('from'    => $from,
-                                          'to'      => $to,
-                                          'cc'      => $cc,
-                                          'subject' => html_entity_decode($subject),
-                                          'text'    => $body));
-    } catch(Exception $e) {
-      echo $e;
-      return false;
-    }
+    return $result;
   }
 
 }

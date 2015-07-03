@@ -76,9 +76,14 @@ function(App, Handlebars, Data) {
       $('#content').html(Handlebars.compile($('#registerFormTemplate').html()));
 
       if (self.sOrganization != undefined) {
-        $('#organization').val(self.sOrganization);
-        $('#organization').attr('disabled', true);
-        $('.bigintro').html('Welcome ' + self.sOrganization);
+        self.oOrganizationModel = new Data.Models.OrganizationModel();
+        self.oOrganizationModel.url = '/api/organization/' + self.sOrganization;
+        self.oOrganizationModel.fetch({success: function() {
+          self.sOrganization = self.oOrganizationModel.attributes.name;
+          $('#organization').val(self.sOrganization);
+          $('#organization').attr('disabled', true);
+          $('.bigintro').html('Welcome ' + self.sOrganization);
+        }});
       }
 
       App.setupPage();

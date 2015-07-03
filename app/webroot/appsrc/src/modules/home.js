@@ -233,115 +233,6 @@ function(App, Handlebars, Data) {
       }
 
       $('.uploadFiles').addClass('hide');
-
-
-      $(document).ready(function(){
-        $('.editorg').click(function(){
-          $('.inner_navigation a').removeClass('active');
-          $('.editorg').addClass('active');
-          $.ajax({
-            url: '/dfcusa-pm/api/organization'
-          }).done(function(res){
-            // debugger;
-            console.log(res);
-            $('#content').html('');
-            $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: res, masterMentor: oCurrentUser.master_mentor}));
-            if(window.location.hash == '#editmentor'){$('.leftnav').addClass('hide');$('.header').addClass('hide');}
-            $('.emailModal').click(function(){
-              $("#emailModal").modal('show');
-            });
-            $('.gHome').click(function(){
-              window.history.back();
-            });
-            $('.deleteMentor').click(function(e){
-              e.preventDefault;
-              var selfButton = this;
-              var delMentorId = this.value;
-              console.log(delMentorId);
-              $.ajax({
-                url: '/dfcusa-pm/api/user/' + delMentorId,
-                type: 'DELETE'
-              }).done(function(){
-                selfButton.closest('tr').remove();
-              });
-            });
-            $('.delProject').click(function(){
-            var selfButton = this;
-            var proButton = this.parentElement.firstElementChild;
-            proButton = proButton.children;
-            projId = proButton[0].value;
-            var projUserId = this.value;
-            proButton = proButton[0];
-            $.ajax({
-                url: '/dfcusa-pm/api/project/' + projId + '/user/' + projUserId,
-                type: 'DELETE'
-              }).done(function(){
-                proButton.remove();
-                selfButton.remove();
-              });
-            });
-            $('.editMemberModal').click(function(){
-              var selUser = this.value;
-              $.ajax({
-                url: '/dfcusa-pm/api/user/' +  selUser
-              }).done(function(response){
-                console.log(response);
-                $("#editMemberModal").modal('show');
-                $('#editMemberModal').find('#first_name').val(response.first_name);
-                $('#editMemberModal').find('#last_name').val(response.last_name);
-                $('#editMemberModal').find('#email').val(response.email);
-                $('#editMemberModal').find('#location').val(response.location);
-                $('#editMemberModal').find('.profilePic').attr('src', response.profilepic);
-                $('#editMemberModal').find('#profile_pic_source').val(response.profilepic);
-                $('.saveMember').attr('value', selUser);
-              });
-            });
-            $('.saveMember').click(function(){
-              var selUser = this.value;
-
-                var first_name = $('#editMemberModal').find('#first_name').val();
-                var last_name = $('#editMemberModal').find('#last_name').val();
-                var email = $('#editMemberModal').find('#email').val();
-                var location = $('#editMemberModal').find('#location').val();
-
-              var formData = $("#editMemberForm").serialize();
-              debugger;
-                $.ajax({
-
-                  url: '/dfcusa-pm/api/user/' +  selUser,
-                  type: 'PATCH',
-                  // data: formData,
-                  data: {first_name: first_name,
-                         last_name: last_name,
-                          email: email,
-                          location: location},
-
-                  dataType: 'JSON'
-                }).done(function(response){
-                  debugger;
-                  $("#editMemberModal").modal('hide');
-                }).fail(function(){
-                  debugger;
-                });
-            });
-              $('.sendInvite').click(function(){
-                var inputName = $('.inviteName').val();
-                var inputEmail = $('.inviteEmail').val();
-
-                if((inputEmail == '') || (inputName == '')){
-                  console.log('throw error');
-                }else{
-                  $('#emailModal a').attr("href", "mailto:" + inputEmail + "?subject=Join Design For Change&body=Click here to Sign up");
-                  $('.inviteName').val('');
-                  $('.inviteEmail').val('');
-                  $('#emailModal').modal('hide');
-                }
-              });
-          });
-        });
-
-
-      });
     },
     newProject: function() {
       console.log('test');
@@ -941,7 +832,7 @@ console.log(self.project.attributes);
           }
         });
 
-        $('.viewMore').click(function(e){
+        $('.viewMore').unbind('click').click(function(e){
           e.preventDefault();
           var selfSkill = this.value;
           $('.contents').html('');
@@ -1047,7 +938,6 @@ console.log(self.project.attributes);
       $('.staging').html('');
       $('#content').find('table').css('float', 'right');
 
-
       self.skills = App.HomeRouter.models.skills;
       self.skills.fetch({success: function() {
         _.each(self.skills.models, function(skill) {
@@ -1092,7 +982,7 @@ console.log(self.project.attributes);
     }
   });
 
-  Home.MentorView = Backbone.View.extend({
+  Home.MentorsView = Backbone.View.extend({
       initialize: function () {
         var self = this;
       },
@@ -1104,6 +994,94 @@ console.log(self.project.attributes);
         var self = this;
 
         App.setupPage();
+
+        self.getMentors();
+      },
+      getMentors: function() {
+        var self = this;
+
+        $('.inner_navigation a').removeClass('active');
+        $('.editorg').addClass('active');
+
+        self.oOrganization = new Data.Models.OrganizationModel();
+        self.oOrganization.fetch({success: function() {
+          $('#content').html('');
+          $('#content').append(Handlebars.compile($('#editOrgTemplate').html())({org: self.oOrganization.attributes, masterMentor: oCurrentUser.master_mentor}));
+
+          $('.gHome').unbind('click').click(function(){
+            window.history.back();
+          });
+
+          $('.inviteMentor').unbind('click').click(function() {
+            self.inviteMentor();
+          });
+
+          $('.deleteMentor').unbind('click').click(function(e){
+            e.preventDefault;
+            var selfButton = this;
+            var delMentorId = this.value;
+            _.each(self.oOrganization.attributes.users, function(user) {
+              if (user.id == delMentorId) {
+                oDelUser = new Data.Models.UserModel();
+                oDelUser.attributes.id = user.id;
+                oDelUser.url = '/dfcusa-pm/api/user/' + oDelUser.attributes.id;
+                oDelUser.destroy({success: function() {
+                  selfButton.closest('tr').remove();
+                }});
+              }
+            });
+          });
+
+          $('.editMentor').unbind('click').click(function(e){
+            self.editMentor($(this).attr('value'));
+          });
+        }});
+      },
+      editMentor: function(userId) {
+        var self = this;
+
+        _.each(self.oOrganization.attributes.users, function(user) {
+          if (user.id == userId) {
+            $("#editMentorModal").modal('show');
+            $('#editMentorModal').find('#first_name').val(user.first_name);
+            $('#editMentorModal').find('#last_name').val(user.last_name);
+            $('#editMentorModal').find('#email').val(user.email);
+            $('#editMentorModal').find('#location').val(user.location);
+            $('#editMentorModal').find('.profilePic').attr('src', user.profilepic);
+            $('#editMentorModal').find('#profile_pic_source').val(user.profilepic);
+            $('.saveMentor').attr('value', user.id);
+            $('.saveMentor').unbind('click').click(function(e) {
+              self.saveMentor($(this).attr('value'));
+            });
+          }
+        });
+      },
+      saveMentor: function(userId) {
+        var self = this;
+
+        oSaveMentor = new Data.Models.UserModel();
+        oSaveMentor.attributes.id = userId;
+        oSaveMentor.url = '/dfcusa-pm/api/user/' + oSaveMentor.attributes.id;
+        oSaveMentor.attributes.first_name = $('#editMentorModal').find('#first_name').val();
+        oSaveMentor.attributes.last_name = $('#editMentorModal').find('#last_name').val();
+        oSaveMentor.attributes.email = $('#editMentorModal').find('#email').val();
+        oSaveMentor.attributes.location = $('#editMentorModal').find('#location').val();
+
+        oSaveMentor.save({}, {success: function() {
+          $("#editMentorModal").modal('hide');
+
+          self.getMentors();
+        }});
+      },
+      inviteMentor: function() {
+        var self = this;
+
+        $('#inviteModal').modal('show');
+
+        $('.sendInvite').unbind().click(function() {
+          $.get('/dfcusa-pm/api/organization/invite/' +  $('.inviteName').val() + '/' + $('.inviteEmail').val());
+          $('#inviteModal').modal('hide');
+        });
       }
     });
 

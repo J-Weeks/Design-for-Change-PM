@@ -5,7 +5,7 @@ App::uses('AppController', 'Controller');
 class ApiController extends AppController {
 
   public $name = 'UserApi';
-  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill', 'File');
+  public $uses = array('User', 'Project', 'UserProject', 'Organization', 'Content', 'Activity', 'Skill', 'File', 'Invite');
   public $components = array('Objects', 'Aws', 'Mailgun');
 
   var $oData = array();
@@ -19,7 +19,7 @@ class ApiController extends AppController {
     $this->response->type('application/json');
     $oData = $this->request->input('json_decode', 'true');
 
-    if ((Router::url() === '/dfcusa-pm/api/user/login') || (Router::url() === '/dfcusa-pm/api/user/new')) {
+    if ((Router::url() === '/dfcusa-pm/api/user/login') || (Router::url() === '/dfcusa-pm/api/user/new')  || (strpos(Router::url(), '/dfcusa-pm/api/organization/') > -1)) {
       $isCreateUserRequest = true;
     }
 
@@ -73,13 +73,17 @@ class ApiController extends AppController {
       if (!$oExistingUser) {
         $this->User->create();
         $oOrganization = $this->Organization->findByName($oData['organization']);
+
         if (!$oOrganization) {
           $this->Organization->create();
           $this->Organization->saveField('name', $oData['organization']);
           $oOrganization = $this->Organization->findByName($oData['organization']);
+          $oData['organization_id'] = $oOrganization['id'];
           $oData['master_mentor'] = 1;
+        } else {
+          $oData['organization_id'] = $oOrganization['id'];
         }
-        $oData['organization_id'] = $oOrganization['id'];
+
         unset($oData['organization']);
         $oData['password'] = md5($oData['password']);
         $oNewUser = $this->User->save($oData);
@@ -185,11 +189,11 @@ class ApiController extends AppController {
 
     if ($bAllowed) {
       if ($oCurrentUser['type'] == 'admin') {
-        $this->User->delete($this->params['userid']);
+       // $this->User->delete($this->params['userid']);
       } else {
         $oUser = $this->User->findById($this->params['userid']);
         if ($oUser['organization_id'] == $oCurrentUser['organization_id']) {
-          $this->User->delete($this->params['userid']);
+         // $this->User->delete($this->params['userid']);
         }
       }
     } else {
@@ -223,10 +227,16 @@ class ApiController extends AppController {
     if (($oCurrentUser['organization_id'] == $this->params['organizationid']) || ($oCurrentUser['type'] == 'admin')) {
       $oOrganization = $this->Organization->findById($this->params['organizationid']);
       $oOrganization['users'] = $this->User->find('all', array('conditions' => array('organization_id' => $this->params['organizationid'])));
+      $oOrganization = $this->Objects->populateOrganization($oOrganization);
+    } else {
+      $oInvite = $this->Invite->find('first', array('conditions' => array('Invite.invite_token' => $this->params['organizationid'])));
+      if ($oInvite) {
+        $oOrganization = $this->Organization->findById($oInvite['organization_id']);
+      }
     }
 
-    echo $this->prepareResponse($this->Objects->populateOrganization($oOrganization), 531, 'access denied');
-  }
+    echo $this->prepareResponse($oOrganization, 531, 'access denied');
+  }  
 
   public function getOrganizationProjects() {
     global $oData;
@@ -276,9 +286,12 @@ class ApiController extends AppController {
   public function sendInvite() {
     global $oCurrentUser;
 
-    $this->Mailgun->sendMail($oCurrentUser['email'], $this->params['to'], '', 'Invite to Design for Change', 'Come join us');
-    // $this->Invitee->create();
-    // $this->Invitee->saveField('name', 'email');
+    $token = md5(time());
+
+    $this->Invite->create();
+    $this->Invite->save(array('email' => $this->params['email'], 'name' => $this->params['name'], 'organization_id' => $oCurrentUser['organization_id'], 'invited_timestamp' => time(), 'accepted' => 0, 'invite_token' => $token));
+
+    $this->Mailgun->sendMail($oCurrentUser['email'], $this->params['email'], '', 'Invite to Design for Change', 'Come join us - http://' . $_SERVER['SERVER_NAME'] . '/dfcusa-pm/login#register/' . $token);
   }
 
   public function getProjects() {
