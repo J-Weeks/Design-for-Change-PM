@@ -702,7 +702,7 @@
       </thead>
     <tbody>
       {{#each org.users}}
-      <tr>
+      <tr value="{{id}}">
         <td>
           <img src="{{profilepic}}" heigh="40px" width="40px">{{first_name}} {{last_name}}
         </td>
@@ -714,7 +714,7 @@
         {{#each projects}}
           <td>
             <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
-            <button type="button" class="btn btn-primary btn-sm delProject"  value="{{../id}}">Delete</button>
+            <button type="button" class="btn btn-primary btn-sm delProject"  value="{{id}}">Delete</button>
           </td>
         {{/each}}
       </tr>

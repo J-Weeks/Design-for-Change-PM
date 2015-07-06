@@ -1044,25 +1044,29 @@ console.log(self.project.attributes);
           });
 
           $('.delProject').unbind('click').click(function(e){
-            self.deleteProject();
+            var userId = this.closest('tr');
+            var projId = this;
+            self.deleteProject(userId, projId);
           });
 
         }});
       },
 
-      deleteProject:function(userId){
-        var selfButton = this;
-        var proButton = this.parentElement.firstElementChild;
-        proButton = proButton.children;
-        projId = proButton[0].value;
-        var projUserId = this.value;
-        proButton = proButton[0];
+      deleteProject:function(userId, projId){
+        var userIdButton = userId;
+        userId = userId.attributes.value.value;
+        var projRow = projId;
+        projId = projId.attributes.value.value;
+
+        App.HomeRouter.models.user;
+        debugger;
+
         $.ajax({
-            url: '/dfcusa-pm/api/project/' + projId + '/user/' + projUserId,
+            url: '/dfcusa-pm/api/project/' + projId + '/user/' + userId,
+            // /api/project/:projectid/user/:userid
             type: 'DELETE'
           }).done(function(){
-            proButton.remove();
-            selfButton.remove();
+            projRow.closest('td').remove();
           });
       },
       editMentor: function(userId) {
