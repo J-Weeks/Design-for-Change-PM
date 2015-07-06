@@ -1058,16 +1058,25 @@ console.log(self.project.attributes);
         var projRow = projId;
         projId = projId.attributes.value.value;
 
-        App.HomeRouter.models.user;
-        debugger;
+        // App.HomeRouter.models.user;
+        // debugger;
 
         $.ajax({
             url: '/dfcusa-pm/api/project/' + projId + '/user/' + userId,
-            // /api/project/:projectid/user/:userid
+            // /api/project/:projectid
+            //alternate project delete
             type: 'DELETE'
           }).done(function(){
             projRow.closest('td').remove();
           });
+        $.ajax({
+          url: '/dfcusa-pm/api/project/' + projId,
+          // /api/project/:projectid
+          // had to delete on both routes to properly remove
+          type: 'DELETE'
+        }).done(function(){
+          console.log('lo');
+        });
       },
       editMentor: function(userId) {
         var self = this;
