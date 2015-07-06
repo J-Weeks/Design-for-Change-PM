@@ -1,6 +1,3 @@
-<!-- <script src="../../js/noframework.waypoints.js"></script> -->
-<script src="../../js/jquery.waypoints.js"></script>
-
 <script type="text/mustache-template" id="contentTemplate">
 	<div class="insidepage">
     <div class="fullcontentview">
@@ -711,7 +708,7 @@
         </td>
         <td>
           <button type="button" class="btn btn-success btn-sm editMentor" value="{{id}}">Edit Member</button>
-          <button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Delete</button>
+          <button type="button" class="btn btn-primary btn-sm deleteMentorConf" value="{{id}}">Delete</button>
         </td>
         <td>{{location}}</td>
         {{#each projects}}
@@ -727,6 +724,24 @@
   </div>
   <p style="font-size: 10pt; margin-left: 20px" class='gHome'>< back to home</p>
   {{/if_eq}}
+
+<div id="deleteMentorModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirm Delete</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-sm deleteMentor" value="{{id}}">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div id="inviteModal" class="modal fade">
       <div class="modal-dialog">

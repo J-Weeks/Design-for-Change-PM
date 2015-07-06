@@ -1016,6 +1016,14 @@ console.log(self.project.attributes);
             self.inviteMentor();
           });
 
+          $('.deleteMentorConf').unbind('click').click(function(){
+            var delId = this.value;
+            var deleteLine = this;
+            $('.deleteMentor').attr('value', delId);
+            $('#deleteMentorModal').modal('show');
+            return deleteLine;
+          });
+
           $('.deleteMentor').unbind('click').click(function(e){
             e.preventDefault;
             var selfButton = this;
@@ -1026,7 +1034,9 @@ console.log(self.project.attributes);
                 oDelUser.attributes.id = user.id;
                 oDelUser.url = '/dfcusa-pm/api/user/' + oDelUser.attributes.id;
                 oDelUser.destroy({success: function() {
-                  selfButton.closest('tr').remove();
+                  $('#deleteMentorModal').modal('hide');
+                  $("[value="+delMentorId+"]+")[0].closest('tr').remove();
+                  debugger;
                 }});
               }
             });

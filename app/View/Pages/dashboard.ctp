@@ -14,7 +14,7 @@
       <div class="inner_login">
         <ul>
           <li><a href="/home#profile">My Profile</a></li>
-          <li data-navigation="editorg"><a href="/home#editmentor" class="getstarted editorg">My Organization</a></li>
+          <li data-navigation="editorg"><a href="/home#mentors" class="getstarted editorg">My Organization</a></li>
           <li><a href="/dfcusa-pm/logout" class="sign">Exit Portal</a></li>
           <li style="width: 20px"><img src="{{user.profilepic}}" class="profilePicSmall"></li>
         </ul>
