@@ -375,3 +375,6 @@ small {
 /*edit org*/
 .gHome{ cursor: pointer;}
 
+.inviteMentor{float:right;}
+
+#projectHeader .steps li{cursor: pointer; cursor: hand;}
