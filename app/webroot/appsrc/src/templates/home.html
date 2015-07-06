@@ -714,7 +714,8 @@
         {{#each projects}}
           <td>
             <a href="#project/{{id}}"><button type="button" class="btn btn-primary btn-sm gotoProject" value="{{id}}">{{name}}</button></a>
-            <button type="button" class="btn btn-primary btn-sm delProject"  value="{{id}}">Delete</button>
+            <button type="button" class="btn btn-primary btn-sm delProjectModal"  value="{{id}}">Delete</button>
+            <!-- <button type="button" class="btn btn-primary btn-sm delProject"  value="{{id}}">Delete</button> -->
           </td>
         {{/each}}
       </tr>
@@ -738,6 +739,24 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary btn-sm deleteMentor" value="">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="deleteProjectModal" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Confirm Delete</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btn-sm delProject"  value="{{id}}">Delete</button>
       </div>
     </div>
   </div>

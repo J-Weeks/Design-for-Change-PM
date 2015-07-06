@@ -1043,9 +1043,10 @@ console.log(self.project.attributes);
             self.editMentor($(this).attr('value'));
           });
 
-          $('.delProject').unbind('click').click(function(e){
+          $('.delProjectModal').unbind('click').click(function(e){
             var userId = this.closest('tr');
             var projId = this;
+            $('#deleteProjectModal').modal('show');
             self.deleteProject(userId, projId);
           });
 
@@ -1053,29 +1054,29 @@ console.log(self.project.attributes);
       },
 
       deleteProject:function(userId, projId){
-        var userIdButton = userId;
-        userId = userId.attributes.value.value;
-        var projRow = projId;
-        projId = projId.attributes.value.value;
+        $('.delProject').unbind('click').click(function(e){
+          var userIdButton = userId;
+          userId = userId.attributes.value.value;
+          var projRow = projId;
+          projId = projId.attributes.value.value;
 
-        // App.HomeRouter.models.user;
-        // debugger;
-
-        $.ajax({
-            url: '/dfcusa-pm/api/project/' + projId + '/user/' + userId,
+          $.ajax({
+              url: '/dfcusa-pm/api/project/' + projId + '/user/' + userId,
+              // /api/project/:projectid
+              //alternate project delete
+              type: 'DELETE'
+            }).done(function(){
+              projRow.closest('td').remove();
+            });
+          $.ajax({
+            url: '/dfcusa-pm/api/project/' + projId,
             // /api/project/:projectid
-            //alternate project delete
+            // had to delete on both routes to properly remove
             type: 'DELETE'
           }).done(function(){
-            projRow.closest('td').remove();
+            console.log('lo');
+            $('#deleteProjectModal').modal('hide');
           });
-        $.ajax({
-          url: '/dfcusa-pm/api/project/' + projId,
-          // /api/project/:projectid
-          // had to delete on both routes to properly remove
-          type: 'DELETE'
-        }).done(function(){
-          console.log('lo');
         });
       },
       editMentor: function(userId) {
