@@ -1021,11 +1021,9 @@ console.log(self.project.attributes);
             var deleteLine = this;
             $('.deleteMentor').attr('value', delId);
             $('#deleteMentorModal').modal('show');
-            return deleteLine;
           });
 
-          $('.deleteMentor').unbind('click').click(function(e){
-            e.preventDefault;
+          $('.deleteMentor').unbind('click').click(function(){
             var selfButton = this;
             var delMentorId = this.value;
             _.each(self.oOrganization.attributes.users, function(user) {
@@ -1036,7 +1034,6 @@ console.log(self.project.attributes);
                 oDelUser.destroy({success: function() {
                   $('#deleteMentorModal').modal('hide');
                   $("[value="+delMentorId+"]+")[0].closest('tr').remove();
-                  debugger;
                 }});
               }
             });
@@ -1045,7 +1042,28 @@ console.log(self.project.attributes);
           $('.editMentor').unbind('click').click(function(e){
             self.editMentor($(this).attr('value'));
           });
+
+          $('.delProject').unbind('click').click(function(e){
+            self.deleteProject();
+          });
+
         }});
+      },
+
+      deleteProject:function(userId){
+        var selfButton = this;
+        var proButton = this.parentElement.firstElementChild;
+        proButton = proButton.children;
+        projId = proButton[0].value;
+        var projUserId = this.value;
+        proButton = proButton[0];
+        $.ajax({
+            url: '/dfcusa-pm/api/project/' + projId + '/user/' + projUserId,
+            type: 'DELETE'
+          }).done(function(){
+            proButton.remove();
+            selfButton.remove();
+          });
       },
       editMentor: function(userId) {
         var self = this;
