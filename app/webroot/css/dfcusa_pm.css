@@ -338,19 +338,12 @@ small {
 
 /*=======New Project Modals=======*/
 .existingNewProject{
-  margin-left:50px;
-  margin-right: 50px;
-}
-
-.existingNewProject img{
-  width: 128px;
-  height: 128px;
+ width: 100%;
+ margin-bottom: 50px;
 }
 
 .blankNewProject{
-  margin-left:50px;
-  margin-right: 50px;
-  float: right;
+  width:100%;
 }
 
 .blankNewProject img{
