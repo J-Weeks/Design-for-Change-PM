@@ -20,7 +20,8 @@ function(App, Handlebars, Mustache, Data, Home) {
       'activities'                             : 'showActivities',
       'activities/:skill/:age/:time'           : 'showActivities',
       'mentors'                                : 'editMentors',
-      'activityskill'                          : 'activityskill'
+      'activityskill'                          : 'activityskill',
+      'welcome'                                : 'welcome'
     },
     initialize: function() {
       this.Layout = new Home.Layout();
@@ -87,6 +88,10 @@ function(App, Handlebars, Mustache, Data, Home) {
     activityskill: function(e){
       this.Layout.setView('activityskill', new Home.ActivityskillView());
       this.Layout.getView('activityskill').render();
+    },
+    welcome: function(e){
+      this.Layout.setView('welcome', new Home.WelcomeView());
+      this.Layout.getView('welcome').render();
     }
   });
 

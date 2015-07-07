@@ -89,6 +89,7 @@ function(App, Handlebars, Data) {
       $('#editProfileModal').find('#profile_pic_source').val(window.oCurrentUser.profilepic);
 
       $('.uploadPicButton').unbind('click').click(function() {
+        debugger;
         $('.uploadPic').click();
         $('.uploadPic').change(function() {
           $(this).upload('/dfcusa-pm/api/user/' + window.oCurrentUser.id + '/upload', function(res) {
@@ -299,9 +300,9 @@ function(App, Handlebars, Data) {
       $('.leftnav').removeClass('hide');
 
       $('#content').html($('#contentTemplate').html());
-
       self.project = new Data.Models.ProjectModel();
       self.project.url = '/dfcusa-pm/api/project/' + self.iProjectId;
+      // debugger;
       self.project.fetch({success: function() {
         self.showProject();
       }});
@@ -328,8 +329,6 @@ function(App, Handlebars, Data) {
 
 
       // self.project.attributes.current_stage = curStage;
-      // debugger;
-
       $('#navbar_fids').removeClass('hide');
       $('#project_name').removeClass('hide');
       $('#main_menu').addClass('pull-right');
@@ -339,9 +338,9 @@ console.log(self.project.attributes);
       $('#projectHeader').removeClass('hide');
 
       $('#project_name').html(self.project.attributes.name);
-
       self.stage = new Data.Models.ContentModel();
       self.stage.url = '/dfcusa-pm/api/content/' + self.sStage;
+
       self.stage.fetch({success: function() {
         self.showStage();
       }});
@@ -1141,6 +1140,28 @@ console.log(self.project.attributes);
         App.setupPage();
       }
     });
+
+  Home.WelcomeView = Backbone.View.extend({
+      initialize: function () {
+        var self = this;
+      },
+      unload: function() {
+        this.remove();
+        this.unbind();
+      },
+      afterRender: function() {
+        var self = this;
+
+        App.setupPage();
+
+        self.carouselSetup();
+      },
+      carouselSetup: function() {
+        var self = this;
+        $('#content').html('');
+        $('#content').html(Handlebars.compile($('#onboardingTemplate').html()));
+    }
+  });
 
 
   return Home;

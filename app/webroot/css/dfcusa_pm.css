@@ -371,3 +371,13 @@ small {
 .inviteMentor{float:right;}
 
 #projectHeader .steps li{cursor: pointer; cursor: hand;}
+
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 70%;
+      margin: auto;
+}
+
+.onboardingCarousel{
+  width: 100%;
+}
