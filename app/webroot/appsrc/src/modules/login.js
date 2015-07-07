@@ -12,10 +12,10 @@ function(App, Handlebars, Data) {
 
   Login.Layout = Backbone.Layout.extend({
     initialize : function () {
-      var self = this;    
+      var self = this;
     }
-  }); 
-  
+  });
+
   Login.LoginFormView = Backbone.View.extend({
     el : '#content',
     events: {
@@ -31,7 +31,7 @@ function(App, Handlebars, Data) {
     },
     afterRender: function () {
       var self = this;
-      
+
       $('#content').html(Handlebars.compile($('#loginFormTemplate').html()));
 
       App.setupPage();
@@ -48,7 +48,8 @@ function(App, Handlebars, Data) {
         this.user.attributes.email = $('#email').val();
         this.user.attributes.password = $('#password').val();
         this.user.save({}, {success: function(data) {
-          location.reload();
+          window.location.href = '/dfcusa-pm/home#welcome'
+          // location.reload();
         }, error: function() {
           $('#loginForm').find('.alert').removeClass('hide');
         }});
@@ -72,7 +73,7 @@ function(App, Handlebars, Data) {
     },
     afterRender: function () {
       var self = this;
-      
+
       $('#content').html(Handlebars.compile($('#registerFormTemplate').html()));
 
       if (self.sOrganization != undefined) {
@@ -111,12 +112,13 @@ function(App, Handlebars, Data) {
           this.user.attributes.password = $('#password').val();
           this.user.attributes.type = 'mentor';
           this.user.save({}, {success: function(data) {
-            window.location.href = '/dfcusa-pm/home#projects'
+            // window.location.href = '/dfcusa-pm/home#projects'
+            window.location.href = '/dfcusa-pm/home#welcome'
           }, error: function() {
             app.showNotify('Error creating account. That e-mail address may already be in use.', 'error');
           }});
         } else {
-          app.alertBox('Error', 'The passwords do not match.', 'OK', false, false, false);  
+          app.alertBox('Error', 'The passwords do not match.', 'OK', false, false, false);
         }
       } else {
         app.alertBox('Error', 'Please fill out all the fields.', 'OK', false, false, false);
