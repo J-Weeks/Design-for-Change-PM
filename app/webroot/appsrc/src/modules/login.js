@@ -48,8 +48,9 @@ function(App, Handlebars, Data) {
         this.user.attributes.email = $('#email').val();
         this.user.attributes.password = $('#password').val();
         this.user.save({}, {success: function(data) {
+          debugger;
           window.location.href = '/dfcusa-pm/home#welcome'
-          // location.reload();
+          location.reload();
         }, error: function() {
           $('#loginForm').find('.alert').removeClass('hide');
         }});
