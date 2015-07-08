@@ -381,3 +381,5 @@ small {
 .onboardingCarousel{
   width: 100%;
 }
+
+.carousel-inner .item{margin-bottom: 30px;}

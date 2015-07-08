@@ -1159,7 +1159,15 @@ console.log(self.project.attributes);
       carouselSetup: function() {
         var self = this;
         $('#content').html('');
-        $('#content').html(Handlebars.compile($('#onboardingTemplate').html()));
+        $.ajax({
+              url: '/dfcusa-pm/api/content/'
+            }).done(function(content){
+              console.log(content);
+              debugger;
+              $('#content').html(Handlebars.compile($('#onboardingTemplate').html())({content: content}));
+              $('.carousel-indicators li').first().addClass('active');
+              $('.carousel-inner .item').first().addClass('active');
+            });
     }
   });
 
