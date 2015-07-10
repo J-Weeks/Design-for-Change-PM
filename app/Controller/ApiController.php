@@ -236,7 +236,7 @@ class ApiController extends AppController {
     }
 
     echo $this->prepareResponse($oOrganization, 531, 'access denied');
-  }  
+  }
 
   public function getOrganizationProjects() {
     global $oData;

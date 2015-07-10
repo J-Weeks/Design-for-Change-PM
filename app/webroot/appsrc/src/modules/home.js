@@ -430,62 +430,22 @@ console.log(self.project.attributes);
     goToSection: function() {
       var self = this;
 
-      // $('.leftnav').find('li').removeClass('active');
-      // $('[data-section="' + self.sSection + '"]').addClass('active');
-      // console.log(self.sSection);
-      // console.log(self.stage);
 
-    //start nav / road bar
       var main = main = $('#main ul');
 
-    // $('.goToSection').click(function(event) {
-    //   main.children().removeClass('active');
-    //   this.classList.add('active');
-    // });
-
-// //progress bar below
-// //lets DRY this up
-//     if (this.classList[1] == "2"){
-//       $('.progress-bar').attr("aria-valuenow", "33");
-//       $('.progress-bar').attr("width", "33%");
-//       $('.progress-bar').attr("style", "width:33%");
-//       $('.progress-bar').text("15 Minutes Left");
-//     } else if (this.classList[1] == "3"){
-//         $('.progress-bar').attr("aria-valuenow", "66");
-//         $('.progress-bar').attr("width", "66%");
-//         $('.progress-bar').attr("style", "width:66%");
-//         $('.progress-bar').text("10 Minutes Left");
-//     } else if (this.classList[1] == "4") {
-//       $('.progress-bar').attr("aria-valuenow", "95");
-//       $('.progress-bar').attr("width", "95%");
-//       $('.progress-bar').attr("style", "width:95%");
-//       $('.progress-bar').text("5 Minutes Left");
-//     } else{
-//       $('.progress-bar').attr("aria-valuenow", "0");
-//       $('.progress-bar').attr("width", "0%");
-//       $('.progress-bar').attr("style", "width:0%");
-//     }
-//     //end
-
-//     });
-
-
-      // $('.contents').html('');
-
-      // console.log(self.stage);
+      $('.leftnav').addClass('hide');
+      //temporary until nav completely removed
 
       $('.contents').html('');
-//start upload
-//not getting inside the click
-
-// end upload
 
 
       if (self.stage.attributes.fids_stage) {
         for (var stageName in self.stage.attributes.content_obj) {
-          $('.contents').append(Handlebars.compile($('#' + stageName + 'Template').html())({content: self.stage.attributes, project: self.project.attributes}));
+          debugger;
+          $('.contents').html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
         }
-
+debugger;
+        $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
         $('.nextStepImagine').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
@@ -517,98 +477,98 @@ console.log(self.project.attributes);
         //   },{context:'.insidepage'});
         // });
 
-      $('#main .2').click(function(e){
-        e.preventDefault();
-        $('.insidepage').animate({
-          scrollTop: $("#1").offset().top
-          }, 2000);
-      });
+      // $('#main .2').click(function(e){
+      //   e.preventDefault();
+      //   $('.insidepage').animate({
+      //     scrollTop: $("#1").offset().top
+      //     }, 2000);
+      // });
 
-      $('#main .3').click(function(e){
-        e.preventDefault();
-        $('.insidepage').animate({
-        scrollTop: $("#2").offset().top
-        }, 2000);
-      });
+      // $('#main .3').click(function(e){
+      //   e.preventDefault();
+      //   $('.insidepage').animate({
+      //   scrollTop: $("#2").offset().top
+      //   }, 2000);
+      // });
 
-      $('#main .4').click(function(e){
-        e.preventDefault();
-        $('.insidepage').animate({
-        scrollTop: "5000px"
-        }, 2000);
-      });
+      // $('#main .4').click(function(e){
+      //   e.preventDefault();
+      //   $('.insidepage').animate({
+      //   scrollTop: "5000px"
+      //   }, 2000);
+      // });
 
 
 
-        setInterval(function(){
-        if((window.location.hash.split("/")[2]) == 'feel'){
-          //can also use self.stage.attributes.stage
-          if ($('.insidepage').scrollTop() < 226 ){
-            $('#main ul li').removeClass('active');
-            $('#main .1').addClass('active');
-          } else if ($('.insidepage').scrollTop() > 227 && $('.insidepage').scrollTop() < 1500){
-            $('#main ul li').removeClass('active');
-            $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 2800){
-            $('#main ul li').removeClass('active');
-            $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2801 && $('.insidepage').scrollTop() < 5500){
-            $('#main ul li').removeClass('active');
-            $('#main .4').addClass('active');
-          }else{
-            $('#main ul li').removeClass('active');
-          }
-        }else if((window.location.hash.split("/")[2]) == 'imagine'){
-          if ($('.insidepage').scrollTop() < 860){
-            $('#main ul li').removeClass('active');
-            $('#main .1').addClass('active');
-          } else if ($('.insidepage').scrollTop() > 861 && $('.insidepage').scrollTop() < 2200){
-            $('#main ul li').removeClass('active');
-            $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3380){
-            $('#main ul li').removeClass('active');
-            $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 3381 && $('.insidepage').scrollTop() < 4500){
-            $('#main ul li').removeClass('active');
-            $('#main .4').addClass('active');
-          }else{
-            $('#main ul li').removeClass('active');
-          }
-        }else if((window.location.hash.split("/")[2]) == 'do'){
-          if ($('.insidepage').scrollTop() < 850){
-            $('#main ul li').removeClass('active');
-            $('#main .1').addClass('active');
-          } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2300){
-            $('#main ul li').removeClass('active');
-            $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 3370){
-            $('#main ul li').removeClass('active');
-            $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 3371 && $('.insidepage').scrollTop() < 4900){
-            $('#main ul li').removeClass('active');
-            $('#main .4').addClass('active');
-          }else{
-            $('#main ul li').removeClass('active');
-          }
-        }else {
-          if ($('.insidepage').scrollTop() < 850){
-            $('#main ul li').removeClass('active');
-            $('#main .1').addClass('active');
-          } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2200){
-            $('#main ul li').removeClass('active');
-            $('#main .2').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3300){
-            $('#main ul li').removeClass('active');
-            $('#main .3').addClass('active');
-          }else if ($('.insidepage').scrollTop() > 3301 && $('.insidepage').scrollTop() < 4000){
-            $('#main ul li').removeClass('active');
-            $('#main .4').addClass('active');
-          }else{
-            $('#main ul li').removeClass('active');
-          }
-        }
+      //   setInterval(function(){
+      //   if((window.location.hash.split("/")[2]) == 'feel'){
+      //     //can also use self.stage.attributes.stage
+      //     if ($('.insidepage').scrollTop() < 226 ){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .1').addClass('active');
+      //     } else if ($('.insidepage').scrollTop() > 227 && $('.insidepage').scrollTop() < 1500){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .2').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 1501 && $('.insidepage').scrollTop() < 2800){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .3').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 2801 && $('.insidepage').scrollTop() < 5500){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .4').addClass('active');
+      //     }else{
+      //       $('#main ul li').removeClass('active');
+      //     }
+      //   }else if((window.location.hash.split("/")[2]) == 'imagine'){
+      //     if ($('.insidepage').scrollTop() < 860){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .1').addClass('active');
+      //     } else if ($('.insidepage').scrollTop() > 861 && $('.insidepage').scrollTop() < 2200){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .2').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3380){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .3').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 3381 && $('.insidepage').scrollTop() < 4500){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .4').addClass('active');
+      //     }else{
+      //       $('#main ul li').removeClass('active');
+      //     }
+      //   }else if((window.location.hash.split("/")[2]) == 'do'){
+      //     if ($('.insidepage').scrollTop() < 850){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .1').addClass('active');
+      //     } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2300){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .2').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 2301 && $('.insidepage').scrollTop() < 3370){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .3').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 3371 && $('.insidepage').scrollTop() < 4900){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .4').addClass('active');
+      //     }else{
+      //       $('#main ul li').removeClass('active');
+      //     }
+      //   }else {
+      //     if ($('.insidepage').scrollTop() < 850){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .1').addClass('active');
+      //     } else if ($('.insidepage').scrollTop() > 851 && $('.insidepage').scrollTop() < 2200){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .2').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 2201 && $('.insidepage').scrollTop() < 3300){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .3').addClass('active');
+      //     }else if ($('.insidepage').scrollTop() > 3301 && $('.insidepage').scrollTop() < 4000){
+      //       $('#main ul li').removeClass('active');
+      //       $('#main .4').addClass('active');
+      //     }else{
+      //       $('#main ul li').removeClass('active');
+      //     }
+      //   }
 
-      }, 500);
+      // }, 500);
 
        }else if
        (self.sSection == 'files') {
@@ -1030,7 +990,8 @@ console.log(self.project.attributes);
                 oDelUser = new Data.Models.UserModel();
                 oDelUser.attributes.id = user.id;
                 oDelUser.url = '/dfcusa-pm/api/user/' + oDelUser.attributes.id;
-                oDelUser.destroy({success: function() {
+                oDelUser.destroy({success: function(res) {
+                  debugger;
                   $('#deleteMentorModal').modal('hide');
                   $("[value="+delMentorId+"]+")[0].closest('tr').remove();
                 }});
@@ -1163,7 +1124,6 @@ console.log(self.project.attributes);
               url: '/dfcusa-pm/api/content/'
             }).done(function(content){
               console.log(content);
-              debugger;
               $('#content').html(Handlebars.compile($('#onboardingTemplate').html())({content: content}));
               $('.carousel-indicators li').first().addClass('active');
               $('.carousel-inner .item').first().addClass('active');

@@ -353,10 +353,10 @@ small {
 
 /*INSIDE PAGE SCROLL*/
 
-.insidepage{
+/*.insidepage{
   max-height: 600px;
   overflow: scroll;
-}
+}*/
 
 
 /*progressbar*/
