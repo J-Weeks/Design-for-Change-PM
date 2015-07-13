@@ -383,3 +383,5 @@ small {
 }
 
 .carousel-inner .item{margin-bottom: 30px;}
+
+#stageCarousel{width:unset;}

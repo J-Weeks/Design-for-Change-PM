@@ -440,7 +440,6 @@ console.log(self.project.attributes);
       $('.insidepage').css('margin-left', 'auto').css('margin-right', 'auto');
       $('.insidepage').css('margin-top', 0).css('margin-bottom', 0);
       $('.insidepage').css('float', 'unset');
-      $('.carousel').css('width', 'unset');
 
       if (self.stage.attributes.fids_stage) {
         var count = 1;
@@ -451,9 +450,7 @@ console.log(self.project.attributes);
               var panel = ".pan" + count;
               $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
               count +=1;
-
-        }
-
+          }
         }
 
         Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
@@ -463,19 +460,14 @@ console.log(self.project.attributes);
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
 
         $('.nextSlide').click(function(){
-          debugger;
           var slidesArr = $(this).parent().find('.carousel-inner .item');
           if (slidesArr.closest('.active').attr('rel') == '0'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $('.pan2').addClass('active');
-            debugger;
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
-            debugger;
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $('.pan3').addClass('active');
-            debugger;
           }else{
-            debugger;
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $('.pan1').addClass('active');
           }
