@@ -415,40 +415,44 @@
 </div>
 </script>
 
-    <script type="text/x-handlebars-template" id="getting_startedTemplate-partial">
-      <div class="float hide">
-        <iframe width="400" height="200" src="//www.youtube.com/embed/{{content.content_obj.getting_started.video}}?rel=0" frameborder="0" allowfullscreen></iframe>
-      </div>
-      {{{content.content_obj.getting_started.text}}}
-    </script>
+<script type="text/x-handlebars-template" id="getting_startedTemplate-partial">
+  <div class="float hide">
+    <iframe width="400" height="200" src="//www.youtube.com/embed/{{content.content_obj.getting_started.video}}?rel=0" frameborder="0" allowfullscreen></iframe>
+  </div>
+  {{{content.content_obj.getting_started.text}}}
+</script>
 
-    <script type="text/mustache-template" id="stageTemplate">
-  <div id="stageCarousel" class="carousel slide " data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      {{#each content.content_obj}}
-        <li data-target="#myStageCarousel" data-slide-to="{{id}}"></li>
-      {{/each}}
-    </ol>
+<script type="text/x-handlebars-template" id="stageTemplate">
+<div id="stageCarousel" class="carousel slide " data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
 
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-      {{> getting_startedTemplate}}
-      </div>
+    <li data-target="#myStageCarousel" data-slide-to="0" class='active'></li>
+    <li data-target="#myStageCarousel" data-slide-to="1"></li>
+    <li data-target="#myStageCarousel" data-slide-to="2"></li>
+  </ol>
 
-      <div class="item">
-      {{> whyTemplate}}
-      </div>
+  <div class="carousel-inner" role="listbox">
+    <div class="item panel1 active">
+      {{> getting_started}}
+    </div>
 
+    <div class="item panel2">
+      {{> why}}
+    </div>
+
+    <div class="item panel3">
+      {{> submit}}
     </div>
   </div>
+</div>
 
     <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <a class="left carousel-control" href="#myStageCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <a class="right carousel-control" href="#myStageCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
       <span class="sr-only">Next</span>
     </a>
@@ -535,7 +539,7 @@
 </script>
 
 
-<script type="text/mustache-template" id="submitTemplate">
+<script type="text/mustache-template" id="submitTemplate-partial">
   <!-- <a name="feel_submit"> -->
     <div id="2"></div>
 

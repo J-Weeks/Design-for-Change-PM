@@ -440,12 +440,25 @@ console.log(self.project.attributes);
 
 
       if (self.stage.attributes.fids_stage) {
+        var count = 1;
         for (var stageName in self.stage.attributes.content_obj) {
-          debugger;
-          $('.contents').html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
+          if(stageName == 'skills'){
+            console.log(stageName);
+          }else{
+              var panel = ".panel" + count;
+              $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
+              count +=1;
+            debugger;
         }
-debugger;
+
+        }
+
+        Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
+        Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
+        Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());
+
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
+        debugger;
         $('.nextStepImagine').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
