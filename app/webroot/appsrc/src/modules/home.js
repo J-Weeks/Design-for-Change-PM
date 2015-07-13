@@ -437,7 +437,10 @@ console.log(self.project.attributes);
       //temporary until nav completely removed
 
       $('.contents').html('');
-
+      $('.insidepage').css('margin-left', 'auto').css('margin-right', 'auto');
+      $('.insidepage').css('margin-top', 0).css('margin-bottom', 0);
+      $('.insidepage').css('float', 'unset');
+      $('.carousel').css('width', 'unset');
 
       if (self.stage.attributes.fids_stage) {
         var count = 1;
@@ -445,10 +448,10 @@ console.log(self.project.attributes);
           if(stageName == 'skills'){
             console.log(stageName);
           }else{
-              var panel = ".panel" + count;
+              var panel = ".pan" + count;
               $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
               count +=1;
-            debugger;
+
         }
 
         }
@@ -458,7 +461,28 @@ console.log(self.project.attributes);
         Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());
 
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
-        debugger;
+
+        $('.nextSlide').click(function(){
+          debugger;
+          var slidesArr = $(this).parent().find('.carousel-inner .item');
+          if (slidesArr.closest('.active').attr('rel') == '0'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $('.pan2').addClass('active');
+            debugger;
+          }else if (slidesArr.closest('.active').attr('rel') == '1'){
+            debugger;
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $('.pan3').addClass('active');
+            debugger;
+          }else{
+            debugger;
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+              $('.pan1').addClass('active');
+          }
+
+        });
+
+
         $('.nextStepImagine').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
