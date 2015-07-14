@@ -460,17 +460,44 @@ console.log(self.project.attributes);
           var slidesArr = $(this).parent().find('.carousel-inner .item');
           if (slidesArr.closest('.active').attr('rel') == '0'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan2').addClass('active');
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan3').addClass('active');
             $('.skillsBox .steps li .changeSkill').first().click();
           }else if(slidesArr.closest('.active').attr('rel') == '2'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan4').addClass('active');
             $('#submitDisplay .steps li .changeDeliverable').first().click();
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
+              $('.pan1').addClass('active');
+          }
+        });
+
+        $('.prevSlide').click(function(){
+          var slidesArr = $(this).parent().find('.carousel-inner .item');
+          if (slidesArr.closest('.active').attr('rel') == '0'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
+            $('.pan4').addClass('active');
+          }else if (slidesArr.closest('.active').attr('rel') == '3'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
+            $('.pan3').addClass('active');
+            $('.skillsBox .steps li .changeSkill').first().click();
+          }else if(slidesArr.closest('.active').attr('rel') == '2'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
+            $('.pan2').addClass('active');
+            $('#submitDisplay .steps li .changeDeliverable').first().click();
+          }else{
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
               $('.pan1').addClass('active');
           }
         });

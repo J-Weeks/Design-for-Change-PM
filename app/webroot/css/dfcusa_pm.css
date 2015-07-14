@@ -386,12 +386,13 @@ small {
 
 #stageCarousel{width:unset;}
 
-#stageCarousel .carousel-indicators{bottom:0px;}
+#stageCarousel .carousel-indicators{bottom:-30px; }
 
-.skipStep{float:right;}
 
 .skipIntro{
   display: block;
   width: 200px;
   margin: 0 auto;
 }
+
+.contents{padding-bottom: 50px;}
