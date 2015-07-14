@@ -475,7 +475,26 @@ console.log(self.project.attributes);
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-              $('.pan1').addClass('active');
+            // $('.pan1').addClass('active');
+            $('.skipStep').click();
+
+            // var windowhasharray = window.location.hash.split("/");
+            // if(self.sStage == 'feel'){
+
+            //   self.sStage = 'image';
+            //   windowhasharray.pop();
+            //   windowhasharray.push(self.sStage);
+            //   windowhasharray = windowhasharray.join("/");
+            //   router.navigate((windowhasharray), {replace:true, trigger:true});
+
+            // }else if(self.sStage == 'imagine'){
+            //   self.sStage = 'do';
+            // }else if(self.sStage == 'do'){
+            //   self.sStage = 'share';
+            // }else{
+            //   self.sStage = 'feel';
+            // }
+
           }
         });
 
@@ -498,7 +517,7 @@ console.log(self.project.attributes);
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-              $('.pan1').addClass('active');
+            $('.pan1').addClass('active');
           }
         });
 
