@@ -477,11 +477,11 @@ console.log(self.project.attributes);
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $('.pan3').addClass('active');
-            debugger;
             $('.skillsBox .steps li .changeSkill').first().click();
           }else if(slidesArr.closest('.active').attr('rel') == '2'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $('.pan4').addClass('active');
+            $('#submitDisplay .steps li .changeDeliverable').first().click();
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $('.pan1').addClass('active');
