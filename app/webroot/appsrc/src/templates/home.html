@@ -430,6 +430,7 @@
     <li class='pan1 active' data-target="#myStageCarousel" data-slide-to="0"></li>
     <li class='pan2' data-target="#myStageCarousel" data-slide-to="1"></li>
     <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
+    <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
   </ol>
 
   <div class="carousel-inner" role="listbox">
@@ -442,8 +443,13 @@
     </div>
 
     <div class="item pan3" rel=2>
+      {{> skills}}
+    </div>
+
+    <div class="item pan4" rel=3>
       {{> submit}}
     </div>
+
   </div>
 </div>
 
@@ -460,16 +466,15 @@
 
 </script>
 
-<script type="text/mustache-template" id="skillsTemplate">
-  <!-- <a name="feel_skills"> -->
-
+<script type="text/mustache-template" id="skillsTemplate-partial">
+  <div>
 	{{{content.content_obj.skills.text}}}
-	<section class="panel clearfix skillsBox">
+	 <section class="panel clearfix skillsBox">
     <div class="wizard wizard-vertical clearfix" id="wizard-2">
       <ul class="steps">
 	      <li class="step active"><a href="javascript:void(0)" class="changeSkill" data-target="#all" data-skill="all"><span class="badge badge-info">1</span>{{ucWords content.stage}} Activities</a></li>
       	{{#content.content_obj.skills.skills}}
-	        <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 2}}</span>{{ucWords this.skill}}</a></li>
+	       <li class="step"><a href="javascript:void(0)" class="changeSkill" data-target="#{{this.skill}}" data-skill="{{this.skill}}"><span class="badge badge-info">{{add @index 2}}</span>{{ucWords this.skill}}</a></li>
 	      {{/content.content_obj.skills.skills}}
       </ul>
     </div>
@@ -485,11 +490,10 @@
         	{{{this.text}}}
       	</div>
       {{/content.content_obj.skills.skills}}
-
-  </section>
-  <div class="activities leftMargin">
+    </section>
+    <div class="activities leftMargin">
+    </div>
   </div>
-</div>
 </script>
 
     <script type="text/mustache-template" id="activitiesTemplate">

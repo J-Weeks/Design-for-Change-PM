@@ -385,3 +385,5 @@ small {
 .carousel-inner .item{margin-bottom: 30px;}
 
 #stageCarousel{width:unset;}
+
+#stageCarousel .carousel-indicators{bottom:0px;}

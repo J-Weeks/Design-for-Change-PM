@@ -441,21 +441,31 @@ console.log(self.project.attributes);
       $('.insidepage').css('margin-top', 0).css('margin-bottom', 0);
       $('.insidepage').css('float', 'unset');
 
-      if (self.stage.attributes.fids_stage) {
-        var count = 1;
+      // if (self.stage.attributes.fids_stage) {
+      //   var count = 1;
+      //   for (var stageName in self.stage.attributes.content_obj) {
+      //     if(stageName == 'skills'){
+      //       console.log(stageName);
+      //     }else{
+      //         var panel = ".pan" + count;
+      //         $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
+      //         count +=1;
+      //     }
+      //   }
+
+
+        if (self.stage.attributes.fids_stage) {
+          var count = 1;
         for (var stageName in self.stage.attributes.content_obj) {
-          if(stageName == 'skills'){
-            console.log(stageName);
-          }else{
               var panel = ".pan" + count;
               $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
               count +=1;
-          }
         }
 
         Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
         Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
         Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());
+        Handlebars.registerPartial("skills", $("#skillsTemplate-partial").html());
 
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
 
@@ -467,6 +477,11 @@ console.log(self.project.attributes);
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $('.pan3').addClass('active');
+            debugger;
+            $('.skillsBox .steps li .changeSkill').first().click();
+          }else if(slidesArr.closest('.active').attr('rel') == '2'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $('.pan4').addClass('active');
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $('.pan1').addClass('active');
