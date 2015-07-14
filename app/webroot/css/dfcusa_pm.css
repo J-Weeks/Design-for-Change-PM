@@ -389,3 +389,9 @@ small {
 #stageCarousel .carousel-indicators{bottom:0px;}
 
 .skipStep{float:right;}
+
+.skipIntro{
+  display: block;
+  width: 200px;
+  margin: 0 auto;
+}
