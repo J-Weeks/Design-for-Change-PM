@@ -490,7 +490,8 @@ console.log(self.project.attributes);
         });
 
 
-        $('.nextStepImagine').click(function(){
+        // $('.nextStepImagine').click(function(){
+        $('.skipStep').click(function(){
 
           var windowhasharray = window.location.hash.split("/");
           if (windowhasharray[2] === "feel"){
