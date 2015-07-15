@@ -350,69 +350,24 @@ console.log(self.project.attributes);
       var self = this;
 
 
-      $('.leftNav').find('li').removeClass('active');
+        $('.leftNav').find('li').removeClass('active');
       if (self.sStage == 'home') {
-        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
 
-        $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
 
-//stepsTemplate
-      $('.steps').click(function(){
-        $(".insidepage").html("");
-        $('.insidepage').html(Handlebars.compile($('#stepsTemplate').html()));
-        $('.projecthome li').removeClass('active');
-        $(".steps").addClass('active');
-      });
-//end
+        // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
 
-//timeTemplate
-      $('.time').click(function(){
-        $(".insidepage").html("");
-        $('.insidepage').html(Handlebars.compile($('#timeTemplate').html()));
-        $('.projecthome li').removeClass('active');
-        $(".time").addClass('active');
-      });
-//end
-
-//resourcesTemplate
-      $('.resources').click(function(){
-        $(".insidepage").html("");
-        $('.insidepage').html(Handlebars.compile($('#resourcesTemplate').html()));
-        $('.projecthome li').removeClass('active');
-        $(".resources").addClass('active');
-      });
-//end
-
-//sampleProjectsTemplate
-      $('.sampleProjects').click(function(){
-        $(".insidepage").html("");
-        $('.insidepage').html(Handlebars.compile($('#sampleProjectsTemplate').html()));
-        $('.projecthome li').removeClass('active');
-        $(".sampleProjects").addClass('active');
-      });
-//end
-
-//portalGuideTemplate
-      $('.portalGuide').click(function(){
-
-        $(".insidepage").html("");
-        $('.insidepage').html(Handlebars.compile($('#portalGuideTemplate').html()));
-        $('.projecthome li').removeClass('active');
-        $(".portalGuide").addClass('active');
-      });
-//end
 
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
       } else if (self.sStage == 'files') {
-        // $('.leftnav').html(Handlebars.compile($('#projectLeftNavTemplate').html())({project: self.iProjectId}));
 
-        // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
         });
       } else {
+
         $('.stageicons').find('img').each(function() {
           $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '.png');
           if ($(this).attr('data-stage-icon') == self.sStage) {
@@ -444,11 +399,27 @@ console.log(self.project.attributes);
       if (self.stage.attributes.fids_stage) {
         var count = 1;
         for (var stageName in self.stage.attributes.content_obj) {
+          if(count == 1){
+            $.ajax({
+            url: '/dfcusa-pm/api/content/',
+            async:false
+              })
+            .done(function(content){
+              console.log(content[0]);
+              var welcomeContent = content[0];
+              debugger;
+              $('.pan1').html(Handlebars.compile($('#welcomeTemplate-partial').html())({content: welcomeContent}));
+              count +=1;
+          });
+
+          }else{
               var panel = ".pan" + count;
               $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
               count +=1;
         }
+        }
 
+        Handlebars.registerPartial("welcome", $("#welcomeTemplate-partial").html());
         Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
         Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
         Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());

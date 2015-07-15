@@ -24,10 +24,11 @@
 
     <div class="wizard clearfix stageicons">
       <ul class="steps">
-        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;FEEL</li></a>
-        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;IMAGINE</li></a>
-        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li></a>
-        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
+        <!-- <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}{{/if_greaterthanequal}}&nbsp;FEEL</li></a> -->
+        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}{{/if_greaterthanequal}}&nbsp;FEEL</li></a>
+        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}{{/if_greaterthanequal}}&nbsp;IMAGINE</li></a>
+        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}{{/if_greaterthanequal}}&nbsp;DO</li></a>
+        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
       </ul>
 
        <!--<ul class="steps">
@@ -422,6 +423,7 @@
   {{{content.content_obj.getting_started.text}}}
 </script>
 
+
 <script type="text/x-handlebars-template" id="stageTemplate">
 <div id="stageCarousel" class="carousel slide stageCarousel" data-ride="carousel">
   <!-- Indicators -->
@@ -431,23 +433,29 @@
     <li class='pan2' data-target="#myStageCarousel" data-slide-to="1"></li>
     <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
     <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
+    <li class='pan5' data-target="#myStageCarousel" data-slide-to="4"></li>
     <br><button type="button" class="btn btn-success btn-sm skipStep">Skip This Stage</button>
   </ol>
 
   <div class="carousel-inner" role="listbox">
-    <div class="item pan1 active" rel=0>
-      {{> getting_started}}
+
+   <div class="item pan1 active" rel=0>
+      {{> welcome}}
     </div>
 
     <div class="item pan2" rel=1>
-      {{> why}}
+      {{> getting_started}}
     </div>
 
     <div class="item pan3" rel=2>
-      {{> skills}}
+      {{> why}}
     </div>
 
     <div class="item pan4" rel=3>
+      {{> skills}}
+    </div>
+
+    <div class="item pan5" rel=4>
       {{> submit}}
     </div>
 
@@ -466,6 +474,22 @@
   </div>
 
 
+</script>
+
+<script type="text/x-handlebars-template" id="welcomeTemplate-partial">
+  <div id="welcomeLanding">
+
+  content
+  {{content}}
+  content.content_obj
+  {{content.content_obj}}
+  content.content_obj.content
+  {{content.content_obj.content}}
+
+  <!-- {{{content_obj.content}}}
+    {{{content_obj.getting_started.text}}}
+    {{{content_obj.why.text}}}
+  </div> -->
 </script>
 
 <script type="text/mustache-template" id="skillsTemplate-partial">
@@ -864,41 +888,3 @@
   </div>
 </script>
 
-<script type="text/mustache-template" id="onboardingTemplate">
-<div class="container">
-  <br>
-  <div id="myCarousel" class="carousel slide onboardingCarousel" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-
-    {{#each content}}
-        <li data-target="#myCarousel" data-slide-to="{{id}}"></li>
-    {{/each}}
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-        {{#each content}}
-          <div class="item panel1">
-            <div class="{{stage}}-panel">
-            {{{content_obj.content}}}
-            {{{content_obj.getting_started.text}}}
-            {{{content_obj.why.text}}}
-            <br>
-            </div>
-          </div>
-        {{/each}}
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-</div>
-</script>
