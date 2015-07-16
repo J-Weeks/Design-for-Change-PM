@@ -516,6 +516,15 @@ console.log(self.project.attributes);
           }
         });
 
+        $('.carouselNext').click(function(){
+          $('.nextSlide').click();
+        });
+
+        $('.carouselPrev').click(function(){
+          $('.prevSlide').click();
+        })
+
+
 
         // $('.nextStepImagine').click(function(){
         $('.skipStep').click(function(){
