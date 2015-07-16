@@ -401,14 +401,14 @@ console.log(self.project.attributes);
         for (var stageName in self.stage.attributes.content_obj) {
           if(count == 1){
             $.ajax({
-            url: '/dfcusa-pm/api/content/',
-            async:false
+            url: '/dfcusa-pm/api/content/'
+            // async:false
               })
-            .done(function(content){
-              console.log(content[0]);
-              var welcomeContent = content[0];
+            .done(function(response){
+              console.log(response[0]);
+              var welcomeContent = response[0];
               debugger;
-              $('.pan1').html(Handlebars.compile($('#welcomeTemplate-partial').html())({content: welcomeContent}));
+              $('.pan1').last().html(Handlebars.compile($('#welcomeTemplate-partial').html())({welcomeContent: welcomeContent}));
               count +=1;
           });
 
@@ -418,7 +418,6 @@ console.log(self.project.attributes);
               count +=1;
         }
         }
-
         Handlebars.registerPartial("welcome", $("#welcomeTemplate-partial").html());
         Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
         Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
@@ -442,7 +441,12 @@ console.log(self.project.attributes);
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan4').addClass('active');
-            $('#submitDisplay .steps li .changeDeliverable').first().click();
+          }else if (slidesArr.closest('.active').attr('rel') == '3'){
+              $(this).parent().find('.carousel-inner div.active').removeClass('active');
+              $(this).parent().find('.carousel-indicators .active').removeClass('active');
+              $('.pan5').addClass('active');
+              $('#submitDisplay .steps li .changeDeliverable').first().click();
+
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
@@ -471,20 +475,24 @@ console.log(self.project.attributes);
 
         $('.prevSlide').click(function(){
           var slidesArr = $(this).parent().find('.carousel-inner .item');
-          if (slidesArr.closest('.active').attr('rel') == '0'){
+          if (slidesArr.closest('.active').attr('rel') == '4'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan4').addClass('active');
+            $('.pan5').addClass('active');
+            $('#submitDisplay .steps li .changeDeliverable').first().click();
           }else if (slidesArr.closest('.active').attr('rel') == '3'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan3').addClass('active');
+            $('.pan4').addClass('active');
             $('.skillsBox .steps li .changeSkill').first().click();
           }else if(slidesArr.closest('.active').attr('rel') == '2'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
+            $('.pan3').addClass('active');
+          }else if (slidesArr.closest('.active').attr('rel') == '1'){
+            $(this).parent().find('.carousel-inner div.active').removeClass('active');
+            $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan2').addClass('active');
-            $('#submitDisplay .steps li .changeDeliverable').first().click();
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
