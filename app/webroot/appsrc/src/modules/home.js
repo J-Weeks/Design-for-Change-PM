@@ -522,7 +522,15 @@ console.log(self.project.attributes);
 
         $('.carouselPrev').click(function(){
           $('.prevSlide').click();
-        })
+        });
+
+        $('.carouselDeliverables').click(function(){
+          $(this).parent().find('li').removeClass('active');
+          $('.carousel-inner .item.active').first().removeClass('active')
+          $('.carouselSubmit').addClass('active')
+
+          debugger;
+        });
 
 
 

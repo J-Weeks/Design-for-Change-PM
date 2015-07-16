@@ -435,17 +435,18 @@
     <li class='pan2' data-target="#myStageCarousel" data-slide-to="1"></li>
     <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
     <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
-    <li class='pan5' data-target="#myStageCarousel" data-slide-to="4"></li>
+    <li class='pan5 carouselSubmit' data-target="#myStageCarousel" data-slide-to="4"></li>
     {{else}}
     <li class='pan2 active' data-target="#myStageCarousel" data-slide-to="1"></li>
     <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
     <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
-    <li class='pan5' data-target="#myStageCarousel" data-slide-to="4"></li>
+    <li class='pan5 carouselSubmit' data-target="#myStageCarousel" data-slide-to="4"></li>
     {{/if_eq}}
     <br>
     <button type="button" class="btn btn-primary carouselPrev">Back</button>
     <button type="button" class="btn btn-success btn-sm skipStep">Skip This Stage</button>
     <button type="button" class="btn btn-primary carouselNext">Next</button>
+    <button type="button" class="btn btn-primary carouselDeliverables">Enter Deliverables</button>
   </ol>
   </div>
 
@@ -467,8 +468,8 @@
       {{> skills}}
     </div>
 
-    <div class="item pan5" rel=4>
-      {{> submit}}
+    <div class="item pan5 carouselSubmit" rel=4>
+        {{> submit}}
     </div>
 
     {{else}}
@@ -488,7 +489,7 @@
       {{> skills}}
     </div>
 
-    <div class="item pan5" rel=4>
+    <div class="item pan5 carouselSubmit" rel=4>
       {{> submit}}
     </div>
     {{/if_eq}}
