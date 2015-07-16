@@ -407,7 +407,6 @@ console.log(self.project.attributes);
             .done(function(response){
               console.log(response[0]);
               var welcomeContent = response[0];
-              debugger;
               $('.pan1').last().html(Handlebars.compile($('#welcomeTemplate-partial').html())({welcomeContent: welcomeContent}));
               count +=1;
           });
@@ -423,7 +422,7 @@ console.log(self.project.attributes);
         Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
         Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());
         Handlebars.registerPartial("skills", $("#skillsTemplate-partial").html());
-
+debugger;
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
 
         $('.nextSlide').click(function(){
@@ -441,6 +440,7 @@ console.log(self.project.attributes);
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan4').addClass('active');
+            $('.skillsBox .steps li .changeSkill').first().click();
           }else if (slidesArr.closest('.active').attr('rel') == '3'){
               $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $(this).parent().find('.carousel-indicators .active').removeClass('active');
@@ -478,25 +478,25 @@ console.log(self.project.attributes);
           if (slidesArr.closest('.active').attr('rel') == '4'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan5').addClass('active');
-            $('#submitDisplay .steps li .changeDeliverable').first().click();
+            $('.pan4').addClass('active');
           }else if (slidesArr.closest('.active').attr('rel') == '3'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan4').addClass('active');
+            $('.pan3').addClass('active');
             $('.skillsBox .steps li .changeSkill').first().click();
           }else if(slidesArr.closest('.active').attr('rel') == '2'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan3').addClass('active');
+            $('.pan2').addClass('active');
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan2').addClass('active');
+            $('.pan1').addClass('active');
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            $('.pan1').addClass('active');
+            $('.pan5').addClass('active');
+            $('#submitDisplay .steps li .changeDeliverable').first().click();
           }
         });
 

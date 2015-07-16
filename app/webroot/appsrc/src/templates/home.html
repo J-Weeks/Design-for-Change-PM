@@ -429,16 +429,23 @@
   <!-- Indicators -->
   <ol class="carousel-indicators">
 
+{{#if_eq content.stage 'feel'}}
     <li class='pan1 active' data-target="#myStageCarousel" data-slide-to="0"></li>
     <li class='pan2' data-target="#myStageCarousel" data-slide-to="1"></li>
     <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
     <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
     <li class='pan5' data-target="#myStageCarousel" data-slide-to="4"></li>
+    {{else}}
+    <li class='pan2 active' data-target="#myStageCarousel" data-slide-to="1"></li>
+    <li class='pan3' data-target="#myStageCarousel" data-slide-to="2"></li>
+    <li class='pan4' data-target="#myStageCarousel" data-slide-to="3"></li>
+    <li class='pan5' data-target="#myStageCarousel" data-slide-to="4"></li>
+{{/if_eq}}
     <br><button type="button" class="btn btn-success btn-sm skipStep">Skip This Stage</button>
   </ol>
 
   <div class="carousel-inner" role="listbox">
-
+{{#if_eq content.stage 'feel'}}
    <div class="item pan1 active" rel=0>
       {{> welcome}}
     </div>
@@ -458,8 +465,26 @@
     <div class="item pan5" rel=4>
       {{> submit}}
     </div>
+{{else}}
+    <div class="item pan2 active" rel=1>
+      {{> getting_started}}
+    </div>
 
+    <div class="item pan3" rel=2>
+      {{> why}}
+    </div>
+
+    <div class="item pan4" rel=3>
+      {{> skills}}
+    </div>
+
+    <div class="item pan5" rel=4>
+      {{> submit}}
+    </div>
+{{/if_eq}}
   </div>
+
+
 </div>
 
     <!-- Left and right controls -->
