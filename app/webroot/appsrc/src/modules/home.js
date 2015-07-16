@@ -391,6 +391,7 @@ console.log(self.project.attributes);
       //temporary until nav completely removed
 
       $('.contents').html('');
+      navActive();
       $('.insidepage').css('margin-left', 'auto').css('margin-right', 'auto');
       $('.insidepage').css('margin-top', 0).css('margin-bottom', 0);
       $('.insidepage').css('float', 'unset');
@@ -405,7 +406,6 @@ console.log(self.project.attributes);
             // async:false
               })
             .done(function(response){
-              console.log(response[0]);
               var welcomeContent = response[0];
               $('.pan1').last().html(Handlebars.compile($('#welcomeTemplate-partial').html())({welcomeContent: welcomeContent}));
               count +=1;
@@ -415,61 +415,78 @@ console.log(self.project.attributes);
               var panel = ".pan" + count;
               $(panel).html(Handlebars.compile($('#' + stageName + 'Template-partial').html())({content: self.stage.attributes, project: self.project.attributes}));
               count +=1;
-        }
+          }
         }
         Handlebars.registerPartial("welcome", $("#welcomeTemplate-partial").html());
         Handlebars.registerPartial("getting_started", $("#getting_startedTemplate-partial").html());
         Handlebars.registerPartial("why", $("#whyTemplate-partial").html());
         Handlebars.registerPartial("submit", $("#submitTemplate-partial").html());
         Handlebars.registerPartial("skills", $("#skillsTemplate-partial").html());
-debugger;
         $('.contents').html(Handlebars.compile($('#stageTemplate').html())({content: self.stage.attributes, project: self.project.attributes}));
 
+        function navActive(){
+        var windowhasharray = window.location.hash.split("/");
+          if (windowhasharray[2] === "feel"){
+              $('.navIntro').addClass('active');
+              $('.navFeel').addClass('active');
+            }else if (windowhasharray[2] === "imagine"){
+              $('.navIntro').addClass('active');
+              $('.navFeel').addClass('active');
+              $('.navImagine').addClass('active');
+            }else if (windowhasharray[2] === "do"){
+              $('.navIntro').addClass('active');
+              $('.navFeel').addClass('active');
+              $('.navImagine').addClass('active');
+              $('.navDo').addClass('active');
+            }else if(windowhasharray[2] === "share"){
+              $('.navShare').addClass('active');
+              $('.navIntro').addClass('active');
+              $('.navFeel').addClass('active');
+              $('.navImagine').addClass('active');
+              $('.navDo').addClass('active');
+            }
+            else{
+              $('.navShare').removeClass('active');
+              $('.navIntro').removeClass('active');
+              $('.navFeel').removeClass('active');
+              $('.navImagine').removeClass('active');
+              $('.navDo').removeClass('active');
+            }
+        }
+
         $('.nextSlide').click(function(){
+
           var slidesArr = $(this).parent().find('.carousel-inner .item');
           if (slidesArr.closest('.active').attr('rel') == '0'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan2').addClass('active');
+            navActive();
           }else if (slidesArr.closest('.active').attr('rel') == '1'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan3').addClass('active');
             $('.skillsBox .steps li .changeSkill').first().click();
+            navActive();
           }else if(slidesArr.closest('.active').attr('rel') == '2'){
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
             $('.pan4').addClass('active');
             $('.skillsBox .steps li .changeSkill').first().click();
+            navActive();
           }else if (slidesArr.closest('.active').attr('rel') == '3'){
               $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $(this).parent().find('.carousel-indicators .active').removeClass('active');
               $('.pan5').addClass('active');
               $('#submitDisplay .steps li .changeDeliverable').first().click();
-
+              navActive();
+              debugger;
           }else{
             $(this).parent().find('.carousel-inner div.active').removeClass('active');
             $(this).parent().find('.carousel-indicators .active').removeClass('active');
-            // $('.pan1').addClass('active');
+            $('.pan1').addClass('active');
             $('.skipStep').click();
-
-            // var windowhasharray = window.location.hash.split("/");
-            // if(self.sStage == 'feel'){
-
-            //   self.sStage = 'image';
-            //   windowhasharray.pop();
-            //   windowhasharray.push(self.sStage);
-            //   windowhasharray = windowhasharray.join("/");
-            //   router.navigate((windowhasharray), {replace:true, trigger:true});
-
-            // }else if(self.sStage == 'imagine'){
-            //   self.sStage = 'do';
-            // }else if(self.sStage == 'do'){
-            //   self.sStage = 'share';
-            // }else{
-            //   self.sStage = 'feel';
-            // }
-
+            navActive();
           }
         });
 
@@ -507,12 +524,16 @@ debugger;
           if (windowhasharray[2] === "feel"){
             windowhasharray.pop();
             windowhasharray.push("imagine");
+            debugger;
+            navActive();
           }else if (windowhasharray[2] === "imagine"){
             windowhasharray.pop();
             windowhasharray.push("do");
+            navActive();
           }else if (windowhasharray[2] === "do"){
             windowhasharray.pop();
             windowhasharray.push("share");
+            navActive();
           }else{
             windowhasharray.pop();
             windowhasharray.push("home");
@@ -522,6 +543,7 @@ debugger;
           windowhasharray = windowhasharray.join("/");
           console.log(window.location.host + 'home' + windowhasharray);
           router.navigate((windowhasharray), {replace:true, trigger:true});
+          navActive();
         });
 
        }else if

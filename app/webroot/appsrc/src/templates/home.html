@@ -24,11 +24,11 @@
 
     <div class="wizard clearfix stageicons">
       <ul class="steps">
-        <!-- <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}{{/if_greaterthanequal}}&nbsp;FEEL</li></a> -->
-        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" {{#if_greaterthanequal project.current_stage 1}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 1}}{{/if_greaterthanequal}}&nbsp;FEEL</li></a>
-        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" {{#if_greaterthanequal project.current_stage 2}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 2}}{{/if_greaterthanequal}}&nbsp;IMAGINE</li></a>
-        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" {{#if_greaterthanequal project.current_stage 3}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 3}}{{/if_greaterthanequal}}&nbsp;DO</li></a>
-        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" {{#if_greaterthanequal project.current_stage 4}}class="active"{{/if_greaterthanequal}}>{{#if_greaterthanequal project.current_stage 4}}{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
+        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" class="active navIntro">{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check">{{/if_greaterthanequal}}&nbsp;INTRO</li></a>
+        <a href="#project/{{project.id}}/feel"><li data-target="#project/{{project.id}}/feel" class="navFeel">{{#if_greaterthanequal project.current_stage 1}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;FEEL</li></a>
+        <a href="#project/{{project.id}}/imagine"><li data-target="#project/{{project.id}}/imagine" class="navImagine">{{#if_greaterthanequal project.current_stage 2}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;IMAGINE</li></a>
+        <a href="#project/{{project.id}}/do"><li data-target="#project/{{project.id}}/do" class="navDo">{{#if_greaterthanequal project.current_stage 3}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;DO</li></a>
+        <a href="#project/{{project.id}}/share"><li data-target="#project/{{project.id}}/share" class="navShare">{{#if_greaterthanequal project.current_stage 4}}<span class="fa fa-check"></span>{{/if_greaterthanequal}}&nbsp;SHARE</li></a>
       </ul>
 
        <!--<ul class="steps">
@@ -466,6 +466,10 @@
       {{> submit}}
     </div>
 {{else}}
+    <div class="item pan1" rel=0>
+      Go Back a stage?
+    </div>
+
     <div class="item pan2 active" rel=1>
       {{> getting_started}}
     </div>
