@@ -297,7 +297,6 @@ function(App, Handlebars, Data) {
     afterRender: function () {
       var self = this;
 
-      $('.leftnav').removeClass('hide');
 
       $('#content').html($('#contentTemplate').html());
       self.project = new Data.Models.ProjectModel();
@@ -374,7 +373,7 @@ console.log(self.project.attributes);
             $(this).attr('src', '/dfcusa-pm/app/webroot/images/icon_' + $(this).attr('data-stage-icon') + '_selected.png');
           }
         });
-        $('.leftnav').html(Handlebars.compile($('#stageLeftNavTemplate').html())({project: self.iProjectId, stage: self.sStage}));
+        // $('.leftnav').html(Handlebars.compile($('#stageLeftNavTemplate').html())({project: self.iProjectId, stage: self.sStage}));
       }
 
       self.goToSection();
@@ -387,7 +386,7 @@ console.log(self.project.attributes);
 
       var main = main = $('#main ul');
 
-      $('.leftnav').addClass('hide');
+      // $('.leftnav').addClass('hide');
       //temporary until nav completely removed
 
       $('.contents').html('');
@@ -779,10 +778,10 @@ console.log(self.project.attributes);
           $('.contents').html('');
           $('.insidepage').addClass('activity');
           $('.activity').append("<div class='activitiesContent'></div>");
-          $('.leftnav').addClass('hide');
+          // $('.leftnav').addClass('hide');
           // debugger;
-          $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
-          $('.leftnav').removeClass('hide');
+          // $('.leftnav').html(Handlebars.compile($('#roadmapTemplate').html())({project: self.iProjectId}));
+          // $('.leftnav').removeClass('hide');
           window.location.hash = "#activityskill";
           $.ajax({
             url: "/api/activities/skill/" + selfSkill,
