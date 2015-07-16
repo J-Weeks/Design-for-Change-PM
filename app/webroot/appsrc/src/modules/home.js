@@ -225,8 +225,8 @@ function(App, Handlebars, Data) {
         self.content = new Data.Models.ContentModel();
         self.content.url = '/dfcusa-pm/api/content/welcome';
         self.content.fetch({success: function() {
-          $('#content').find('.modal-body').html(self.content.attributes.content_obj.content);
 
+          $('#content').find('.modal-body').html(self.content.attributes.content_obj.content);
           $('.newProject').unbind('click').click(function() {
             self.newProject();
           });
@@ -271,6 +271,8 @@ function(App, Handlebars, Data) {
             oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
             oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
             oNewProject.save({}, {success: function(data) {
+              $('#checkFidsModal').modal('show');
+              debugger;
               App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
             }, error: function() {
               alert('Error creating project, perhaps a project with the same name already exists.');
