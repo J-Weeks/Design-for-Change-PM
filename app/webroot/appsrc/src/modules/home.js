@@ -477,6 +477,7 @@ console.log(self.project.attributes);
               $(this).parent().find('.carousel-inner div.active').removeClass('active');
               $(this).parent().find('.carousel-indicators .active').removeClass('active');
               $('.pan5').addClass('active');
+              $('.carouselNext').text('Complete this stage');
               $('#submitDisplay .steps li .changeDeliverable').first().click();
               navActive();
               debugger;
@@ -526,10 +527,9 @@ console.log(self.project.attributes);
 
         $('.carouselDeliverables').click(function(){
           $(this).parent().find('li').removeClass('active');
-          $('.carousel-inner .item.active').first().removeClass('active')
-          $('.carouselSubmit').addClass('active')
-
-          debugger;
+          $('.carousel-inner .item.active').first().removeClass('active');
+          $('.carouselSubmit').addClass('active');
+          $('.carouselNext').text('Complete this stage');
         });
 
 
