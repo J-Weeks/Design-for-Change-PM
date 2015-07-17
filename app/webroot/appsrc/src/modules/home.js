@@ -268,22 +268,25 @@ function(App, Handlebars, Data) {
           $('#existingNewProjectModal').modal('hide');
           $('#checkFidsModal').modal('show');
           $('.saveFidsCheck').unbind('click').click(function(){
-            var stageSelect = $('#checkFidsModal').find('.active').text().replace(/\s+/g, '');
-            debugger;
-          });
+            var stageSelect = $('#checkFidsModal').find('.active').text().replace(/\s+/g, '').toLowerCase();
+            $('#checkFidsModal').modal('hide');
 
-          // if (App.checkForm('#newProjectForm')) {
-          //   oNewProject = new Data.Models.ProjectModel();
-          //   oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
-          //   oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
-          //   oNewProject.save({}, {success: function(data) {
-          //     App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
-          //   }, error: function() {
-          //     alert('Error creating project, perhaps a project with the same name already exists.');
-          //   }});
-          // } else {
-          //   return false;
-          // }
+
+            if (App.checkForm('#newProjectForm')) {
+              oNewProject = new Data.Models.ProjectModel();
+              oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
+              oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
+            debugger;
+              oNewProject.save({}, {success: function(data) {
+                App.HomeRouter.navigate('project/' + data.attributes.id + '/'+ stageSelect, {trigger: true});
+
+              }, error: function() {
+                alert('Error creating project, perhaps a project with the same name already exists.');
+              }});
+            } else {
+              return false;
+            }
+          });
         });
       });
     }
