@@ -267,6 +267,10 @@ function(App, Handlebars, Data) {
         $('.createProject').unbind('click').click(function() {
           $('#existingNewProjectModal').modal('hide');
           $('#checkFidsModal').modal('show');
+          $('.saveFidsCheck').unbind('click').click(function(){
+            var stageSelect = $('#checkFidsModal').find('.active').text().replace(/\s+/g, '');
+            debugger;
+          });
 
           // if (App.checkForm('#newProjectForm')) {
           //   oNewProject = new Data.Models.ProjectModel();
