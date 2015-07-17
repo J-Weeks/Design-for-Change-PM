@@ -396,3 +396,12 @@ small {
 }
 
 .contents{padding-bottom: 50px;}
+
+#checkFidsModal .btn-group label{
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#checkFidsModal .modal-body{text-align: center;}

@@ -266,20 +266,20 @@ function(App, Handlebars, Data) {
         $('#existingNewProjectModal').find('.carousel').carousel();
         $('.createProject').unbind('click').click(function() {
           $('#existingNewProjectModal').modal('hide');
-          if (App.checkForm('#newProjectForm')) {
-            oNewProject = new Data.Models.ProjectModel();
-            oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
-            oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
-            oNewProject.save({}, {success: function(data) {
-              $('#checkFidsModal').modal('show');
-              debugger;
-              App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
-            }, error: function() {
-              alert('Error creating project, perhaps a project with the same name already exists.');
-            }});
-          } else {
-            return false;
-          }
+          $('#checkFidsModal').modal('show');
+
+          // if (App.checkForm('#newProjectForm')) {
+          //   oNewProject = new Data.Models.ProjectModel();
+          //   oNewProject.attributes = App.mapFormToModel($('#newProjectForm'));
+          //   oNewProject.attributes.profilepic = '/dfcusa-pm/app/webroot/assets/projects/' + $('#existingNewProjectModal').find('.carousel-indicators').find('.active').attr('data-image');
+          //   oNewProject.save({}, {success: function(data) {
+          //     App.HomeRouter.navigate('project/' + data.attributes.id, {trigger: true});
+          //   }, error: function() {
+          //     alert('Error creating project, perhaps a project with the same name already exists.');
+          //   }});
+          // } else {
+          //   return false;
+          // }
         });
       });
     }
